@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.util.Log;
 
 import com.afollestad.cabinet.R;
+import com.afollestad.cabinet.file.LocalFile;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.fragments.DirectoryFragment;
 import com.afollestad.cabinet.utils.Utils;
@@ -39,6 +40,12 @@ public class Unzipper {
                 String newPath = outputFolder + java.io.File.separator + fileName;
                 log("Unzip file: " + newPath);
                 java.io.File newFile = new java.io.File(newPath);
+                try {
+                    File fi = Utils.checkDuplicatesSync(context.getActivity(), new LocalFile(context.getActivity(), newFile));
+                    newFile = new java.io.File(fi.getPath());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 new java.io.File(newFile.getParent()).mkdirs();
                 FileOutputStream fos = new FileOutputStream(newFile);
                 int len;
@@ -48,9 +55,9 @@ public class Unzipper {
                 }
                 es.close();
                 fos.close();
-                mDialog.setProgress(mDialog.getProgress() + 1);
+                if (mDialog != null)
+                    mDialog.setProgress(mDialog.getProgress() + 1);
             }
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
