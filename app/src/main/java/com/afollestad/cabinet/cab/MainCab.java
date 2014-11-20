@@ -170,6 +170,7 @@ public class MainCab extends BaseFileCab {
                     @Override
                     public void onComplete() {
                         MainCab.super.onActionItemClicked(actionMode, menuItem);
+                        finish();
                     }
                 });
             } else {
@@ -177,6 +178,7 @@ public class MainCab extends BaseFileCab {
                     @Override
                     public void onComplete() {
                         MainCab.super.onActionItemClicked(actionMode, menuItem);
+                        finish();
                     }
                 });
             }
