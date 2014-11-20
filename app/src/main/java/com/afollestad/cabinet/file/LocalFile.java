@@ -541,13 +541,15 @@ public class LocalFile extends File {
     @Override
     public boolean existsSync() throws Exception {
         if (requiresRoot()) {
-            String cmd;
-            if (isDirectory()) {
-                cmd = "[ -d \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
-            } else {
-                cmd = "[ -f \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
+            if (Shell.SU.available()) {
+                String cmd;
+                if (isDirectory()) {
+                    cmd = "[ -d \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
+                } else {
+                    cmd = "[ -f \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
+                }
+                return Integer.parseInt(runAsRoot(cmd).get(0)) == 1;
             }
-            return Integer.parseInt(runAsRoot(cmd).get(0)) == 1;
         }
         java.io.File mFile = new java.io.File(getPath());
         return mFile.exists() && isDirectory() == mFile.isDirectory();
