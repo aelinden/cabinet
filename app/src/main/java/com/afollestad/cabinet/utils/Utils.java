@@ -139,9 +139,9 @@ public class Utils {
         return PreferenceManager.getDefaultSharedPreferences(context).getInt("sorter", 0);
     }
 
-    public static void setGridColumn(DirectoryFragment context, int gridColumn) {
-        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putInt("gridColumn", gridColumn).commit();
-        context.gridColumn = gridColumn;
+    public static void setGridMode(DirectoryFragment context, boolean grid) {
+        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putBoolean("grid_mode", grid).commit();
+        context.gridColumn = grid ? context.getResources().getInteger(R.integer.grid_columns) : 1;
         context.changeLayout();
     }
 

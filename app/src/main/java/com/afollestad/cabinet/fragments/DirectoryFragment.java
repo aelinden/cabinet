@@ -769,9 +769,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             case R.id.change_layout:
                 if (gridColumn == 1) {
-                    Utils.setGridColumn(this, getActivity().getResources().getInteger(R.integer.grid_columns));
+                    Utils.setGridMode(this, true);
                 } else {
-                    Utils.setGridColumn(this, 1);
+                    Utils.setGridMode(this, false);
                 }
                 break;
             case R.id.sortNameFoldersTop:
