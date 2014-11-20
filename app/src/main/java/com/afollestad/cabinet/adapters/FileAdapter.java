@@ -49,7 +49,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         mMenuListener = menuListener;
         mShowDirs = showDirectories;
         checkedPaths = new ArrayList<String>();
-        gridMode = Utils.getGridColumn(context) > 1;
+        gridMode = Utils.getGridMode(context);
     }
 
     @Override
@@ -181,7 +181,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     }
 
     public void invalidateGridMode() {
-        gridMode = Utils.getGridColumn(mContext) > 1;
+        gridMode = Utils.getGridMode(mContext);
         notifyDataSetChanged();
     }
 

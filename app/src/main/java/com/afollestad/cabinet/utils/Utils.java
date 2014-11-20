@@ -141,12 +141,17 @@ public class Utils {
 
     public static void setGridMode(DirectoryFragment context, boolean grid) {
         PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putBoolean("grid_mode", grid).commit();
-        context.gridColumn = grid ? context.getResources().getInteger(R.integer.grid_columns) : 1;
         context.changeLayout();
     }
 
-    public static int getGridColumn(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getInt("gridColumn", 1);
+    private static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+    public static boolean getGridMode(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("grid_mode", isTablet(context));
     }
 
     public static void setFilter(DirectoryFragment context, String filter) {
