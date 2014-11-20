@@ -212,8 +212,9 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         if (clearBackStack)
             getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         FragmentTransaction trans = getFragmentManager().beginTransaction();
-        if (animate && !clearBackStack)
-            trans.setCustomAnimations(R.anim.frag_enter, R.anim.frag_exit);
+        // TODO temporarily disabled animations
+//        if (animate && !clearBackStack)
+//            trans.setCustomAnimations(R.anim.frag_enter, R.anim.frag_exit);
         trans.replace(R.id.container, DirectoryFragment.create(to));
         if (!clearBackStack) trans.addToBackStack(null);
         try {
