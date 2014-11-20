@@ -458,7 +458,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         .items(R.array.new_options)
                         .itemsCallback(new MaterialDialog.ListCallback() {
                             @Override
-                            public void onSelection(MaterialDialog dialog, View view, int which, String text) {
+                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
                                 switch (which) {
                                     case 0: // File
                                         showNewFileDialog(getActivity());

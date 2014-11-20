@@ -65,6 +65,7 @@ public class CopyCab extends BaseFileCab {
                                 @Override
                                 public void onComplete(File newFile) {
                                     getFragment().getAdapter().add(newFile);
+                                    getFragment().setListShown(true);
                                     if (getFiles().size() > 0)
                                         mDialog.setProgress(mDialog.getProgress() + 1);
                                     copyCount++;

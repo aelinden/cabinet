@@ -368,7 +368,7 @@ public class Utils {
                     .items(R.array.open_as_array)
                     .itemsCallback(new MaterialDialog.ListCallback() {
                         @Override
-                        public void onSelection(MaterialDialog dialog, View view, int which, String text) {
+                        public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
                             String newMime;
                             switch (which) {
                                 default:

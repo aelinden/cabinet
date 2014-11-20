@@ -65,6 +65,7 @@ public class CutCab extends BaseFileCab {
                                 @Override
                                 public void onComplete(File file) {
                                     getFragment().getAdapter().add(file);
+                                    getFragment().setListShown(true);
                                     if (getFiles().size() > 0)
                                         mDialog.setProgress(mDialog.getProgress() + 1);
                                     cutCount++;
