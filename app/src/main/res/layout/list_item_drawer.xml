@@ -8,4 +8,5 @@
     android:paddingLeft="@dimen/nav_drawer_item_hor_pad"
     android:fontFamily="sans-serif-light"
     android:textColor="?body_text"
-    android:background="?list_selector" />
+    android:background="?list_selector"
+    android:minHeight="48dp" />

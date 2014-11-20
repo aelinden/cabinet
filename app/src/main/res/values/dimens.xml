@@ -2,7 +2,7 @@
 <resources>
 
     <dimen name="nav_drawer_width">304dp</dimen>
-    <dimen name="nav_drawer_textsize">20sp</dimen>
+    <dimen name="nav_drawer_textsize">16sp</dimen>
     <dimen name="nav_drawer_item_vert_pad">18sp</dimen>
     <dimen name="nav_drawer_item_hor_pad">24sp</dimen>
     <dimen name="welcome_header">32sp</dimen>
