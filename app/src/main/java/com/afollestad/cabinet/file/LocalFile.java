@@ -160,7 +160,7 @@ public class LocalFile extends File {
                                                 public void run() {
                                                     setPath(newFile.getPath());
                                                     callback.onComplete(newFile);
-                                                    updateMediaDatabase(newFile);
+                                                    updateMediaDatabase(newFile, MediaUpdateType.ADD);
                                                 }
                                             });
                                         } catch (final Exception e) {
@@ -181,7 +181,7 @@ public class LocalFile extends File {
                                     public void run() {
                                         setPath(newFile.getPath());
                                         callback.onComplete(newFile);
-                                        updateMediaDatabase(newFile);
+                                        updateMediaDatabase(newFile, MediaUpdateType.ADD);
                                     }
                                 });
                             } else {
@@ -334,7 +334,7 @@ public class LocalFile extends File {
         in.close();
         out.close();
         File scanFile = new LocalFile(getContext(), newFile);
-        updateMediaDatabase(scanFile);
+        updateMediaDatabase(scanFile, MediaUpdateType.ADD);
         return dest;
     }
 
@@ -491,7 +491,7 @@ public class LocalFile extends File {
     @Override
     public boolean deleteSync() {
         boolean val = new java.io.File(getPath()).delete();
-        updateMediaDatabase(this);
+        updateMediaDatabase(this, MediaUpdateType.REMOVE);
         return val;
     }
 

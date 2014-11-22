@@ -222,7 +222,7 @@ public abstract class File implements Serializable {
         return o instanceof File && ((File) o).getPath().equals(getPath());
     }
 
-    static enum MediaUpdateType {
+    protected enum MediaUpdateType {
         ADD,
         REMOVE
     }
