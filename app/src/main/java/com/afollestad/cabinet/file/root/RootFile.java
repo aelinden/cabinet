@@ -96,7 +96,7 @@ public class RootFile extends File {
                                 public void run() {
                                     setPath(newFile.getPath());
                                     callback.onComplete(newFile);
-                                    updateMediaDatabase(newFile);
+                                    updateMediaDatabase(newFile, MediaUpdateType.ADD);
                                 }
                             });
                         } catch (final Exception e) {
