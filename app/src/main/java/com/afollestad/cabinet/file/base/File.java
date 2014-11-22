@@ -1,10 +1,12 @@
 package com.afollestad.cabinet.file.base;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
@@ -220,23 +222,34 @@ public abstract class File implements Serializable {
         return o instanceof File && ((File) o).getPath().equals(getPath());
     }
 
-    protected final void notifyMediaScannerService(File file) {
+    static enum MediaUpdateType {
+        ADD,
+        REMOVE
+    }
+
+    protected final void updateMediaDatabase(File file, MediaUpdateType type) {
         if (!file.getMimeType().startsWith("image/") &&
                 !file.getMimeType().startsWith("audio/") &&
                 !file.getMimeType().startsWith("video/") &&
                 !file.getExtension().equals("ogg")) {
             return;
         }
-        Log.i("Scanner", "Scanning " + file.getPath());
-        MediaScannerConnection.scanFile(mContext,
-                new String[]{file.getPath()}, null,
-                new MediaScannerConnection.OnScanCompletedListener() {
-                    @Override
-                    public void onScanCompleted(String path, Uri uri) {
-                        Log.i("Scanner", "Scanned " + path + ":");
-                        Log.i("Scanner", "-> uri=" + uri);
+        if (type == MediaUpdateType.ADD) {
+            Log.i("UpdateMediaDatabase", "Scanning " + file.getPath());
+            MediaScannerConnection.scanFile(mContext,
+                    new String[]{file.getPath()}, null,
+                    new MediaScannerConnection.OnScanCompletedListener() {
+                        @Override
+                        public void onScanCompleted(String path, Uri uri) {
+                            Log.i("Scanner", "Scanned " + path + ":");
+                            Log.i("Scanner", "-> uri=" + uri);
+                        }
                     }
-                }
-        );
+            );
+        } else {
+            ContentResolver r = getContext().getContentResolver();
+            r.delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "_data = ?", new String[]{file.getPath()});
+            r.delete(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, "_data = ?", new String[]{file.getPath()});
+        }
     }
 }
