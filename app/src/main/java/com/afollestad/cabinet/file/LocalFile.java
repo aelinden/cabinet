@@ -158,6 +158,7 @@ public class LocalFile extends File {
                                             getContext().runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
+                                                    updateMediaDatabase(LocalFile.this, MediaUpdateType.REMOVE);
                                                     setPath(newFile.getPath());
                                                     callback.onComplete(newFile);
                                                     updateMediaDatabase(newFile, MediaUpdateType.ADD);
@@ -179,6 +180,7 @@ public class LocalFile extends File {
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        updateMediaDatabase(LocalFile.this, MediaUpdateType.REMOVE);
                                         setPath(newFile.getPath());
                                         callback.onComplete(newFile);
                                         updateMediaDatabase(newFile, MediaUpdateType.ADD);
@@ -342,12 +344,14 @@ public class LocalFile extends File {
         if (!to.mkdir()) throw new Exception("Unable to create the destination directory.");
         java.io.File[] subFiles = dir.listFiles();
         for (java.io.File f : subFiles) {
+            final File old = new LocalFile(getContext(), f);
             java.io.File dest = new java.io.File(to, f.getName());
             if (f.isDirectory()) copyRecursive(f, dest, deleteAfter);
             else {
                 if (deleteAfter) {
                     if (!f.renameTo(dest))
                         throw new Exception("Failed to move a file to the new directory.");
+                    else updateMediaDatabase(old, MediaUpdateType.REMOVE);
                 } else {
                     try {
                         copySync(f, dest);
@@ -402,8 +406,12 @@ public class LocalFile extends File {
                 } else {
                     log(" >> Uploading sub-file: " + lf.getPath() + " to " + newFile.getPath());
                     client.putSync(lf.getPath(), newFile.getPath());
-                    if (deleteAfter && !lf.toJavaFile().delete()) {
-                        throw new Exception("Failed to delete old local file " + lf.getPath());
+                    if (deleteAfter) {
+                        if (!lf.toJavaFile().delete()) {
+                            throw new Exception("Failed to delete old local file " + lf.getPath());
+                        } else {
+                            updateMediaDatabase(lf, MediaUpdateType.REMOVE);
+                        }
                     }
                 }
             }
@@ -417,8 +425,12 @@ public class LocalFile extends File {
             } catch (Exception e) {
                 throw new Exception("Failed to upload " + local.getPath() + " (" + e.getMessage() + ")");
             }
-            if (deleteAfter && !local.toJavaFile().delete()) {
-                throw new Exception("Failed to delete old local file " + local.getPath());
+            if (deleteAfter) {
+                if (!local.toJavaFile().delete()) {
+                    throw new Exception("Failed to delete old local file " + local.getPath());
+                } else {
+                    updateMediaDatabase(local, MediaUpdateType.REMOVE);
+                }
             }
         }
         return dest;
@@ -434,10 +446,12 @@ public class LocalFile extends File {
                     if (callback != null) callback.onError(new Exception("Unknown error"));
                     else throw new Exception("Failed to delete " + fi.getPath());
                     break;
+                } else {
+                    updateMediaDatabase(fi, MediaUpdateType.REMOVE);
                 }
             }
         }
-        if (!((LocalFile) dir).deleteSync()) {
+        if (!dir.deleteSync()) {
             if (callback != null) callback.onError(new Exception("Unknown error"));
             else throw new Exception("Failed to delete " + dir.getPath());
             return;
