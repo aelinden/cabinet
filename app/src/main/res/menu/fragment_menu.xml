@@ -72,7 +72,7 @@
         </menu>
     </item>
     <item
-        android:id="@+id/change_layout"
+        android:id="gridMode"
         android:title="@string/grid_mode"
         android:checkable="true" />
     <item

@@ -235,7 +235,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         } else menu.findItem(R.id.filterNone).setChecked(true);
 
         if (getActivity() != null)
-            menu.findItem(R.id.change_layout).setChecked(Utils.getGridMode(getActivity()));
+            menu.findItem(R.id.gridMode).setChecked(Utils.getGridMode(getActivity()));
 
         boolean canShow = !((DrawerLayout) getActivity().findViewById(R.id.drawer_layout)).isDrawerOpen(Gravity.START);
         if (!mDirectory.isRemote()) {
@@ -658,9 +658,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public void changeLayout() {
         View v = getView();
         if (v == null) return;
-        ((RecyclerView) v.findViewById(android.R.id.list)).setLayoutManager(new GridLayoutManager(getActivity(),
+        RecyclerView mRecyclerView = (RecyclerView) v.findViewById(android.R.id.list);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
                 Utils.getGridMode(getActivity()) ? getResources().getInteger(R.integer.grid_columns) : 1));
-        mAdapter.invalidateGridMode();
+        mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
+        mRecyclerView.setAdapter(mAdapter);
         getActivity().invalidateOptionsMenu(); // update checkbox
     }
 
@@ -767,7 +769,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             case R.id.goUp:
                 ((DrawerActivity) getActivity()).switchDirectory(mDirectory.getParent(), false);
                 break;
-            case R.id.change_layout:
+            case R.id.gridMode:
                 boolean gridMode = Utils.getGridMode(getActivity());
                 Utils.setGridMode(this, !gridMode);
                 break;

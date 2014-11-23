@@ -180,11 +180,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         notifyDataSetChanged();
     }
 
-    public void invalidateGridMode() {
-        gridMode = Utils.getGridMode(mContext);
-        notifyDataSetChanged();
-    }
-
     public List<File> getFiles() {
         return mFiles;
     }
