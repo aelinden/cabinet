@@ -664,6 +664,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
         getActivity().invalidateOptionsMenu(); // update checkbox
+        reload();
     }
 
     public void reload() {

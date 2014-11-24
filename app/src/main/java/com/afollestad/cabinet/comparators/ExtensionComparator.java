@@ -20,7 +20,12 @@ public class ExtensionComparator implements java.util.Comparator<File> {
             return 1;
         } else {
             // Once folders are sorted, sort files by extension
-            return lhs.getExtension().compareTo(rhs.getExtension());
+            final int extensionCompare = lhs.getExtension().compareTo(rhs.getExtension());
+            if (extensionCompare == 0) {
+                // If the extensions are the same, sort by name
+                return lhs.getName().compareTo(rhs.getName());
+            }
+            return extensionCompare;
         }
     }
 }
