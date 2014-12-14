@@ -3,6 +3,7 @@ package com.afollestad.cabinet.ui;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.afollestad.cabinet.R;
@@ -61,8 +62,10 @@ public class SettingsActivity extends ThemableActivity implements AboutDialog.Di
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preference_activity_custom);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.settings_content, new SettingsFragment()).commit();
     }
 
     @Override

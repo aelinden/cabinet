@@ -45,13 +45,23 @@ public class ThemeUtils {
         return changed;
     }
 
-    public int getCurrent() {
-        if (trueBlack) {
-            return R.style.Theme_CabinetTrueBlack;
-        } else if (darkMode) {
-            return R.style.Theme_CabinetDark;
+    public int getCurrent(boolean hasNavDrawer) {
+        if (hasNavDrawer) {
+            if (trueBlack) {
+                return R.style.Theme_CabinetTrueBlack_WithNavDrawer;
+            } else if (darkMode) {
+                return R.style.Theme_CabinetDark_WithNavDrawer;
+            } else {
+                return R.style.Theme_Cabinet_WithNavDrawer;
+            }
         } else {
-            return R.style.Theme_Cabinet;
+            if (trueBlack) {
+                return R.style.Theme_CabinetTrueBlack;
+            } else if (darkMode) {
+                return R.style.Theme_CabinetDark;
+            } else {
+                return R.style.Theme_Cabinet;
+            }
         }
     }
 }

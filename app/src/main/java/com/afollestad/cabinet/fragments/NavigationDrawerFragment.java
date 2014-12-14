@@ -83,7 +83,8 @@ public class NavigationDrawerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_drawer, container, false);
+        View v = inflater.inflate(R.layout.fragment_drawer, container, false);
+        mRecyclerView = (RecyclerView) v.findViewById(android.R.id.list);
         mRecyclerView.setClipToPadding(false);
         mAdapter = new NavigationDrawerAdapter(getActivity(), new NavigationDrawerAdapter.ClickListener() {
             @Override
@@ -109,7 +110,7 @@ public class NavigationDrawerFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setCheckedPos(mCurrentSelectedPosition);
-        return mRecyclerView;
+        return v;
     }
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
