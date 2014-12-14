@@ -6,39 +6,47 @@
 
     <include layout="@layout/toolbar_actionbar" />
 
-    <RelativeLayout
+    <FrameLayout
+        android:foreground="@drawable/toolbar_shadow"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <ScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
-            <EditText
-                android:id="@+id/input"
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:fontFamily="sans-serif-light"
-                android:gravity="top"
-                android:inputType="textCapSentences|textMultiLine"
-                android:minHeight="120dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:textColorLink="@color/cabinet_accent_color"
-                android:textSize="18sp" />
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp">
 
-        </ScrollView>
+                <EditText
+                    android:id="@+id/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="top"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minHeight="120dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textColorLink="@color/cabinet_accent_color"
+                    android:textSize="18sp" />
 
-        <ProgressBar
-            android:id="@+id/progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+            </ScrollView>
 
-    </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
 </LinearLayout>
