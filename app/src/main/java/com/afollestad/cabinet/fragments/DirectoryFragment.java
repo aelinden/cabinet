@@ -237,10 +237,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (getActivity() != null)
             menu.findItem(R.id.gridMode).setChecked(Utils.getGridMode(getActivity()));
 
-        boolean canShow = !((DrawerLayout) getActivity().findViewById(R.id.drawer_layout)).isDrawerOpen(Gravity.START);
+        boolean canShow=true;
         if (!mDirectory.isRemote()) {
             try {
-                canShow = canShow && mDirectory.existsSync();
+                canShow = mDirectory.existsSync();
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();

@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -90,7 +92,9 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() == 0) {
+        if(mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        }else if (getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         } else getFragmentManager().popBackStack();
     }
@@ -132,7 +136,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout);
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout, mActionBarToolbar);
 
         int[] colorPrimaryDarkAttr = new int[]{R.attr.colorPrimaryDark};
         TypedArray a = obtainStyledAttributes(new TypedValue().data, colorPrimaryDarkAttr);
