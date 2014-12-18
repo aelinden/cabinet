@@ -122,7 +122,7 @@ public class NavigationDrawerFragment extends Fragment {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
-        actionBarToolbar.setNavigationIcon(R.drawable.ic_drawer);
+        actionBarToolbar.setNavigationIcon(R.drawable.ic_menu_white);
         actionBarToolbar.setNavigationOnClickListener(new View
                 .OnClickListener() {
             @Override
