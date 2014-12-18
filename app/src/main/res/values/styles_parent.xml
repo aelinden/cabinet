@@ -43,6 +43,7 @@
         <item name="actionModeCloseDrawable">@drawable/ic_action_close</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_action_close</item>
 
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="_SelectorParentDark" parent="Theme.AppCompat.NoActionBar">
@@ -96,6 +97,8 @@
 
         <item name="actionModeCloseDrawable">@drawable/ic_action_close</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_action_close</item>
+
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="CabinetTrueBlackParent" parent="@style/CabinetDarkParent">
