@@ -8,7 +8,7 @@
 
     <FrameLayout
         android:id="@+id/settings_content"
-        android:foreground="@drawable/toolbar_shadow"
+        android:foreground="?android:windowContentOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
