@@ -3,6 +3,7 @@ package com.afollestad.cabinet.ui;
 import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -50,6 +51,8 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
         mInput = (EditText) findViewById(R.id.input);
         mInput.addTextChangedListener(this);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (getIntent().getData() != null) load(getIntent().getData());

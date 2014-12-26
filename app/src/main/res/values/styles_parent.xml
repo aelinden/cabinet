@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="_SelectorParent" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="_SelectorParent" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="list_selector">@drawable/list_selector</item>
         <item name="menu_selector">@drawable/menu_selector</item>
     </style>
@@ -43,9 +43,10 @@
         <item name="actionModeCloseDrawable">@drawable/ic_action_close</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_action_close</item>
 
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
-    <style name="_SelectorParentDark" parent="Theme.AppCompat">
+    <style name="_SelectorParentDark" parent="Theme.AppCompat.NoActionBar">
         <item name="list_selector">@drawable/list_selector_dark</item>
         <item name="menu_selector">@drawable/menu_selector_dark</item>
     </style>
@@ -96,6 +97,8 @@
 
         <item name="actionModeCloseDrawable">@drawable/ic_action_close</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_action_close</item>
+
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="CabinetTrueBlackParent" parent="@style/CabinetDarkParent">

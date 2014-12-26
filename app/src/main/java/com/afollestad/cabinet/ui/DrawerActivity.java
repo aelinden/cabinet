@@ -4,12 +4,17 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -47,6 +52,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     public boolean shouldAttachFab; // used during config change, tells fragment to reattach to cab
     public boolean pickMode; // flag indicating whether user is picking a file for another app
     public DrawerLayout mDrawerLayout;
+    private Toolbar mActionBarToolbar;
 
     public BaseCab getCab() {
         return mCab;
@@ -86,15 +92,33 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() == 0) {
+        if(mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        }else if (getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         } else getFragmentManager().popBackStack();
+    }
+
+    protected Toolbar getActionBarToolbar() {
+        if (mActionBarToolbar == null) {
+            mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+            if (mActionBarToolbar != null) {
+                setSupportActionBar(mActionBarToolbar);
+            }
+        }
+        return mActionBarToolbar;
+    }
+
+    @Override
+    protected boolean hasNavDrawer() {
+        return true;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+        getActionBarToolbar();
 
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("cab")) {
@@ -112,7 +136,13 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout);
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout, mActionBarToolbar);
+
+        int[] colorPrimaryDarkAttr = new int[]{R.attr.colorPrimaryDark};
+        TypedArray a = obtainStyledAttributes(new TypedValue().data, colorPrimaryDarkAttr);
+        int color = a.getColor(0, -1);
+        a.recycle();
+        mDrawerLayout.setStatusBarBackgroundColor(color);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -3,9 +3,15 @@
 
     <style name="Theme.Cabinet" parent="@style/CabinetParent" />
 
+    <style name="Theme.Cabinet.WithNavDrawer" parent="Theme.Cabinet" />
+
     <style name="Theme.CabinetDark" parent="@style/CabinetDarkParent" />
 
+    <style name="Theme.CabinetDark.WithNavDrawer" parent="Theme.CabinetDark" />
+
     <style name="Theme.CabinetTrueBlack" parent="@style/CabinetTrueBlackParent" />
+
+    <style name="Theme.CabinetTrueBlack.WithNavDrawer" parent="Theme.CabinetTrueBlack" />
 
 
     <style name="ButtonCabinet" parent="android:Widget.Holo.Light.Button">
