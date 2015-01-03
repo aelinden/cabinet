@@ -14,7 +14,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -314,7 +313,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     }
 
     public void donate(int index) {
-        mBP.purchase("donation" + index);
+        mBP.purchase(this, "donation" + index);
     }
 
     @Override
