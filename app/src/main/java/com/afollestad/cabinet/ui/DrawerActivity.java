@@ -91,9 +91,9 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
     @Override
     public void onBackPressed() {
-        if(mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-        }else if (getFragmentManager().getBackStackEntryCount() == 0) {
+        } else if (getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         } else getFragmentManager().popBackStack();
     }
