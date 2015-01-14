@@ -38,13 +38,20 @@
         </FrameLayout>
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/navigation_drawer"
-        android:layout_width="@dimen/nav_drawer_width"
+    <FrameLayout
+        android:id="@+id/nav_drawer_frame"
+        android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:name="com.afollestad.cabinet.fragments.NavigationDrawerFragment"
-        tools:layout="@layout/fragment_drawer"
-        android:tag="NAV_DRAWER" />
+        android:background="?colorPrimaryDark"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start">
+        <fragment
+            android:id="@+id/navigation_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.afollestad.cabinet.fragments.NavigationDrawerFragment"
+            tools:layout="@layout/fragment_drawer"
+            android:tag="NAV_DRAWER" />
+    </FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>
