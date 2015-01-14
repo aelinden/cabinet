@@ -94,7 +94,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
     @Override
     public void onDestroyActionMode(ActionMode actionMode) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            getContext().getWindow().setStatusBarColor(getContext().getResources().getColor(R.color.cabinet_color_darker));
+            getContext().getWindow().setStatusBarColor(getContext().getResources().getColor(android.R.color.transparent));
         mActionMode = null;
     }
 }
