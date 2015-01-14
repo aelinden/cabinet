@@ -150,12 +150,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         holder.title.setActivated(mCheckedPos == index);
         holder.title.setTextColor(mCheckedPos == index ? selectionColor : bodyText);
 
-        if (mCheckedPos == index) {
-            holder.title.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
-        } else {
-            holder.title.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
-        }
-
         if (item.isRemote()) {
             holder.title.setText(item.getDisplay(mContext));
         } else {

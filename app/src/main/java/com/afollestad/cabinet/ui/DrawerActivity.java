@@ -13,9 +13,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.afollestad.cabinet.R;
@@ -135,7 +138,17 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout, mActionBarToolbar);
+        mNavigationDrawerFragment.setUp(mDrawerLayout, mActionBarToolbar);
+
+        FrameLayout navDrawerFrame=(FrameLayout)findViewById(R.id.nav_drawer_frame);
+        int navDrawerMargin = getResources().getDimensionPixelSize(R.dimen.nav_drawer_margin);
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int navDrawerWidthLimit = getResources().getDimensionPixelSize(R.dimen.nav_drawer_width_limit);
+        int navDrawerWidth = displayMetrics.widthPixels - navDrawerMargin;
+        if (navDrawerWidth > navDrawerWidthLimit) {
+            navDrawerWidth = navDrawerWidthLimit;
+        }
+        navDrawerFrame.setLayoutParams(new DrawerLayout.LayoutParams(navDrawerWidth,DrawerLayout.LayoutParams.MATCH_PARENT, Gravity.START));
 
         int[] colorPrimaryDarkAttr = new int[]{R.attr.colorPrimaryDark};
         TypedArray a = obtainStyledAttributes(new TypedValue().data, colorPrimaryDarkAttr);

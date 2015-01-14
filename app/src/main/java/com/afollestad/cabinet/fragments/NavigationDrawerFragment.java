@@ -3,20 +3,17 @@ package com.afollestad.cabinet.fragments;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -38,7 +35,6 @@ public class NavigationDrawerFragment extends Fragment {
     private DrawerLayout mDrawerLayout;
     private RecyclerView mRecyclerView;
     private NavigationDrawerAdapter mAdapter;
-    private View mFragmentContainerView;
 
     private int mCurrentSelectedPosition = 1;
     private boolean mFromSavedInstanceState;
@@ -113,8 +109,7 @@ public class NavigationDrawerFragment extends Fragment {
         return v;
     }
 
-    public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar actionBarToolbar) {
-        mFragmentContainerView = getActivity().findViewById(fragmentId);
+    public void setUp(DrawerLayout drawerLayout, Toolbar actionBarToolbar) {
         mDrawerLayout = drawerLayout;
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
@@ -173,7 +168,7 @@ public class NavigationDrawerFragment extends Fragment {
         // If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
         // per the navigation drawer design guidelines.
         if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
-            mDrawerLayout.openDrawer(mFragmentContainerView);
+            mDrawerLayout.openDrawer(Gravity.START);
         }
 
     }
@@ -185,7 +180,7 @@ public class NavigationDrawerFragment extends Fragment {
             mAdapter.setCheckedPos(position);
         }
         if (mDrawerLayout != null) {
-            mDrawerLayout.closeDrawer(mFragmentContainerView);
+            mDrawerLayout.closeDrawer(Gravity.START);
         }
         DrawerActivity act = (DrawerActivity) getActivity();
         Pins.Item item = mAdapter.getItem(position);
