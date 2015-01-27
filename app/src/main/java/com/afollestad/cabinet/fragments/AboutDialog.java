@@ -61,12 +61,8 @@ public class AboutDialog extends DialogFragment {
                 .theme(ThemeUtils.getDialogTheme(getActivity()))
                 .positiveColorRes(R.color.cabinet_accent_color)
                 .title(Html.fromHtml(getString(R.string.app_name_and_version, versionName)))
-                .customView(rootView)
-                .callback(new MaterialDialog.SimpleCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-                    }
-                }).build();
+                .customView(rootView, true)
+                .build();
     }
 
     @Override

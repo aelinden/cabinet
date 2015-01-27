@@ -417,14 +417,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                                     .content(R.string.file_already_exists_warning)
                                                     .positiveText(android.R.string.ok)
                                                     .negativeText(android.R.string.cancel)
-                                                    .callback(new MaterialDialog.Callback() {
+                                                    .callback(new MaterialDialog.ButtonCallback() {
                                                         @Override
                                                         public void onPositive(MaterialDialog dialog) {
                                                             createNewFileDuplicate(context, newFile);
-                                                        }
-
-                                                        @Override
-                                                        public void onNegative(MaterialDialog dialog) {
                                                         }
                                                     })
                                                     .build().show();
@@ -913,7 +909,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             .content(R.string.auto_unzip_prompt)
                             .positiveText(android.R.string.ok)
                             .negativeText(android.R.string.cancel)
-                            .callback(new MaterialDialog.Callback() {
+                            .callback(new MaterialDialog.ButtonCallback() {
                                 @Override
                                 public void onPositive(MaterialDialog dialog) {
                                     List<File> files = new ArrayList<File>();

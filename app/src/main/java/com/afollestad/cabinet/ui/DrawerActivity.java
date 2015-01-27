@@ -191,17 +191,13 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
                     .positiveText(R.string.sure)
                     .neutralText(R.string.later)
                     .negativeText(R.string.no_thanks)
-                    .callback(new MaterialDialog.FullCallback() {
+                    .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
                             PreferenceManager.getDefaultSharedPreferences(DrawerActivity.this)
                                     .edit().putBoolean("shown_rating_dialog", true).commit();
                             startActivity(new Intent(Intent.ACTION_VIEW)
                                     .setData(Uri.parse("market://details?id=com.afollestad.cabinet")));
-                        }
-
-                        @Override
-                        public void onNeutral(MaterialDialog dialog) {
                         }
 
                         @Override

@@ -43,15 +43,11 @@ public abstract class NetworkedActivity extends ThemableActivity {
                 .content(R.string.disconnect_prompt, host)
                 .positiveText(R.string.yes)
                 .negativeText(R.string.no)
-                .callback(new MaterialDialog.Callback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         startService(new Intent(NetworkedActivity.this, NetworkService.class)
                                 .setAction(NetworkService.DISCONNECT_SFTP));
-                    }
-
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
                     }
                 })
                 .build().show();

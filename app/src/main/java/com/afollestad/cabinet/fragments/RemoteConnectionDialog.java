@@ -91,7 +91,7 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
                 .cancelable(false)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
-                .callback(new MaterialDialog.Callback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         Utils.unlockOrientation(mContext);

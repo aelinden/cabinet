@@ -160,7 +160,7 @@ public class DetailsDialog extends DialogFragment implements CompoundButton.OnCh
                 .theme(ThemeUtils.getDialogTheme(getActivity()))
                 .title(R.string.details)
                 .customView(rootView)
-                .callback(new MaterialDialog.SimpleCallback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         applyPermissionsIfNecessary();

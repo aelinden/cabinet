@@ -102,7 +102,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                                     .title(R.string.unsupported_extension)
                                     .content(R.string.unsupported_extension_desc)
                                     .positiveText(android.R.string.ok)
-                                    .callback(new MaterialDialog.SimpleCallback() {
+                                    .callback(new MaterialDialog.ButtonCallback() {
                                         @Override
                                         public void onPositive(MaterialDialog dialog) {
                                             finish();
@@ -267,7 +267,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                     .content(R.string.unsaved_changes_desc)
                     .positiveText(R.string.yes)
                     .negativeText(R.string.no)
-                    .callback(new MaterialDialog.Callback() {
+                    .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
                             save(true);

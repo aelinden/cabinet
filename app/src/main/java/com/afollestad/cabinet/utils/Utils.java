@@ -180,14 +180,10 @@ public class Utils {
                 .content(message, replacement)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
-                .callback(new MaterialDialog.Callback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         callback.onPositive(0, null);
-                    }
-
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
                     }
                 })
                 .build().show();
@@ -207,12 +203,7 @@ public class Utils {
                         .title(R.string.error)
                         .content(message)
                         .positiveText(android.R.string.ok)
-                        .callback(new MaterialDialog.SimpleCallback() {
-                            @Override
-                            public void onPositive(MaterialDialog dialog) {
-                            }
-                        })
-                        .build().show();
+                        .show();
             }
         });
     }
@@ -239,7 +230,7 @@ public class Utils {
                 .title(title)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
-                .callback(new MaterialDialog.Callback() {
+                .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
                         if (callback != null) {
@@ -247,11 +238,7 @@ public class Utils {
                             callback.onInput(input.getText().toString().trim());
                         }
                     }
-
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
-                    }
-                }).customView(view);
+                }).customView(view, true);
         final EditText input = (EditText) view.findViewById(R.id.input);
         if (hint != 0) input.setHint(hint);
         if (prefillInput != null) input.append(prefillInput);
