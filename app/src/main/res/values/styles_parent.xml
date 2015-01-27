@@ -103,8 +103,6 @@
 
     <style name="CabinetTrueBlackParent" parent="@style/CabinetDarkParent">
         <item name="android:windowBackground">@drawable/black</item>
-        <item name="colorPrimary">@color/cabinet_gray</item>
-        <item name="colorPrimaryDark">@color/cabinet_gray_darker</item>
     </style>
 
 </resources>
