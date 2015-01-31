@@ -329,14 +329,13 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             for (int i = 0; i < checkedPaths.size(); i++) {
                 if (checkedPaths.get(i).equals(file.getPath())) {
                     checkedPaths.remove(i);
-                    notifyItemRemoved(findItem(file));
                     break;
                 }
             }
         } else if (!checkedPaths.contains(file.getPath()) && checked) {
             checkedPaths.add(file.getPath());
-            notifyItemChanged(findItem(file));
         }
+        notifyItemChanged(findItem(file));
     }
 
     public void setItemsChecked(List<File> files, boolean checked) {
