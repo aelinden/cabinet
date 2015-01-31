@@ -44,18 +44,8 @@ public class WelcomeFragment extends Fragment {
     public void onAttach(final Activity activity) {
         super.onAttach(activity);
         final DrawerActivity act = (DrawerActivity) activity;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        act.disableFab(true);
-                        act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
-                    }
-                });
-            }
-        }).start();
+        act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
+        act.disableFab(true);
     }
 
     @Override
@@ -107,7 +97,9 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().putBoolean("shown_welcome", true).commit();
-                ((DrawerActivity) getActivity()).switchDirectory(null, true);
+                DrawerActivity act = (DrawerActivity) getActivity();
+                act.switchDirectory(null, true);
+                act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
             }
         });
     }

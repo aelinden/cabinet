@@ -3,7 +3,6 @@ package com.afollestad.cabinet.fragments;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -105,7 +104,6 @@ public class NavigationDrawerFragment extends Fragment {
 
     public void setUp(DrawerLayout drawerLayout, Toolbar actionBarToolbar) {
         mDrawerLayout = drawerLayout;
-        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -116,12 +114,6 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 // Don't call super method to disable the rotating nav icon
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-
             }
         };
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);

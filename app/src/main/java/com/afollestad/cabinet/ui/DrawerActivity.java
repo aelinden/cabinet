@@ -144,8 +144,12 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         }
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigationDrawerFragment.setUp(mDrawerLayout, mToolbar);
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("shown_welcome", false)) {
+            NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
+            mNavigationDrawerFragment.setUp(mDrawerLayout, mToolbar);
+        } else {
+            mToolbar.setNavigationIcon(R.drawable.ic_intro_menu);
+        }
 
         FrameLayout navDrawerFrame = (FrameLayout) findViewById(R.id.nav_drawer_frame);
         int navDrawerMargin = getResources().getDimensionPixelSize(R.dimen.nav_drawer_margin);
