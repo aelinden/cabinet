@@ -40,6 +40,7 @@ public abstract class BaseFileCab extends BaseCab {
     public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
         boolean result = super.onCreateActionMode(actionMode, menu);
         invalidateFab();
+        getContext().invalidateNavDrawerPadding(true);
         return result;
     }
 
@@ -183,6 +184,7 @@ public abstract class BaseFileCab extends BaseCab {
         if (!overrideDestroy) {
             clearFiles();
             getFragment().mAdapter.resetChecked();
+            getContext().invalidateNavDrawerPadding(false);
             if (canPaste() == PasteMode.ENABLED) {
                 getContext().fabPasteMode = PasteMode.DISABLED;
                 getContext().fab.setImageResource(R.drawable.ic_action_content_new);

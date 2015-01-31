@@ -10,4 +10,4 @@
     android:textStyle="@integer/font_textStyle_medium"
     android:textColor="?body_text"
     android:background="?list_selector"
-    android:minHeight="48dp" />
+    android:minHeight="56dp" />

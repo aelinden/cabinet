@@ -84,6 +84,15 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            openOptionsMenu();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         if (mCab != null && mCab.isActive())
             outState.putSerializable("cab", mCab);
@@ -140,7 +149,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mNavigationDrawerFragment.setUp(mDrawerLayout, mActionBarToolbar);
 
-        FrameLayout navDrawerFrame=(FrameLayout)findViewById(R.id.nav_drawer_frame);
+        FrameLayout navDrawerFrame = (FrameLayout) findViewById(R.id.nav_drawer_frame);
         int navDrawerMargin = getResources().getDimensionPixelSize(R.dimen.nav_drawer_margin);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int navDrawerWidthLimit = getResources().getDimensionPixelSize(R.dimen.nav_drawer_width_limit);
@@ -148,7 +157,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         if (navDrawerWidth > navDrawerWidthLimit) {
             navDrawerWidth = navDrawerWidthLimit;
         }
-        navDrawerFrame.setLayoutParams(new DrawerLayout.LayoutParams(navDrawerWidth,DrawerLayout.LayoutParams.MATCH_PARENT, Gravity.START));
+        navDrawerFrame.setLayoutParams(new DrawerLayout.LayoutParams(navDrawerWidth, DrawerLayout.LayoutParams.MATCH_PARENT, Gravity.START));
 
         int[] colorPrimaryDarkAttr = new int[]{R.attr.colorPrimaryDark};
         TypedArray a = obtainStyledAttributes(new TypedValue().data, colorPrimaryDarkAttr);
@@ -229,6 +238,10 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
     public void reloadNavDrawer(boolean open) {
         ((NavigationDrawerFragment) getFragmentManager().findFragmentByTag("NAV_DRAWER")).reload(open);
+    }
+
+    public void invalidateNavDrawerPadding(boolean cabStarted) {
+        ((NavigationDrawerFragment) getFragmentManager().findFragmentByTag("NAV_DRAWER")).invalidatePadding(cabStarted);
     }
 
     public void reloadNavDrawer() {

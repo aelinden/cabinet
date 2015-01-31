@@ -242,51 +242,53 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         if (mime != null) {
             if (mime.startsWith("image/")) {
                 Uri uri = Uri.fromFile(file.toJavaFile());
-                DisplayImageOptions options = App.getDisplayOptions(Utils.resolveDrawable(context, R.attr.ic_file_image));
+                DisplayImageOptions options = App.getDisplayOptions(R.drawable.ic_file_image);
                 ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon, options);
             } else if (mime.equals("application/vnd.android.package-archive")) {
-                DisplayImageOptions options = App.getDisplayOptions(Utils.resolveDrawable(context, R.attr.ic_file_apk));
+                DisplayImageOptions options = App.getDisplayOptions(R.drawable.ic_file_apk);
                 ImageLoader.getInstance().displayImage(file.getPath(), icon, options);
             } else {
-                int resId = Utils.resolveDrawable(context, R.attr.ic_file_misc);
+                int resId = R.drawable.ic_file_misc;
                 if (file.isDirectory()) {
                     if (file.isHidden())
-                        resId = Utils.resolveDrawable(context, R.attr.ic_folder_hidden);
-                    else resId = Utils.resolveDrawable(context, R.attr.ic_folder);
+                        resId = R.drawable.ic_folder_hidden;
+                    else resId = R.drawable.ic_folder;
                 } else {
                     final String ext = file.getExtension().toLowerCase(Locale.getDefault());
-                    final List<String> codeExts = Arrays.asList(context.getResources().getStringArray(R.array.code_extensions));
-                    final List<String> archiveExts = Arrays.asList(context.getResources().getStringArray(R.array.archive_extensions));
-                    final List<String> textExts = Arrays.asList(context.getResources().getStringArray(R.array.other_text_extensions));
-                    if (mime.startsWith("audio/") || mime.equals("application/ogg")) {
-                        resId = R.drawable.ic_file_audio;
-                    } else if (mime.startsWith("image/")) {
-                        resId = R.drawable.ic_file_image;
-                    } else if (mime.startsWith("video/")) {
-                        resId = R.drawable.ic_file_video;
-                    } else if (mime.equals("application/pdf")) {
-                        resId = R.drawable.ic_file_pdf;
-                    } else if (archiveExts.contains(ext)) {
-                        resId = R.drawable.ic_file_zip;
-                    } else if (mime.startsWith("model/")) {
-                        resId = R.drawable.ic_file_model;
-                    } else if (file.getExtension().equals("doc") || file.getExtension().equals("docx") ||
-                            mime.startsWith("text/") || textExts.contains(ext)) {
-                        resId = R.drawable.ic_file_doc;
-                    } else if (file.getExtension().equals("ppt") || file.getExtension().equals("pptx")) {
-                        resId = R.drawable.ic_file_ppt;
-                    } else if (file.getExtension().equals("xls") || file.getExtension().equals("xlsx")) {
-                        resId = R.drawable.ic_file_excel;
-                    } else if (file.getExtension().equals("ttf")) {
-                        resId = R.drawable.ic_file_font;
-                    } else if (file.getExtension().equals("sh") || file.getExtension().equals("bat") ||
-                            codeExts.contains(ext)) {
-                        resId = R.drawable.ic_file_code;
+                    if (!ext.trim().isEmpty()) {
+                        final List<String> codeExts = Arrays.asList(context.getResources().getStringArray(R.array.code_extensions));
+                        final List<String> archiveExts = Arrays.asList(context.getResources().getStringArray(R.array.archive_extensions));
+                        final List<String> textExts = Arrays.asList(context.getResources().getStringArray(R.array.other_text_extensions));
+                        if (mime.startsWith("audio/") || mime.equals("application/ogg")) {
+                            resId = R.drawable.ic_file_audio;
+                        } else if (mime.startsWith("image/")) {
+                            resId = R.drawable.ic_file_image;
+                        } else if (mime.startsWith("video/")) {
+                            resId = R.drawable.ic_file_video;
+                        } else if (mime.equals("application/pdf")) {
+                            resId = R.drawable.ic_file_pdf;
+                        } else if (archiveExts.contains(ext)) {
+                            resId = R.drawable.ic_file_zip;
+                        } else if (mime.startsWith("model/")) {
+                            resId = R.drawable.ic_file_model;
+                        } else if (file.getExtension().equals("doc") || file.getExtension().equals("docx") ||
+                                mime.startsWith("text/") || textExts.contains(ext)) {
+                            resId = R.drawable.ic_file_doc;
+                        } else if (file.getExtension().equals("ppt") || file.getExtension().equals("pptx")) {
+                            resId = R.drawable.ic_file_ppt;
+                        } else if (file.getExtension().equals("xls") || file.getExtension().equals("xlsx")) {
+                            resId = R.drawable.ic_file_excel;
+                        } else if (file.getExtension().equals("ttf")) {
+                            resId = R.drawable.ic_file_font;
+                        } else if (file.getExtension().equals("sh") || file.getExtension().equals("bat") ||
+                                codeExts.contains(ext)) {
+                            resId = R.drawable.ic_file_code;
+                        }
                     }
                 }
                 icon.setImageResource(resId);
             }
-        } else icon.setImageResource(Utils.resolveDrawable(context, R.attr.ic_file_misc));
+        } else icon.setImageResource(R.drawable.ic_file_misc);
     }
 
     @Override

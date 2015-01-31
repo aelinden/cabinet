@@ -2,9 +2,7 @@ package com.afollestad.cabinet.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -13,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +46,6 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mTitle = savedInstanceState.getCharSequence(STATE_TITLE);
@@ -55,7 +53,7 @@ public class NavigationDrawerFragment extends Fragment {
         mStorageHelper = new StorageHelper(getActivity(), new StorageHelper.StateListener() {
             @Override
             public void onStateChanged(boolean available, boolean writeable) {
-
+                // TODO?
             }
         });
         mStorageHelper.startWatchingExternalStorage();
@@ -119,6 +117,12 @@ public class NavigationDrawerFragment extends Fragment {
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 // Don't call super method to disable the rotating nav icon
             }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+
+            }
         };
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
         mDrawerLayout.post(new Runnable() {
@@ -166,6 +170,22 @@ public class NavigationDrawerFragment extends Fragment {
         if (act != null) {
             mAdapter.reload(act);
             if (open) mDrawerLayout.openDrawer(Gravity.START);
+        }
+    }
+
+    public void invalidatePadding(boolean cabStarted) {
+        if (getView() == null || getActivity() == null) return;
+        final View v = getView();
+        if (cabStarted) {
+            int actionBarHeight;
+            TypedValue tv = new TypedValue();
+            if (getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+                actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+            else
+                actionBarHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 52, getResources().getDisplayMetrics());
+            v.setPadding(v.getPaddingLeft(), actionBarHeight, v.getPaddingRight(), v.getPaddingBottom());
+        } else {
+            v.setPadding(v.getPaddingLeft(), 0, v.getPaddingRight(), v.getPaddingBottom());
         }
     }
 }
