@@ -21,6 +21,8 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.cabinet.R;
@@ -126,9 +128,11 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         setContentView(R.layout.activity_drawer);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-        mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
         mToolbar.setPopupTheme(getThemeUtils().getPopupTheme());
         setSupportActionBar(mToolbar);
+
+        LinearLayout toolbarDirectory = (LinearLayout) findViewById(R.id.toolbar_directory);
+        toolbarDirectory.setBackgroundColor(getThemeUtils().primaryColor());
 
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("cab")) {
@@ -297,6 +301,34 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     public void search(File currentDir, String query) {
         getFragmentManager().beginTransaction().replace(R.id.container,
                 DirectoryFragment.create(currentDir, query)).addToBackStack(null).commit();
+    }
+
+    public final void setStatus(int message, String replacement) {
+        TextView status = (TextView) findViewById(R.id.status);
+        if (message == 0) {
+            status.setVisibility(View.GONE);
+            invalidateStatusColors(false);
+        } else {
+            status.setVisibility(View.VISIBLE);
+            status.setText(getString(message, replacement));
+            invalidateStatusColors(false);
+        }
+    }
+
+    public void invalidateStatusColors(boolean forceCabGone) {
+        TextView status = (TextView) findViewById(R.id.status);
+        final boolean shown = status.getVisibility() == View.VISIBLE;
+
+        if (shown) {
+            BaseCab cab = getCab();
+            int bgColor;
+            if (cab != null && cab.isActive() && !forceCabGone) {
+                bgColor = getResources().getColor(R.color.dark_theme_gray_darker);
+            } else {
+                bgColor = getThemeUtils().primaryColor();
+            }
+            status.setBackgroundColor(bgColor);
+        }
     }
 
     @Override

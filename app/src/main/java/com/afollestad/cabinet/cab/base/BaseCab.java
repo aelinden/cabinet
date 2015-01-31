@@ -109,7 +109,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
             if (!overrideDestroy)
-                getFragment().invalidateStatusColorsAndElevation(true);
+                act.invalidateStatusColors(true);
         }
         mActionMode = null;
     }
