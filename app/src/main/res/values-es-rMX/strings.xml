@@ -177,4 +177,13 @@
     <string name="owner">Propietario</string>
     <string name="group">Grupo</string>
     <string name="applying_permissions">Aplicando permisos…</string>
+
+    <string name="primary_color">Primary Color</string>
+    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
+    <string name="accent_color">Accent Color</string>
+    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
+    <string name="colored_navbar">Colored Navigation Bar</string>
+    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
+    <string name="defaultStr">Default</string>
+
 </resources>
