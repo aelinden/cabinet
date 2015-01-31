@@ -938,11 +938,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
 
     private void shareFile(File file) {
         try {
-            String mime = file.getMimeType();
-            if (file.getExtension().equals("apk")) mime = "*/*";
-            getActivity().startActivity(new Intent(Intent.ACTION_SEND)
-                    .setType(mime)
-                    .putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file.toJavaFile())));
+            final Uri uri = Uri.fromFile(file.toJavaFile());
+            getActivity().startActivity(new Intent(Intent.ACTION_SEND).setDataAndType(uri, "*/*")
+                    .putExtra(Intent.EXTRA_STREAM, uri));
         } catch (ActivityNotFoundException e) {
             Toast.makeText(getActivity(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
         }

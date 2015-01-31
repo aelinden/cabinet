@@ -86,24 +86,26 @@ public class MainCab extends BaseFileCab {
     }
 
     private void shareFiles(List<File> send) {
-        Intent intent = new Intent().setAction(Intent.ACTION_SEND_MULTIPLE);
-        String mime = null;
-        for (File fi : send) {
-            if (mime == null) mime = fi.getMimeType();
-            else if (!fi.getMimeType().equals(mime)) {
-                mime = "*/*";
-                break;
+        if (send.size() == 1) {
+            final Uri uri = Uri.fromFile(send.get(0).toJavaFile());
+            Intent intent = new Intent().setAction(Intent.ACTION_SEND)
+                    .setDataAndType(uri, "*/*").putExtra(Intent.EXTRA_STREAM, uri);
+            try {
+                getContext().startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(getContext(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
             }
-        }
-        intent.setType(mime);
-        ArrayList<Uri> files = new ArrayList<>();
-        for (File fi : send)
-            files.add(Uri.fromFile(fi.toJavaFile()));
-        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, files);
-        try {
-            getContext().startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(getContext(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent().setAction(Intent.ACTION_SEND_MULTIPLE);
+            ArrayList<Uri> files = new ArrayList<>();
+            for (File fi : send)
+                files.add(Uri.fromFile(fi.toJavaFile()));
+            intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, files);
+            try {
+                getContext().startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(getContext(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
