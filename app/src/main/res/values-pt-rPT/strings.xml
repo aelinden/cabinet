@@ -184,4 +184,6 @@
     <string name="colored_navbar_desc">Se a barra de navegação deve ser ou não colorida com a cor primária.</string>
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Esta funcionalidade só está disponível para versões iguais ou superiores ao Android Lollipop.</string>
+    <string name="colored_folders">Colored Folders</string>
+    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
 </resources>

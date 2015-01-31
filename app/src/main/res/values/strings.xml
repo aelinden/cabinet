@@ -291,6 +291,8 @@
     <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
     <string name="colored_navbar">Colored Navigation Bar</string>
     <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
+    <string name="colored_folders">Colored Folders</string>
+    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
     <string name="defaultStr">Default</string>
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
 

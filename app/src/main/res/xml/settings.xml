@@ -50,6 +50,14 @@
             android:summary="@string/accent_color_desc" />
 
         <CheckBoxPreference
+            android:key="colored_folders"
+            android:title="@string/colored_folders"
+            android:summary="@string/colored_folders_desc"
+            android:layout="@layout/preference_custom"
+            android:persistent="true"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
             android:key="colored_navbar"
             android:title="@string/colored_navbar"
             android:summary="@string/colored_navbar_desc"

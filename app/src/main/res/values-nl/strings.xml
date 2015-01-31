@@ -185,5 +185,7 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
     <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
     <string name="defaultStr">Default</string>
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
+    <string name="colored_folders">Colored Folders</string>
+    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
 
 </resources>

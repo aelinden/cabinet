@@ -30,6 +30,7 @@ import com.afollestad.cabinet.file.root.RootFile;
 import com.afollestad.cabinet.ui.DrawerActivity;
 import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.Pins;
+import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.TimeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -53,7 +54,13 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         mShowDirs = showDirectories;
         checkedPaths = new ArrayList<>();
         gridMode = Utils.getGridMode(context);
-        primaryColor = ((ThemableActivity) context).getThemeUtils().primaryColor();
+
+        ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();
+        if (ThemeUtils.isColoredFolders(context))
+            primaryColor = theme.primaryColor();
+        else {
+            primaryColor = context.getResources().getColor(R.color.non_colored_folder);
+        }
     }
 
     @Override
