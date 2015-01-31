@@ -13,16 +13,14 @@
             android:id="@+id/status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/cabinet_color"
             android:textColor="@android:color/white"
             android:textSize="17sp"
-            android:gravity="center_vertical"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
+            android:gravity="center_vertical|start"
+            android:paddingBottom="12dp"
+            android:paddingLeft="72dp"
             android:paddingRight="16dp"
             android:visibility="gone"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif-light" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@android:id/list"

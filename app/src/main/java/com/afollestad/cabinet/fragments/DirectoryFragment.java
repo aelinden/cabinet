@@ -48,6 +48,7 @@ import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.DrawerActivity;
 import com.afollestad.cabinet.ui.SettingsActivity;
+import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.PauseOnScrollListener;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.ThemeUtils;
@@ -517,6 +518,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (message == 0) status.setVisibility(View.GONE);
         else {
             status.setVisibility(View.VISIBLE);
+            status.setBackgroundColor(((ThemableActivity) getActivity()).getThemeUtils().primaryColor());
             status.setText(getString(message, replacement));
         }
     }

@@ -151,7 +151,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
 
     public void add(File file) {
         mFiles.add(file);
-        notifyDataSetChanged();
+        notifyItemInserted(mFiles.size() - 1);
     }
 
     public void set(List<File> files) {
@@ -161,24 +161,14 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         notifyDataSetChanged();
     }
 
-//    public void update(File file) {
-//        for (int i = 0; i < mFiles.size(); i++) {
-//            if (mFiles.get(i).getPath().equals(file.getPath())) {
-//                mFiles.set(i, file);
-//                break;
-//            }
-//        }
-//        notifyDataSetChanged();
-//    }
-
-    public void remove(File file, boolean notify) {
+    public void remove(File file) {
         for (int i = 0; i < mFiles.size(); i++) {
             if (mFiles.get(i).getPath().equals(file.getPath())) {
                 mFiles.remove(i);
+                notifyItemRemoved(i);
                 break;
             }
         }
-        if (notify) notifyDataSetChanged();
     }
 
     public void clear() {
@@ -326,19 +316,27 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         public abstract void onMenuItemClick(File file, MenuItem item);
     }
 
+    private int findItem(File file) {
+        for (int i = 0; i < mFiles.size(); i++) {
+            if (mFiles.get(i).equals(file))
+                return i;
+        }
+        return -1;
+    }
 
     public void setItemChecked(File file, boolean checked) {
         if (checkedPaths.contains(file.getPath()) && !checked) {
             for (int i = 0; i < checkedPaths.size(); i++) {
                 if (checkedPaths.get(i).equals(file.getPath())) {
                     checkedPaths.remove(i);
+                    notifyItemRemoved(findItem(file));
                     break;
                 }
             }
         } else if (!checkedPaths.contains(file.getPath()) && checked) {
             checkedPaths.add(file.getPath());
+            notifyItemChanged(findItem(file));
         }
-        notifyDataSetChanged();
     }
 
     public void setItemsChecked(List<File> files, boolean checked) {

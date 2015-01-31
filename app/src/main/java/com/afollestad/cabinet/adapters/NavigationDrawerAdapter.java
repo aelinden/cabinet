@@ -115,8 +115,11 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     }
 
     public void setCheckedPos(int index) {
+        int beforeChecked = mCheckedPos;
         mCheckedPos = index;
-        notifyDataSetChanged();
+        if (beforeChecked > -1)
+            notifyItemChanged(beforeChecked);
+        notifyItemChanged(mCheckedPos);
     }
 
     public Pins.Item getItem(int index) {
