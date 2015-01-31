@@ -40,7 +40,7 @@
     <string name="sort_modified">Last modified</string>
     <string name="modified_x">Modified %1$s</string>
     <string name="iconpress_hint">You can tap a file\'s icon to quickly select it!</string>
-    <string name="drawer_longpress_hint">Tip: long press pinned shortcuts to remove them!</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="new_folder">New Folder</string>
@@ -272,7 +272,6 @@
     <string name="filter_active">Filter active: %1$s</string>
 
     <string name="base_theme">Base Theme</string>
-
     <string-array name="base_themes">
         <item>Light</item>
         <item>Dark</item>

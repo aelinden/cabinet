@@ -33,7 +33,7 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="sort_modified">최근 수정</string>
     <string name="modified_x">%1$s 에 수정 됨</string>
     <string name="iconpress_hint">파일 아이콘을 눌러 빠르게 선택할 수 있습니다.</string>
-    <string name="drawer_longpress_hint">팁: 바로 가기를 길게 눌러 지울 수 있습니다.</string>
+
     <string name="navigation_drawer_open">탐색 서랍 열기</string>
     <string name="navigation_drawer_close">탐색 서랍 닫기</string>
     <string name="new_folder">새 폴더</string>
@@ -168,10 +168,8 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="no_files_filter">필터링 된 파일 없음: %1$s</string>
     <string name="superuser_not_available">Superuser를 사용할 수 없습니다.</string>
     <string name="filter_active">%1$s 필터 활성화 됨</string>
-    <string name="dark_theme">어두운 테마</string>
-    <string name="dark_theme_description">Cabinet이 어두운 색깔을 사용합니다.</string>
-    <string name="true_black">진짜 검정</string>
-    <string name="true_black_description">Cabinet은 아몰레드 디스플레이를 위해 순수한 검정색을 사용합니다.</string>
+
+
     <string name="sdcard">SD카드</string>
     <string name="owner">소유자</string>
     <string name="group">그룹</string>
@@ -187,5 +185,13 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

@@ -32,7 +32,6 @@
     <string name="sort_modified">Último modificado</string>
     <string name="modified_x">Modificado %1$s</string>
     <string name="iconpress_hint">Pode tocar num icone de um ficheiro\s para selecioná-lo rapidamente!</string>
-    <string name="drawer_longpress_hint">Sugestão: manter premido nos atalhos para os remover!</string>
     <string name="navigation_drawer_open">Abrir gaveta de navegação</string>
     <string name="navigation_drawer_close">Fechar gaveta de navegação</string>
     <string name="new_folder">Nova Pasta</string>
@@ -168,10 +167,12 @@
     <string name="no_files_filter">Nenhum ficheiro após a filtragem: %1$s</string>
     <string name="superuser_not_available">Superuser indisponível</string>
     <string name="filter_active">Filtro ativo: %1$s</string>
-    <string name="dark_theme">Tema escuro</string>
-    <string name="dark_theme_description">O Cabinet irá usar cores mais escuras.</string>
-    <string name="true_black">Preto puro.</string>
-    <string name="true_black_description">O Cabinet irá usar preto puro para os ecrãs AMOLED.</string>
+    <string name="base_theme">Tema Base</string>
+    <string-array name="base_themes">
+        <item>Claro</item>
+        <item>Escuro</item>
+        <item>Preto (AMOLED)</item>
+    </string-array>
     <string name="sdcard">Cartão SD</string>
     <string name="owner">Dono</string>
     <string name="group">Grupo</string>
@@ -182,8 +183,9 @@
     <string name="accent_color_desc">A cor a utilizar para os acentos. A cor padrão é rosa.</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Se a barra de navegação deve ser ou não colorida com a cor primária.</string>
+    <string name="colored_folders">Pastas Coloridas</string>
+    <string name="colored_folders_desc">Se as pastas devem ser ou não coloridas com a cor primária.</string>
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Esta funcionalidade só está disponível para versões iguais ou superiores ao Android Lollipop.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+    <string name="base_theme_desc">Escolha se pretende um tema claro, escuro ou preto AMOLED para pintar as cores.</string>
 </resources>

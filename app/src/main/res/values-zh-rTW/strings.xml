@@ -34,7 +34,7 @@
     <string name="sort_modified">修改時間</string>
     <string name="modified_x">修改時間 %1$s</string>
     <string name="iconpress_hint">您可以通過點擊檔案圖示來進行快速選擇！</string>
-    <string name="drawer_longpress_hint">貼士：長按可刪除已固定的捷徑。</string>
+
     <string name="navigation_drawer_open">打開導航欄</string>
     <string name="navigation_drawer_close">關閉導航欄</string>
     <string name="new_folder">新資料夾</string>
@@ -170,14 +170,12 @@
     <string name="no_files_filter">無符合此篩選條件的檔案： %1$s</string>
     <string name="superuser_not_available">Superuser 不可用</string>
     <string name="filter_active">" 篩選條件： %1$s"</string>
-    <string name="dark_theme">暗系主題</string>
-    <string name="dark_theme_description">內閣將使用較暗的顏色。</string>
-    <string name="true_black">真黑</string>
-    <string name="true_black_description">內閣將採用純黑色的AMOLED顯示屏。</string>
+
+
     <string name="sdcard">SD卡</string>
     <string name="owner">擁有者</string>
     <string name="group">群組</string>
-    <string name="applying_permissions">申請權限中......</string>
+    <string name="applying_permissions">申請權限中……</string>
 
     <string name="primary_color">Primary Color</string>
     <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
@@ -189,5 +187,12 @@
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

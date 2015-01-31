@@ -33,7 +33,7 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="sort_modified">Ostatnio modyfikowane</string>
     <string name="modified_x">Modyfikowane %1$s</string>
     <string name="iconpress_hint">Możesz dotknąć ikony pliku, aby go szybko zaznaczyć</string>
-    <string name="drawer_longpress_hint">Wskazówka: dłuższe przyciśnięcie skrótów usuwa je</string>
+
     <string name="navigation_drawer_open">Otwórz szufladę</string>
     <string name="navigation_drawer_close">Zamknij szufladę</string>
     <string name="new_folder">Nowy Folder</string>
@@ -174,10 +174,8 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="no_files_filter">Brak wyników filtrowania: %1$s</string>
     <string name="superuser_not_available">Tryb Superuser niedostępny</string>
     <string name="filter_active">Aktywny filtr: %1$s</string>
-    <string name="dark_theme">Ciemny motyw</string>
-    <string name="dark_theme_description">Cabinet będzie używał ciemniejszych kolorów</string>
-    <string name="true_black">Prawdziwa Czerń</string>
-    <string name="true_black_description">Cabinet będzie używał prawdziwej czerni na wyświetlaczach typu AMOLED</string>
+
+
     <string name="sdcard">Karta SD</string>
     <string name="owner">Właściciel</string>
     <string name="group">Grupa</string>
@@ -193,5 +191,13 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

@@ -33,7 +33,7 @@
     <string name="sort_modified">Dernière modification</string>
     <string name="modified_x">Modifié %1$s</string>
     <string name="iconpress_hint">Vous pouvez appuyer sur l\'icône d\'un fichier pour le sélectionner rapidement !</string>
-    <string name="drawer_longpress_hint">Astuce : restez appuyé sur un raccourci épinglé pour l\'enlever !</string>
+
     <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
     <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
     <string name="new_folder">Nouveau dossier</string>
@@ -169,24 +169,27 @@
     <string name="no_files_filter">Aucun fichier pour le filtre: %1$s</string>
     <string name="superuser_not_available">Superutilisateur non disponible</string>
     <string name="filter_active">Filtre activé: %1$s</string>
-    <string name="dark_theme">Thème foncé</string>
-    <string name="dark_theme_description">Cabinet des couleurs plus foncées.</string>
-    <string name="true_black">Vrai Noir</string>
-    <string name="true_black_description">Cabinet utilisera un noir pur pour les écrans AMOLED.</string>
+    <string name="base_theme">Thème de base</string>
+    <string-array name="base_themes">
+        <item>Clair</item>
+        <item>Sombre</item>
+        <item>Noir (AMOLED)</item>
+    </string-array>
     <string name="sdcard">Carte SD</string>
     <string name="owner">Propriétaire</string>
     <string name="group">Groupe</string>
     <string name="applying_permissions">Application des permissions…</string>
+    <string name="primary_color">Couleur principale</string>
+    <string name="primary_color_desc">La couleur principale du thème. Bleu matériau par défaut.</string>
+    <string name="colored_navbar">Barre de navigation colorée</string>
+    <string name="colored_navbar_desc">Colorer la barre de navigation avec la couleur principale.</string>
+    <string name="colored_folders">Dossiers colorés</string>
+    <string name="colored_folders_desc">Colorer les dossiers avec la couleur principale.</string>
+    <string name="defaultStr">Défaut</string>
+    <string name="only_available_lollipop">Cette fonctionnalité n\'est disponible qu\'à partir d\'Android Lollipop.</string>
+    <string name="base_theme_desc">Choisissez un thème clair, sombre, ou noir AMOLED à colorer.</string>
 
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
     <string name="accent_color">Accent Color</string>
     <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
 
 </resources>

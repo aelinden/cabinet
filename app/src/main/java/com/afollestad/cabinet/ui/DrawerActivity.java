@@ -59,6 +59,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     public boolean shouldAttachFab; // used during config change, tells fragment to reattach to cab
     public boolean pickMode; // flag indicating whether user is picking a file for another app
     public DrawerLayout mDrawerLayout;
+    public Toolbar mToolbar;
 
     public BaseCab getCab() {
         return mCab;
@@ -124,7 +125,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
         mToolbar.setPopupTheme(getThemeUtils().getPopupTheme());
         setSupportActionBar(mToolbar);

@@ -33,7 +33,7 @@
     <string name="sort_modified">Ultima modificare</string>
     <string name="modified_x">Modificat la %1$s</string>
     <string name="iconpress_hint">Poţi apӑsa pe iconiţa unui fișier pentru selecţie rapidӑ!</string>
-    <string name="drawer_longpress_hint">Pont: ţine apӑsat pe scurtӑturile marcate pentru a le șterge!</string>
+
     <string name="navigation_drawer_open">Deschide meniul de navigare</string>
     <string name="navigation_drawer_close">Inchide meniul de navigare</string>
     <string name="new_folder">Folder Nou</string>
@@ -169,10 +169,8 @@ Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Websit
     <string name="no_files_filter">Nici un fișier de tipul: %1$s</string>
     <string name="superuser_not_available">Superuser nu este valabil</string>
     <string name="filter_active">Filtru activ: %1$s</string>
-    <string name="dark_theme">Temӑ întunecatӑ</string>
-    <string name="dark_theme_description">Cabinet va folosi culori mai întunecate.</string>
-    <string name="true_black">Negru adevӑrat</string>
-    <string name="true_black_description">Cabinet va folosi negru adevarat folositor pentru ecranele AMOLED.</string>
+
+
     <string name="sdcard">Card SD</string>
     <string name="owner">Proprietar</string>
     <string name="group">Grup</string>
@@ -188,5 +186,13 @@ Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Websit
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

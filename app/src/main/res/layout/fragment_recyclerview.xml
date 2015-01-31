@@ -18,7 +18,9 @@
             android:gravity="center_vertical|start"
             android:paddingBottom="12dp"
             android:paddingLeft="72dp"
+            android:paddingStart="72dp"
             android:paddingRight="16dp"
+            android:paddingEnd="16dp"
             android:visibility="gone"
             android:fontFamily="sans-serif-light" />
 

@@ -33,7 +33,7 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="sort_modified">En son değiştirilme</string>
     <string name="modified_x">%1$s saatinde değiştirildi</string>
     <string name="iconpress_hint">Bir dosyayı hızlıca seçmek için onun simgesine dokunabilirsiniz!</string>
-    <string name="drawer_longpress_hint">İpucu: sabitlenmiş kısayollara basılı tutarak onları kaldırabilirsiniz</string>
+
     <string name="navigation_drawer_open">Gezinti bölmesini aç</string>
     <string name="navigation_drawer_close">Gezinti bölmesini kapat</string>
     <string name="new_folder">Yeni klasör</string>
@@ -169,10 +169,8 @@ Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneti
     <string name="no_files_filter">%1$s filtresi için dosya yok</string>
     <string name="superuser_not_available">Superuser kullanılamıyor</string>
     <string name="filter_active">%1$s filtresi aktif</string>
-    <string name="dark_theme">Karanlık Tema</string>
-    <string name="dark_theme_description">Cabinet daha koyu renkler kullanacak.</string>
-    <string name="true_black">Tam Siyah</string>
-    <string name="true_black_description">Cabinet AMOLED ekranlar için saf siyah kullanacak</string>
+
+
     <string name="sdcard">SD Kart</string>
     <string name="owner">Sahibi</string>
     <string name="group">Grup</string>
@@ -186,5 +184,14 @@ Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneti
     <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
     <string name="defaultStr">Default</string>
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="colored_folders">Colored Folders</string>
+    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
@@ -514,11 +515,22 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         View v = getView();
         if (v == null) return;
         TextView status = (TextView) v.findViewById(R.id.status);
-        if (message == 0) status.setVisibility(View.GONE);
-        else {
+        DrawerActivity act = (DrawerActivity) getActivity();
+        final float toolbarElevation = getResources().getDimension(R.dimen.toolbar_elevation);
+        if (message == 0) {
+            status.setVisibility(View.GONE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                act.mToolbar.setElevation(toolbarElevation);
+                status.setElevation(0f);
+            }
+        } else {
             status.setVisibility(View.VISIBLE);
             status.setBackgroundColor(((ThemableActivity) getActivity()).getThemeUtils().primaryColor());
             status.setText(getString(message, replacement));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                act.mToolbar.setElevation(0f);
+                status.setElevation(toolbarElevation);
+            }
         }
     }
 

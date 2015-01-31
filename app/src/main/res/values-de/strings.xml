@@ -33,7 +33,7 @@
     <string name="sort_modified">Zuletzt verändert</string>
     <string name="modified_x">%1$s verändert</string>
     <string name="iconpress_hint">Sie können das Icon der Datei drücken um sie schnell auszuwählen!</string>
-    <string name="drawer_longpress_hint">Tipp: Verknüpfungen lange drücken um sie zu löschen!</string>
+
     <string name="navigation_drawer_open">Öffne navigation drawer</string>
     <string name="navigation_drawer_close">Schließe Navigation drawer</string>
     <string name="new_folder">Neuer Ordner</string>
@@ -169,10 +169,8 @@
     <string name="no_files_filter">Keine Dateien für Filter: %1$s</string>
     <string name="superuser_not_available">Superuser nicht verfügbar</string>
     <string name="filter_active">Filter aktiv: %1$s</string>
-    <string name="dark_theme">Dunkles Theme</string>
-    <string name="dark_theme_description">Cabinet benutzt dunklere Farben.</string>
-    <string name="true_black">Echtes Schwarz</string>
-    <string name="true_black_description">Cabinet wird pures schwarz für AMOLED-Bildschirme verwenden.</string>
+
+
     <string name="sdcard">SD-Karte</string>
     <string name="owner">Besitzer</string>
     <string name="group">Gruppe</string>
@@ -188,5 +186,13 @@
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

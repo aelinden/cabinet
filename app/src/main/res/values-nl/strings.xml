@@ -32,7 +32,7 @@
     <string name="sort_modified">Laatst aangepast</string>
     <string name="modified_x">Aangepast %1$s</string>
     <string name="iconpress_hint">Je kan op een bestand zijn icoon tikken om hem snel te selecteren</string>
-    <string name="drawer_longpress_hint">Tip: hou vastgezette snelkoppelingen vast om ze te verwijderen!</string>
+
     <string name="navigation_drawer_open">Open navigatie paneel</string>
     <string name="navigation_drawer_close">Sluit navigatie paneel</string>
     <string name="new_folder">Nieuwe map</string>
@@ -168,10 +168,8 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
     <string name="no_files_filter">Geen bestanden voor filter: %1$s</string>
     <string name="superuser_not_available">Superuser niet beschikbaar.</string>
     <string name="filter_active">Filter actief:%1$s</string>
-    <string name="dark_theme">Donker thema</string>
-    <string name="dark_theme_description">Cabinet zal donkerere kleuren gebruiken.</string>
-    <string name="true_black">Echt zwart</string>
-    <string name="true_black_description">Cabinet zal echt zwart gebruiken voor AMOLED schermen.</string>
+
+
     <string name="sdcard">SD Kaart</string>
     <string name="owner">Eigenaar</string>
     <string name="group">Groep</string>
@@ -187,5 +185,12 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
 
 </resources>

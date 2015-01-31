@@ -33,7 +33,7 @@
     <string name="sort_modified">修改时间</string>
     <string name="modified_x">修改时间 %1$s</string>
     <string name="iconpress_hint">你可以点击文件图标来快速选择它！</string>
-    <string name="drawer_longpress_hint">提示：长按删除已固定到侧边栏的快捷方式！</string>
+
     <string name="navigation_drawer_open">打开导航栏</string>
     <string name="navigation_drawer_close">关闭导航栏</string>
     <string name="new_folder">新文件夹</string>
@@ -169,10 +169,8 @@
     <string name="no_files_filter">无符合此筛选条件的文件: %1$s</string>
     <string name="superuser_not_available">Superuser不可用</string>
     <string name="filter_active">当前筛选条件: %1$s</string>
-    <string name="dark_theme">暗色主题</string>
-    <string name="dark_theme_description">Cabinet将使用更暗色调</string>
-    <string name="true_black">正黑色</string>
-    <string name="true_black_description">Cabinet将在AMOLED屏上使用纯黑色</string>
+
+
     <string name="sdcard">SD卡</string>
     <string name="owner">拥有者</string>
     <string name="group">群组</string>
@@ -188,5 +186,12 @@
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

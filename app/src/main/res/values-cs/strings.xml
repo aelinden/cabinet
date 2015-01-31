@@ -33,7 +33,7 @@ disponuje také dalšími různými funkcemi, jako vzdálený přístup k server
     <string name="sort_modified">Poslední změna</string>
     <string name="modified_x">Změněno %1$s</string>
     <string name="iconpress_hint">Pro rychlé označení souboru můžete stisknout jeho ikonu.</string>
-    <string name="drawer_longpress_hint">Tip: pro odstranění zástupce jej dlouze stiskněte</string>
+
     <string name="navigation_drawer_open">Otevřít navigační lištu</string>
     <string name="navigation_drawer_close">Zavřít navigační lištu</string>
     <string name="new_folder">Nová složka</string>
@@ -169,10 +169,8 @@ Vytvořil <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Web<
     <string name="no_files_filter">Žádné soubory pro filtr: %1$s</string>
     <string name="superuser_not_available">Superuser není povolen</string>
     <string name="filter_active">Aktivní filtr: %1$s</string>
-    <string name="dark_theme">Tmavé téma</string>
-    <string name="dark_theme_description">Cabinet se přemění do tmavších barev.</string>
-    <string name="true_black">Černá</string>
-    <string name="true_black_description">Cabinet bude používat černou barvu vhodnou pro AMOLED displeje.</string>
+
+
     <string name="sdcard">SD karta</string>
     <string name="owner">Vlastník</string>
     <string name="group">Skupina</string>
@@ -188,5 +186,13 @@ Vytvořil <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Web<
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

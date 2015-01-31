@@ -33,7 +33,7 @@
     <string name="sort_modified">Legutóbb Módosítva</string>
     <string name="modified_x">Módosítva %1$s</string>
     <string name="iconpress_hint">Érintse meg a fájl ikonját a gyorsabb kiválasztás miatt!</string>
-    <string name="drawer_longpress_hint">Hosszú érintés a már hozzáadott kedvenc mappa eltávolításához!</string>
+
     <string name="navigation_drawer_open">Navigációs Fiók megnyitása</string>
     <string name="navigation_drawer_close">Navigációs Fiók bezárása</string>
     <string name="new_folder">Új Mappa</string>
@@ -169,10 +169,8 @@
     <string name="no_files_filter">Nincsenek %1$s fájlok</string>
     <string name="superuser_not_available">Superuser nem elérhető</string>
     <string name="filter_active">A Fájl Szűrő Aktív: %1$s</string>
-    <string name="dark_theme">Sötét Téma</string>
-    <string name="dark_theme_description">Sötétebb színösszeállítás.</string>
-    <string name="true_black">Éjszakai Mód</string>
-    <string name="true_black_description">Ideális az esti használathoz. (Először engedélyezni kell a Sötét Témát.)</string>
+
+
     <string name="sdcard">Memóriakártya</string>
     <string name="owner">Tulajdonos</string>
     <string name="group">Csoport</string>
@@ -188,5 +186,13 @@
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

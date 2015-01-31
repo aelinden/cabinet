@@ -33,7 +33,7 @@ Cabinetはその他にもSFTPによるサーバへのリモートアクセスな
     <string name="sort_modified">最終更新日</string>
     <string name="modified_x">%1$s 更新</string>
     <string name="iconpress_hint">ファイルアイコンをタップすると素早く選択できます！</string>
-    <string name="drawer_longpress_hint">ヒント：ピン留めされたショートカットを削除するには長押し</string>
+
     <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
     <string name="navigation_drawer_close">ナビゲーションドロワーを閉じる</string>
     <string name="new_folder">新規フォルダ</string>
@@ -169,10 +169,8 @@ Android4.1以降向けのミニマリスト、直感的かつ美しいファイ�
     <string name="no_files_filter">フィルタ %1$s に対するファイルがありません</string>
     <string name="superuser_not_available">Superuserが利用できません</string>
     <string name="filter_active">アクティブフィルタ：%1$s</string>
-    <string name="dark_theme">暗いテーマ</string>
-    <string name="dark_theme_description">内閣は暗い色を使用します。</string>
-    <string name="true_black">トゥルーブラック</string>
-    <string name="true_black_description">内閣は、AMO​​LEDディスプレイの純粋な黒を使用します。</string>
+
+
     <string name="sdcard">SDカード</string>
     <string name="owner">オーナー</string>
     <string name="group">グループ</string>
@@ -188,5 +186,13 @@ Android4.1以降向けのミニマリスト、直感的かつ美しいファイ�
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="colored_folders">Colored Folders</string>
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
+
+    <string name="base_theme">Base Theme</string>
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>
