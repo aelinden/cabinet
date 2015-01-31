@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.fragments.DirectoryFragment;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.utils.ThemeUtils;
 
 import java.io.Serializable;
@@ -50,8 +50,8 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         return fragment;
     }
 
-    public DrawerActivity getContext() {
-        return (DrawerActivity) context;
+    public MainActivity getContext() {
+        return (MainActivity) context;
     }
 
     public abstract int getMenu();
@@ -76,12 +76,13 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         if (getMenu() != -1)
             actionMode.getMenuInflater().inflate(getMenu(), menu);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            DrawerActivity act = getContext();
+            MainActivity act = getContext();
             ThemeUtils utils = act.getThemeUtils();
             final int darkGray = act.getResources().getColor(R.color.dark_theme_gray);
             act.getWindow().setStatusBarColor(darkGray);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(darkGray);
+            act.invalidateToolbarMenu(true);
         }
         return true;
     }
@@ -102,14 +103,16 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
     @Override
     public void onDestroyActionMode(ActionMode actionMode) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            DrawerActivity act = getContext();
+            MainActivity act = getContext();
             ThemeUtils utils = act.getThemeUtils();
             final int oldColor = utils.primaryColorDark();
             act.getWindow().setStatusBarColor(oldColor);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
-            if (!overrideDestroy)
+            if (!overrideDestroy) {
                 act.invalidateStatusColors(true);
+                act.invalidateToolbarMenu(false);
+            }
         }
         mActionMode = null;
     }

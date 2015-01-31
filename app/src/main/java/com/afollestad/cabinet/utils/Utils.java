@@ -25,7 +25,7 @@ import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.fragments.DirectoryFragment;
 import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.Arrays;
@@ -250,7 +250,7 @@ public class Utils {
 
     private static boolean cancelledDownload;
 
-    public static void downloadFile(final DrawerActivity context, final File item, final FileCallback callback) {
+    public static void downloadFile(final MainActivity context, final File item, final FileCallback callback) {
         final java.io.File downloadDir = new java.io.File(Environment.getExternalStorageDirectory(), "Cabinet");
         if (!downloadDir.exists()) downloadDir.mkdir();
         java.io.File tester = new java.io.File(downloadDir, item.getName());
@@ -327,7 +327,7 @@ public class Utils {
         }, (CloudFile) item);
     }
 
-    public static void openFile(final DrawerActivity context, final File item, final boolean openAs) {
+    public static void openFile(final MainActivity context, final File item, final boolean openAs) {
         if (item.isRemote()) {
             downloadFile(context, item, new FileCallback() {
                 @Override

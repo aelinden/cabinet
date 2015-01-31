@@ -16,7 +16,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.afollestad.cabinet.R;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 
 /**
  * @author Aidan Follestad (afollestad)
@@ -25,7 +25,7 @@ public class WelcomeFragment extends Fragment {
 
     @Override
     public void onDetach() {
-        DrawerActivity act = (DrawerActivity) getActivity();
+        MainActivity act = (MainActivity) getActivity();
         act.disableFab(false);
         act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
         super.onDetach();
@@ -43,7 +43,7 @@ public class WelcomeFragment extends Fragment {
     @Override
     public void onAttach(final Activity activity) {
         super.onAttach(activity);
-        final DrawerActivity act = (DrawerActivity) activity;
+        final MainActivity act = (MainActivity) activity;
         act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
         act.disableFab(true);
     }
@@ -97,7 +97,7 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().putBoolean("shown_welcome", true).commit();
-                DrawerActivity act = (DrawerActivity) getActivity();
+                MainActivity act = (MainActivity) getActivity();
                 act.switchDirectory(null, true);
                 act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
             }

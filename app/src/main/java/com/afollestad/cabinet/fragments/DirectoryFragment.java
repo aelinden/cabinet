@@ -46,7 +46,7 @@ import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.base.FileFilter;
 import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.utils.PauseOnScrollListener;
 import com.afollestad.cabinet.utils.Pins;
@@ -62,13 +62,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class DirectoryFragment extends Fragment implements FileAdapter.IconClickListener, FileAdapter.ItemClickListener, FileAdapter.MenuClickListener, DrawerActivity.FabListener {
+public class DirectoryFragment extends Fragment implements FileAdapter.IconClickListener, FileAdapter.ItemClickListener, FileAdapter.MenuClickListener, MainActivity.FabListener {
 
     private final transient BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction() != null && intent.getAction().equals(NetworkService.DISCONNECT_SFTP)) {
-                ((DrawerActivity) getActivity()).switchDirectory(null, true);
+                ((MainActivity) getActivity()).switchDirectory(null, true);
             }
         }
     };
@@ -129,7 +129,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public void onResume() {
         super.onResume();
 
-        DrawerActivity act = (DrawerActivity) getActivity();
+        MainActivity act = (MainActivity) getActivity();
         act.toggleFab(false);
         act.registerReceiver(mReceiver, new IntentFilter(NetworkService.DISCONNECT_SFTP));
         if (!((DrawerLayout) act.findViewById(R.id.drawer_layout)).isDrawerOpen(Gravity.START)) {
@@ -140,7 +140,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }
 
-        BaseCab cab = ((DrawerActivity) getActivity()).getCab();
+        BaseCab cab = ((MainActivity) getActivity()).getCab();
         if (cab != null && cab instanceof BaseFileCab) {
             mAdapter.restoreCheckedPaths(((BaseFileCab) cab).getFiles());
             if (act.shouldAttachFab) {
@@ -150,7 +150,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                DrawerActivity act = (DrawerActivity) getActivity();
+                                MainActivity act = (MainActivity) getActivity();
                                 BaseFileCab cab = (BaseFileCab) act.getCab()
                                         .setFragment(DirectoryFragment.this);
                                 cab.start();
@@ -263,7 +263,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     search.collapseActionView();
-                    ((DrawerActivity) getActivity()).search(mDirectory, query);
+                    ((MainActivity) getActivity()).search(mDirectory, query);
                     return false;
                 }
 
@@ -447,7 +447,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public void onFabPressed(BaseFileCab.PasteMode pasteMode) {
         if (getActivity() != null) {
             if (pasteMode == BaseFileCab.PasteMode.ENABLED) {
-                ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).paste();
+                ((BaseFileCab) ((MainActivity) getActivity()).getCab()).paste();
             } else {
                 new MaterialDialog.Builder(getActivity())
                         .title(R.string.newStr)
@@ -483,11 +483,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             public void onScrolled(RecyclerView view, int dx, int dy) {
                 if (dy < 0) {
                     if (dy < -5) {
-                        ((DrawerActivity) getActivity()).toggleFab(false);
+                        ((MainActivity) getActivity()).toggleFab(false);
                     }
                 } else if (dy > 0) {
                     if (dy > 10) {
-                        ((DrawerActivity) getActivity()).toggleFab(true);
+                        ((MainActivity) getActivity()).toggleFab(true);
                     }
                 }
             }
@@ -498,7 +498,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
 
-        ((DrawerActivity) getActivity()).setFabListener(this);
+        ((MainActivity) getActivity()).setFabListener(this);
         reload();
     }
 
@@ -582,7 +582,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         @Override
                         public void run() {
                             if (mDirectory.isRemote()) {
-                                ((DrawerActivity) getActivity()).disableFab(false);
+                                ((MainActivity) getActivity()).disableFab(false);
                             }
                             try {
                                 String message = e.getMessage();
@@ -663,7 +663,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             return;
         }
 
-        DrawerActivity act = (DrawerActivity) getActivity();
+        MainActivity act = (MainActivity) getActivity();
 
         setListShown(false);
         mAdapter.showLastModified = (sorter == 5);
@@ -731,7 +731,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         ((ImageView) v.findViewById(R.id.emptyImage)).setImageResource(
                                 Utils.resolveDrawable(getActivity(), R.attr.empty_image_error));
                         if (mDirectory.isRemote()) {
-                            ((DrawerActivity) getActivity()).disableFab(false);
+                            ((MainActivity) getActivity()).disableFab(false);
                         }
                         try {
                             String message = e.getMessage();
@@ -757,7 +757,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.goUp:
-                ((DrawerActivity) getActivity()).switchDirectory(mDirectory.getParent(), false);
+                ((MainActivity) getActivity()).switchDirectory(mDirectory.getParent(), false);
                 break;
             case R.id.gridMode:
                 boolean gridMode = Utils.getGridMode(getActivity());
@@ -832,16 +832,16 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             }
             case R.id.donation1:
-                ((DrawerActivity) getActivity()).donate(1);
+                ((MainActivity) getActivity()).donate(1);
                 break;
             case R.id.donation2:
-                ((DrawerActivity) getActivity()).donate(2);
+                ((MainActivity) getActivity()).donate(2);
                 break;
             case R.id.donation3:
-                ((DrawerActivity) getActivity()).donate(3);
+                ((MainActivity) getActivity()).donate(3);
                 break;
             case R.id.donation4:
-                ((DrawerActivity) getActivity()).donate(4);
+                ((MainActivity) getActivity()).donate(4);
                 break;
             case R.id.settings:
                 startActivity(new Intent(getActivity(), SettingsActivity.class));
@@ -852,7 +852,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
 
     @Override
     public void onIconClicked(int index, File file, boolean added) {
-        DrawerActivity activity = (DrawerActivity) getActivity();
+        MainActivity activity = (MainActivity) getActivity();
         BaseCab cab = activity.getCab();
         if (cab != null && (cab instanceof CopyCab || cab instanceof CutCab) && cab.isActive()) {
             if (added) ((BaseFileCab) cab).addFile(file, false);
@@ -874,11 +874,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     @Override
     public void onItemClicked(int index, File file) {
         if (file.isDirectory()) {
-            ((DrawerActivity) getActivity()).switchDirectory(file, false);
+            ((MainActivity) getActivity()).switchDirectory(file, false);
         } else {
-            if (((DrawerActivity) getActivity()).pickMode) {
+            if (((MainActivity) getActivity()).pickMode) {
                 if (file.isRemote()) {
-                    Utils.downloadFile((DrawerActivity) getActivity(), file, new Utils.FileCallback() {
+                    Utils.downloadFile((MainActivity) getActivity(), file, new Utils.FileCallback() {
                         @Override
                         public void onFile(File file) {
                             Activity act = getActivity();
@@ -913,12 +913,12 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
 
                                 @Override
                                 public void onNegative(MaterialDialog dialog) {
-                                    Utils.openFile((DrawerActivity) getActivity(), fFile, false);
+                                    Utils.openFile((MainActivity) getActivity(), fFile, false);
                                 }
                             })
                             .build().show();
                 } else {
-                    Utils.openFile((DrawerActivity) getActivity(), file, false);
+                    Utils.openFile((MainActivity) getActivity(), file, false);
                 }
             }
         }
@@ -939,31 +939,31 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         switch (item.getItemId()) {
             case R.id.pin:
                 Pins.add(getActivity(), new Pins.Item(file));
-                ((DrawerActivity) getActivity()).reloadNavDrawer(true);
+                ((MainActivity) getActivity()).reloadNavDrawer(true);
                 break;
             case R.id.openAs:
-                Utils.openFile((DrawerActivity) getActivity(), file, true);
+                Utils.openFile((MainActivity) getActivity(), file, true);
                 break;
             case R.id.copy: {
-                BaseCab cab = ((DrawerActivity) getActivity()).getCab();
+                BaseCab cab = ((MainActivity) getActivity()).getCab();
                 boolean shouldCreateCopy = cab == null || !cab.isActive() || !(cab instanceof CopyCab);
                 if (shouldCreateCopy) {
                     if (cab != null && cab instanceof BaseFileCab) {
                         ((BaseFileCab) cab).overrideDestroy = true;
                     }
-                    ((DrawerActivity) getActivity()).setCab(new CopyCab()
+                    ((MainActivity) getActivity()).setCab(new CopyCab()
                             .setFragment(this).setFile(file, true).start());
                 } else ((BaseFileCab) cab).setFragment(this).addFile(file, true);
                 break;
             }
             case R.id.cut: {
-                BaseCab cab = ((DrawerActivity) getActivity()).getCab();
+                BaseCab cab = ((MainActivity) getActivity()).getCab();
                 boolean shouldCreateCut = cab == null || !cab.isActive() || !(cab instanceof CutCab);
                 if (shouldCreateCut) {
                     if (cab != null && cab instanceof BaseFileCab) {
                         ((BaseFileCab) cab).overrideDestroy = true;
                     }
-                    ((DrawerActivity) getActivity()).setCab(new CutCab()
+                    ((MainActivity) getActivity()).setCab(new CutCab()
                             .setFragment(this).setFile(file, true).start());
                 } else ((BaseFileCab) cab).setFragment(this).addFile(file, true);
                 break;
@@ -981,11 +981,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             @Override
                             public void onComplete(File newFile) {
                                 reload();
-                                if (((DrawerActivity) getActivity()).getCab() != null &&
-                                        ((DrawerActivity) getActivity()).getCab() instanceof BaseFileCab) {
-                                    int cabIndex = ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).findFile(file);
+                                if (((MainActivity) getActivity()).getCab() != null &&
+                                        ((MainActivity) getActivity()).getCab() instanceof BaseFileCab) {
+                                    int cabIndex = ((BaseFileCab) ((MainActivity) getActivity()).getCab()).findFile(file);
                                     if (cabIndex > -1)
-                                        ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).setFile(cabIndex, newFile, true);
+                                        ((BaseFileCab) ((MainActivity) getActivity()).getCab()).setFile(cabIndex, newFile, true);
                                     Toast.makeText(getActivity(), getString(R.string.renamed_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -1009,7 +1009,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             case R.id.share:
                 if (file.isRemote()) {
-                    Utils.downloadFile((DrawerActivity) getActivity(), file, new Utils.FileCallback() {
+                    Utils.downloadFile((MainActivity) getActivity(), file, new Utils.FileCallback() {
                         @Override
                         public void onFile(File file) {
                             shareFile(file);
@@ -1027,9 +1027,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             @Override
                             public void onComplete() {
                                 if (Pins.remove(getActivity(), file))
-                                    ((DrawerActivity) getActivity()).reloadNavDrawer();
+                                    ((MainActivity) getActivity()).reloadNavDrawer();
                                 mAdapter.remove(file);
-                                DrawerActivity act = (DrawerActivity) getActivity();
+                                MainActivity act = (MainActivity) getActivity();
                                 if (act.getCab() != null && act.getCab() instanceof BaseFileCab) {
                                     BaseFileCab cab = (BaseFileCab) act.getCab();
                                     if (cab.getFiles().size() > 0) {

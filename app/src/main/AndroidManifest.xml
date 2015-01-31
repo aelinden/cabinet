@@ -16,7 +16,7 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name=".ui.DrawerActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop">
             <intent-filter>
