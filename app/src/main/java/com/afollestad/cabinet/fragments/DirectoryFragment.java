@@ -1042,7 +1042,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             public void onComplete() {
                                 if (Pins.remove(getActivity(), file))
                                     ((DrawerActivity) getActivity()).reloadNavDrawer();
-                                mAdapter.remove(file, true);
+                                mAdapter.remove(file);
                                 DrawerActivity act = (DrawerActivity) getActivity();
                                 if (act.getCab() != null && act.getCab() instanceof BaseFileCab) {
                                     BaseFileCab cab = (BaseFileCab) act.getCab();
