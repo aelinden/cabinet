@@ -17,8 +17,8 @@
         <item name="inset_divider">@color/md_divider_black</item>
 
         <item name="colorAccent">#000</item>
-        <item name="actionModeBackground">@color/dark_theme_gray</item>
-        <item name="android:actionModeBackground">@color/dark_theme_gray</item>
+        <item name="actionModeBackground">@color/dark_theme_gray_darker</item>
+        <item name="android:actionModeBackground">@color/dark_theme_gray_darker</item>
 
         <item name="android:buttonStyle">@style/ButtonCabinet</item>
 
@@ -46,8 +46,8 @@
         <item name="inset_divider">@color/md_divider_white</item>
 
         <item name="colorAccent">#fff</item>
-        <item name="actionModeBackground">@color/dark_theme_gray</item>
-        <item name="android:actionModeBackground">@color/dark_theme_gray</item>
+        <item name="actionModeBackground">@color/dark_theme_gray_darker</item>
+        <item name="android:actionModeBackground">@color/dark_theme_gray_darker</item>
 
         <item name="android:buttonStyle">@style/ButtonCabinetDark</item>
 

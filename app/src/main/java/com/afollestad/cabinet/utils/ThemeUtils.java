@@ -62,7 +62,7 @@ public class ThemeUtils {
     }
 
     public int accentColorLight() {
-        return ColorChooserDialog.shiftColorDown(accentColor());
+        return ColorChooserDialog.shiftColorUp(accentColor());
     }
 
     public int accentColorDark() {

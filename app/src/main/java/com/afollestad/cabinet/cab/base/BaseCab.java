@@ -77,7 +77,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             DrawerActivity act = getContext();
             ThemeUtils utils = act.getThemeUtils();
-            final int darkGray = act.getResources().getColor(R.color.dark_theme_gray_lighter);
+            final int darkGray = act.getResources().getColor(R.color.dark_theme_gray);
             act.getWindow().setStatusBarColor(darkGray);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(darkGray);
