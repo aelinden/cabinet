@@ -86,15 +86,17 @@ public abstract class BaseFileCab extends BaseCab {
         return this;
     }
 
-    public final BaseFileCab addFile(File file) {
-        getFragment().mAdapter.setItemChecked(file, true);
+    public final BaseFileCab addFile(File file, boolean notifyAdapter) {
+        if (notifyAdapter)
+            getFragment().mAdapter.setItemChecked(file, true);
         mFiles.add(file);
         invalidate();
         return this;
     }
 
-    public final BaseFileCab addFiles(List<File> files) {
-        getFragment().mAdapter.setItemsChecked(files, true);
+    public final BaseFileCab addFiles(List<File> files, boolean notifyAdapter) {
+        if (notifyAdapter)
+            getFragment().mAdapter.setItemsChecked(files, true);
         mFiles.addAll(files);
         invalidate();
         return this;
@@ -109,18 +111,21 @@ public abstract class BaseFileCab extends BaseCab {
         return -1;
     }
 
-    public final void setFile(int index, File file) {
+    public final void setFile(int index, File file, boolean notifyAdapter) {
         // Uncheck old file
-        getFragment().mAdapter.setItemChecked(getFiles().get(index), false);
+        if (notifyAdapter)
+            getFragment().mAdapter.setItemChecked(getFiles().get(index), false);
         // Replace old file with new one
         getFiles().set(index, file);
         // Check new file
-        getFragment().mAdapter.setItemChecked(file, true);
+        if (notifyAdapter)
+            getFragment().mAdapter.setItemChecked(file, true);
         invalidate();
     }
 
-    public final BaseFileCab removeFile(File file) {
-        getFragment().mAdapter.setItemChecked(file, false);
+    public final BaseFileCab removeFile(File file, boolean notifyAdapter) {
+        if (notifyAdapter)
+            getFragment().mAdapter.setItemChecked(file, false);
         for (int i = 0; i < mFiles.size(); i++) {
             if (file.getPath().equals(mFiles.get(i).getPath())) {
                 mFiles.remove(i);
@@ -131,18 +136,22 @@ public abstract class BaseFileCab extends BaseCab {
         return this;
     }
 
-    public final BaseFileCab setFile(File file) {
-        getFragment().mAdapter.resetChecked();
-        getFragment().mAdapter.setItemChecked(file, true);
+    public final BaseFileCab setFile(File file, boolean notifyAdapter) {
+        if (notifyAdapter) {
+            getFragment().mAdapter.resetChecked();
+            getFragment().mAdapter.setItemChecked(file, true);
+        }
         clearFiles();
         mFiles.add(file);
         invalidate();
         return this;
     }
 
-    public final BaseFileCab setFiles(List<File> files) {
-        getFragment().mAdapter.resetChecked();
-        getFragment().mAdapter.setItemsChecked(files, true);
+    public final BaseFileCab setFiles(List<File> files, boolean notifyAdapter) {
+        if (notifyAdapter) {
+            getFragment().mAdapter.resetChecked();
+            getFragment().mAdapter.setItemsChecked(files, true);
+        }
         clearFiles();
         mFiles.addAll(files);
         invalidate();

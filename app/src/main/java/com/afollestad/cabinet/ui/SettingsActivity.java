@@ -1,11 +1,15 @@
 package com.afollestad.cabinet.ui;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.fragments.AboutDialog;
@@ -14,6 +18,7 @@ import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.cabinet.views.CabinetPreference;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
@@ -40,19 +45,46 @@ public class SettingsActivity extends ThemableActivity
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings);
 
-            findPreference("dark_mode").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            findPreference("base_theme").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
-                public boolean onPreferenceChange(Preference preference, Object o) {
+                public boolean onPreferenceClick(Preference preference) {
                     ImageLoader.getInstance().clearMemoryCache();
-                    getActivity().recreate();
-                    return true;
-                }
-            });
-            findPreference("true_black").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object o) {
-                    getActivity().recreate();
-                    return true;
+
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    int preselect = 0;
+                    if (prefs.getBoolean("true_black", false)) {
+                        preselect = 2;
+                    } else if (prefs.getBoolean("dark_mode", false)) {
+                        preselect = 1;
+                    }
+
+                    new MaterialDialog.Builder(getActivity())
+                            .title(R.string.base_theme)
+                            .items(R.array.base_themes)
+                            .itemsCallbackSingleChoice(preselect, new MaterialDialog.ListCallback() {
+                                @SuppressLint("CommitPrefEdits")
+                                @Override
+                                public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {
+                                    SharedPreferences.Editor prefs = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
+                                    switch (i) {
+                                        default:
+                                            prefs.remove("dark_mode").remove("true_black");
+                                            break;
+                                        case 1:
+                                            prefs.remove("true_black")
+                                                    .putBoolean("dark_mode", true);
+                                            break;
+                                        case 2:
+                                            prefs.putBoolean("dark_mode", true)
+                                                    .putBoolean("true_black", true);
+                                            break;
+                                    }
+                                    prefs.commit();
+                                    ImageLoader.getInstance().clearMemoryCache();
+                                    getActivity().recreate();
+                                }
+                            }).show();
+                    return false;
                 }
             });
 

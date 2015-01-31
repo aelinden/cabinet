@@ -139,13 +139,13 @@ public class MainCab extends BaseFileCab {
             if (getContext().getCab() instanceof BaseFileCab)
                 ((BaseFileCab) getContext().getCab()).overrideDestroy = true;
             getContext().setCab(new CopyCab()
-                    .setFragment(getFragment()).setFiles(getFiles()).start());
+                    .setFragment(getFragment()).setFiles(getFiles(), true).start());
             return super.onActionItemClicked(actionMode, menuItem);
         } else if (menuItem.getItemId() == R.id.cut) {
             if (getContext().getCab() instanceof BaseFileCab)
                 ((BaseFileCab) getContext().getCab()).overrideDestroy = true;
             getContext().setCab(new CutCab()
-                    .setFragment(getFragment()).setFiles(getFiles()).start());
+                    .setFragment(getFragment()).setFiles(getFiles(), true).start());
             return super.onActionItemClicked(actionMode, menuItem);
         } else if (menuItem.getItemId() == R.id.delete) {
             Utils.showConfirmDialog(getContext(), R.string.delete,
@@ -161,7 +161,7 @@ public class MainCab extends BaseFileCab {
             return false;
         } else if (menuItem.getItemId() == R.id.selectAll) {
             List<File> newSelected = getFragment().mAdapter.checkAll();
-            addFiles(newSelected);
+            addFiles(newSelected, true);
             invalidate();
             return true;
         } else if (menuItem.getItemId() == R.id.share) {

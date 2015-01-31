@@ -24,19 +24,11 @@
 
     <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/ui">
 
-        <CheckBoxPreference
-            android:key="dark_mode"
-            android:title="@string/dark_theme"
-            android:summary="@string/dark_theme_description"
-            android:persistent="true"
-            android:layout="@layout/preference_custom" />
-
-        <CheckBoxPreference
-            android:key="true_black"
-            android:title="@string/true_black"
-            android:summary="@string/true_black_description"
-            android:persistent="true"
-            android:dependency="dark_mode"
+        <Preference
+            android:key="base_theme"
+            android:title="@string/base_theme"
+            android:summary="@string/base_theme_desc"
+            android:persistent="false"
             android:layout="@layout/preference_custom" />
 
         <com.afollestad.cabinet.views.CabinetPreference

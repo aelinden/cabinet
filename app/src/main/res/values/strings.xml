@@ -271,10 +271,14 @@
     <string name="superuser_not_available">Superuser not available</string>
     <string name="filter_active">Filter active: %1$s</string>
 
-    <string name="dark_theme">Dark Theme</string>
-    <string name="dark_theme_description">Cabinet will use darker colors.</string>
-    <string name="true_black">True Black</string>
-    <string name="true_black_description">Cabinet will use pure black for AMOLED displays.</string>
+    <string name="base_theme">Base Theme</string>
+
+    <string-array name="base_themes">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Black (AMOLED)</item>
+    </string-array>
+
     <string name="sdcard">SD Card</string>
 
     <string name="mime_textplain" translatable="false">text/plain</string>
@@ -295,5 +299,6 @@
     <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
     <string name="defaultStr">Default</string>
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
+    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
 </resources>

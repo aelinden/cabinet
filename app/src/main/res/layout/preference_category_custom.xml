@@ -6,5 +6,6 @@
     android:paddingLeft="16dip"
     android:paddingRight="16dip"
     android:paddingTop="16dp"
-    android:fontFamily="sans-serif"
-    android:textSize="16sp" />
+    android:fontFamily="@string/font_fontFamily_medium"
+    android:textStyle="@integer/font_textStyle_medium"
+    android:textSize="14sp" />

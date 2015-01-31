@@ -121,7 +121,13 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             prefs.edit().putBoolean("shown_iconpress_hint", true).commit();
             Toast.makeText(mContext, R.string.iconpress_hint, Toast.LENGTH_LONG).show();
         }
-        view.findViewById(R.id.image).performClick();
+//        view.findViewById(R.id.image).performClick();
+        int index = Integer.parseInt(((String) view.getTag()).split(":")[1]);
+        File file = mFiles.get(index);
+        boolean checked = !isItemChecked(file);
+        setItemChecked(file, checked);
+        if (mIconListener != null)
+            mIconListener.onIconClicked(index, file, checked);
         return true;
     }
 

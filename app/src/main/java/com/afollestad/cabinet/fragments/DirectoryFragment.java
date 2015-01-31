@@ -875,16 +875,16 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public void onIconClicked(int index, File file, boolean added) {
         BaseCab cab = ((DrawerActivity) getActivity()).getCab();
         if (cab != null && (cab instanceof CopyCab || cab instanceof CutCab) && cab.isActive()) {
-            if (added) ((BaseFileCab) cab).addFile(file);
-            else ((BaseFileCab) cab).removeFile(file);
+            if (added) ((BaseFileCab) cab).addFile(file, false);
+            else ((BaseFileCab) cab).removeFile(file, false);
         } else {
             boolean shouldCreateCab = cab == null || !cab.isActive() || !(cab instanceof MainCab) && added;
             if (shouldCreateCab)
                 ((DrawerActivity) getActivity()).setCab(new MainCab()
-                        .setFragment(this).setFile(file).start());
+                        .setFragment(this).setFile(file, false).start());
             else {
-                if (added) ((BaseFileCab) cab).addFile(file);
-                else ((BaseFileCab) cab).removeFile(file);
+                if (added) ((BaseFileCab) cab).addFile(file, false);
+                else ((BaseFileCab) cab).removeFile(file, false);
             }
         }
     }
@@ -970,8 +970,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         ((BaseFileCab) cab).overrideDestroy = true;
                     }
                     ((DrawerActivity) getActivity()).setCab(new CopyCab()
-                            .setFragment(this).setFile(file).start());
-                } else ((BaseFileCab) cab).setFragment(this).addFile(file);
+                            .setFragment(this).setFile(file, true).start());
+                } else ((BaseFileCab) cab).setFragment(this).addFile(file, true);
                 break;
             }
             case R.id.cut: {
@@ -982,8 +982,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         ((BaseFileCab) cab).overrideDestroy = true;
                     }
                     ((DrawerActivity) getActivity()).setCab(new CutCab()
-                            .setFragment(this).setFile(file).start());
-                } else ((BaseFileCab) cab).setFragment(this).addFile(file);
+                            .setFragment(this).setFile(file, true).start());
+                } else ((BaseFileCab) cab).setFragment(this).addFile(file, true);
                 break;
             }
             case R.id.rename:
@@ -1003,7 +1003,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                         ((DrawerActivity) getActivity()).getCab() instanceof BaseFileCab) {
                                     int cabIndex = ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).findFile(file);
                                     if (cabIndex > -1)
-                                        ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).setFile(cabIndex, newFile);
+                                        ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).setFile(cabIndex, newFile, true);
                                     Toast.makeText(getActivity(), getString(R.string.renamed_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -1053,10 +1053,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                     if (cab.getFiles().size() > 0) {
                                         List<File> files = new ArrayList<>();
                                         files.addAll(cab.getFiles()); // copy so it doesn't get modified by CAB functions
-                                        cab.removeFile(file);
+                                        cab.removeFile(file, true);
                                         for (File fi : files) {
                                             if (fi.getPath().startsWith(file.getPath())) {
-                                                cab.removeFile(fi);
+                                                cab.removeFile(fi, true);
                                             }
                                         }
                                     }
