@@ -24,24 +24,6 @@
 
         <item name="android:buttonStyle">@style/ButtonCabinet</item>
 
-        <item name="ic_file_apk">@drawable/ic_file_apk</item>
-        <item name="ic_file_audio">@drawable/ic_file_audio</item>
-        <item name="ic_file_code">@drawable/ic_file_code</item>
-        <item name="ic_file_doc">@drawable/ic_file_doc</item>
-        <item name="ic_file_excel">@drawable/ic_file_excel</item>
-        <item name="ic_file_font">@drawable/ic_file_font</item>
-        <item name="ic_file_image">@drawable/ic_file_image</item>
-        <item name="ic_file_misc">@drawable/ic_file_misc</item>
-        <item name="ic_file_model">@drawable/ic_file_model</item>
-        <item name="ic_file_pdf">@drawable/ic_file_pdf</item>
-        <item name="ic_file_ppt">@drawable/ic_file_ppt</item>
-        <item name="ic_file_script">@drawable/ic_file_script</item>
-        <item name="ic_file_video">@drawable/ic_file_video</item>
-        <item name="ic_file_word">@drawable/ic_file_word</item>
-        <item name="ic_file_zip">@drawable/ic_file_zip</item>
-        <item name="ic_folder">@drawable/ic_folder</item>
-        <item name="ic_folder_hidden">@drawable/ic_folder_hidden</item>
-
         <item name="actionModeCloseDrawable">@drawable/ic_action_close</item>
         <item name="android:actionModeCloseDrawable">@drawable/ic_action_close</item>
 
@@ -72,24 +54,6 @@
         <item name="android:actionModeBackground">@color/cabinet_color</item>
 
         <item name="android:buttonStyle">@style/ButtonCabinetDark</item>
-
-        <item name="ic_file_apk">@drawable/ic_file_apk_light</item>
-        <item name="ic_file_audio">@drawable/ic_file_audio_light</item>
-        <item name="ic_file_code">@drawable/ic_file_code_light</item>
-        <item name="ic_file_doc">@drawable/ic_file_doc_light</item>
-        <item name="ic_file_excel">@drawable/ic_file_excel_light</item>
-        <item name="ic_file_font">@drawable/ic_file_font_light</item>
-        <item name="ic_file_image">@drawable/ic_file_image_light</item>
-        <item name="ic_file_misc">@drawable/ic_file_misc_light</item>
-        <item name="ic_file_model">@drawable/ic_file_model_light</item>
-        <item name="ic_file_pdf">@drawable/ic_file_pdf_light</item>
-        <item name="ic_file_ppt">@drawable/ic_file_ppt_light</item>
-        <item name="ic_file_script">@drawable/ic_file_script_light</item>
-        <item name="ic_file_video">@drawable/ic_file_video_light</item>
-        <item name="ic_file_word">@drawable/ic_file_word_light</item>
-        <item name="ic_file_zip">@drawable/ic_file_zip_light</item>
-        <item name="ic_folder">@drawable/ic_folder</item>
-        <item name="ic_folder_hidden">@drawable/ic_folder_hidden_light</item>
 
         <item name="android:textColorAlertDialogListItem">?body_text</item>
         <item name="textAppearanceLargePopupMenu">
