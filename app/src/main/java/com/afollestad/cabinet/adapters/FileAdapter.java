@@ -43,12 +43,12 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
 
     public FileAdapter(Activity context, ItemClickListener listener, IconClickListener iconClickListener, MenuClickListener menuListener, boolean showDirectories) {
         mContext = context;
-        mFiles = new ArrayList<File>();
+        mFiles = new ArrayList<>();
         mListener = listener;
         mIconListener = iconClickListener;
         mMenuListener = menuListener;
         mShowDirs = showDirectories;
-        checkedPaths = new ArrayList<String>();
+        checkedPaths = new ArrayList<>();
         gridMode = Utils.getGridMode(context);
     }
 
@@ -337,7 +337,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     }
 
     public List<File> checkAll() {
-        List<File> newlySelected = new ArrayList<File>();
+        List<File> newlySelected = new ArrayList<>();
         for (File file : mFiles) {
             String path = file.getPath();
             if (!checkedPaths.contains(path)) {

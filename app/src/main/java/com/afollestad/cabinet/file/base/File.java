@@ -45,7 +45,7 @@ public abstract class File implements Serializable {
             Log.v("SearchRecursive", "No files in " + mFile.getAbsolutePath());
             return null;
         }
-        List<File> matches = new ArrayList<File>();
+        List<File> matches = new ArrayList<>();
         matches.addAll(listFilesSync(includeHidden, filter));
         for (File fi : all) {
             List<File> subResults = fi.searchRecursive(includeHidden, filter);

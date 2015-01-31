@@ -18,7 +18,7 @@ public class LsParser {
     private boolean includeHidden;
 
     private LsParser() {
-        mFiles = new ArrayList<File>();
+        mFiles = new ArrayList<>();
     }
 
     public static LsParser parse(Activity context, String path, List<String> response, FileFilter filter, boolean includeHidden) {

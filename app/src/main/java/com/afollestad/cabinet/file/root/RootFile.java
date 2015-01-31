@@ -270,7 +270,7 @@ public class RootFile extends File {
 
     @Override
     public List<File> listFilesSync(boolean includeHidden, FileFilter filter) throws Exception {
-        List<File> results = new ArrayList<File>();
+        List<File> results = new ArrayList<>();
         if (requiresRoot()) {
             if (Shell.SU.available()) {
                 List<String> response = runAsRoot("ls -l \"" + getPath() + "\"", false);
@@ -281,7 +281,7 @@ public class RootFile extends File {
         java.io.File[] list;
         if (filter != null) list = new java.io.File(getPath()).listFiles();
         else list = new java.io.File(getPath()).listFiles();
-        if (list == null || list.length == 0) return new ArrayList<File>();
+        if (list == null || list.length == 0) return new ArrayList<>();
         for (java.io.File local : list) {
             if (!includeHidden && (local.isHidden() || local.getName().startsWith(".")))
                 continue;
@@ -308,7 +308,8 @@ public class RootFile extends File {
 
     public static String getMountablePath(File from) {
         if (from == null) return null;
-        if (from.getParent() == null || from.getParent().equals("/")) return from.getPath();
+        if (from.getParent() == null || from.getParent().getPath().equals("/"))
+            return from.getPath();
         File lastParent = from.getParent();
         if (lastParent.getParent() == null) {
             return lastParent.getPath();

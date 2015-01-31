@@ -268,7 +268,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
+    public boolean dispatchKeyEvent(@NonNull KeyEvent event) {
         if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
             if (mCab != null && mCab.isActive()) {
                 onBackPressed();

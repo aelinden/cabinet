@@ -219,14 +219,19 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             } else {
                 String[] splitFilter = filter.split(":");
                 if (splitFilter[0].equals("mime")) {
-                    if (splitFilter[1].equals("text")) {
-                        menu.findItem(R.id.filterText).setChecked(true);
-                    } else if (splitFilter[1].equals("image")) {
-                        menu.findItem(R.id.filterImage).setChecked(true);
-                    } else if (splitFilter[1].equals("audio")) {
-                        menu.findItem(R.id.filterAudio).setChecked(true);
-                    } else if (splitFilter[1].equals("video")) {
-                        menu.findItem(R.id.filterVideo).setChecked(true);
+                    switch (splitFilter[1]) {
+                        case "text":
+                            menu.findItem(R.id.filterText).setChecked(true);
+                            break;
+                        case "image":
+                            menu.findItem(R.id.filterImage).setChecked(true);
+                            break;
+                        case "audio":
+                            menu.findItem(R.id.filterAudio).setChecked(true);
+                            break;
+                        case "video":
+                            menu.findItem(R.id.filterVideo).setChecked(true);
+                            break;
                     }
                 } else if (splitFilter[0].equals("ext")) {
                     menu.findItem(R.id.filterOther).setChecked(true);
@@ -237,7 +242,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (getActivity() != null)
             menu.findItem(R.id.gridMode).setChecked(Utils.getGridMode(getActivity()));
 
-        boolean canShow=true;
+        boolean canShow = true;
         if (!mDirectory.isRemote()) {
             try {
                 canShow = mDirectory.existsSync();
@@ -254,6 +259,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (canShow && !searchMode) {
             assert search != null;
             SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+            searchView.setQueryHint(getString(R.string.search_files));
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
@@ -631,14 +637,15 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         } else {
             String[] splitFilter = filter.split(":");
             if (splitFilter[0].equals("mime")) {
-                if (splitFilter[1].equals("text/")) {
-                    return getString(R.string.text);
-                } else if (splitFilter[1].equals("image/")) {
-                    return getString(R.string.image);
-                } else if (splitFilter[1].equals("audio/")) {
-                    return getString(R.string.audio);
-                } else if (splitFilter[1].equals("video/")) {
-                    return getString(R.string.video);
+                switch (splitFilter[1]) {
+                    case "text/":
+                        return getString(R.string.text);
+                    case "image/":
+                        return getString(R.string.image);
+                    case "audio/":
+                        return getString(R.string.audio);
+                    case "video/":
+                        return getString(R.string.video);
                 }
             } else if (splitFilter[0].equals("ext")) {
                 return splitFilter[1];
@@ -912,7 +919,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             .callback(new MaterialDialog.ButtonCallback() {
                                 @Override
                                 public void onPositive(MaterialDialog dialog) {
-                                    List<File> files = new ArrayList<File>();
+                                    List<File> files = new ArrayList<>();
                                     files.add(fFile);
                                     Unzipper.unzip(DirectoryFragment.this, files, null);
                                 }
@@ -1007,7 +1014,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 });
                 break;
             case R.id.zip:
-                final List<File> files = new ArrayList<File>();
+                final List<File> files = new ArrayList<>();
                 files.add(file);
                 if (file.getExtension().equals("zip")) {
                     Unzipper.unzip(this, files, null);
@@ -1041,7 +1048,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                 if (act.getCab() != null && act.getCab() instanceof BaseFileCab) {
                                     BaseFileCab cab = (BaseFileCab) act.getCab();
                                     if (cab.getFiles().size() > 0) {
-                                        List<File> files = new ArrayList<File>();
+                                        List<File> files = new ArrayList<>();
                                         files.addAll(cab.getFiles()); // copy so it doesn't get modified by CAB functions
                                         cab.removeFile(file);
                                         for (File fi : files) {

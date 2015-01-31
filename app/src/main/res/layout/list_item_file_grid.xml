@@ -5,8 +5,10 @@
     android:layout_height="match_parent"
     android:paddingTop="16dp"
     android:paddingLeft="16dp"
+    android:paddingStart="16dp"
     android:background="?list_selector"
-    android:descendantFocusability="blocksDescendants">
+    android:descendantFocusability="blocksDescendants"
+    tools:ignore="RtlSymmetry">
 
     <RelativeLayout
         android:id="@android:id/widget_frame"
@@ -19,9 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/menu"
+            android:layout_toStartOf="@+id/menu"
             android:paddingRight="2dp"
+            android:paddingEnd="2dp"
             android:layout_marginBottom="16dp"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="RtlSymmetry">
 
             <ImageView
                 android:id="@+id/image"
@@ -76,13 +81,16 @@
             android:src="?overflow"
             android:scaleType="fitXY"
             android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:background="?menu_selector"
             android:layout_centerVertical="true"
             android:padding="8dp"
             android:focusableInTouchMode="false"
             android:focusable="false"
-            android:layout_marginRight="7dp" />
+            android:layout_marginRight="7dp"
+            android:layout_marginEnd="7dp" />
 
     </RelativeLayout>
 

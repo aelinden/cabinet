@@ -48,6 +48,7 @@
     <string name="confirm_delete">Tem certeza que deseja deletar %1$s?</string>
     <string name="confirm_delete_xfiles">Tem certeza que deseja deletar %1$d arquivos?</string>
     <string name="unavailable">Inválido</string>
+    <string name="grid_mode">Modo grade</string>
     <string name="sort_by">Ordenar por</string>
     <string name="sort_name_folderstop">Nome, pastas primeiro</string>
     <string name="sort_name">Nome</string>
@@ -175,5 +176,4 @@
     <string name="owner">Proprietário</string>
     <string name="group">Grupo</string>
     <string name="applying_permissions">Aplicando permissões…</string>
-    <string name="grid_mode">Grid mode</string>
 </resources>

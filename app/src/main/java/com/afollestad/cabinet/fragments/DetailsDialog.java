@@ -159,7 +159,7 @@ public class DetailsDialog extends DialogFragment implements CompoundButton.OnCh
                 .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(getActivity()))
                 .title(R.string.details)
-                .customView(rootView)
+                .customView(rootView, true)
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {

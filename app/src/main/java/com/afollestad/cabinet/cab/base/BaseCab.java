@@ -74,7 +74,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         if (getMenu() != -1)
             actionMode.getMenuInflater().inflate(getMenu(), menu);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            getContext().getWindow().setStatusBarColor(getContext().getResources().getColor(R.color.statusbar_color_cab));
+            context.getWindow().setStatusBarColor(context.getResources().getColor(R.color.cabinet_color_darker));
         return true;
     }
 

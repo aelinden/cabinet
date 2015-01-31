@@ -22,13 +22,17 @@ public class StorageHelper {
 
     private void updateExternalStorageState() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            mExternalStorageAvailable = mExternalStorageWriteable = true;
-        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            mExternalStorageAvailable = true;
-            mExternalStorageWriteable = false;
-        } else {
-            mExternalStorageAvailable = mExternalStorageWriteable = false;
+        switch (state) {
+            case Environment.MEDIA_MOUNTED:
+                mExternalStorageAvailable = mExternalStorageWriteable = true;
+                break;
+            case Environment.MEDIA_MOUNTED_READ_ONLY:
+                mExternalStorageAvailable = true;
+                mExternalStorageWriteable = false;
+                break;
+            default:
+                mExternalStorageAvailable = mExternalStorageWriteable = false;
+                break;
         }
         log("State = " + state + "; available = " + mExternalStorageAvailable + "; writeable = " + mExternalStorageWriteable);
         if (mListener != null)

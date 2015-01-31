@@ -612,7 +612,7 @@ public class LocalFile extends File {
 
     @Override
     public List<File> listFilesSync(boolean includeHidden, FileFilter filter) throws Exception {
-        List<File> results = new ArrayList<File>();
+        List<File> results = new ArrayList<>();
         if (requiresRoot()) {
             if (Shell.SU.available()) {
                 List<String> response = runAsRoot("ls -l \"" + getPath() + "\"");
@@ -622,7 +622,7 @@ public class LocalFile extends File {
         java.io.File[] list;
         if (filter != null) list = new java.io.File(getPath()).listFiles();
         else list = new java.io.File(getPath()).listFiles();
-        if (list == null || list.length == 0) return new ArrayList<File>();
+        if (list == null || list.length == 0) return new ArrayList<>();
         for (java.io.File local : list) {
             if (!includeHidden && (local.isHidden() || local.getName().startsWith(".")))
                 continue;

@@ -21,7 +21,7 @@ public abstract class BaseFileCab extends BaseCab {
 
     public BaseFileCab() {
         super();
-        mFiles = new ArrayList<File>();
+        mFiles = new ArrayList<>();
     }
 
     private File mDirectory;

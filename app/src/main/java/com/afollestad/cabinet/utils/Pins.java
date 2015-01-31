@@ -138,7 +138,7 @@ public class Pins {
     }
 
     public static List<Item> getAll(Context context) {
-        List<Item> items = new ArrayList<Item>();
+        List<Item> items = new ArrayList<>();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String shortcuts = prefs.getString("pins", null);
         if (shortcuts == null) return items;

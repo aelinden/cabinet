@@ -78,7 +78,13 @@ public class NetworkService extends Service {
             nm.notify(CONNECTION_NOTI, nb.build());
             return;
         }
-        nm.notify(CONNECTION_NOTI, nb.getNotification());
+        Notification noti;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            noti = nb.build();
+        } else {
+            noti = nb.getNotification();
+        }
+        nm.notify(CONNECTION_NOTI, noti);
     }
 
     public SftpClient getSftpClient() {

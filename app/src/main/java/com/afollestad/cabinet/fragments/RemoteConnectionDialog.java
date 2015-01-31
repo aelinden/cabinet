@@ -87,7 +87,7 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
                 .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(mContext))
                 .title(R.string.new_remote_connection)
-                .customView(view)
+                .customView(view, true)
                 .cancelable(false)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)

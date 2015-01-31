@@ -10,7 +10,7 @@
     <string name="pin">Прикріпити</string>
     <string name="copy">Копіювати</string>
     <string name="cut">Вирізати</string>
-    <string name="rename">Змінити ім\'я</string>
+    <string name="rename">Перейменувати</string>
     <string name="delete">Видалити</string>
     <string name="paste">Вставити</string>
     <string name="share">Поділитись</string>
@@ -49,6 +49,7 @@
     <string name="confirm_delete">Ви впевнені, що хочете видалити %1$s?</string>
     <string name="confirm_delete_xfiles">Ви впевнені, що хочете видалити %1$d файлів?</string>
     <string name="unavailable">Недоступно</string>
+    <string name="grid_mode">Режим таблиці</string>
     <string name="sort_by">Сортувати за</string>
     <string name="sort_name_folderstop">По імені, спочатку теки</string>
     <string name="sort_name">Іменем</string>
@@ -173,8 +174,7 @@
     <string name="true_black">Справжній чорний</string>
     <string name="true_black_description">Cabinet буде використовувати чисто чорний для AMOLED дисплеїв.</string>
     <string name="sdcard">SD Карта</string>
-    <string name="grid_mode">Grid mode</string>
-    <string name="owner">Owner</string>
-    <string name="group">Group</string>
-    <string name="applying_permissions">Applying permissions…</string>
+    <string name="owner">Власник</string>
+    <string name="group">Група</string>
+    <string name="applying_permissions">Застосування дозволів…</string>
 </resources>

@@ -50,6 +50,7 @@
     <string name="confirm_delete">確認要刪除 %1$s ？</string>
     <string name="confirm_delete_xfiles">確認要刪除 %1$d 檔案？</string>
     <string name="unavailable">不可用</string>
+    <string name="grid_mode">網格模式</string>
     <string name="sort_by">排序</string>
     <string name="sort_name_folderstop">名稱，資料夾優先</string>
     <string name="sort_name">名稱</string>
@@ -174,8 +175,7 @@
     <string name="true_black">真黑</string>
     <string name="true_black_description">內閣將採用純黑色的AMOLED顯示屏。</string>
     <string name="sdcard">SD卡</string>
-    <string name="grid_mode">Grid mode</string>
-    <string name="owner">Owner</string>
-    <string name="group">Group</string>
-    <string name="applying_permissions">Applying permissions…</string>
+    <string name="owner">擁有者</string>
+    <string name="group">群組</string>
+    <string name="applying_permissions">申請權限中......</string>
 </resources>

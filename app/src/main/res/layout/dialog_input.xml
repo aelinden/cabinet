@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:singleLine="true"
-        android:imeOptions="actionDone" />
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences" />
 
 </LinearLayout>

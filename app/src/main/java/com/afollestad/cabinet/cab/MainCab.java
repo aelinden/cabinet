@@ -96,7 +96,7 @@ public class MainCab extends BaseFileCab {
             }
         }
         intent.setType(mime);
-        ArrayList<Uri> files = new ArrayList<Uri>();
+        ArrayList<Uri> files = new ArrayList<>();
         for (File fi : send)
             files.add(Uri.fromFile(fi.toJavaFile()));
         intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, files);
@@ -108,7 +108,7 @@ public class MainCab extends BaseFileCab {
     }
 
     private void shareNext(final List<File> from, List<File> to) {
-        if (to == null) to = new ArrayList<File>();
+        if (to == null) to = new ArrayList<>();
         if (from.size() == 0) {
             // All files have been moved into 'to'
             shareFiles(to);

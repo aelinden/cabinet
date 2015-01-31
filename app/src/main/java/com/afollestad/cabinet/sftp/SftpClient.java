@@ -26,7 +26,7 @@ public class SftpClient {
 
     public static class MyLogger implements com.jcraft.jsch.Logger {
 
-        static java.util.Hashtable<Integer, String> name = new java.util.Hashtable<Integer, String>();
+        static java.util.Hashtable<Integer, String> name = new java.util.Hashtable<>();
 
         static {
             name.put(DEBUG, "DEBUG: ");
@@ -263,7 +263,7 @@ public class SftpClient {
     }
 
     public List<CloudFile> lsSync(Activity context, boolean includeHidden, String dir, FileFilter filter) throws Exception {
-        List<CloudFile> results = new ArrayList<CloudFile>();
+        List<CloudFile> results = new ArrayList<>();
         Vector vector = mChannel.ls(dir);
         Enumeration enumer = vector.elements();
         while (enumer.hasMoreElements()) {

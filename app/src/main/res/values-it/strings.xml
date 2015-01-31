@@ -32,7 +32,7 @@
     <string name="confirm_remove_shortcut">Eliminare veramente la scorciatoia a %1$s?</string>
     <string name="sort_modified">Ultima modifica</string>
     <string name="modified_x">Modificato %1$s</string>
-    <string name="iconpress_hint">È possibile toccare l\'icona di un file per selezionarlo velocemente.</string>
+    <string name="iconpress_hint">È possibile toccare \'icona di un file per selezionarlo velocemente.</string>
     <string name="drawer_longpress_hint">Suggerimento: premere a lungo le scorciatoie selezionate per rimuoverle.</string>
     <string name="navigation_drawer_open">Apri drawer di navigazione</string>
     <string name="navigation_drawer_close">Chiudi drawer di navigazione</string>
@@ -133,7 +133,7 @@
     <string name="ui">Interfaccia</string>
     <string name="settings">Impostazioni</string>
     <string name="about_body"><![CDATA[
-        Un gestore di file minimale, intuitivo e bellissimo per Android 4.1 e versioni successive.<br/><br/>
+        A gestore di file minimale, intuitivo e bellissimo per Android 4.1 e versioni successive.<br/><br/>
         Progettato da <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Sito web</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
         <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;

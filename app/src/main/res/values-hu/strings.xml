@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="welcome">Üdvözöljük!</string>
-    <string name="welcome_intro">A Cabinet egy egyszerű Fájlkezelő ami esztétikusra lett tervezve.
+    <string name="welcome_intro">A Cabinet egy egyszerű Fájlkezelő amit esztétikusra terveztünk.
  Kellemes és úgy működik ahogy azt egy fájlkezelőtől elvárjuk. \n\n Vegyen egy pillantást a fájra:</string>
     <string name="welcome_conclusion">Érintse meg az ikonképet vagy a 3-as pont ikont. Ha az ikonképet megnyomja feltűnnek az opciók. Ezt a fájl hosszú nyomva tartásával is elérheti. A 3-as pont ikon megjeleníti a fájl többi opcióit. \n\nA
- különféle jellemzői közé tartozik a szerverekhez való távoli hozzáférés SFTPn keresztül. Köszönjük hogy ezt az alkalmazást használja!</string>
+ különféle jellemzői közé tartozik a szerverekhez való távoli hozzáférés SFTPn keresztül. Köszönjük hogy az alkalmazást használja!</string>
     <string name="lets_go">Indulás!</string>
     <string name="open_as">Megnyitás Mint…</string>
-    <string name="pin">Kedvencekhez</string>
+    <string name="pin">Kedvencekhez Ad</string>
     <string name="copy">Másolás</string>
     <string name="cut">Kivágás</string>
     <string name="rename">Átnevezés</string>
@@ -24,17 +24,17 @@
     <string name="directory">Könyvtár</string>
     <string name="unknown">Ismeretlen</string>
     <string name="go_up">Ugrás Fel</string>
-    <string name="x_files">%1$d fájlok</string>
-    <string name="x_dirs">%1$d könyvtárak</string>
+    <string name="x_files">%1$d fájl(ok)</string>
+    <string name="x_dirs">%1$d könyvtár(ak)</string>
     <string name="no_x_files">Nincsenek %1$s fájlok</string>
     <string name="done">Kész</string>
     <string name="remove_shortcut">Eltávolítás</string>
     <string name="confirm_remove_shortcut">Biztos el távolítja a(z) %1$s mappát a kedvencekből?</string>
     <string name="sort_modified">Legutóbb Módosítva</string>
     <string name="modified_x">Módosítva %1$s</string>
-    <string name="iconpress_hint">TIPP: Érintse meg a fájl ikonját a gyorsabb kiválasztás miatt!</string>
-    <string name="drawer_longpress_hint">TIPP: Hosszú érintés a már hozzáadott kedvenc mappa eltávolításához!</string>
-    <string name="navigation_drawer_open">Navigációs Fiók kinyitása</string>
+    <string name="iconpress_hint">Érintse meg a fájl ikonját a gyorsabb kiválasztás miatt!</string>
+    <string name="drawer_longpress_hint">Hosszú érintés a már hozzáadott kedvenc mappa eltávolításához!</string>
+    <string name="navigation_drawer_open">Navigációs Fiók megnyitása</string>
     <string name="navigation_drawer_close">Navigációs Fiók bezárása</string>
     <string name="new_folder">Új Mappa</string>
     <string name="created_folder">Létrehozott Mappa %1$s</string>
@@ -114,7 +114,7 @@
     <string name="rate">Értékelés</string>
     <string name="later">Később</string>
     <string name="rate_desc">Szeretné értékelni az alkalmazást?</string>
-    <string name="sure">Persze!</string>
+    <string name="sure">Igen!</string>
     <string name="no_thanks">Köszönöm Nem</string>
     <string name="file">Fájl</string>
     <string name="folder">Mappa</string>
@@ -125,7 +125,7 @@
     <string name="video">Videó</string>
     <string name="other">Egyéb</string>
     <string name="info">Információ</string>
-    <string name="files">Fájlok</string>
+    <string name="files">Fájlok és Mappák</string>
     <string name="show_hidden_files">Rejtett Fájlok</string>
     <string name="about">Névjegy</string>
     <string name="about_desc">Az alkalmazásról és a fejlesztőjéről.</string>
@@ -167,12 +167,12 @@
     <string name="archives">Archívumok</string>
     <string name="extension">Kiterjesztés</string>
     <string name="no_files_filter">Nincsenek %1$s fájlok</string>
-    <string name="superuser_not_available">A Superuser nem elérhető</string>
+    <string name="superuser_not_available">Superuser nem elérhető</string>
     <string name="filter_active">A Fájl Szűrő Aktív: %1$s</string>
     <string name="dark_theme">Sötét Téma</string>
-    <string name="dark_theme_description">Sötétebb színek használata.</string>
+    <string name="dark_theme_description">Sötétebb színösszeállítás.</string>
     <string name="true_black">Éjszakai Mód</string>
-    <string name="true_black_description">Mindenhol sötét és fekete színek használata.</string>
+    <string name="true_black_description">Ideális az esti használathoz. (Először engedélyezni kell a Sötét Témát.)</string>
     <string name="sdcard">Memóriakártya</string>
     <string name="owner">Tulajdonos</string>
     <string name="group">Csoport</string>

@@ -2,7 +2,6 @@ package com.afollestad.cabinet.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Environment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,7 +40,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     public NavigationDrawerAdapter(Activity context, ClickListener listener) {
         mContext = context;
-        mItems = new ArrayList<Pins.Item>();
+        mItems = new ArrayList<>();
         mListener = listener;
         selectionColor = context.getResources().getColor(R.color.cabinet_color);
         bodyText = Utils.resolveColor(context, R.attr.body_text);

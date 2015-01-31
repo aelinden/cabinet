@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">환영합니다</string>
+    <string name="welcome_intro">Cabinet에 오신 것을 환영합니다! Cabinet은 미적인 즐거움을 목표로 디자인 된 가장 단순하고
+사용이 편리한 파일 관리자입니다.\n\n다음 파일을 참조하세요:</string>
+    <string name="welcome_conclusion">미리보기 그림 또는 3점 아이콘을 눌러보세요. 미리보기나 파일을 길게 누르면 대량 작업을 위해 파일을 선택합니다. 3점 아이콘은 개별 파일에 대한 팝업 메뉴를 표시합니다.\n\n
+Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖추고 있습니다. Cabinet를 이용해 주셔서 감사합니다!</string>
+    <string name="lets_go">시작!</string>
+    <string name="open_as">…로 열기</string>
+    <string name="pin">바로 가기</string>
+    <string name="copy">복사</string>
+    <string name="cut">잘라내기</string>
+    <string name="rename">이름 바꾸기</string>
+    <string name="delete">삭제</string>
+    <string name="paste">붙여넣기</string>
+    <string name="share">공유</string>
+    <string name="zip">압축</string>
+    <string name="unzip">압축 풀기</string>
+    <string name="selectAll">모두 선택</string>
+    <string name="details">속성</string>
+    <string name="no_files">파일 없음</string>
+    <string name="storage">저장소</string>
+    <string name="root">루트</string>
+    <string name="directory">디렉토리</string>
+    <string name="unknown">알 수 없음</string>
+    <string name="go_up">위로</string>
+    <string name="x_files">%1$d 파일</string>
+    <string name="x_dirs">%1$d 디렉토리</string>
+    <string name="no_x_files">%1$s 파일 없음</string>
+    <string name="done">완료</string>
+    <string name="remove_shortcut">바로 가기 삭제</string>
+    <string name="confirm_remove_shortcut">%1$s 바로가기를 삭제하겠습니까?</string>
+    <string name="sort_modified">최근 수정</string>
+    <string name="modified_x">%1$s 에 수정 됨</string>
+    <string name="iconpress_hint">파일 아이콘을 눌러 빠르게 선택할 수 있습니다.</string>
+    <string name="drawer_longpress_hint">팁: 바로 가기를 길게 눌러 지울 수 있습니다.</string>
+    <string name="navigation_drawer_open">탐색 서랍 열기</string>
+    <string name="navigation_drawer_close">탐색 서랍 닫기</string>
+    <string name="new_folder">새 폴더</string>
+    <string name="created_folder">%1$s 폴더 생성 됨</string>
+    <string name="untitled">제목 없음</string>
+    <string name="renamed_to">%1$s 이름 변경 됨</string>
+    <string name="moved_to">%1$s 이동 됨</string>
+    <string name="copied_to">%1$s 복사 됨</string>
+    <string name="no">아니오</string>
+    <string name="yes">네</string>
+    <string name="newStr">새로 만들기</string>
+    <string name="search">검색</string>
+    <string name="confirm_delete">%1$s를 삭제하겠습니까?</string>
+    <string name="confirm_delete_xfiles">%1$d 개의 파일을 삭제하겠습니까?</string>
+    <string name="unavailable">할 수 없음</string>
+    <string name="grid_mode">격자 모드</string>
+    <string name="sort_by">정렬 순서</string>
+    <string name="sort_name_folderstop">파일명, 폴더 우선</string>
+    <string name="sort_name">파일명</string>
+    <string name="sort_extension">형식</string>
+    <string name="sort_size_lowhigh">파일 크기 작은 순서</string>
+    <string name="sort_size_highlow">파일 크기 큰 순서</string>
+    <string name="new_remote_connection">새로운 무선 연결</string>
+    <string name="network_service_label">Cabinet 네트워크 서비스</string>
+    <string name="connection_notification_content">%1$s에 연결 됨</string>
+    <string name="cabinet_sftp">Cabinet SFTP</string>
+    <string name="disconnect">연결 끊김</string>
+    <string name="host">호스트</string>
+    <string name="port">포트</string>
+    <string name="username">사용자 이름</string>
+    <string name="password">암호</string>
+    <string name="test_connection">연결 검사</string>
+    <string name="connection_successful">연결 성공!</string>
+    <string name="disconnect_prompt">%1$s와 연결을 끊겠습니까?</string>
+    <string name="uploaded_to">%1$s 업로드 됨</string>
+    <string name="downloaded_to">%1$s 내려받기 완료</string>
+    <string name="connecting">연결 중…</string>
+    <string name="downloading">내려받는 중…</string>
+    <string name="deleting">삭제 중…</string>
+    <string name="making_folder">폴더 생성 중…</string>
+    <string name="renaming">이름 변경 중…</string>
+    <string name="unzipping">압축 해제 중…</string>
+    <string name="zipping">압축 중…</string>
+    <string name="moving">이동 중…</string>
+    <string name="uploading">업로드 중…</string>
+    <string name="copying">복사 중…</string>
+    <string name="failed_delete_file">%1$s 파일 삭제 실패</string>
+    <string name="failed_make_directory">%1$s 새 폴더 만들기 실패</string>
+    <string name="failed_rename_file">%1$s 파일 이름 바꾸기/이동 실패</string>
+    <string name="failed_unzip_file">%1$s 파일 압축 해제 실패</string>
+    <string name="failed_zip_files">%1$s 파일 압축 실패</string>
+    <string name="error">오류</string>
+    <string name="failed_download_file">%1$s 파일을 내려 받는 동안 오류가 발생했습니다.</string>
+    <string name="failed_connect_server">%1$s 서버에 연결 실패</string>
+    <string name="activity_not_found">이 파일을 열 수 있는 앱이 없습니다</string>
+    <string name="failed_upload_file">%1$s 파일 업로드 실패</string>
+    <string name="failed_copy_file">%1$s 파일 복사 실패</string>
+    <string name="no_apps_for_sharing">이 유형의 파일을 공유 할 수 있는 앱을 찾을 수 없습니다</string>
+    <string name="directory_already_exists">디렉토리가 이미 존재합니다</string>
+    <string name="copy_x"><![CDATA[
+        <b>복사:</b>&nbsp;&nbsp;%1$s
+    ]]></string>
+    <string name="cut_x"><![CDATA[
+        <b>잘라내기:</b>&nbsp;&nbsp;%1$s
+    ]]></string>
+    <string name="copy_xfiles"><![CDATA[
+        <b>복사:</b>&nbsp;&nbsp;%1$d 파일
+    ]]></string>
+    <string name="cut_xfiles"><![CDATA[
+        <b>잘라내기:</b>&nbsp;&nbsp;%1$d 파일
+    ]]></string>
+    <string name="search_files">파일 검색…</string>
+    <string name="search_x"><![CDATA[
+        <b>검색:</b>&nbsp;%1$s
+    ]]></string>
+    <string name="donate">기부</string>
+    <string name="thank_you">감사합니다!</string>
+    <string name="rate">별점</string>
+    <string name="later">나중에</string>
+    <string name="rate_desc">구글 플레이에서 Cabinet의 평가를 부탁드립니다!</string>
+    <string name="sure">예!</string>
+    <string name="no_thanks">아니오…</string>
+    <string name="file">파일</string>
+    <string name="folder">폴더</string>
+    <string name="remote_connection">무선 연결…</string>
+    <string name="text">문서</string>
+    <string name="image">그림</string>
+    <string name="audio">오디오</string>
+    <string name="video">비디오</string>
+    <string name="other">기타</string>
+    <string name="info">정보</string>
+    <string name="files">파일</string>
+    <string name="show_hidden_files">숨김 파일 보기</string>
+    <string name="about">정보</string>
+    <string name="about_desc">앱과 디자이너에 대해…</string>
+    <string name="show_hidden_files_desc">숨김 파일 보기 토글</string>
+    <string name="ui">UI</string>
+    <string name="settings">설정</string>
+    <string name="about_body"><![CDATA[
+        안드로이드 4.1 이상을 위한 단순하고 직감적이며 아름다운 파일 관리자..<br/><br/><b>Aidan Follestad</b> 디자인.<br/><a href=\'http://aidanfollestad.com\'>웹사이트</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>트위터</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+    ]]></string>
+    <string name="details_body_file"><![CDATA[
+        <b>이름:</b>&nbsp;&nbsp;%1$s<br/><b>위치:</b>&nbsp;&nbsp;%2$s<br/><b>크기:</b>&nbsp;&nbsp;%3$s<br/><b>최종 수정:</b>&nbsp;&nbsp;%4$s<br/><b>권한:</b>&nbsp;&nbsp;%5$s
+    ]]></string>
+    <string name="details_body_dir"><![CDATA[
+        <b>이름:</b>&nbsp;&nbsp;%1$s<br/><b>위치:</b>&nbsp;&nbsp;%2$s<br/><b>내용:</b>&nbsp;&nbsp;%3$s<br/><b>최종 수정:</b>&nbsp;&nbsp;%4$s
+    ]]></string>
+    <string name="new_file">새 파일</string>
+    <string name="making_file">파일 생성 중…</string>
+    <string name="created_file">%1$s 파일 생성됨</string>
+    <string name="file_already_exists">파일이 존재합니다.</string>
+    <string name="failed_make_file">%1$s 새 파일 만들기 실패</string>
+    <string name="pick_a_file">파일 선택…</string>
+    <string name="cabinet_text_editor">Cabinet 문서 편집기</string>
+    <string name="save">저장</string>
+    <string name="unsaved_changes">변경사항 저장되지 않음</string>
+    <string name="unsaved_changes_desc">변경사항이 저장되지 않았습니다. 나가기 전에 저장하시겠습니까?</string>
+    <string name="saving">저장 중…</string>
+    <string name="loading">불러오는 중…</string>
+    <string name="unsupported_extension">지원하지 않는 형식</string>
+    <string name="unsupported_extension_desc">문서 편집기로 열 수 없는 형식입니다.</string>
+    <string name="file_already_exists_warning">주의: 이 파일은 이미 존재합니다. 새로운 파일은 복사본으로 저장됩니다.</string>
+    <string name="auto_unzip_prompt">현재 디렉토리에 압축 해제하겠습니까?</string>
+    <string name="filter">필터</string>
+    <string name="none">없음</string>
+    <string name="archives">압축파일</string>
+    <string name="extension">형식</string>
+    <string name="no_files_filter">필터링 된 파일 없음: %1$s</string>
+    <string name="superuser_not_available">Superuser를 사용할 수 없습니다.</string>
+    <string name="filter_active">%1$s 필터 활성화 됨</string>
+    <string name="dark_theme">어두운 테마</string>
+    <string name="dark_theme_description">Cabinet이 어두운 색깔을 사용합니다.</string>
+    <string name="true_black">진짜 검정</string>
+    <string name="true_black_description">Cabinet은 아몰레드 디스플레이를 위해 순수한 검정색을 사용합니다.</string>
+    <string name="sdcard">SD카드</string>
+    <string name="owner">소유자</string>
+    <string name="group">그룹</string>
+    <string name="applying_permissions">권한 적용</string>
+</resources>

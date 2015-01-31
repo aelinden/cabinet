@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Merhaba</string>
+    <string name="welcome_intro">Cabinet\'e hoşgeldiniz! Cabinet sade ve estetik olarak tatmin edici olarak tasarlanmış bir dosya yöneticisidir.
+Cabinet bir dosya yöneticis nasıl çalışmalıysa öyle çalışır. \n\n Şu dosyaya bir göz atın:</string>
+    <string name="welcome_conclusion">3 noktalı simgeye veya ön izleme resmine tıklamayı deneyin. Ön izleme resmine tıklamak çeşitli işlemler için dosyayı seçer, bu ayrıca dosyaların üstünde basılı tutularakta yapılabilir. 3 noktalı simge ise dosya seçenekleri barındıran bir menü açacaktır.\n\nCabinet
+daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta bunlardan biridir.Cabinet\'i denediğiniz için teşekkürler!</string>
+    <string name="lets_go">Başlayalım!</string>
+    <string name="open_as">Birlikte Aç</string>
+    <string name="pin">Sabitle</string>
+    <string name="copy">Kopyala</string>
+    <string name="cut">Kes</string>
+    <string name="rename">Yeniden adlandır</string>
+    <string name="delete">Sil</string>
+    <string name="paste">Yapıştır</string>
+    <string name="share">Paylaş</string>
+    <string name="zip">Sıkıştır</string>
+    <string name="unzip">Çıkart</string>
+    <string name="selectAll">Hepsini seç</string>
+    <string name="details">Ayrıntılar</string>
+    <string name="no_files">Dosya yok</string>
+    <string name="storage">Depolama</string>
+    <string name="root">Ana Dizin</string>
+    <string name="directory">Dizin</string>
+    <string name="unknown">Bilinmeyen</string>
+    <string name="go_up">Yukarı git</string>
+    <string name="x_files">%1$d dosya</string>
+    <string name="x_dirs">%1$d dizin</string>
+    <string name="no_x_files">%1$s dosyası yok</string>
+    <string name="done">Bitti</string>
+    <string name="remove_shortcut">Kısayolu sil</string>
+    <string name="confirm_remove_shortcut">%1$s kısayolunu silmek istediğinize emin misiniz?</string>
+    <string name="sort_modified">En son değiştirilme</string>
+    <string name="modified_x">%1$s saatinde değiştirildi</string>
+    <string name="iconpress_hint">Bir dosyayı hızlıca seçmek için onun simgesine dokunabilirsiniz!</string>
+    <string name="drawer_longpress_hint">İpucu: sabitlenmiş kısayollara basılı tutarak onları kaldırabilirsiniz</string>
+    <string name="navigation_drawer_open">Gezinti bölmesini aç</string>
+    <string name="navigation_drawer_close">Gezinti bölmesini kapat</string>
+    <string name="new_folder">Yeni klasör</string>
+    <string name="created_folder">%1$s klasörü oluşturuldu</string>
+    <string name="untitled">Başlıksız</string>
+    <string name="renamed_to">%1$s olarak yeniden adlandırıldı</string>
+    <string name="moved_to">%1$s konumuna taşındı</string>
+    <string name="copied_to">%1$s konumuna kopyalandı</string>
+    <string name="no">Hayır</string>
+    <string name="yes">Evet</string>
+    <string name="newStr">Yeni</string>
+    <string name="search">Ara</string>
+    <string name="confirm_delete">%1$s öğesini silmek istediğinizden emin misiniz?</string>
+    <string name="confirm_delete_xfiles">%1$d dosyayı silmek istediğinizden emin misiniz?</string>
+    <string name="unavailable">Uygun değil</string>
+    <string name="grid_mode">Izgara modu</string>
+    <string name="sort_by">Sırala</string>
+    <string name="sort_name_folderstop">İsim, klasörler önce</string>
+    <string name="sort_name">İsim</string>
+    <string name="sort_extension">Uzantı</string>
+    <string name="sort_size_lowhigh">Boyut, küçükten büyüğe</string>
+    <string name="sort_size_highlow">Boyut, büyükten küçüğe</string>
+    <string name="new_remote_connection">Yeni Uzak Bağlantı</string>
+    <string name="network_service_label">Cabinet Ağ Hizmeti</string>
+    <string name="connection_notification_content">%1$s konumuna bağlanıldı</string>
+    <string name="cabinet_sftp">Cabinet SFTP</string>
+    <string name="disconnect">Bağlantıyı kes</string>
+    <string name="host">Sunucu</string>
+    <string name="port">Port</string>
+    <string name="username">Kullanıcı adı</string>
+    <string name="password">Şifre</string>
+    <string name="test_connection">Bağlantıyı test et</string>
+    <string name="connection_successful">Bağlantı başarılı!</string>
+    <string name="disconnect_prompt">%1$s bağlantısı kesmek istiyor musunuz?</string>
+    <string name="uploaded_to">%1$s konumuna yüklendi</string>
+    <string name="downloaded_to">%1$s konumuna indirildi</string>
+    <string name="connecting">Bağlanılıyor…</string>
+    <string name="downloading">İndiriliyor…</string>
+    <string name="deleting">Siliniyor…</string>
+    <string name="making_folder">Klasör oluşturuluyor…</string>
+    <string name="renaming">Adlandırılıyor…</string>
+    <string name="unzipping">Çıkartılıyor…</string>
+    <string name="zipping">Sıkıştırılıyor..</string>
+    <string name="moving">Taşınıyor…</string>
+    <string name="uploading">Yükleniyor…</string>
+    <string name="copying">Kopyalanıyor…</string>
+    <string name="failed_delete_file">%1$s dosyası silinemedi</string>
+    <string name="failed_make_directory">%1$s klasörü oluşturulamadı.</string>
+    <string name="failed_rename_file">%1$s dosyası yeniden adlandırılamadı/taşınamadı</string>
+    <string name="failed_unzip_file">%1$s adlı dosya çıkartılamadı</string>
+    <string name="failed_zip_files">%1$s adlı dosya(lar) sıkıştırılamadı</string>
+    <string name="error">Hata</string>
+    <string name="failed_download_file">%1$s dosyası indirilmeye çalışılırken bir hata oluştu</string>
+    <string name="failed_connect_server">%1$s sunucusuna bağlanılamadı</string>
+    <string name="activity_not_found">Dosyayı açacak bir uygulama bulunamadı</string>
+    <string name="failed_upload_file">%1$s dosyası yüklenemedi</string>
+    <string name="failed_copy_file">%1$s dosyası kopyalanamadı</string>
+    <string name="no_apps_for_sharing">Bu dosya türünü paylaşabilecek uygun bir uygulama bulunamadı</string>
+    <string name="directory_already_exists">Dizin zaten mevcut</string>
+    <string name="copy_x"><![CDATA[
+<b>Kopyala:</b>&nbsp;&nbsp;%1$s
+    ]]></string>
+    <string name="cut_x"><![CDATA[
+<b>Kes:</b>&nbsp;&nbsp;%1$s
+    ]]></string>
+    <string name="copy_xfiles"><![CDATA[
+<b>Kopyala:</b>&nbsp;&nbsp;%1$d dosya
+    ]]></string>
+    <string name="cut_xfiles"><![CDATA[
+<b>Kes:</b>&nbsp;&nbsp;%1$d dosya
+    ]]></string>
+    <string name="search_files">Dosyaları ara…</string>
+    <string name="search_x"><![CDATA[
+<b>Ara:</b>&nbsp;%1$s
+    ]]></string>
+    <string name="donate">Bağış yap</string>
+    <string name="thank_you">Çok teşekkürler!</string>
+    <string name="rate">Oyla</string>
+    <string name="later">Sonra</string>
+    <string name="rate_desc">Cabinet\'i Google Play\'de oylamak ister misiniz? Tutarlı oylar memnuniyet verecektir.</string>
+    <string name="sure">Elbette!</string>
+    <string name="no_thanks">Hayır teşekkürler</string>
+    <string name="file">Dosya</string>
+    <string name="folder">Klasör</string>
+    <string name="remote_connection">Uzak Bağlantı…</string>
+    <string name="text">Metin</string>
+    <string name="image">Resim</string>
+    <string name="audio">Ses</string>
+    <string name="video">Video</string>
+    <string name="other">Diğer</string>
+    <string name="info">Bilgi</string>
+    <string name="files">Dosyalar</string>
+    <string name="show_hidden_files">Gizli dosyaları göster</string>
+    <string name="about">Hakkında</string>
+    <string name="about_desc">Uygulama ve tasarımcısı hakkında.</string>
+    <string name="show_hidden_files_desc">Cabinet\'in gizli dosyaları gösterip göstermeyeceğini seçin.</string>
+    <string name="ui">Arayüz</string>
+    <string name="settings">Ayarlar</string>
+    <string name="about_body"><![CDATA[
+Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneticisi.<br/><br/><b>Aidan Follestad</b> tarafından tasarlandı.
+<a href=\'http://aidanfollestad.com\'>Web Sitesi</a>&nbsp;&nbsp;
+<a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+<a href=\'https://google.com/+AidanFollestad\'>Google</a>&nbsp;&nbsp;
+<a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+<a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>&nbsp;&nbsp;
+    ]]></string>
+    <string name="details_body_file"><![CDATA[
+<b>Dosya Adı:</b>&nbsp;&nbsp;%1$s<br/><b>Konum:</b>&nbsp;&nbsp;%2$s<br/><b>Boyut:</b>&nbsp;&nbsp;%3$s<br/><b>En Son Değiştirilme:</b>&nbsp;&nbsp;%4$s<br/><b>İzinler:</b>&nbsp;&nbsp;%5$s<br/>
+    ]]></string>
+    <string name="details_body_dir"><![CDATA[
+<b>Klasör adı:</b>&nbsp;&nbsp;%1$s<br/><b>Konum:</b>&nbsp;&nbsp;%2$s<br/><b>İçerik:</b>&nbsp;&nbsp;%3$s<br/><b>En son değiştirilme:</b>&nbsp;&nbsp;%4$s<br/>
+    ]]></string>
+    <string name="new_file">Yeni Dosya</string>
+    <string name="making_file">Dosya oluşturuluyor</string>
+    <string name="created_file">%1$s oluşturuldu</string>
+    <string name="file_already_exists">Dosya zaten mevcut</string>
+    <string name="failed_make_file">%1$s oluşturulamadı</string>
+    <string name="pick_a_file">Bir dosya seçin…</string>
+    <string name="cabinet_text_editor">Cabinet Metin Editörü</string>
+    <string name="save">Kaydet</string>
+    <string name="unsaved_changes">Kaydedilmemiş Değişiklikler</string>
+    <string name="unsaved_changes_desc">Kaydedilmemiş değişiklikleriniz var, çıkmadan önce onları kaydetmek ister misiniz?</string>
+    <string name="saving">Kaydediliyor…</string>
+    <string name="loading">Yükleniyor…</string>
+    <string name="unsupported_extension">Desteklenmeyen Uzantı</string>
+    <string name="unsupported_extension_desc">Bu tür bir dosyayı metin olarak düzenlemek için açamazsınız.</string>
+    <string name="file_already_exists_warning">Uyarı: bu dosya zaten mevcut. Yeni dosyanız bir kopya olarak görünecek</string>
+    <string name="auto_unzip_prompt">Arşivi bulunduğunuz dizine çıkartmak istiyor musunuz ?</string>
+    <string name="filter">Filtre</string>
+    <string name="none">Hiçbiri</string>
+    <string name="archives">Arşivler</string>
+    <string name="extension">Uzantı</string>
+    <string name="no_files_filter">%1$s filtresi için dosya yok</string>
+    <string name="superuser_not_available">Superuser kullanılamıyor</string>
+    <string name="filter_active">%1$s filtresi aktif</string>
+    <string name="dark_theme">Karanlık Tema</string>
+    <string name="dark_theme_description">Cabinet daha koyu renkler kullanacak.</string>
+    <string name="true_black">Tam Siyah</string>
+    <string name="true_black_description">Cabinet AMOLED ekranlar için saf siyah kullanacak</string>
+    <string name="sdcard">SD Kart</string>
+    <string name="owner">Sahibi</string>
+    <string name="group">Grup</string>
+    <string name="applying_permissions">İzinler uygulanıyor…</string>
+</resources>

@@ -3,7 +3,7 @@
     <string name="welcome">Bienvenue</string>
     <string name="welcome_intro">Bienvenue dans Cabinet ! Cabinet est un gestionnaire de fichier simpliste conçu pour être esthétiquement
  agréable, et fonctionner juste comme il se doit.\n\n Jetez un œil à ce fichier :</string>
-    <string name="welcome_conclusion">Essayez d\'appuyer sur l\'aperçu ou l\'icône "…". Appuyer sur l\'aperçu sélectionne le fichier pour des actions groupées, ce qui est également possible en restant appuyé sur le fichier. L\'icône "…" ouvre un menu pour traiter le fichier individuellement.\n\nCabinet
+    <string name="welcome_conclusion">Essayez d\'appuyer sur l\'aperçu ou l\'icône \"…\". Appuyer sur l\'aperçu sélectionne le fichier pour des actions groupées, ce qui est également possible en restant appuyé sur le fichier. L\'icône \"…\" ouvre un menu pour traiter le fichier individuellement.\n\nCabinet
  a d\'autres fonctionnalités comme l\'accès à un serveur distant via SFTP, que vous trouverez dans l\'application. Merci d\'utiliser Cabinet !</string>
     <string name="lets_go">Allons-y !</string>
     <string name="open_as">Ouvrir comme…</string>
@@ -49,6 +49,7 @@
     <string name="confirm_delete">Voulez-vous vraiment supprimer %1$s ?</string>
     <string name="confirm_delete_xfiles">Voulez-vous vraiment supprimer %1$d fichiers ?</string>
     <string name="unavailable">Indisponible</string>
+    <string name="grid_mode">Mode grille</string>
     <string name="sort_by">Trier par</string>
     <string name="sort_name_folderstop">Nom, dossiers en premier</string>
     <string name="sort_name">Nom</string>
@@ -171,10 +172,9 @@
     <string name="dark_theme">Thème foncé</string>
     <string name="dark_theme_description">Cabinet des couleurs plus foncées.</string>
     <string name="true_black">Vrai Noir</string>
-    <string name="true_black_description">Cabinet le noir pur pour écrans AMOLED.</string>
+    <string name="true_black_description">Cabinet utilisera un noir pur pour les écrans AMOLED.</string>
     <string name="sdcard">Carte SD</string>
-    <string name="grid_mode">Grid mode</string>
-    <string name="owner">Owner</string>
-    <string name="group">Group</string>
-    <string name="applying_permissions">Applying permissions…</string>
+    <string name="owner">Propriétaire</string>
+    <string name="group">Groupe</string>
+    <string name="applying_permissions">Application des permissions…</string>
 </resources>

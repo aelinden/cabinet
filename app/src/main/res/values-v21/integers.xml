@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <bool name="translucent_nav">true</bool>
+    <integer name="font_textStyle_medium">0</integer>
 
 </resources>

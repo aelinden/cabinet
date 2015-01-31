@@ -32,8 +32,8 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="confirm_remove_shortcut">Czy jesteś pewnien, że chcesz usunąć swój skrót do %1$s?</string>
     <string name="sort_modified">Ostatnio modyfikowane</string>
     <string name="modified_x">Modyfikowane %1$s</string>
-    <string name="iconpress_hint">"Możesz dotknąć ikonki pliku by go szybko zaznaczyć! "</string>
-    <string name="drawer_longpress_hint">Wskazówka: dłuższe przyciśnięcie skrótów zaznacza je do usunięcia!</string>
+    <string name="iconpress_hint">Możesz dotknąć ikony pliku, aby go szybko zaznaczyć</string>
+    <string name="drawer_longpress_hint">Wskazówka: dłuższe przyciśnięcie skrótów usuwa je</string>
     <string name="navigation_drawer_open">Otwórz szufladę</string>
     <string name="navigation_drawer_close">Zamknij szufladę</string>
     <string name="new_folder">Nowy Folder</string>
@@ -129,7 +129,7 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="show_hidden_files">Pokaż ukryte pliki</string>
     <string name="about">O aplikacji</string>
     <string name="about_desc">Informacje o aplikacji i jej twórcy</string>
-    <string name="show_hidden_files_desc">Zaznacz lub odznacz pokazywanie ukrytych plików</string>
+    <string name="show_hidden_files_desc">Włącz lub wyłącz pokazywanie ukrytych plików</string>
     <string name="ui">Wygląd</string>
     <string name="settings">Ustawienia</string>
     <string name="about_body"><![CDATA[
@@ -177,7 +177,7 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="dark_theme">Ciemny motyw</string>
     <string name="dark_theme_description">Cabinet będzie używał ciemniejszych kolorów</string>
     <string name="true_black">Prawdziwa Czerń</string>
-    <string name="true_black_description">Cabinet będzie używał prawdziwej czerni w wyświetlaczach typu AMOLED.</string>
+    <string name="true_black_description">Cabinet będzie używał prawdziwej czerni na wyświetlaczach typu AMOLED</string>
     <string name="sdcard">Karta SD</string>
     <string name="owner">Właściciel</string>
     <string name="group">Grupa</string>
