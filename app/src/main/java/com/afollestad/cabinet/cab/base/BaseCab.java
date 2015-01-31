@@ -22,6 +22,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
     private transient ActionMode mActionMode;
     private transient Activity context;
     private transient DirectoryFragment fragment;
+    public transient boolean overrideDestroy;
 
     public final BaseCab start() {
         getContext().startSupportActionMode(this);
@@ -107,6 +108,8 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
             act.getWindow().setStatusBarColor(oldColor);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
+            if (!overrideDestroy)
+                getFragment().invalidateStatusColorsAndElevation(true);
         }
         mActionMode = null;
     }

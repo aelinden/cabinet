@@ -75,8 +75,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         }
     };
 
-    private static final int SETTINGS_REQUEST = 3002;
-
     public DirectoryFragment() {
     }
 
@@ -515,22 +513,40 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         View v = getView();
         if (v == null) return;
         TextView status = (TextView) v.findViewById(R.id.status);
-        DrawerActivity act = (DrawerActivity) getActivity();
-        final float toolbarElevation = getResources().getDimension(R.dimen.toolbar_elevation);
         if (message == 0) {
             status.setVisibility(View.GONE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                act.mToolbar.setElevation(toolbarElevation);
-                status.setElevation(0f);
-            }
+            invalidateStatusColorsAndElevation(false);
         } else {
             status.setVisibility(View.VISIBLE);
-            status.setBackgroundColor(((ThemableActivity) getActivity()).getThemeUtils().primaryColor());
             status.setText(getString(message, replacement));
+            invalidateStatusColorsAndElevation(false);
+        }
+    }
+
+    public void invalidateStatusColorsAndElevation(boolean forceCabGone) {
+        View v = getView();
+        if (v == null) return;
+        TextView status = (TextView) v.findViewById(R.id.status);
+        DrawerActivity act = (DrawerActivity) getActivity();
+        final float toolbarElevation = getResources().getDimension(R.dimen.toolbar_elevation);
+        final boolean shown = status.getVisibility() == View.VISIBLE;
+
+        if (shown) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 act.mToolbar.setElevation(0f);
                 status.setElevation(toolbarElevation);
             }
+            BaseCab cab = ((DrawerActivity) getActivity()).getCab();
+            int bgColor;
+            if (cab != null && cab.isActive() && !forceCabGone) {
+                bgColor = getResources().getColor(R.color.dark_theme_gray_darker);
+            } else {
+                bgColor = ((ThemableActivity) getActivity()).getThemeUtils().primaryColor();
+            }
+            status.setBackgroundColor(bgColor);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            act.mToolbar.setElevation(toolbarElevation);
+            status.setElevation(0f);
         }
     }
 
@@ -869,18 +885,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 ((DrawerActivity) getActivity()).donate(4);
                 break;
             case R.id.settings:
-                startActivityForResult(new Intent(getActivity(), SettingsActivity.class), SETTINGS_REQUEST);
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SETTINGS_REQUEST && resultCode == Activity.RESULT_OK) {
-            getActivity().recreate();
-        }
     }
 
     @Override
@@ -899,6 +907,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 else ((BaseFileCab) cab).removeFile(file, false);
             }
         }
+
+        invalidateStatusColorsAndElevation(false);
     }
 
     @Override

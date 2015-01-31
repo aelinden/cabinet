@@ -26,7 +26,6 @@ public abstract class BaseFileCab extends BaseCab {
 
     private File mDirectory;
     private final List<File> mFiles;
-    public transient boolean overrideDestroy;
 
     public abstract boolean canShowFab();
 
