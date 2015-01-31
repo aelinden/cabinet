@@ -32,6 +32,7 @@ public abstract class ThemableActivity extends ActionBarActivity {
         ThemeSingleton.get().positiveColor = accent;
         ThemeSingleton.get().neutralColor = accent;
         ThemeSingleton.get().negativeColor = accent;
+        ThemeSingleton.get().darkTheme = ThemeUtils.isDarkMode(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final int dark = getThemeUtils().primaryColorDark();
@@ -44,7 +45,7 @@ public abstract class ThemableActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (mThemeUtils.isChanged()) {
+        if (mThemeUtils.isChanged(true)) {
             setTheme(mThemeUtils.getCurrent(hasNavDrawer()));
             recreate();
         }

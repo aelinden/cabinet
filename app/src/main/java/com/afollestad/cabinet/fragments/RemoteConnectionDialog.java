@@ -12,7 +12,6 @@ import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.DrawerActivity;
 import com.afollestad.cabinet.utils.Pins;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -86,7 +85,6 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
         });
 
         dialog = new MaterialDialog.Builder(mContext)
-                .theme(ThemeUtils.getDialogTheme(mContext))
                 .title(R.string.new_remote_connection)
                 .customView(view, true)
                 .cancelable(false)

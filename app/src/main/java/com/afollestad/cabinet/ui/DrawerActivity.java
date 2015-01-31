@@ -35,7 +35,6 @@ import com.afollestad.cabinet.fragments.WelcomeFragment;
 import com.afollestad.cabinet.ui.base.NetworkedActivity;
 import com.afollestad.cabinet.utils.APKIconDownloader;
 import com.afollestad.cabinet.utils.Pins;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
@@ -127,6 +126,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
+        mToolbar.setPopupTheme(getThemeUtils().getPopupTheme());
         setSupportActionBar(mToolbar);
 
         if (savedInstanceState != null) {
@@ -214,7 +214,6 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (!prefs.getBoolean("shown_rating_dialog", false)) {
             new MaterialDialog.Builder(DrawerActivity.this)
-                    .theme(ThemeUtils.getDialogTheme(DrawerActivity.this))
                     .title(R.string.rate)
                     .content(R.string.rate_desc)
                     .positiveText(R.string.sure)
@@ -234,8 +233,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
                             PreferenceManager.getDefaultSharedPreferences(DrawerActivity.this)
                                     .edit().putBoolean("shown_rating_dialog", true).commit();
                         }
-                    })
-                    .build().show();
+                    }).show();
         }
     }
 

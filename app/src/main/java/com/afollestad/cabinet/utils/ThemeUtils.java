@@ -7,13 +7,12 @@ import android.preference.PreferenceManager;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.fragments.ColorChooserDialog;
-import com.afollestad.materialdialogs.Theme;
 
 public class ThemeUtils {
 
     public ThemeUtils(Activity context) {
         mContext = context;
-        isChanged(); // invalidate stored booleans
+        isChanged(false); // invalidate stored booleans
     }
 
     private Context mContext;
@@ -22,6 +21,14 @@ public class ThemeUtils {
     private int mLastPrimaryColor;
     private int mLastAccentColor;
     private boolean mLastColoredNav;
+
+    public int getPopupTheme() {
+        if (mDarkMode || mTrueBlack) {
+            return R.style.ThemeOverlay_AppCompat_Dark;
+        } else {
+            return R.style.ThemeOverlay_AppCompat_Light;
+        }
+    }
 
     public static boolean isDarkMode(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -35,18 +42,12 @@ public class ThemeUtils {
     }
 
     public int primaryColor() {
-        String key = "primary_color";
-        if (mDarkMode || mTrueBlack) key += "_dark";
-        else key += "_light";
         final int defaultColor = mContext.getResources().getColor(R.color.cabinet_color);
-        return PreferenceManager.getDefaultSharedPreferences(mContext).getInt(key, defaultColor);
+        return PreferenceManager.getDefaultSharedPreferences(mContext).getInt("primary_color", defaultColor);
     }
 
     public void primaryColor(int newColor) {
-        String key = "primary_color";
-        if (mDarkMode || mTrueBlack) key += "_dark";
-        else key += "_light";
-        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt(key, newColor).commit();
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt("primary_color", newColor).commit();
     }
 
     public int primaryColorDark() {
@@ -54,11 +55,8 @@ public class ThemeUtils {
     }
 
     public int accentColor() {
-        String key = "accent_color";
-        if (mDarkMode || mTrueBlack) key += "_dark";
-        else key += "_light";
         final int defaultColor = mContext.getResources().getColor(R.color.cabinet_accent_color);
-        return PreferenceManager.getDefaultSharedPreferences(mContext).getInt(key, defaultColor);
+        return PreferenceManager.getDefaultSharedPreferences(mContext).getInt("accent_color", defaultColor);
     }
 
     public int accentColorLight() {
@@ -70,36 +68,33 @@ public class ThemeUtils {
     }
 
     public void accentColor(int newColor) {
-        String key = "accent_color";
-        if (mDarkMode || mTrueBlack) key += "_dark";
-        else key += "_light";
-        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt(key, newColor).commit();
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt("accent_color", newColor).commit();
     }
 
     public boolean isColoredNavBar() {
         return PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("colored_navbar", true);
     }
 
-    public static Theme getDialogTheme(Context context) {
-        if (isDarkMode(context) || isTrueBlack(context)) return Theme.DARK;
-        else return Theme.LIGHT;
-    }
-
-    public boolean isChanged() {
+    public boolean isChanged(boolean checkForChanged) {
         final boolean darkTheme = isDarkMode(mContext);
         final boolean blackTheme = isTrueBlack(mContext);
         final int primaryColor = primaryColor();
         final int accentColor = accentColor();
         final boolean coloredNav = isColoredNavBar();
 
-        final boolean changed = mDarkMode != darkTheme || mTrueBlack != blackTheme ||
-                mLastPrimaryColor != primaryColor || mLastAccentColor != accentColor ||
-                coloredNav != mLastColoredNav;
+        boolean changed = false;
+        if (checkForChanged) {
+            changed = mDarkMode != darkTheme || mTrueBlack != blackTheme ||
+                    mLastPrimaryColor != primaryColor || mLastAccentColor != accentColor ||
+                    coloredNav != mLastColoredNav;
+        }
+
         mDarkMode = darkTheme;
         mTrueBlack = blackTheme;
         mLastPrimaryColor = primaryColor;
         mLastAccentColor = accentColor;
         mLastColoredNav = coloredNav;
+
         return changed;
     }
 

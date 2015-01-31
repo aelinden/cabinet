@@ -19,7 +19,6 @@ import com.afollestad.cabinet.file.root.RootFile;
 import com.afollestad.cabinet.fragments.DetailsDialog;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.base.NetworkedActivity;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -99,7 +98,6 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                         @Override
                         public void run() {
                             new MaterialDialog.Builder(TextEditor.this)
-                                    .theme(ThemeUtils.getDialogTheme(TextEditor.this))
                                     .title(R.string.unsupported_extension)
                                     .content(R.string.unsupported_extension_desc)
                                     .positiveText(android.R.string.ok)
@@ -262,7 +260,6 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
     private void checkUnsavedChanges() {
         if (mOriginal != null && !mOriginal.equals(mInput.getText().toString())) {
             new MaterialDialog.Builder(this)
-                    .theme(ThemeUtils.getDialogTheme(this))
                     .title(R.string.unsaved_changes)
                     .content(R.string.unsaved_changes_desc)
                     .positiveText(R.string.yes)

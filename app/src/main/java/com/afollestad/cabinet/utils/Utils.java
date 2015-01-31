@@ -175,7 +175,6 @@ public class Utils {
 
     public static void showConfirmDialog(Activity context, int title, int message, Object replacement, final ClickListener callback) {
         new MaterialDialog.Builder(context)
-                .theme(ThemeUtils.getDialogTheme(context))
                 .title(title)
                 .content(message, replacement)
                 .positiveText(android.R.string.ok)
@@ -197,7 +196,6 @@ public class Utils {
             @Override
             public void run() {
                 new MaterialDialog.Builder(context)
-                        .theme(ThemeUtils.getDialogTheme(context))
                         .title(R.string.error)
                         .content(message)
                         .positiveText(android.R.string.ok)
@@ -224,7 +222,6 @@ public class Utils {
         @SuppressLint("InflateParams")
         final View view = context.getLayoutInflater().inflate(R.layout.dialog_input, null);
         MaterialDialog.Builder dialog = new MaterialDialog.Builder(context)
-                .theme(ThemeUtils.getDialogTheme(context))
                 .title(title)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
@@ -352,7 +349,6 @@ public class Utils {
         }
         if (mime == null) {
             new MaterialDialog.Builder(context)
-                    .theme(ThemeUtils.getDialogTheme(context))
                     .title(R.string.open_as)
                     .items(R.array.open_as_array)
                     .itemsCallback(new MaterialDialog.ListCallback() {

@@ -11,7 +11,6 @@ import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.file.CloudFile;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.services.NetworkService;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 /**
@@ -37,7 +36,6 @@ public abstract class NetworkedActivity extends ThemableActivity {
         if (mRemoteSwitch != null)
             host = mRemoteSwitch.getRemote().getHost();
         new MaterialDialog.Builder(this)
-                .theme(ThemeUtils.getDialogTheme(this))
                 .title(R.string.disconnect)
                 .content(R.string.disconnect_prompt, host)
                 .positiveText(R.string.yes)

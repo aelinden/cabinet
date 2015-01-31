@@ -51,7 +51,6 @@ import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.PauseOnScrollListener;
 import com.afollestad.cabinet.utils.Pins;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.cabinet.zip.Unzipper;
 import com.afollestad.cabinet.zip.Zipper;
@@ -74,6 +73,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }
     };
+
+    private static final int SETTINGS_REQUEST = 3002;
 
     public DirectoryFragment() {
     }
@@ -418,7 +419,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                         @Override
                                         public void run() {
                                             new MaterialDialog.Builder(getActivity())
-                                                    .theme(ThemeUtils.getDialogTheme(getActivity()))
                                                     .title(R.string.file_already_exists)
                                                     .content(R.string.file_already_exists_warning)
                                                     .positiveText(android.R.string.ok)
@@ -453,7 +453,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).paste();
             } else {
                 new MaterialDialog.Builder(getActivity())
-                        .theme(ThemeUtils.getDialogTheme(getActivity()))
                         .title(R.string.newStr)
                         .items(R.array.new_options)
                         .itemsCallback(new MaterialDialog.ListCallback() {
@@ -858,10 +857,18 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 ((DrawerActivity) getActivity()).donate(4);
                 break;
             case R.id.settings:
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
+                startActivityForResult(new Intent(getActivity(), SettingsActivity.class), SETTINGS_REQUEST);
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SETTINGS_REQUEST && resultCode == Activity.RESULT_OK) {
+            getActivity().recreate();
+        }
     }
 
     @Override
@@ -910,7 +917,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 if (file.getExtension().equals("zip")) {
                     final File fFile = file;
                     new MaterialDialog.Builder(getActivity())
-                            .theme(ThemeUtils.getDialogTheme(getActivity()))
                             .title(R.string.unzip)
                             .content(R.string.auto_unzip_prompt)
                             .positiveText(android.R.string.ok)

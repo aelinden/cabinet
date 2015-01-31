@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.afollestad.cabinet.R;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.Calendar;
@@ -60,7 +59,6 @@ public class AboutDialog extends DialogFragment {
 
         return new MaterialDialog.Builder(getActivity())
                 .positiveText(android.R.string.ok)
-                .theme(ThemeUtils.getDialogTheme(getActivity()))
                 .title(Html.fromHtml(getString(R.string.app_name_and_version, versionName)))
                 .customView(rootView, true)
                 .build();
