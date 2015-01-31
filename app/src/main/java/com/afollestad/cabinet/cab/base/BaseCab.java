@@ -106,7 +106,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ThemeUtils utils = act.getThemeUtils();
             final int oldColor = utils.primaryColorDark();
-            act.getWindow().setStatusBarColor(oldColor);
+            act.getWindow().setStatusBarColor(act.getResources().getColor(android.R.color.transparent));
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
         }

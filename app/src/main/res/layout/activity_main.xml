@@ -42,7 +42,6 @@
         android:id="@+id/nav_drawer_frame"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="?colorPrimaryDark"
         android:fitsSystemWindows="true"
         android:layout_gravity="start">
 

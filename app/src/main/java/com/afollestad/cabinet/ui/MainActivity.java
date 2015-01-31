@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -16,7 +15,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -131,7 +129,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drawer);
+        setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         mToolbar.setPopupTheme(getThemeUtils().getPopupTheme());
@@ -171,12 +169,9 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             navDrawerWidth = navDrawerWidthLimit;
         }
         navDrawerFrame.setLayoutParams(new DrawerLayout.LayoutParams(navDrawerWidth, DrawerLayout.LayoutParams.MATCH_PARENT, Gravity.START));
+        navDrawerFrame.setBackgroundColor(getThemeUtils().primaryColorDark());
 
-        int[] colorPrimaryDarkAttr = new int[]{R.attr.colorPrimaryDark};
-        TypedArray a = obtainStyledAttributes(new TypedValue().data, colorPrimaryDarkAttr);
-        int color = a.getColor(0, -1);
-        a.recycle();
-        mDrawerLayout.setStatusBarBackgroundColor(color);
+        mDrawerLayout.setStatusBarBackgroundColor(getThemeUtils().primaryColorDark());
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setColorNormal(getThemeUtils().accentColor());
