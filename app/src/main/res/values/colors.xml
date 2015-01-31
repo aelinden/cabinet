@@ -13,7 +13,7 @@
     <color name="empty_text">#C7C7C7</color>
     <color name="empty_text_dark">#575757</color>
 
-    <color name="dark_theme_gray_darker">#1F1F1F</color>
-    <color name="dark_theme_gray">#292929</color>
+    <color name="dark_theme_gray">#1F1F1F</color>
+    <color name="dark_theme_gray_darker">#292929</color>
 
 </resources>
