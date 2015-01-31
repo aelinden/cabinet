@@ -43,7 +43,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
-public class DrawerActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
+public class MainActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
 
     public interface FabListener {
         public abstract void onFabPressed(BaseFileCab.PasteMode pasteMode);
@@ -187,7 +187,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         fab.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Toast.makeText(DrawerActivity.this, fabPasteMode == BaseFileCab.PasteMode.ENABLED ? R.string.paste : R.string.newStr, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, fabPasteMode == BaseFileCab.PasteMode.ENABLED ? R.string.paste : R.string.newStr, Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -220,7 +220,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     private void checkRating() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (!prefs.getBoolean("shown_rating_dialog", false)) {
-            new MaterialDialog.Builder(DrawerActivity.this)
+            new MaterialDialog.Builder(MainActivity.this)
                     .title(R.string.rate)
                     .content(R.string.rate_desc)
                     .positiveText(R.string.sure)
@@ -229,7 +229,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
-                            PreferenceManager.getDefaultSharedPreferences(DrawerActivity.this)
+                            PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
                                     .edit().putBoolean("shown_rating_dialog", true).commit();
                             startActivity(new Intent(Intent.ACTION_VIEW)
                                     .setData(Uri.parse("market://details?id=com.afollestad.cabinet")));
@@ -237,7 +237,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
                         @Override
                         public void onNegative(MaterialDialog dialog) {
-                            PreferenceManager.getDefaultSharedPreferences(DrawerActivity.this)
+                            PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
                                     .edit().putBoolean("shown_rating_dialog", true).commit();
                         }
                     }).show();

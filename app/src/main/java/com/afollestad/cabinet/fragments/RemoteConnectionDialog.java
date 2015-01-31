@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.sftp.SftpClient;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.DialogAction;
@@ -155,6 +155,6 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
                 pass.getText().toString().trim(),
                 "/"
         ));
-        ((DrawerActivity) mContext).reloadNavDrawer(true);
+        ((MainActivity) mContext).reloadNavDrawer(true);
     }
 }

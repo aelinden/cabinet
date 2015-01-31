@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.adapters.NavigationDrawerAdapter;
 import com.afollestad.cabinet.file.base.File;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.StorageHelper;
 import com.afollestad.cabinet.utils.Utils;
@@ -145,7 +145,7 @@ public class NavigationDrawerFragment extends Fragment {
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(Gravity.START);
         }
-        DrawerActivity act = (DrawerActivity) getActivity();
+        MainActivity act = (MainActivity) getActivity();
         Pins.Item item = mAdapter.getItem(position);
         act.switchDirectory(item);
         mTitle = item.getDisplay(getActivity());

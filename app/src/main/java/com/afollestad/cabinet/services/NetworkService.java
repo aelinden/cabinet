@@ -13,7 +13,7 @@ import android.os.IBinder;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.file.CloudFile;
 import com.afollestad.cabinet.sftp.SftpClient;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 
 public class NetworkService extends Service {
 
@@ -58,7 +58,7 @@ public class NetworkService extends Service {
 
     private void startPersistedNotification(CloudFile file) {
         NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent mainIntent = new Intent(this, DrawerActivity.class)
+        Intent mainIntent = new Intent(this, MainActivity.class)
                 .putExtra("remote", file);
         PendingIntent mainPi = PendingIntent.getActivity(this, OPEN_MAIN,
                 mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);

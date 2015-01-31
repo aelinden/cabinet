@@ -27,7 +27,7 @@ import com.afollestad.cabinet.cab.CutCab;
 import com.afollestad.cabinet.cab.base.BaseFileCab;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.root.RootFile;
-import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.ThemeUtils;
@@ -83,7 +83,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             mPopupMenu.inflate(file.isDirectory() ? R.menu.dir_options : R.menu.file_options);
             boolean foundInCopyCab = false;
             boolean foundInCutCab = false;
-            DrawerActivity act = (DrawerActivity) mContext;
+            MainActivity act = (MainActivity) mContext;
             if (act.getCab() instanceof CopyCab) {
                 foundInCopyCab = ((BaseFileCab) act.getCab()).containsFile(file);
             } else if (act.getCab() instanceof CutCab) {
