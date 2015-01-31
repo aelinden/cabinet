@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
@@ -139,6 +140,7 @@ public class DetailsDialog extends DialogFragment implements CompoundButton.OnCh
         file = (File) getArguments().getSerializable("file");
         file.setContext(getActivity());
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        @SuppressLint("InflateParams")
         View rootView = layoutInflater.inflate(R.layout.dialog_custom, null);
 
         ownerR = (CheckBox) rootView.findViewById(R.id.ownerR);

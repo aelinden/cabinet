@@ -279,7 +279,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_recyclerview, null);
+        return inflater.inflate(R.layout.fragment_recyclerview, container);
     }
 
     private void showNewFolderDialog(final Activity context) {

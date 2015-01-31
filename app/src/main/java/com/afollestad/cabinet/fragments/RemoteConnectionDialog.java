@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,6 +34,7 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
 
     public void show() {
         Utils.lockOrientation(mContext);
+        @SuppressLint("InflateParams")
         View view = mContext.getLayoutInflater().inflate(R.layout.dialog_add_remote, null);
         testConnection = (Button) view.findViewById(R.id.testConnection);
         host = (TextView) view.findViewById(R.id.host);

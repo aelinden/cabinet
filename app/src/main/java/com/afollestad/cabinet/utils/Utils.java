@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
@@ -223,6 +224,7 @@ public class Utils {
     }
 
     public static void showInputDialog(Activity context, int title, int hint, String prefillInput, final InputCallback callback) {
+        @SuppressLint("InflateParams")
         final View view = context.getLayoutInflater().inflate(R.layout.dialog_input, null);
         MaterialDialog.Builder dialog = new MaterialDialog.Builder(context)
                 .positiveColorRes(R.color.cabinet_accent_color)

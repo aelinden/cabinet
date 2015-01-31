@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -50,6 +51,7 @@ public class AboutDialog extends DialogFragment {
             versionName = VERSION_UNAVAILABLE;
         }
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        @SuppressLint("InflateParams")
         View rootView = layoutInflater.inflate(R.layout.dialog_custom, null);
         rootView.findViewById(R.id.permissionsGroup).setVisibility(View.GONE);
         TextView aboutBodyView = (TextView) rootView.findViewById(R.id.body);

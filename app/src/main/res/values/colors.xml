@@ -11,8 +11,6 @@
     <color name="cabinet_accent_color_darker">#d81b60</color>
 
     <color name="drawer_background">#fff</color>
-    <color name="accent_color">#333</color>
-    <color name="search_view_hint">#BBFFFFFF</color>
 
     <color name="button_disabled">#ddd</color>
     <color name="button_disabled_dark">#303030</color>
