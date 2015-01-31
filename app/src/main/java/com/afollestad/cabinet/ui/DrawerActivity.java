@@ -214,7 +214,6 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (!prefs.getBoolean("shown_rating_dialog", false)) {
             new MaterialDialog.Builder(DrawerActivity.this)
-                    .positiveColorRes(R.color.cabinet_accent_color)
                     .theme(ThemeUtils.getDialogTheme(DrawerActivity.this))
                     .title(R.string.rate)
                     .content(R.string.rate_desc)

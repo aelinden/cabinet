@@ -86,7 +86,6 @@ public class RemoteConnectionDialog implements SftpClient.CompletionCallback {
         });
 
         dialog = new MaterialDialog.Builder(mContext)
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(mContext))
                 .title(R.string.new_remote_connection)
                 .customView(view, true)

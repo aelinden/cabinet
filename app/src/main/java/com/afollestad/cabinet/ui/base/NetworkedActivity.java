@@ -37,7 +37,6 @@ public abstract class NetworkedActivity extends ThemableActivity {
         if (mRemoteSwitch != null)
             host = mRemoteSwitch.getRemote().getHost();
         new MaterialDialog.Builder(this)
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(this))
                 .title(R.string.disconnect)
                 .content(R.string.disconnect_prompt, host)

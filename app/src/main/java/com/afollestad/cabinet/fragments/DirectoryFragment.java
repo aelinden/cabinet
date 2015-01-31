@@ -417,7 +417,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                         @Override
                                         public void run() {
                                             new MaterialDialog.Builder(getActivity())
-                                                    .positiveColorRes(R.color.cabinet_accent_color)
                                                     .theme(ThemeUtils.getDialogTheme(getActivity()))
                                                     .title(R.string.file_already_exists)
                                                     .content(R.string.file_already_exists_warning)
@@ -453,7 +452,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 ((BaseFileCab) ((DrawerActivity) getActivity()).getCab()).paste();
             } else {
                 new MaterialDialog.Builder(getActivity())
-                        .positiveColorRes(R.color.cabinet_accent_color)
                         .theme(ThemeUtils.getDialogTheme(getActivity()))
                         .title(R.string.newStr)
                         .items(R.array.new_options)
@@ -910,7 +908,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 if (file.getExtension().equals("zip")) {
                     final File fFile = file;
                     new MaterialDialog.Builder(getActivity())
-                            .positiveColorRes(R.color.cabinet_accent_color)
                             .theme(ThemeUtils.getDialogTheme(getActivity()))
                             .title(R.string.unzip)
                             .content(R.string.auto_unzip_prompt)

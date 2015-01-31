@@ -175,7 +175,6 @@ public class Utils {
 
     public static void showConfirmDialog(Activity context, int title, int message, Object replacement, final ClickListener callback) {
         new MaterialDialog.Builder(context)
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(context))
                 .title(title)
                 .content(message, replacement)
@@ -186,8 +185,7 @@ public class Utils {
                     public void onPositive(MaterialDialog dialog) {
                         callback.onPositive(0, null);
                     }
-                })
-                .build().show();
+                }).show();
     }
 
     public static void showErrorDialog(Activity context, int message, Exception e) {
@@ -199,7 +197,6 @@ public class Utils {
             @Override
             public void run() {
                 new MaterialDialog.Builder(context)
-                        .positiveColorRes(R.color.cabinet_accent_color)
                         .theme(ThemeUtils.getDialogTheme(context))
                         .title(R.string.error)
                         .content(message)
@@ -227,7 +224,6 @@ public class Utils {
         @SuppressLint("InflateParams")
         final View view = context.getLayoutInflater().inflate(R.layout.dialog_input, null);
         MaterialDialog.Builder dialog = new MaterialDialog.Builder(context)
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(context))
                 .title(title)
                 .positiveText(android.R.string.ok)
@@ -356,7 +352,6 @@ public class Utils {
         }
         if (mime == null) {
             new MaterialDialog.Builder(context)
-                    .positiveColorRes(R.color.cabinet_accent_color)
                     .theme(ThemeUtils.getDialogTheme(context))
                     .title(R.string.open_as)
                     .items(R.array.open_as_array)
@@ -383,7 +378,7 @@ public class Utils {
                             }
                             openLocal(context, file, newMime, remoteSource);
                         }
-                    }).build().show();
+                    }).show();
             return;
         }
         try {

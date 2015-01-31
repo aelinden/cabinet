@@ -61,7 +61,6 @@ public class AboutDialog extends DialogFragment {
         return new MaterialDialog.Builder(getActivity())
                 .positiveText(android.R.string.ok)
                 .theme(ThemeUtils.getDialogTheme(getActivity()))
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .title(Html.fromHtml(getString(R.string.app_name_and_version, versionName)))
                 .customView(rootView, true)
                 .build();

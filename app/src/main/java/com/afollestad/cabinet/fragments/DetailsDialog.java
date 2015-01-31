@@ -158,7 +158,6 @@ public class DetailsDialog extends DialogFragment implements CompoundButton.OnCh
 
         return new MaterialDialog.Builder(getActivity())
                 .positiveText(android.R.string.ok)
-                .positiveColorRes(R.color.cabinet_accent_color)
                 .theme(ThemeUtils.getDialogTheme(getActivity()))
                 .title(R.string.details)
                 .customView(rootView, true)

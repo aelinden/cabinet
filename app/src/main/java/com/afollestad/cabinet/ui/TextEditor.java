@@ -99,7 +99,6 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                         @Override
                         public void run() {
                             new MaterialDialog.Builder(TextEditor.this)
-                                    .positiveColorRes(R.color.cabinet_accent_color)
                                     .theme(ThemeUtils.getDialogTheme(TextEditor.this))
                                     .title(R.string.unsupported_extension)
                                     .content(R.string.unsupported_extension_desc)
@@ -263,7 +262,6 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
     private void checkUnsavedChanges() {
         if (mOriginal != null && !mOriginal.equals(mInput.getText().toString())) {
             new MaterialDialog.Builder(this)
-                    .positiveColorRes(R.color.cabinet_accent_color)
                     .theme(ThemeUtils.getDialogTheme(this))
                     .title(R.string.unsaved_changes)
                     .content(R.string.unsaved_changes_desc)
