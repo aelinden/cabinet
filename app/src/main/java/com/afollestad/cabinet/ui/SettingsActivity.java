@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -65,14 +66,20 @@ public class SettingsActivity extends ThemableActivity
                 }
             });
 
-            findPreference("colored_navbar").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    if (getActivity() != null)
-                        getActivity().recreate();
-                    return true;
-                }
-            });
+            Preference coloredNav = findPreference("colored_navbar");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                coloredNav.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
+                        if (getActivity() != null)
+                            getActivity().recreate();
+                        return true;
+                    }
+                });
+            } else {
+                coloredNav.setEnabled(false);
+                coloredNav.setSummary(R.string.only_available_lollipop);
+            }
 
 
             ThemeUtils themeUtils = ((ThemableActivity) getActivity()).getThemeUtils();
