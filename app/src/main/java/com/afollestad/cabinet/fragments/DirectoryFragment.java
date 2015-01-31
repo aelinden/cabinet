@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
@@ -49,7 +48,6 @@ import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.ui.SettingsActivity;
-import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.PauseOnScrollListener;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.Utils;
@@ -509,47 +507,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (act != null) act.runOnUiThread(runnable);
     }
 
-    public final void setStatus(int message, String replacement) {
-        View v = getView();
-        if (v == null) return;
-        TextView status = (TextView) v.findViewById(R.id.status);
-        if (message == 0) {
-            status.setVisibility(View.GONE);
-            invalidateStatusColorsAndElevation(false);
-        } else {
-            status.setVisibility(View.VISIBLE);
-            status.setText(getString(message, replacement));
-            invalidateStatusColorsAndElevation(false);
-        }
-    }
-
-    public void invalidateStatusColorsAndElevation(boolean forceCabGone) {
-        View v = getView();
-        if (v == null) return;
-        TextView status = (TextView) v.findViewById(R.id.status);
-        MainActivity act = (MainActivity) getActivity();
-        final float toolbarElevation = getResources().getDimension(R.dimen.toolbar_elevation);
-        final boolean shown = status.getVisibility() == View.VISIBLE;
-
-        if (shown) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                act.mToolbar.setElevation(0f);
-                status.setElevation(toolbarElevation);
-            }
-            BaseCab cab = ((MainActivity) getActivity()).getCab();
-            int bgColor;
-            if (cab != null && cab.isActive() && !forceCabGone) {
-                bgColor = getResources().getColor(R.color.dark_theme_gray_darker);
-            } else {
-                bgColor = ((ThemableActivity) getActivity()).getThemeUtils().primaryColor();
-            }
-            status.setBackgroundColor(bgColor);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            act.mToolbar.setElevation(toolbarElevation);
-            status.setElevation(0f);
-        }
-    }
-
     public final void setListShown(boolean shown) {
         View v = getView();
         if (v != null) {
@@ -706,6 +663,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             return;
         }
 
+        MainActivity act = (MainActivity) getActivity();
+
         setListShown(false);
         mAdapter.showLastModified = (sorter == 5);
         mDirectory.setContext(getActivity());
@@ -713,7 +672,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         FileFilter lsFilter = null;
         if (filter != null) {
             String display = getFilterDisplay();
-            setStatus(R.string.filter_active, display);
+            act.setStatus(R.string.filter_active, display);
             setEmptyText(getString(R.string.no_files_filter, display));
             lsFilter = new FileFilter() {
                 @Override
@@ -734,7 +693,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 }
             };
         } else {
-            setStatus(0, null);
+            act.setStatus(0, null);
             setEmptyText(getString(R.string.no_files));
         }
 
@@ -893,14 +852,15 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
 
     @Override
     public void onIconClicked(int index, File file, boolean added) {
-        BaseCab cab = ((MainActivity) getActivity()).getCab();
+        MainActivity activity = (MainActivity) getActivity();
+        BaseCab cab = activity.getCab();
         if (cab != null && (cab instanceof CopyCab || cab instanceof CutCab) && cab.isActive()) {
             if (added) ((BaseFileCab) cab).addFile(file, false);
             else ((BaseFileCab) cab).removeFile(file, false);
         } else {
             boolean shouldCreateCab = cab == null || !cab.isActive() || !(cab instanceof MainCab) && added;
             if (shouldCreateCab)
-                ((MainActivity) getActivity()).setCab(new MainCab()
+                activity.setCab(new MainCab()
                         .setFragment(this).setFile(file, false).start());
             else {
                 if (added) ((BaseFileCab) cab).addFile(file, false);
@@ -908,7 +868,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }
 
-        invalidateStatusColorsAndElevation(false);
+        activity.invalidateToolbarColors(false);
     }
 
     @Override

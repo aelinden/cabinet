@@ -10,6 +10,8 @@
         <item name="actionModePasteDrawable">@drawable/abc_ic_menu_paste_mtrl_am_alpha</item>
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
+
+        <item name="toolbar_shadow">@null</item>
     </style>
 
     <style name="_SelectorParentDark" parent="Theme.AppCompat.NoActionBar">
@@ -21,6 +23,8 @@
         <item name="actionModePasteDrawable">@drawable/abc_ic_menu_paste_mtrl_am_alpha</item>
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
+
+        <item name="toolbar_shadow">@null</item>
     </style>
 
 </resources>

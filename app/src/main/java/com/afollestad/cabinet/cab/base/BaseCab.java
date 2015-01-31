@@ -102,17 +102,17 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
     @SuppressLint("NewApi")
     @Override
     public void onDestroyActionMode(ActionMode actionMode) {
+        MainActivity act = getContext();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            MainActivity act = getContext();
             ThemeUtils utils = act.getThemeUtils();
             final int oldColor = utils.primaryColorDark();
             act.getWindow().setStatusBarColor(oldColor);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
-            if (!overrideDestroy) {
-                getFragment().invalidateStatusColorsAndElevation(true);
-                act.invalidateToolbarMenu(false);
-            }
+        }
+        if (!overrideDestroy) {
+            act.invalidateToolbarColors(true);
+            act.invalidateToolbarMenu(false);
         }
         mActionMode = null;
     }
