@@ -120,6 +120,12 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         return true;
     }
 
+    public void invalidateToolbarMenu(boolean cabShown) {
+        for (int i = 0; i < mToolbar.getMenu().size(); i++) {
+            mToolbar.getMenu().getItem(i).setVisible(!cabShown);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

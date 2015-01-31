@@ -82,6 +82,7 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
             act.getWindow().setStatusBarColor(darkGray);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(darkGray);
+            act.invalidateToolbarMenu(true);
         }
         return true;
     }
@@ -108,8 +109,10 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
             act.getWindow().setStatusBarColor(oldColor);
             if (utils.isColoredNavBar())
                 act.getWindow().setNavigationBarColor(oldColor);
-            if (!overrideDestroy)
+            if (!overrideDestroy) {
                 getFragment().invalidateStatusColorsAndElevation(true);
+                act.invalidateToolbarMenu(false);
+            }
         }
         mActionMode = null;
     }
