@@ -868,7 +868,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }
 
-        activity.invalidateStatusColors(false);
+        activity.invalidateToolbarColors(false);
     }
 
     @Override

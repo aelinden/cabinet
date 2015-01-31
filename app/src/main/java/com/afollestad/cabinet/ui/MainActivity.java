@@ -313,28 +313,25 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         TextView status = (TextView) findViewById(R.id.status);
         if (message == 0) {
             status.setVisibility(View.GONE);
-            invalidateStatusColors(false);
+            invalidateToolbarColors(false);
         } else {
             status.setVisibility(View.VISIBLE);
             status.setText(getString(message, replacement));
-            invalidateStatusColors(false);
+            invalidateToolbarColors(false);
         }
     }
 
-    public void invalidateStatusColors(boolean forceCabGone) {
-        TextView status = (TextView) findViewById(R.id.status);
-        final boolean shown = status.getVisibility() == View.VISIBLE;
+    public void invalidateToolbarColors(boolean forceCabGone) {
+        LinearLayout toolbarDirectory = (LinearLayout) findViewById(R.id.toolbar_directory);
 
-        if (shown) {
-            BaseCab cab = getCab();
-            int bgColor;
-            if (cab != null && cab.isActive() && !forceCabGone) {
-                bgColor = getResources().getColor(R.color.dark_theme_gray_darker);
-            } else {
-                bgColor = getThemeUtils().primaryColor();
-            }
-            status.setBackgroundColor(bgColor);
+        BaseCab cab = getCab();
+        int bgColor;
+        if (cab != null && cab.isActive() && !forceCabGone) {
+            bgColor = getResources().getColor(R.color.dark_theme_gray_darker);
+        } else {
+            bgColor = getThemeUtils().primaryColor();
         }
+        toolbarDirectory.setBackgroundColor(bgColor);
     }
 
     @Override
