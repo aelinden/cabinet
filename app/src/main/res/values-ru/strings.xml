@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome">Добропожаловать</string>
-    <string name="welcome_intro">Добро пожаловать в Cabinet! Cabinet это простой файловый менеджер разработанный для эстетического
- удовольствия и работы, которую должен выполнять файловый менеджер.\n\nВзгляните на данный файл:</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="welcome_intro">Добро пожаловать в Cabinet! Cabinet — это простой файловый менеджер, разработанный быть эстетически
+приятным и простым в использовании.\n\nВзгляните на этот файл:</string>
     <string name="welcome_conclusion">Попробуйте нажать на изображение файла слева или на иконку меню справа. Для выделения и работы с файлами и папками, нажимайте на их изображение слева, или используйте долгое нажатие. Для доступа к другим действиям с файлами, используйте иконку меню справа.\n\nВ Cabinet
 есть и другие различные функции, такие как архивация и удалённый доступ через SFTP. Огромное спасибо за то, что пользуетесь Cabinet!</string>
-    <string name="lets_go">Использовать!</string>
+    <string name="lets_go">Поехали!</string>
     <string name="open_as">Открыть как…</string>
     <string name="pin">Закрепить</string>
     <string name="copy">Копировать</string>
@@ -13,27 +13,26 @@
     <string name="rename">Переименовать</string>
     <string name="delete">Удалить</string>
     <string name="paste">Вставить</string>
-    <string name="share">Поделиться</string>
-    <string name="zip">Архив</string>
-    <string name="unzip">Разархивировать</string>
+    <string name="share">Отправить</string>
+    <string name="zip">Архивировать</string>
+    <string name="unzip">Распаковать</string>
     <string name="selectAll">Выбрать всё</string>
-    <string name="details">Детали</string>
-    <string name="no_files">Пустая папка</string>
+    <string name="details">Свойства</string>
+    <string name="no_files">Файлов нет</string>
     <string name="storage">Закладки</string>
-    <string name="root">Устройство</string>
-    <string name="directory">Папка</string>
+    <string name="root">Система</string>
+    <string name="directory">Каталог</string>
     <string name="unknown">Неизвестно</string>
     <string name="go_up">Выше</string>
     <string name="x_files">%1$d файлов</string>
     <string name="x_dirs">%1$d папок</string>
     <string name="no_x_files">Нет %1$s файлов</string>
-    <string name="done">Выполнено</string>
-    <string name="remove_shortcut">Удалить закладку</string>
-    <string name="confirm_remove_shortcut">Вы уверены что хотите удалить закладку на %1$s?</string>
-    <string name="sort_modified">Последние изменённые</string>
+    <string name="done">Готово</string>
+    <string name="remove_shortcut">Удалить ярлык</string>
+    <string name="confirm_remove_shortcut">Вы уверены, что хотите удалить свой ярлык %1$s?</string>
+    <string name="sort_modified">Последние изменения</string>
     <string name="modified_x">Изменён %1$s</string>
-    <string name="iconpress_hint">Вы можете выделить файл нажав на его иконку!</string>
-
+    <string name="iconpress_hint">Вы можете быстро выбрать файл, нажав на его иконку</string>
     <string name="navigation_drawer_open">Открыть меню</string>
     <string name="navigation_drawer_close">Закрыть меню</string>
     <string name="new_folder">Новая папка</string>
@@ -45,9 +44,9 @@
     <string name="no">Нет</string>
     <string name="yes">Да</string>
     <string name="newStr">Создать</string>
-    <string name="search">Искать</string>
-    <string name="confirm_delete">Вы уверены что хотите удалить %1$s?</string>
-    <string name="confirm_delete_xfiles">Вы уверены что хотите удалить %1$d файлов?</string>
+    <string name="search">Поиск</string>
+    <string name="confirm_delete">Вы уверены, что хотите удалить %1$s?</string>
+    <string name="confirm_delete_xfiles">Вы уверены, что хотите удалить %1$d файлов?</string>
     <string name="unavailable">Недоступен</string>
     <string name="grid_mode">Режим сетки</string>
     <string name="sort_by">Сортировать по</string>
@@ -169,6 +168,7 @@
     <string name="no_files_filter">Нет файлов соответствующих отбору: %1$s</string>
     <string name="superuser_not_available">Права Суперпользователя не доступны</string>
     <string name="filter_active">Отбор по: %1$s</string>
+    <string name="base_theme">Основная тема</string>
     <string-array name="base_themes">
         <item>Светлая</item>
         <item>Темная</item>
@@ -189,6 +189,4 @@
     <string name="defaultStr">По умолчанию</string>
     <string name="only_available_lollipop">Эта особенность доступна только на Android Lollipop и выше.</string>
     <string name="base_theme_desc">Выберете по желанию, какую тему использовать: светлую, темную или с настоящим черным для AMOLED.</string>
-    <string name="base_theme">Base Theme</string>
-
 </resources>
