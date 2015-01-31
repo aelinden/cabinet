@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,7 +21,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.cabinet.App;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.cab.CopyCab;
 import com.afollestad.cabinet.cab.CutCab;
@@ -27,6 +28,7 @@ import com.afollestad.cabinet.cab.base.BaseFileCab;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.root.RootFile;
 import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.ui.base.ThemableActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.TimeUtils;
 import com.afollestad.cabinet.utils.Utils;
@@ -51,6 +53,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         mShowDirs = showDirectories;
         checkedPaths = new ArrayList<>();
         gridMode = Utils.getGridMode(context);
+        primaryColor = ((ThemableActivity) context).getThemeUtils().primaryColor();
     }
 
     @Override
@@ -144,6 +147,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     private List<String> checkedPaths;
     public boolean showLastModified;
     private boolean gridMode;
+    private static int primaryColor;
 
     public void add(File file) {
         mFiles.add(file);
@@ -242,10 +246,18 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         if (mime != null) {
             if (mime.startsWith("image/")) {
                 Uri uri = Uri.fromFile(file.toJavaFile());
-                DisplayImageOptions options = App.getDisplayOptions(R.drawable.ic_file_image);
-                ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon, options);
+                ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon);
             } else if (mime.equals("application/vnd.android.package-archive")) {
-                DisplayImageOptions options = App.getDisplayOptions(R.drawable.ic_file_apk);
+                final Drawable fallback = context.getResources().getDrawable(R.drawable.ic_file_apk);
+                fallback.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+                final DisplayImageOptions options = new DisplayImageOptions.Builder()
+                        .resetViewBeforeLoading(true)
+                        .showImageOnLoading(fallback)
+                        .showImageForEmptyUri(fallback)
+                        .showImageOnFail(fallback)
+                        .cacheInMemory(true)
+                        .cacheOnDisk(false)
+                        .build();
                 ImageLoader.getInstance().displayImage(file.getPath(), icon, options);
             } else {
                 int resId = R.drawable.ic_file_misc;
@@ -286,9 +298,15 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
                         }
                     }
                 }
-                icon.setImageResource(resId);
+                Drawable d = context.getResources().getDrawable(resId);
+                d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+                icon.setImageDrawable(d);
             }
-        } else icon.setImageResource(R.drawable.ic_file_misc);
+        } else {
+            Drawable d = context.getResources().getDrawable(R.drawable.ic_file_misc);
+            d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+            icon.setImageDrawable(d);
+        }
     }
 
     @Override

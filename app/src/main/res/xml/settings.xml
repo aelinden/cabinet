@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="@string/info"
-        android:layout="@layout/preference_category_custom">
+    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/info">
 
         <Preference
             android:key="about"
@@ -11,11 +9,9 @@
             android:summary="@string/about_desc"
             android:layout="@layout/preference_custom" />
 
-    </PreferenceCategory>
+    </com.afollestad.cabinet.views.CabinetPreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/files"
-        android:layout="@layout/preference_category_custom">
+    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/files">
 
         <CheckBoxPreference
             android:key="show_hidden"
@@ -24,11 +20,9 @@
             android:persistent="true"
             android:layout="@layout/preference_custom" />
 
-    </PreferenceCategory>
+    </com.afollestad.cabinet.views.CabinetPreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/ui"
-        android:layout="@layout/preference_category_custom">
+    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/ui">
 
         <CheckBoxPreference
             android:key="dark_mode"
@@ -45,6 +39,24 @@
             android:dependency="dark_mode"
             android:layout="@layout/preference_custom" />
 
-    </PreferenceCategory>
+        <com.afollestad.cabinet.views.CabinetPreference
+            android:key="primary_color"
+            android:title="@string/primary_color"
+            android:summary="@string/primary_color_desc" />
+
+        <com.afollestad.cabinet.views.CabinetPreference
+            android:key="accent_color"
+            android:title="@string/accent_color"
+            android:summary="@string/accent_color_desc" />
+
+        <CheckBoxPreference
+            android:key="colored_navbar"
+            android:title="@string/colored_navbar"
+            android:summary="@string/colored_navbar_desc"
+            android:layout="@layout/preference_custom"
+            android:persistent="true"
+            android:defaultValue="true" />
+
+    </com.afollestad.cabinet.views.CabinetPreferenceCategory>
 
 </PreferenceScreen>

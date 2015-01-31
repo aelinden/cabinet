@@ -8,15 +8,29 @@ import android.view.MenuItem;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.fragments.AboutDialog;
+import com.afollestad.cabinet.fragments.ColorChooserDialog;
 import com.afollestad.cabinet.ui.base.ThemableActivity;
+import com.afollestad.cabinet.utils.ThemeUtils;
+import com.afollestad.cabinet.utils.Utils;
+import com.afollestad.cabinet.views.CabinetPreference;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * @author Aidan Follestad (afollestad)
  */
-public class SettingsActivity extends ThemableActivity implements AboutDialog.DismissListener {
+public class SettingsActivity extends ThemableActivity
+        implements AboutDialog.DismissListener, ColorChooserDialog.ColorCallback {
 
     private static boolean aboutDialogShown;
+
+    @Override
+    public void onColorSelection(int title, int color) {
+        if (title == R.string.primary_color)
+            getThemeUtils().primaryColor(color);
+        else
+            getThemeUtils().accentColor(color);
+        recreate();
+    }
 
     public static class SettingsFragment extends PreferenceFragment {
 
@@ -50,6 +64,42 @@ public class SettingsActivity extends ThemableActivity implements AboutDialog.Di
                     return true;
                 }
             });
+
+            findPreference("colored_navbar").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    if (getActivity() != null)
+                        getActivity().recreate();
+                    return true;
+                }
+            });
+
+
+            ThemeUtils themeUtils = ((ThemableActivity) getActivity()).getThemeUtils();
+            CabinetPreference primaryColor = (CabinetPreference) findPreference("primary_color");
+            primaryColor.setColor(themeUtils.primaryColor(), Utils.resolveColor(getActivity(), R.attr.colorAccent));
+            primaryColor.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    ThemeUtils themeUtils = ((ThemableActivity) getActivity()).getThemeUtils();
+                    new ColorChooserDialog().show(getActivity(), preference.getTitleRes(),
+                            themeUtils.primaryColor());
+                    return true;
+                }
+            });
+
+
+            CabinetPreference accentColor = (CabinetPreference) findPreference("accent_color");
+            accentColor.setColor(themeUtils.accentColor(), Utils.resolveColor(getActivity(), R.attr.colorAccent));
+            accentColor.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    ThemeUtils themeUtils = ((ThemableActivity) getActivity()).getThemeUtils();
+                    new ColorChooserDialog().show(getActivity(), preference.getTitleRes(),
+                            themeUtils.accentColor());
+                    return true;
+                }
+            });
         }
     }
 
@@ -62,8 +112,11 @@ public class SettingsActivity extends ThemableActivity implements AboutDialog.Di
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preference_activity_custom);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-        setSupportActionBar(toolbar);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
+
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getFragmentManager().beginTransaction().replace(R.id.settings_content, new SettingsFragment()).commit();
     }

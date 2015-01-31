@@ -15,6 +15,7 @@ import com.afollestad.cabinet.file.LocalFile;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.Utils;
+import com.afollestad.materialdialogs.ThemeSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         mContext = context;
         mItems = new ArrayList<>();
         mListener = listener;
-        selectionColor = context.getResources().getColor(R.color.cabinet_color);
         bodyText = Utils.resolveColor(context, R.attr.body_text);
 
         if (Pins.getAll(context).size() == 0) {
@@ -88,7 +88,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     private List<Pins.Item> mItems;
     private int mCheckedPos = -1;
     private ClickListener mListener;
-    private int selectionColor;
     private int bodyText;
 
     public void reload(Context context) {
@@ -147,7 +146,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         holder.title.setOnClickListener(this);
         holder.title.setOnLongClickListener(this);
         holder.title.setActivated(mCheckedPos == index);
-        holder.title.setTextColor(mCheckedPos == index ? selectionColor : bodyText);
+        holder.title.setTextColor(mCheckedPos == index ?
+                ThemeSingleton.get().positiveColor : bodyText);
 
         if (item.isRemote()) {
             holder.title.setText(item.getDisplay(mContext));

@@ -1,14 +1,16 @@
 package com.afollestad.cabinet.ui.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
 import com.afollestad.cabinet.utils.ThemeUtils;
+import com.afollestad.materialdialogs.ThemeSingleton;
 
 /**
  * @author Aidan Follestad (afollestad)
  */
-public class ThemableActivity extends ActionBarActivity {
+public abstract class ThemableActivity extends ActionBarActivity {
 
     private ThemeUtils mThemeUtils;
 
@@ -16,11 +18,27 @@ public class ThemableActivity extends ActionBarActivity {
         return false;
     }
 
+    public ThemeUtils getThemeUtils() {
+        return mThemeUtils;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mThemeUtils = new ThemeUtils(this);
         setTheme(mThemeUtils.getCurrent(hasNavDrawer()));
         super.onCreate(savedInstanceState);
+
+        final int accent = mThemeUtils.accentColor();
+        ThemeSingleton.get().positiveColor = accent;
+        ThemeSingleton.get().neutralColor = accent;
+        ThemeSingleton.get().negativeColor = accent;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final int dark = getThemeUtils().primaryColorDark();
+            getWindow().setStatusBarColor(dark);
+            if (getThemeUtils().isColoredNavBar())
+                getWindow().setNavigationBarColor(dark);
+        }
     }
 
     @Override

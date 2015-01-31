@@ -12,6 +12,7 @@
     <dimen name="menu_touchdelegate">25dp</dimen>
     <dimen name="welcome_section1_margin">5dp</dimen>
     <dimen name="file_item_spacing">12dp</dimen>
-
+    <dimen name="circle_view_border">1dp</dimen>
+    <dimen name="circle_view_check">24dp</dimen>
 
 </resources>

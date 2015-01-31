@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.fragments.DirectoryFragment;
 import com.afollestad.cabinet.ui.DrawerActivity;
+import com.afollestad.cabinet.utils.ThemeUtils;
 
 import java.io.Serializable;
 
@@ -73,8 +74,14 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
         mActionMode = actionMode;
         if (getMenu() != -1)
             actionMode.getMenuInflater().inflate(getMenu(), menu);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            context.getWindow().setStatusBarColor(context.getResources().getColor(R.color.cabinet_color_darker));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            DrawerActivity act = getContext();
+            ThemeUtils utils = act.getThemeUtils();
+            final int darkGray = act.getResources().getColor(R.color.dark_theme_gray_lighter);
+            act.getWindow().setStatusBarColor(darkGray);
+            if (utils.isColoredNavBar())
+                act.getWindow().setNavigationBarColor(darkGray);
+        }
         return true;
     }
 
@@ -93,8 +100,14 @@ public abstract class BaseCab implements ActionMode.Callback, Serializable {
     @SuppressLint("NewApi")
     @Override
     public void onDestroyActionMode(ActionMode actionMode) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            getContext().getWindow().setStatusBarColor(getContext().getResources().getColor(android.R.color.transparent));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            DrawerActivity act = getContext();
+            ThemeUtils utils = act.getThemeUtils();
+            final int oldColor = utils.primaryColorDark();
+            act.getWindow().setStatusBarColor(oldColor);
+            if (utils.isColoredNavBar())
+                act.getWindow().setNavigationBarColor(oldColor);
+        }
         mActionMode = null;
     }
 }

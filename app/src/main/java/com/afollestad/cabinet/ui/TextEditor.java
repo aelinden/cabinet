@@ -48,11 +48,13 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_texteditor);
 
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
+
         mInput = (EditText) findViewById(R.id.input);
         mInput.addTextChangedListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (getIntent().getData() != null) load(getIntent().getData());
@@ -279,8 +281,9 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                         }
                     })
                     .build().show();
+        } else {
+            finish();
         }
-        else { finish(); }
     }
 
     @Override

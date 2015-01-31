@@ -5,6 +5,8 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -31,12 +33,16 @@ import com.afollestad.cabinet.fragments.DirectoryFragment;
 import com.afollestad.cabinet.fragments.NavigationDrawerFragment;
 import com.afollestad.cabinet.fragments.WelcomeFragment;
 import com.afollestad.cabinet.ui.base.NetworkedActivity;
+import com.afollestad.cabinet.utils.APKIconDownloader;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.melnykov.fab.FloatingActionButton;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class DrawerActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
 
@@ -54,7 +60,6 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     public boolean shouldAttachFab; // used during config change, tells fragment to reattach to cab
     public boolean pickMode; // flag indicating whether user is picking a file for another app
     public DrawerLayout mDrawerLayout;
-    private Toolbar mActionBarToolbar;
 
     public BaseCab getCab() {
         return mCab;
@@ -110,16 +115,6 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         } else getFragmentManager().popBackStack();
     }
 
-    protected Toolbar getActionBarToolbar() {
-        if (mActionBarToolbar == null) {
-            mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-            if (mActionBarToolbar != null) {
-                setSupportActionBar(mActionBarToolbar);
-            }
-        }
-        return mActionBarToolbar;
-    }
-
     @Override
     protected boolean hasNavDrawer() {
         return true;
@@ -129,7 +124,10 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-        getActionBarToolbar();
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar.setBackgroundColor(getThemeUtils().primaryColor());
+        setSupportActionBar(mToolbar);
 
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("cab")) {
@@ -147,7 +145,7 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigationDrawerFragment.setUp(mDrawerLayout, mActionBarToolbar);
+        mNavigationDrawerFragment.setUp(mDrawerLayout, mToolbar);
 
         FrameLayout navDrawerFrame = (FrameLayout) findViewById(R.id.nav_drawer_frame);
         int navDrawerMargin = getResources().getDimensionPixelSize(R.dimen.nav_drawer_margin);
@@ -166,6 +164,9 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         mDrawerLayout.setStatusBarBackgroundColor(color);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setColorNormal(getThemeUtils().accentColor());
+        fab.setColorPressed(getThemeUtils().accentColorDark());
+        fab.setColorRipple(getThemeUtils().accentColorLight());
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,6 +182,22 @@ public class DrawerActivity extends NetworkedActivity implements BillingProcesso
         });
 
         mBP = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlPBB2hP/R0PrXtK8NPeDX7QV1fvk1hDxPVbIwRZLIgO5l/ZnAOAf8y9Bq57+eO5CD+ZVTgWcAVrS/QsiqDI/MwbfXcDydSkZLJoFofOFXRuSL7mX/jNwZBNtH0UrmcyFx1RqaHIe9KZFONBWLeLBmr47Hvs7dKshAto2Iy0v18kN48NqKxlWtj/PHwk8uIQ4YQeLYiXDCGhfBXYS861guEr3FFUnSLYtIpQ8CiGjwfU60+kjRMmXEGnmhle5lqzj6QeL6m2PNrkbJ0T9w2HM+bR7buHcD8e6tHl2Be6s/j7zn1Ypco/NCbqhtPgCnmLpeYm8EwwTnH4Yei7ACR7mXQIDAQAB", this);
+
+        final Drawable fallback = getResources().getDrawable(R.drawable.ic_file_image);
+        fallback.setColorFilter(getThemeUtils().primaryColor(), PorterDuff.Mode.SRC_ATOP);
+        final DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .resetViewBeforeLoading(true)
+                .showImageOnLoading(fallback)
+                .showImageForEmptyUri(fallback)
+                .showImageOnFail(fallback)
+                .cacheInMemory(true)
+                .cacheOnDisk(false)
+                .build();
+        final ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
+                .defaultDisplayImageOptions(options)
+                .imageDownloader(new APKIconDownloader(this))
+                .build();
+        ImageLoader.getInstance().init(config);
     }
 
     @Override
