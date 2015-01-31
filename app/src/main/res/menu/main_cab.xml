@@ -8,6 +8,11 @@
         android:icon="@drawable/ic_delete"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_share"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/copy"
         android:title="@string/copy"
         android:icon="@drawable/ic_copy"
@@ -21,11 +26,6 @@
         android:id="@+id/selectAll"
         android:title="@string/selectAll"
         android:icon="@drawable/ic_selectall"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/share"
-        android:title="@string/share"
-        android:icon="@drawable/ic_share"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/pin"
