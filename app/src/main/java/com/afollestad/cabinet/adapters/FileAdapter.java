@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -102,6 +103,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         }
     }
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     public boolean onLongClick(View view) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -252,36 +254,34 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
                         resId = Utils.resolveDrawable(context, R.attr.ic_folder_hidden);
                     else resId = Utils.resolveDrawable(context, R.attr.ic_folder);
                 } else {
-                    String ext = file.getExtension().toLowerCase(Locale.getDefault());
-                    List<String> codeExts = Arrays.asList(context.getResources().getStringArray(R.array.code_extensions));
-                    List<String> archiveExts = Arrays.asList(context.getResources().getStringArray(R.array.archive_extensions));
-                    List<String> textExts = Arrays.asList(context.getResources().getStringArray(R.array.other_text_extensions));
+                    final String ext = file.getExtension().toLowerCase(Locale.getDefault());
+                    final List<String> codeExts = Arrays.asList(context.getResources().getStringArray(R.array.code_extensions));
+                    final List<String> archiveExts = Arrays.asList(context.getResources().getStringArray(R.array.archive_extensions));
+                    final List<String> textExts = Arrays.asList(context.getResources().getStringArray(R.array.other_text_extensions));
                     if (mime.startsWith("audio/") || mime.equals("application/ogg")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_audio);
+                        resId = R.drawable.ic_file_audio;
                     } else if (mime.startsWith("image/")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_image);
+                        resId = R.drawable.ic_file_image;
                     } else if (mime.startsWith("video/")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_video);
+                        resId = R.drawable.ic_file_video;
                     } else if (mime.equals("application/pdf")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_pdf);
+                        resId = R.drawable.ic_file_pdf;
                     } else if (archiveExts.contains(ext)) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_zip);
+                        resId = R.drawable.ic_file_zip;
                     } else if (mime.startsWith("model/")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_model);
-                    } else if (file.getExtension().equals("doc") || file.getExtension().equals("docx")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_word);
+                        resId = R.drawable.ic_file_model;
+                    } else if (file.getExtension().equals("doc") || file.getExtension().equals("docx") ||
+                            mime.startsWith("text/") || textExts.contains(ext)) {
+                        resId = R.drawable.ic_file_doc;
                     } else if (file.getExtension().equals("ppt") || file.getExtension().equals("pptx")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_ppt);
+                        resId = R.drawable.ic_file_ppt;
                     } else if (file.getExtension().equals("xls") || file.getExtension().equals("xlsx")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_excel);
+                        resId = R.drawable.ic_file_excel;
                     } else if (file.getExtension().equals("ttf")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_font);
-                    } else if (file.getExtension().equals("sh") || file.getExtension().equals("bat")) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_script);
-                    } else if (codeExts.contains(ext)) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_code);
-                    } else if (mime.startsWith("text/") || textExts.contains(ext)) {
-                        resId = Utils.resolveDrawable(context, R.attr.ic_file_doc);
+                        resId = R.drawable.ic_file_font;
+                    } else if (file.getExtension().equals("sh") || file.getExtension().equals("bat") ||
+                            codeExts.contains(ext)) {
+                        resId = R.drawable.ic_file_code;
                     }
                 }
                 icon.setImageResource(resId);
