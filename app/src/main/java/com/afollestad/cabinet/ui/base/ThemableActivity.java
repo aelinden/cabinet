@@ -48,6 +48,11 @@ public abstract class ThemableActivity extends ActionBarActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final int dark = getThemeUtils().primaryColorDark();
+            if (hasNavDrawer()) {
+                getWindow().setStatusBarColor(getResources().getColor(android.R.color.transparent));
+            } else {
+                getWindow().setStatusBarColor(dark);
+            }
             if (getThemeUtils().isColoredNavBar())
                 getWindow().setNavigationBarColor(dark);
         }
