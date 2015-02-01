@@ -11,12 +11,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.text.Html;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -132,12 +130,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         MainActivity act = (MainActivity) getActivity();
         act.toggleFab(false);
         act.registerReceiver(mReceiver, new IntentFilter(NetworkService.DISCONNECT_SFTP));
-        if (!((DrawerLayout) act.findViewById(R.id.drawer_layout)).isDrawerOpen(Gravity.START)) {
-            if (mQuery != null) {
-                act.setTitle(Html.fromHtml(getString(R.string.search_x, mQuery)));
-            } else {
-                act.setTitle(mDirectory.getDisplay());
-            }
+        if (mQuery != null) {
+            act.setTitle(Html.fromHtml(getString(R.string.search_x, mQuery)));
+        } else {
+            act.setTitle(mDirectory.getDisplay());
         }
 
         BaseCab cab = ((MainActivity) getActivity()).getCab();

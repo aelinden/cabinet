@@ -17,7 +17,6 @@ import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.root.RootFile;
 import com.afollestad.cabinet.utils.Perm;
-import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.cabinet.utils.TimeUtils;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.MaterialDialog;

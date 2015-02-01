@@ -27,7 +27,6 @@ import com.afollestad.cabinet.utils.Utils;
 public class NavigationDrawerFragment extends Fragment {
 
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
-    private static final String STATE_TITLE = "title";
 
     private DrawerLayout mDrawerLayout;
     private RecyclerView mRecyclerView;
@@ -35,7 +34,6 @@ public class NavigationDrawerFragment extends Fragment {
     private ActionBarDrawerToggle mDrawerToggle;
 
     private int mCurrentSelectedPosition = 1;
-    private CharSequence mTitle;
 
     private StorageHelper mStorageHelper;
 
@@ -47,7 +45,6 @@ public class NavigationDrawerFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
-            mTitle = savedInstanceState.getCharSequence(STATE_TITLE);
         }
         mStorageHelper = new StorageHelper(getActivity(), new StorageHelper.StateListener() {
             @Override
@@ -109,28 +106,28 @@ public class NavigationDrawerFragment extends Fragment {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
+        //Call super.onDrawerOpened() and super.onDrawerClosed() to update content descriptions.
+        //Call super.onDrawerSlide(..,0f) to trick it into thinking the drawer is closed.
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, actionBarToolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
-                // Don't call super method to disable the rotating nav icon
+                super.onDrawerSlide(drawerView, 0f);
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                // Don't call super method to disable the rotating nav icon
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                // Don't call super method to disable the rotating nav icon
+                super.onDrawerOpened(drawerView);
+                super.onDrawerSlide(drawerView, 0f);
             }
         };
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
+
         mDrawerLayout.post(new Runnable() {
             @Override
             public void run() {
                 mDrawerToggle.syncState();
+                mDrawerToggle.onDrawerSlide(mDrawerLayout, 0f);
             }
         });
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -148,7 +145,6 @@ public class NavigationDrawerFragment extends Fragment {
         MainActivity act = (MainActivity) getActivity();
         Pins.Item item = mAdapter.getItem(position);
         act.switchDirectory(item);
-        mTitle = item.getDisplay(getActivity());
         mDrawerLayout.closeDrawers();
     }
 
@@ -160,7 +156,6 @@ public class NavigationDrawerFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
-        outState.putCharSequence(STATE_TITLE, mTitle);
     }
 
     private ActionBar getActionBar() {
