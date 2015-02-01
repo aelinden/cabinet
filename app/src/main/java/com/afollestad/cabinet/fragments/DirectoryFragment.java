@@ -622,13 +622,13 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             String[] splitFilter = filter.split(":");
             if (splitFilter[0].equals("mime")) {
                 switch (splitFilter[1]) {
-                    case "text/":
+                    case "text":
                         return getString(R.string.text);
-                    case "image/":
+                    case "image":
                         return getString(R.string.image);
-                    case "audio/":
+                    case "audio":
                         return getString(R.string.audio);
-                    case "video/":
+                    case "video":
                         return getString(R.string.video);
                 }
             } else if (splitFilter[0].equals("ext")) {
