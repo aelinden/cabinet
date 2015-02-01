@@ -118,12 +118,13 @@ public class NavigationDrawerFragment extends Fragment {
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                // Don't call super method to disable the rotating nav icon
+                mTitle = getActivity().getTitle();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 // Don't call super method to disable the rotating nav icon
+                getActivity().setTitle(mTitle);
             }
         };
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
