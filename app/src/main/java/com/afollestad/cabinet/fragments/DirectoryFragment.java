@@ -793,19 +793,19 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             case R.id.filterText:
                 item.setChecked(true);
-                Utils.setFilter(this, "mime:text/");
+                Utils.setFilter(this, "mime:text");
                 break;
             case R.id.filterImage:
                 item.setChecked(true);
-                Utils.setFilter(this, "mime:image/");
+                Utils.setFilter(this, "mime:image");
                 break;
             case R.id.filterAudio:
                 item.setChecked(true);
-                Utils.setFilter(this, "mime:audio/");
+                Utils.setFilter(this, "mime:audio");
                 break;
             case R.id.filterVideo:
                 item.setChecked(true);
-                Utils.setFilter(this, "mime:video/");
+                Utils.setFilter(this, "mime:video");
                 break;
             case R.id.filterArchives:
                 item.setChecked(true);
