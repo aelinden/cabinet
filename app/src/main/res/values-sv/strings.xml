@@ -6,7 +6,7 @@ tilltalande, och fungerar som en filhanterare ska.\n\nTa en titt på denna fil:<
     <string name="welcome_conclusion">Prova att trycka på bilden eller ikonen med 3 prickar. Genom att trycka på bilden får man upp olika åtgärder för filen, detta kan också göras genom att trycka länge på filer. Ikonen med 3 prickar visar en popup-meny med enskilda filalternativ.\n\nCabinet
 har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du hittar genom att utforska. Tack för att du provar Cabinet!</string>
     <string name="lets_go">Kör igång!</string>
-    <string name="open_as">Öppna som...</string>
+    <string name="open_as">Öppna som…</string>
     <string name="pin">Nåla fast</string>
     <string name="copy">Kopiera</string>
     <string name="cut">Klipp ut</string>
@@ -69,16 +69,16 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="disconnect_prompt">Vill du koppla ifrån %1$s?</string>
     <string name="uploaded_to">Uppaddad till %1$s</string>
     <string name="downloaded_to">Nedladdad till %1$s</string>
-    <string name="connecting">Ansluter...</string>
-    <string name="downloading">Laddar ner...</string>
-    <string name="deleting">Tar bort...</string>
-    <string name="making_folder">Skapar mapp...</string>
-    <string name="renaming">Byter namn...</string>
-    <string name="unzipping">Packar upp...</string>
-    <string name="zipping">Packar ihop...</string>
-    <string name="moving">Flyttar...</string>
-    <string name="uploading">Laddar upp...</string>
-    <string name="copying">Kopierar...</string>
+    <string name="connecting">Ansluter…</string>
+    <string name="downloading">Laddar ner…</string>
+    <string name="deleting">Tar bort…</string>
+    <string name="making_folder">Skapar mapp…</string>
+    <string name="renaming">Byter namn…</string>
+    <string name="unzipping">Packar upp…</string>
+    <string name="zipping">Packar ihop…</string>
+    <string name="moving">Flyttar…</string>
+    <string name="uploading">Laddar upp…</string>
+    <string name="copying">Kopierar…</string>
     <string name="failed_delete_file">Kunde inte ta bort fil: %1$s</string>
     <string name="failed_make_directory">Kunde inte skapa mapp: %1$s</string>
     <string name="failed_rename_file">Kunde inte flytta/byta namn på fil: %1$s</string>
@@ -96,7 +96,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="cut_x"><![CDATA[        <b>Klipp ut:</b>&nbsp;&nbsp;%1$s]]></string>
     <string name="copy_xfiles"><![CDATA[        <b>Kopiera:</b>&nbsp;&nbsp;%1$d filer]]></string>
     <string name="cut_xfiles"><![CDATA[        <b>Klipp ut:</b>&nbsp;&nbsp;%1$d filer]]></string>
-    <string name="search_files">Sök efter filer...</string>
+    <string name="search_files">Sök efter filer…</string>
     <string name="search_x"><![CDATA[        <b>Sök:</b>&nbsp;%1$s]]></string>
     <string name="donate">Donera</string>
     <string name="thank_you">Tack så mycket!</string>
@@ -107,7 +107,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="no_thanks">Nej, tack</string>
     <string name="file">FIl</string>
     <string name="folder">Mapp</string>
-    <string name="remote_connection">Fjärranslutning...</string>
+    <string name="remote_connection">Fjärranslutning…</string>
     <string name="text">Text</string>
     <string name="image">Bild</string>
     <string name="audio">Ljud</string>
@@ -122,11 +122,11 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="settings">Inställningar</string>
     <string name="about_body"><![CDATA[
         En minimalistisk, intuitiv och snygg filhanterare för Android 4.1 och senare.<br/><br/>
-        Skapad av <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Hemsida</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+        Skapad av <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Hemsida</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Namn:</b>&nbsp;&nbsp;%1$s<br/><b>Sökväg:</b>&nbsp;&nbsp;%2$s<br/><b>Storlek:</b>&nbsp;&nbsp;%3$s<br/><b>Modifierad:</b>&nbsp;&nbsp;%4$s<br/><b>Rättigheter:</b>&nbsp;&nbsp;%5$s
@@ -135,17 +135,17 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
         <b>Namn:</b>&nbsp;&nbsp;%1$s<br/><b>Sökväg:</b>&nbsp;&nbsp;%2$s<br/><b>Innehåll:</b>&nbsp;&nbsp;%3$s<br/><b>Ändrad:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Ny fil</string>
-    <string name="making_file">Skapar fil...</string>
+    <string name="making_file">Skapar fil…</string>
     <string name="created_file">Skapade fil %1$s</string>
     <string name="file_already_exists">Filen finns redan</string>
     <string name="failed_make_file">Kunde inte skapa filen: %1$s</string>
-    <string name="pick_a_file">Välj en fil...</string>
+    <string name="pick_a_file">Välj en fil…</string>
     <string name="cabinet_text_editor">Cabinet textredigerare</string>
     <string name="save">Spara</string>
     <string name="unsaved_changes">Ej sparade ändringar</string>
     <string name="unsaved_changes_desc">Du har ej sparade ändringar, vill du spara innan du avslutar?</string>
-    <string name="saving">Sparar...</string>
-    <string name="loading">Laddar...</string>
+    <string name="saving">Sparar…</string>
+    <string name="loading">Laddar…</string>
     <string name="unsupported_extension">Filändelsen stöds inte</string>
     <string name="unsupported_extension_desc">Du kan inte redigera den här filtypen med textredigeraren.</string>
     <string name="file_already_exists_warning">Varning: filen finns redan. Den nya filen kommer att skapas som dubblett.</string>
@@ -166,7 +166,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="sdcard">SD-kort</string>
     <string name="owner">Ägare</string>
     <string name="group">Grupp</string>
-    <string name="applying_permissions">Tillämpar rättigheter...</string>
+    <string name="applying_permissions">Tillämpar rättigheter…</string>
     <string name="primary_color">Primär färg</string>
     <string name="primary_color_desc">Temats primära färg. Standard är Material blå.</string>
     <string name="accent_color">Sekundär färg</string>

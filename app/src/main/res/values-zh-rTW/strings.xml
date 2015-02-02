@@ -133,11 +133,11 @@
     <string name="settings">設定</string>
     <string name="about_body"><![CDATA[
     一個簡約、直觀、優美的檔案管理器， Android 4.1 以上版本可用。<br/><br/>
-    由 <b>Aidan Follestad</b>設計。<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+    由 <b>Aidan Follestad</b>設計。<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>名稱：</b>&nbsp;&nbsp;%1$s<br/><b>路徑：</b>&nbsp;&nbsp;%2$s<br/><b>大小：</b>&nbsp;&nbsp;%3$s<br/><b>修改時間：</b>&nbsp;&nbsp;%4$s<br/><b>許可權：</b>&nbsp;&nbsp;%5$s
@@ -177,7 +177,7 @@
     <string name="sdcard">SD卡</string>
     <string name="owner">擁有者</string>
     <string name="group">群組</string>
-    <string name="applying_permissions">申請權限中......</string>
+    <string name="applying_permissions">申請權限中……</string>
     <string name="primary_color">主色調（Primary顏色）</string>
     <string name="primary_color_desc">界面主色調。默認為Material藍色。</string>
     <string name="accent_color">強調色調（Accent顏色）</string>
