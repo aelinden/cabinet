@@ -125,11 +125,11 @@
     <string name="video">Vídeo</string>
     <string name="other">Otro</string>
     <string name="info">Info</string>
-    <string name="files">Archivos</string>
+
     <string name="show_hidden_files">Mostrar archivos ocultos</string>
     <string name="about">Acerca de</string>
     <string name="about_desc">Acerca de la aplicación y su diseñador.</string>
-    <string name="show_hidden_files_desc">Configura cuando muestra o no Cabinet los archivos ocultos.</string>
+
     <string name="ui">Interfaz</string>
     <string name="settings">Configuración</string>
     <string name="about_body"><![CDATA[

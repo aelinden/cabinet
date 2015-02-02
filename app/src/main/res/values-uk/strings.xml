@@ -125,11 +125,11 @@
     <string name="video">Відео</string>
     <string name="other">Інше</string>
     <string name="info">Інформація</string>
-    <string name="files">Файли</string>
+
     <string name="show_hidden_files">Показати приховані файли</string>
     <string name="about">Про</string>
     <string name="about_desc">Про додаток та розробника</string>
-    <string name="show_hidden_files_desc">Оберіть, показувати чи ні приховані файли.</string>
+
     <string name="ui">Інтерфейс</string>
     <string name="settings">Налаштування</string>
     <string name="about_body"><![CDATA[

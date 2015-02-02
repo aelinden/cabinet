@@ -20,6 +20,10 @@ public class Pins {
 
     public static class Item {
 
+        public Item(boolean settings) {
+            mSettings = settings;
+        }
+
         public Item(File file) {
             mPath = file.getPath();
             if (file.isRemote()) {
@@ -53,11 +57,12 @@ public class Pins {
         }
 
         private boolean isRemote;
-        private final String mPath;
+        private String mPath;
         private String mHost;
         private int mPort;
         private String mUser;
         private String mPass;
+        private boolean mSettings;
 
         public boolean isRemote() {
             return isRemote;
@@ -89,6 +94,10 @@ public class Pins {
             } else {
                 return new LocalFile(context, getPath()).getDisplay();
             }
+        }
+
+        public boolean isSettings() {
+            return mSettings;
         }
 
         public JSONObject toJSON() {

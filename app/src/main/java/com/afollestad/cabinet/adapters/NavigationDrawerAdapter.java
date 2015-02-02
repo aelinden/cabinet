@@ -2,11 +2,13 @@ package com.afollestad.cabinet.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.os.Environment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +21,17 @@ import com.afollestad.materialdialogs.ThemeSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.ShortcutViewHolder> implements View.OnClickListener, View.OnLongClickListener {
 
     @Override
     public void onClick(View view) {
-        mListener.onClick((Integer) view.getTag());
+        int index = (Integer) view.getTag();
+        if (mItems.get(index).isSettings())
+            mListener.onClickSettings();
+        else
+            mListener.onClick(index);
     }
 
     @Override
@@ -37,6 +44,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         public abstract void onClick(int index);
 
         public abstract boolean onLongClick(int index);
+
+        public abstract void onClickSettings();
     }
 
     public NavigationDrawerAdapter(Activity context, ClickListener listener) {
@@ -91,13 +100,11 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     private int bodyText;
 
     public void reload(Context context) {
-        set(Pins.getAll(context));
-    }
-
-    public void set(List<Pins.Item> items) {
+        final List<Pins.Item> items = Pins.getAll(context);
         mItems.clear();
         for (Pins.Item i : items)
             mItems.add(i);
+        mItems.add(new Pins.Item(true));
         notifyDataSetChanged();
     }
 
@@ -105,7 +112,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         int index = -1;
         for (int i = 0; i < mItems.size(); i++) {
             Pins.Item item = mItems.get(i);
-            if (item.getPath().equals(file.getPath())) {
+            if (item.getPath() != null && item.getPath().equals(file.getPath())) {
                 index = i;
                 break;
             }
@@ -130,14 +137,20 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         public ShortcutViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView;
+            view = itemView;
+            title = (TextView) itemView.findViewById(R.id.title);
+            icon = (ImageView) itemView.findViewById(R.id.icon);
+            divider = itemView.findViewById(R.id.divider);
         }
 
+        View view;
         TextView title;
+        ImageView icon;
+        View divider;
     }
 
     @Override
-    public ShortcutViewHolder onCreateViewHolder(ViewGroup parent, int index) {
+    public ShortcutViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_drawer, parent, false);
         return new ShortcutViewHolder(v);
     }
@@ -145,26 +158,57 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     @Override
     public void onBindViewHolder(ShortcutViewHolder holder, int index) {
         Pins.Item item = mItems.get(index);
-        holder.title.setTag(index);
-        holder.title.setOnClickListener(this);
-        holder.title.setOnLongClickListener(this);
-        holder.title.setActivated(mCheckedPos == index);
-        holder.title.setTextColor(mCheckedPos == index ?
-                ThemeSingleton.get().positiveColor : bodyText);
+        holder.view.setTag(index);
+        holder.view.setOnClickListener(this);
 
-        if (item.isRemote()) {
-            holder.title.setText(item.getDisplay(mContext));
+        if (item.isSettings()) {
+            holder.title.setText(R.string.settings);
+            holder.title.setTextColor(bodyText);
+            holder.icon.setImageResource(R.drawable.ic_drawer_settings);
+            holder.divider.setVisibility(View.VISIBLE);
         } else {
-            File file = new LocalFile(mContext, item.getPath());
-            if (file.isRoot()) {
-                holder.title.setText(R.string.root);
-            } else if (file.isStorageDirectory()) {
-                holder.title.setText(R.string.storage);
-            } else if (file.getName().startsWith("sdcard")) {
-                holder.title.setText(R.string.sdcard);
-            } else {
+            holder.view.setOnLongClickListener(this);
+            holder.view.setActivated(mCheckedPos == index);
+
+            int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
+            holder.title.setTextColor(currentColor);
+            holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
+
+            if (item.isRemote()) {
                 holder.title.setText(item.getDisplay(mContext));
+            } else {
+                File file = new LocalFile(mContext, item.getPath());
+                if (file.isRoot()) {
+                    holder.title.setText(R.string.root);
+                } else if (file.isStorageDirectory()) {
+                    holder.title.setText(R.string.storage);
+                } else if (file.getName().startsWith("sdcard")) {
+                    holder.title.setText(R.string.sdcard);
+                } else {
+                    holder.title.setText(item.getDisplay(mContext));
+                }
             }
+
+            loadThumbnail(item, holder.icon);
+        }
+    }
+
+    private void loadThumbnail(Pins.Item item, ImageView icon) {
+        final String p = item.getPath().toLowerCase(Locale.getDefault());
+        if (p.equals("/")) {
+            icon.setImageResource(R.drawable.ic_drawer_root);
+        } else if (p.equals(Environment.getExternalStorageDirectory().getAbsolutePath())) {
+            icon.setImageResource(R.drawable.ic_drawer_storage);
+        } else if (p.contains("dcim") || p.contains("camera")) {
+            icon.setImageResource(R.drawable.ic_drawer_camera);
+        } else if (p.contains("download")) {
+            icon.setImageResource(R.drawable.ic_drawer_download);
+        } else if (p.contains("music") || p.contains("audio")) {
+            icon.setImageResource(R.drawable.ic_drawer_audio);
+        } else if (p.contains("pictures") || p.contains("instagram")) {
+            icon.setImageResource(R.drawable.ic_drawer_photo);
+        } else {
+            icon.setImageResource(R.drawable.ic_drawer_folder);
         }
     }
 

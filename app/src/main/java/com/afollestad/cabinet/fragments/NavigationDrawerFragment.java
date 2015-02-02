@@ -2,6 +2,7 @@ package com.afollestad.cabinet.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -20,6 +21,7 @@ import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.adapters.NavigationDrawerAdapter;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.ui.MainActivity;
+import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.StorageHelper;
 import com.afollestad.cabinet.utils.Utils;
@@ -91,6 +93,11 @@ public class NavigationDrawerFragment extends Fragment {
                         }
                 );
                 return false;
+            }
+
+            @Override
+            public void onClickSettings() {
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
             }
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

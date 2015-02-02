@@ -125,11 +125,11 @@ disponuje také dalšími různými funkcemi, jako vzdálený přístup k server
     <string name="video">Video</string>
     <string name="other">Ostatní</string>
     <string name="info">Info</string>
-    <string name="files">Soubory</string>
+
     <string name="show_hidden_files">Zobrazovat skryté soubory</string>
     <string name="about">O aplikaci</string>
     <string name="about_desc">O aplikaci a jejím vývojáři.</string>
-    <string name="show_hidden_files_desc">Zaškrtněte, pokud chcete zobrazit skryté soubory.</string>
+
     <string name="ui">Uživatelské rozhraní</string>
     <string name="settings">Nastavení</string>
     <string name="about_body"><![CDATA[

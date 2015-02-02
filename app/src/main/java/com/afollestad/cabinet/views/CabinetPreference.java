@@ -2,6 +2,7 @@ package com.afollestad.cabinet.views;
 
 import android.content.Context;
 import android.preference.Preference;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -27,7 +28,7 @@ public class CabinetPreference extends Preference {
     }
 
     @Override
-    protected void onBindView(View view) {
+    protected void onBindView(@NonNull View view) {
         super.onBindView(view);
         mView = view;
         invalidateColor();

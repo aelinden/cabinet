@@ -29,6 +29,6 @@ public class CabinetPreferenceCategory extends PreferenceCategory {
     @Override
     protected void onBindView(@NonNull View view) {
         super.onBindView(view);
-        ((TextView) view).setTextColor(ThemeSingleton.get().positiveColor);
+        ((TextView) view.findViewById(android.R.id.title)).setTextColor(ThemeSingleton.get().positiveColor);
     }
 }

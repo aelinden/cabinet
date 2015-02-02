@@ -125,11 +125,11 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="video">비디오</string>
     <string name="other">기타</string>
     <string name="info">정보</string>
-    <string name="files">파일</string>
+
     <string name="show_hidden_files">숨김 파일 보기</string>
     <string name="about">정보</string>
     <string name="about_desc">앱과 디자이너에 대해…</string>
-    <string name="show_hidden_files_desc">숨김 파일 보기 토글</string>
+
     <string name="ui">UI</string>
     <string name="settings">설정</string>
     <string name="about_body"><![CDATA[

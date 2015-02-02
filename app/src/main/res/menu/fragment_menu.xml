@@ -76,6 +76,10 @@
         android:title="@string/grid_mode"
         android:checkable="true" />
     <item
+        android:id="@+id/showHidden"
+        android:title="@string/show_hidden_files"
+        android:checkable="true" />
+    <item
         android:id="@+id/donate"
         android:title="@string/donate">
         <menu>
@@ -93,8 +97,5 @@
                 android:title="@string/donation4" />
         </menu>
     </item>
-    <item
-        android:id="@+id/settings"
-        android:title="@string/settings" />
 
 </menu>

@@ -30,7 +30,11 @@
             android:fontFamily="sans-serif"
             android:textColor="?android:textColorPrimary"
             android:textSize="16sp"
-            tools:text="Title" />
+            tools:text="Title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="start"
+            android:textAlignment="viewStart" />
 
         <TextView
             android:id="@android:id/summary"
@@ -40,11 +44,15 @@
             android:layout_alignStart="@android:id/title"
             android:layout_alignLeft="@android:id/title"
             android:textSize="14sp"
-            android:maxLines="4"
+            android:maxLines="2"
             android:layout_marginTop="2dp"
             android:fontFamily="sans-serif-light"
             android:textColor="?android:textColorSecondary"
-            tools:text="Summary" />
+            tools:text="Summary"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="start"
+            android:textAlignment="viewStart" />
 
     </RelativeLayout>
 
@@ -54,7 +62,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
 
     <com.afollestad.cabinet.views.CircleView
         android:id="@+id/circle"
@@ -62,8 +72,8 @@
         android:layout_height="32dp"
         android:visibility="gone"
         tools:visibility="visible"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
 
 </LinearLayout>

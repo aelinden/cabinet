@@ -125,11 +125,11 @@
     <string name="video">Video</string>
     <string name="other">Altele</string>
     <string name="info">Detalii</string>
-    <string name="files">Fișiere</string>
+
     <string name="show_hidden_files">Afișarea Fișierelor Ascunse</string>
     <string name="about">Despre</string>
     <string name="about_desc">Despre aplicaţie și autorul ei.</string>
-    <string name="show_hidden_files_desc">Bifeazӑ dacӑ sӑ afișeze sau nu fișierele ascunse.</string>
+
     <string name="ui">Interfaţӑ</string>
     <string name="settings">Setӑri</string>
     <string name="about_body"><![CDATA[

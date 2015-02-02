@@ -124,11 +124,11 @@
     <string name="video">Video</string>
     <string name="other">Overig</string>
     <string name="info">Info</string>
-    <string name="files">Bestanden</string>
+
     <string name="show_hidden_files">Toon verborgen bestanden</string>
     <string name="about">Over</string>
     <string name="about_desc">Over de app en de ontwerper</string>
-    <string name="show_hidden_files_desc">Kies of Cabinet verborgen bestanden wel of niet toont.</string>
+
     <string name="ui">UI</string>
     <string name="settings">Instellingen</string>
     <string name="about_body"><![CDATA[

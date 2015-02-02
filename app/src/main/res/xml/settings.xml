@@ -11,17 +11,6 @@
 
     </com.afollestad.cabinet.views.CabinetPreferenceCategory>
 
-    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/files">
-
-        <CheckBoxPreference
-            android:key="show_hidden"
-            android:title="@string/show_hidden_files"
-            android:summary="@string/show_hidden_files_desc"
-            android:persistent="true"
-            android:layout="@layout/preference_custom" />
-
-    </com.afollestad.cabinet.views.CabinetPreferenceCategory>
-
     <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/ui">
 
         <Preference

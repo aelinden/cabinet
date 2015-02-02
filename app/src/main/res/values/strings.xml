@@ -169,11 +169,11 @@
     <string name="other">Other</string>
 
     <string name="info">Info</string>
-    <string name="files">Files</string>
+
     <string name="show_hidden_files">Show Hidden Files</string>
     <string name="about">About</string>
     <string name="about_desc">About the app and its designer.</string>
-    <string name="show_hidden_files_desc">Toggle whether or not Cabinet will show hidden files.</string>
+
     <string name="ui">UI</string>
     <string name="settings">Settings</string>
 

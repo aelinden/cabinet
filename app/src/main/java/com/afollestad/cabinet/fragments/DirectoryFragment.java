@@ -45,7 +45,6 @@ import com.afollestad.cabinet.file.base.FileFilter;
 import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.MainActivity;
-import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.utils.PauseOnScrollListener;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.Utils;
@@ -77,7 +76,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     private File mDirectory;
     private String mQuery;
     public FileAdapter mAdapter;
-    private boolean showHidden;
+    public boolean showHidden;
     public int sorter;
     public String filter;
     private Thread searchThread;
@@ -234,8 +233,10 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         } else menu.findItem(R.id.filterNone).setChecked(true);
 
-        if (getActivity() != null)
+        if (getActivity() != null) {
             menu.findItem(R.id.gridMode).setChecked(Utils.getGridMode(getActivity()));
+            menu.findItem(R.id.showHidden).setChecked(Utils.getShowHidden(getActivity()));
+        }
 
         boolean canShow = true;
         if (!mDirectory.isRemote()) {
@@ -759,6 +760,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 boolean gridMode = Utils.getGridMode(getActivity());
                 Utils.setGridMode(this, !gridMode);
                 break;
+            case R.id.showHidden:
+                Utils.setShowHidden(this, !showHidden);
+                break;
             case R.id.sortNameFoldersTop:
                 item.setChecked(true);
                 Utils.setSorter(this, 0);
@@ -838,9 +842,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             case R.id.donation4:
                 ((MainActivity) getActivity()).donate(4);
-                break;
-            case R.id.settings:
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

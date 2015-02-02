@@ -52,6 +52,7 @@
             android:name="com.afollestad.cabinet.fragments.NavigationDrawerFragment"
             tools:layout="@layout/fragment_drawer"
             android:tag="NAV_DRAWER" />
+
     </FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>

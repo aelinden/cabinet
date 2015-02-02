@@ -125,11 +125,11 @@
     <string name="video">Video</string>
     <string name="other">Andere</string>
     <string name="info">Information</string>
-    <string name="files">Dateien</string>
+
     <string name="show_hidden_files">Zeige versteckte Dateien</string>
     <string name="about">Über</string>
     <string name="about_desc">Über die App und deren Designer</string>
-    <string name="show_hidden_files_desc">Stelle ein ob Kabinett versteckte Dateien zeigen soll.</string>
+
     <string name="ui">UI</string>
     <string name="settings">Einstellungen</string>
     <string name="about_body"><![CDATA[

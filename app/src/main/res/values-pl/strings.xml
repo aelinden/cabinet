@@ -125,11 +125,11 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="video">Film</string>
     <string name="other">Inny</string>
     <string name="info">Informacje</string>
-    <string name="files">Pliki</string>
+
     <string name="show_hidden_files">Pokaż ukryte pliki</string>
     <string name="about">O aplikacji</string>
     <string name="about_desc">Informacje o aplikacji i jej twórcy</string>
-    <string name="show_hidden_files_desc">Włącz lub wyłącz pokazywanie ukrytych plików</string>
+
     <string name="ui">Wygląd</string>
     <string name="settings">Ustawienia</string>
     <string name="about_body"><![CDATA[

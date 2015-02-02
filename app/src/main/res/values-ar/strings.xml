@@ -127,11 +127,11 @@
     <string name="video">فيديو</string>
     <string name="other">نوع آخر</string>
     <string name="info">معلومات</string>
-    <string name="files">ملفات</string>
+
     <string name="show_hidden_files">أظهر الملفّات المخفيّة</string>
     <string name="about">نبذة</string>
     <string name="about_desc">نبذة عن التطبيق ومُصمّمه</string>
-    <string name="show_hidden_files_desc">بدلّ ما إذا كان Cabinet سيظهر الملفات المخفية أم لا</string>
+
     <string name="ui">الواجهة</string>
     <string name="settings">الإعدادات</string>
     <string name="about_body"><![CDATA[

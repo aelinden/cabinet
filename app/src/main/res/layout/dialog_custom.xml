@@ -15,7 +15,9 @@
         android:fontFamily="sans-serif-light"
         android:linksClickable="true"
         android:textIsSelectable="false"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:gravity="start"
+        android:textAlignment="viewStart" />
 
     <GridLayout
         android:id="@+id/permissionsGroup"

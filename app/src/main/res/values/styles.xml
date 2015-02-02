@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.Cabinet" parent="@style/CabinetParent" />
 
@@ -28,16 +28,19 @@
         <item name="android:minWidth">64dp</item>
     </style>
 
-    <style name="_FileMenuParent">
+    <style name="_FileMenuParent" tools:ignore="NewApi">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
         <item name="android:src">?overflow</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
         <item name="android:background">?menu_selector</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginRight">23dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:focusableInTouchMode">false</item>

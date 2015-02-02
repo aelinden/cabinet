@@ -35,35 +35,38 @@
 
             <TextView
                 android:id="@android:id/title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:textColor="?title_text"
                 android:singleLine="true"
                 android:layout_marginBottom="4dp"
                 android:ellipsize="middle"
-                android:fontFamily="sans-serif" />
+                android:fontFamily="sans-serif"
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@android:id/content"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:singleLine="true"
                 android:fontFamily="sans-serif-light"
                 android:layout_marginBottom="4dp"
-                android:textColor="?body_text" />
+                android:textColor="?body_text"
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@+id/directory"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:visibility="gone"
                 android:fontFamily="sans-serif-light"
-                android:textColor="?body_text" />
+                android:textColor="?body_text"
+                android:layout_gravity="start" />
 
         </LinearLayout>
 

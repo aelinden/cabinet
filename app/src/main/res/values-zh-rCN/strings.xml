@@ -33,7 +33,6 @@
     <string name="sort_modified">修改时间</string>
     <string name="modified_x">修改时间 %1$s</string>
     <string name="iconpress_hint">你可以点击文件图标来快速选择它！</string>
-
     <string name="navigation_drawer_open">打开导航栏</string>
     <string name="navigation_drawer_close">关闭导航栏</string>
     <string name="new_folder">新文件夹</string>
@@ -118,7 +117,7 @@
     <string name="no_thanks">拒绝！</string>
     <string name="file">文件</string>
     <string name="folder">文件夹</string>
-    <string name="remote_connection">远程连接…</string>
+    <string name="remote_connection">远程连接...</string>
     <string name="text">文本</string>
     <string name="image">图片</string>
     <string name="audio">音频</string>
@@ -129,16 +128,15 @@
     <string name="show_hidden_files">显示隐藏文件</string>
     <string name="about">关于</string>
     <string name="about_desc">关于程序和设计师</string>
-    <string name="show_hidden_files_desc">选择是否显示隐藏文件</string>
     <string name="ui">用户界面</string>
     <string name="settings">设置</string>
     <string name="about_body"><![CDATA[
         一个简约、直观、美丽的文件管理器，只要 Android 4.1以上版本就可以使用。<br/><br/>
-        由 <b>Aidan Follestad</b> 设计。<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        由 <b>Aidan Follestad</b> 设计。<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>文件名：</b>&nbsp;&nbsp;%1$s<br/><b>路径：</b>&nbsp;&nbsp;%2$s<br/><b>大小：</b>&nbsp;&nbsp;%3$s<br/><b>修改时间：</b>&nbsp;&nbsp;%4$s<br/><b>权限：</b>&nbsp;&nbsp;%5$s
@@ -147,17 +145,17 @@
         <b>文件名：</b>&nbsp;&nbsp;%1$s<br/><b>路径：</b>&nbsp;&nbsp;%2$s<br/><b>内容：</b>&nbsp;&nbsp;%3$s<br/><b>修改时间：</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">新文件</string>
-    <string name="making_file">创建文件…</string>
+    <string name="making_file">创建文件...</string>
     <string name="created_file">创建文件 %1$s</string>
     <string name="file_already_exists">文件已经存在</string>
     <string name="failed_make_file">创建新文件失败：%1$s</string>
-    <string name="pick_a_file">提取文件…</string>
+    <string name="pick_a_file">提取文件...</string>
     <string name="cabinet_text_editor">Cabinet 文件编辑器</string>
     <string name="save">保存</string>
     <string name="unsaved_changes">未保存修改</string>
     <string name="unsaved_changes_desc">您仍有修改尚未保存, 是否在退出前保存修改</string>
-    <string name="saving">保存中…</string>
-    <string name="loading">加载中…</string>
+    <string name="saving">保存中...</string>
+    <string name="loading">加载中...</string>
     <string name="unsupported_extension">不支持的文件类型</string>
     <string name="unsupported_extension_desc">您无法将此类文件以文本编辑方式打开</string>
     <string name="file_already_exists_warning">警告: 此文件已存在. 新文件将以副本形式出现</string>
@@ -169,29 +167,25 @@
     <string name="no_files_filter">无符合此筛选条件的文件: %1$s</string>
     <string name="superuser_not_available">Superuser不可用</string>
     <string name="filter_active">当前筛选条件: %1$s</string>
-
-
+    <string name="base_theme">主题背景</string>
+    <string-array name="base_themes">
+        <item>浅灰色背景</item>
+        <item>深灰色背景</item>
+        <item>黑色背景（AMOLED)</item>
+    </string-array>
     <string name="sdcard">SD卡</string>
     <string name="owner">拥有者</string>
     <string name="group">群组</string>
-    <string name="applying_permissions">更新权限…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">更新权限...</string>
+    <string name="primary_color">主色调（Primary颜色）</string>
+    <string name="primary_color_desc">界面主色调。默认为Material蓝色。</string>
+    <string name="accent_color">强调色调（Accent颜色）</string>
+    <string name="accent_color_desc">界面强调色调。默认为Material粉色。</string>
+    <string name="colored_navbar">主色调导航栏</string>
+    <string name="colored_navbar_desc">导航栏是否设为主色调颜色。</string>
+    <string name="colored_folders">主色调文件夹</string>
+    <string name="colored_folders_desc">文件夹图标是否设为主色调颜色。</string>
+    <string name="defaultStr">默认</string>
+    <string name="only_available_lollipop">此功能仅适用于Android 5.0及以上。</string>
+    <string name="base_theme_desc">选择浅灰色 、深灰色、或AMOLED黑色背景。</string>
 </resources>
