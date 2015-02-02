@@ -23,7 +23,6 @@ import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.ui.MainActivity;
 import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.utils.Pins;
-import com.afollestad.cabinet.utils.StorageHelper;
 import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -38,8 +37,6 @@ public class NavigationDrawerFragment extends Fragment {
 
     private int mCurrentSelectedPosition = 1;
 
-    private StorageHelper mStorageHelper;
-
     public NavigationDrawerFragment() {
     }
 
@@ -49,19 +46,6 @@ public class NavigationDrawerFragment extends Fragment {
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
         }
-        mStorageHelper = new StorageHelper(getActivity(), new StorageHelper.StateListener() {
-            @Override
-            public void onStateChanged(boolean available, boolean writeable) {
-                // TODO?
-            }
-        });
-        mStorageHelper.startWatchingExternalStorage();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mStorageHelper.stopWatchingExternalStorage();
     }
 
     @Override

@@ -441,31 +441,18 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     }
 
     @Override
-    public void onFabPressed(BaseFileCab.PasteMode pasteMode) {
+    public void onFabPressed(int action) {
         if (getActivity() != null) {
-            if (pasteMode == BaseFileCab.PasteMode.ENABLED) {
-                ((BaseFileCab) ((MainActivity) getActivity()).getCab()).paste();
-            } else {
-                new MaterialDialog.Builder(getActivity())
-                        .title(R.string.newStr)
-                        .items(R.array.new_options)
-                        .itemsCallback(new MaterialDialog.ListCallback() {
-                            @Override
-                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                switch (which) {
-                                    case 0: // File
-                                        showNewFileDialog(getActivity());
-                                        break;
-                                    case 1: // Folder
-                                        showNewFolderDialog(getActivity());
-                                        break;
-                                    case 2: // Remote connection
-                                        new RemoteConnectionDialog(getActivity()).show();
-                                        break;
-                                }
-                            }
-                        })
-                        .build().show();
+            switch (action) {
+                case 0: // File
+                    showNewFileDialog(getActivity());
+                    break;
+                case 1: // Folder
+                    showNewFolderDialog(getActivity());
+                    break;
+                case 2: // Remote connection
+                    new RemoteConnectionDialog(getActivity()).show();
+                    break;
             }
         }
     }

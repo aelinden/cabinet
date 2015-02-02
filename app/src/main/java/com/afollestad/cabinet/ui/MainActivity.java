@@ -35,10 +35,12 @@ import com.afollestad.cabinet.fragments.WelcomeFragment;
 import com.afollestad.cabinet.ui.base.NetworkedActivity;
 import com.afollestad.cabinet.utils.APKIconDownloader;
 import com.afollestad.cabinet.utils.Pins;
+import com.afollestad.cabinet.utils.ThemeUtils;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -46,13 +48,13 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 public class MainActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
 
     public interface FabListener {
-        public abstract void onFabPressed(BaseFileCab.PasteMode pasteMode);
+        public abstract void onFabPressed(int action);
     }
 
     private BillingProcessor mBP; // used for donations
     private BaseCab mCab; // the current contextual action bar, saves state throughout fragments
 
-    public FloatingActionButton fab; // the floating blue add/paste button
+    public FloatingActionsMenu fab; // the floating blue add/paste button
     private FabListener mFabListener; // a callback used to notify DirectoryFragment of fab press
     public BaseFileCab.PasteMode fabPasteMode = BaseFileCab.PasteMode.DISABLED;
     private boolean fabDisabled; // flag indicating whether fab should stay hidden while scrolling
@@ -160,6 +162,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             mToolbar.setNavigationIcon(R.drawable.ic_intro_menu);
         }
 
+
         FrameLayout navDrawerFrame = (FrameLayout) findViewById(R.id.nav_drawer_frame);
         int navDrawerMargin = getResources().getDimensionPixelSize(R.dimen.nav_drawer_margin);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
@@ -173,22 +176,10 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         mDrawerLayout.setStatusBarBackgroundColor(getThemeUtils().primaryColorDark());
 
-//       TODO fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setColorNormal(getThemeUtils().accentColor());
-//        fab.setColorPressed(getThemeUtils().accentColorDark());
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////               TODO if (mFabListener != null) mFabListener.onFabPressed(fabPasteMode);
-//            }
-//        });
-//        fab.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View view) {
-//                Toast.makeText(MainActivity.this, fabPasteMode == BaseFileCab.PasteMode.ENABLED ? R.string.paste : R.string.newStr, Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        });
+        setupFab(findViewById(R.id.fab_actions), -1);
+        setupFab(findViewById(R.id.actionNewFile), 0);
+        setupFab(findViewById(R.id.actionNewFolder), 1);
+        setupFab(findViewById(R.id.actionNewConnection), 2);
 
         mBP = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlPBB2hP/R0PrXtK8NPeDX7QV1fvk1hDxPVbIwRZLIgO5l/ZnAOAf8y9Bq57+eO5CD+ZVTgWcAVrS/QsiqDI/MwbfXcDydSkZLJoFofOFXRuSL7mX/jNwZBNtH0UrmcyFx1RqaHIe9KZFONBWLeLBmr47Hvs7dKshAto2Iy0v18kN48NqKxlWtj/PHwk8uIQ4YQeLYiXDCGhfBXYS861guEr3FFUnSLYtIpQ8CiGjwfU60+kjRMmXEGnmhle5lqzj6QeL6m2PNrkbJ0T9w2HM+bR7buHcD8e6tHl2Be6s/j7zn1Ypco/NCbqhtPgCnmLpeYm8EwwTnH4Yei7ACR7mXQIDAQAB", this);
 
@@ -207,6 +198,39 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                 .imageDownloader(new APKIconDownloader(this))
                 .build();
         ImageLoader.getInstance().init(config);
+    }
+
+    private void setupFab(View view, int action) {
+        final ThemeUtils theme = getThemeUtils();
+        if (view instanceof FloatingActionButton) {
+            FloatingActionButton btn = (FloatingActionButton) view;
+            btn.setColorNormal(theme.accentColor());
+            btn.setColorPressed(theme.accentColorDark());
+            btn.setTag(action);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mFabListener != null)
+                        mFabListener.onFabPressed((Integer) v.getTag());
+                    ((FloatingActionsMenu) v.getParent()).toggle();
+                }
+            });
+        } else {
+            fab = (FloatingActionsMenu) view;
+            FloatingActionButton btn = fab.getButton();
+            btn.setIcon(R.drawable.ic_fab_new);
+            btn.setColorNormal(theme.accentColor());
+            btn.setColorPressed(theme.accentColorDark());
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (fabPasteMode == BaseFileCab.PasteMode.ENABLED)
+                        ((BaseFileCab) getCab()).paste();
+                    else
+                        ((FloatingActionsMenu) v.getParent()).toggle();
+                }
+            });
+        }
     }
 
     @Override
