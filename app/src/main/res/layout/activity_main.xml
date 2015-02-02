@@ -23,6 +23,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+            <View
+                android:id="@+id/outerFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
             <com.getbase.floatingactionbutton.FloatingActionsMenu
                 android:id="@+id/fab_actions"
                 android:layout_width="wrap_content"

@@ -217,6 +217,24 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             });
         } else {
             fab = (FloatingActionsMenu) view;
+            fab.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+                @Override
+                public void onMenuExpanded() {
+                    View outerFrame = findViewById(R.id.outerFrame);
+                    outerFrame.setVisibility(View.VISIBLE);
+                    outerFrame.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            fab.collapse();
+                        }
+                    });
+                }
+
+                @Override
+                public void onMenuCollapsed() {
+                    findViewById(R.id.outerFrame).setVisibility(View.GONE);
+                }
+            });
             FloatingActionButton btn = fab.getButton();
             btn.setIcon(R.drawable.ic_fab_new);
             btn.setColorNormal(theme.accentColor());

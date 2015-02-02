@@ -116,6 +116,8 @@ public class FloatingActionsMenu extends ViewGroup {
     }
 
     public void hide(boolean animate) {
+        if (isExpanded())
+            collapse();
         toggleShown(false, animate, false);
     }
 
