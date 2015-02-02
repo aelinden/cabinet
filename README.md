@@ -1,7 +1,7 @@
 Cabinet
 =======
 
-![Screenshots](https://github.com/afollestad/cabinet/blob/master/art/cabinet.apk)
+![Screenshots](https://github.com/afollestad/cabinet/blob/master/art/cabinet.png)
 
 Cabinet is a minimal file manager designed for Android 4.1 and above. Feel free to make pull requests
 to help fix bugs or add features.
