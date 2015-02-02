@@ -38,7 +38,7 @@ import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
-import com.melnykov.fab.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -70,17 +70,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     }
 
     public void toggleFab(boolean hide) {
-        if (fabDisabled) fab.hide(false);
-        else if (hide) fab.hide(true);
-        else fab.show(true);
+//       TODO if (fabDisabled) fab.hide(false);
+//        else if (hide) fab.hide(true);
+//        else fab.show(true);
     }
 
     public void disableFab(boolean disable) {
-        if (!disable) {
-            fab.show(true);
-        } else {
-            fab.hide(true);
-        }
+//       TODO if (!disable) {
+//            fab.show(true);
+//        } else {
+//            fab.hide(true);
+//        }
         fabDisabled = disable;
     }
 
@@ -173,23 +173,22 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         mDrawerLayout.setStatusBarBackgroundColor(getThemeUtils().primaryColorDark());
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setColorNormal(getThemeUtils().accentColor());
-        fab.setColorPressed(getThemeUtils().accentColorDark());
-        fab.setColorRipple(getThemeUtils().accentColorLight());
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mFabListener != null) mFabListener.onFabPressed(fabPasteMode);
-            }
-        });
-        fab.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Toast.makeText(MainActivity.this, fabPasteMode == BaseFileCab.PasteMode.ENABLED ? R.string.paste : R.string.newStr, Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+//       TODO fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setColorNormal(getThemeUtils().accentColor());
+//        fab.setColorPressed(getThemeUtils().accentColorDark());
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////               TODO if (mFabListener != null) mFabListener.onFabPressed(fabPasteMode);
+//            }
+//        });
+//        fab.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View view) {
+//                Toast.makeText(MainActivity.this, fabPasteMode == BaseFileCab.PasteMode.ENABLED ? R.string.paste : R.string.newStr, Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
 
         mBP = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlPBB2hP/R0PrXtK8NPeDX7QV1fvk1hDxPVbIwRZLIgO5l/ZnAOAf8y9Bq57+eO5CD+ZVTgWcAVrS/QsiqDI/MwbfXcDydSkZLJoFofOFXRuSL7mX/jNwZBNtH0UrmcyFx1RqaHIe9KZFONBWLeLBmr47Hvs7dKshAto2Iy0v18kN48NqKxlWtj/PHwk8uIQ4YQeLYiXDCGhfBXYS861guEr3FFUnSLYtIpQ8CiGjwfU60+kjRMmXEGnmhle5lqzj6QeL6m2PNrkbJ0T9w2HM+bR7buHcD8e6tHl2Be6s/j7zn1Ypco/NCbqhtPgCnmLpeYm8EwwTnH4Yei7ACR7mXQIDAQAB", this);
 
