@@ -72,17 +72,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     }
 
     public void toggleFab(boolean hide) {
-//       TODO if (fabDisabled) fab.hide(false);
-//        else if (hide) fab.hide(true);
-//        else fab.show(true);
+        if (fabDisabled) fab.hide(false);
+        else if (hide) fab.hide(true);
+        else fab.show(true);
     }
 
     public void disableFab(boolean disable) {
-//       TODO if (!disable) {
-//            fab.show(true);
-//        } else {
-//            fab.hide(true);
-//        }
+        if (!disable) {
+            fab.show(true);
+        } else {
+            fab.hide(true);
+        }
         fabDisabled = disable;
     }
 

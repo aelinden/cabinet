@@ -18,12 +18,15 @@ import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
 
 public class FloatingActionsMenu extends ViewGroup {
+
     public static final int EXPAND_UP = 0;
     public static final int EXPAND_DOWN = 1;
     public static final int EXPAND_LEFT = 2;
@@ -35,6 +38,8 @@ public class FloatingActionsMenu extends ViewGroup {
     private static final int ANIMATION_DURATION = 300;
     private static final float COLLAPSED_PLUS_ROTATION = 0f;
     private static final float EXPANDED_PLUS_ROTATION = 90f + 45f;
+    private static final int TRANSLATE_DURATION_MILLIS = 200;
+
     private int mAddButtonSize;
 
     private int mExpandDirection;
@@ -44,6 +49,7 @@ public class FloatingActionsMenu extends ViewGroup {
     private int mLabelsVerticalOffset;
 
     private boolean mExpanded;
+    private boolean mVisible;
 
     private AnimatorSet mExpandAnimation = new AnimatorSet().setDuration(ANIMATION_DURATION);
     private AnimatorSet mCollapseAnimation = new AnimatorSet().setDuration(ANIMATION_DURATION);
@@ -95,6 +101,68 @@ public class FloatingActionsMenu extends ViewGroup {
         }
 
         createAddButton(context);
+    }
+
+    public void show() {
+        show(true);
+    }
+
+    public void show(boolean animate) {
+        toggleShown(true, animate, false);
+    }
+
+    public void hide() {
+        hide(true);
+    }
+
+    public void hide(boolean animate) {
+        toggleShown(false, animate, false);
+    }
+
+    private void toggleShown(final boolean visible, final boolean animate, boolean force) {
+        if (mVisible != visible || force) {
+            mVisible = visible;
+            int height = getHeight();
+            if (height == 0 && !force) {
+                ViewTreeObserver vto = getViewTreeObserver();
+                if (vto.isAlive()) {
+                    vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                        @Override
+                        public boolean onPreDraw() {
+                            ViewTreeObserver currentVto = getViewTreeObserver();
+                            if (currentVto.isAlive()) {
+                                currentVto.removeOnPreDrawListener(this);
+                            }
+                            toggleShown(visible, animate, true);
+                            return true;
+                        }
+                    });
+                    return;
+                }
+            }
+            int translationY = visible ? 0 : height + getMarginBottom();
+            if (animate) {
+                animate().setInterpolator(new AccelerateDecelerateInterpolator())
+                        .setDuration(TRANSLATE_DURATION_MILLIS)
+                        .translationY(translationY);
+            } else {
+                this.setTranslationY(translationY);
+            }
+
+            // On pre-Honeycomb a translated view is still clickable, so we need to disable clicks manually
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB) {
+                setClickable(visible);
+            }
+        }
+    }
+
+    private int getMarginBottom() {
+        int marginBottom = 0;
+        final ViewGroup.LayoutParams layoutParams = getLayoutParams();
+        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+            marginBottom = ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
+        }
+        return marginBottom;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
