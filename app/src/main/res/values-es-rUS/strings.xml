@@ -33,7 +33,6 @@
     <string name="sort_modified">Última modificación</string>
     <string name="modified_x">Modificado %1$s</string>
     <string name="iconpress_hint">¡Toca el icono de un archivo para seleccionarlo rápidamente!</string>
-
     <string name="navigation_drawer_open">Abrir el cajón de navegación</string>
     <string name="navigation_drawer_close">Cerrar el cajón de navegación</string>
     <string name="new_folder">Nuevo carpeta</string>
@@ -118,27 +117,25 @@
     <string name="no_thanks">No gracias</string>
     <string name="file">Archivo</string>
     <string name="folder">Carpeta</string>
-    <string name="remote_connection">Conexión remota…</string>
+    <string name="remote_connection">Conexión remota...</string>
     <string name="text">Texto</string>
     <string name="image">Imagen</string>
     <string name="audio">Audio</string>
     <string name="video">Video</string>
     <string name="other">Otro</string>
     <string name="info">Info</string>
-
     <string name="show_hidden_files">Mostrar archivos ocultos</string>
     <string name="about">Acerca</string>
     <string name="about_desc">Acerca de la aplicación y su diseñador</string>
-
     <string name="ui">Interfaz</string>
     <string name="settings">Configuración</string>
     <string name="about_body"><![CDATA[
         Un minimalista, intuitivo y bello administrador de archivos para Android 4.1 o mayores versiones.<br/><br/>
-        Diseñado por <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Pagina web</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Diseñado por <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Pagina web</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Nombre:</b>&nbsp;&nbsp;%1$s<br/><b>Ruta:</b>&nbsp;&nbsp;%2$s<br/><b>Tamaño:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s<br/><b>Permisos:</b>&nbsp;&nbsp;%5$s
@@ -147,17 +144,17 @@
         <b>Nombre:</b>&nbsp;&nbsp;%1$s<br/><b>Ruta:</b>&nbsp;&nbsp;%2$s<br/><b>Contenido:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nuevo Archivo</string>
-    <string name="making_file">Creando archivo…</string>
+    <string name="making_file">Creando archivo...</string>
     <string name="created_file">Archivo creado %1$s</string>
     <string name="file_already_exists">El archivo ya existe</string>
     <string name="failed_make_file">Error al crear un nuevo archivo: %1$s</string>
-    <string name="pick_a_file">Seleccione un archivo…</string>
+    <string name="pick_a_file">Seleccione un archivo...</string>
     <string name="cabinet_text_editor">Cabinet editor de texto</string>
     <string name="save">Guardar</string>
     <string name="unsaved_changes">Cambios no guardados</string>
     <string name="unsaved_changes_desc">Tienes cambios no guardados, ¿quieres guardarlos antes de salir?</string>
-    <string name="saving">Guardando…</string>
-    <string name="loading">Cargando…</string>
+    <string name="saving">Guardando...</string>
+    <string name="loading">Cargando...</string>
     <string name="unsupported_extension">Extension no soportada</string>
     <string name="unsupported_extension_desc">No puedes abrir este tipo de archivo con el editor de texto.</string>
     <string name="file_already_exists_warning">Advertencia: este archivo ya existe. El nuevo archivo aparecerá como un duplicado.</string>
@@ -169,30 +166,33 @@
     <string name="no_files_filter">No hay archivos para el filtro: %1$s</string>
     <string name="superuser_not_available">Superuser no disponible</string>
     <string name="filter_active">Filtro activo: %1$s</string>
-
-
+    <string name="base_theme">Tema base</string>
+    <string-array name="base_themes">
+        <item>Claro</item>
+        <item>Oscuro</item>
+        <item>Negro (AMOLED)</item>
+    </string-array>
     <string name="sdcard">Tarjeta SD</string>
     <string name="owner">Dueño</string>
     <string name="group">Grupo</string>
-    <string name="applying_permissions">Aplicando permisos…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">Aplicando permisos...</string>
+    <string name="primary_color">Color primario</string>
+    <string name="primary_color_desc">El color primario a usar. Por defecto azul Material.</string>
+    <string name="accent_color">Color resaltante</string>
+    <string name="accent_color_desc">El color resaltante a usar. Por defecto rosado Material</string>
+    <string name="colored_navbar">Barra de navegación colorida.</string>
+    <string name="colored_navbar_desc">Barra de navegación coloreada con el color primario.</string>
+    <string name="colored_folders">Carpetas coloreadas.</string>
+    <string name="colored_folders_desc">Carpetas coloreadas con el color primario.</string>
+    <string name="defaultStr">Por defecto</string>
+    <string name="only_available_lollipop">Esta característica esta disponible en Android Lollipop hacia arriba.</string>
+    <string name="base_theme_desc">Elija si quiere aplicar el tema claro, oscuro, o negro AMOLED.</string>
+    <string name="find_and_replace">Encontrar y remplazar</string>
+    <string name="find">Encontrar</string>
+    <string name="replace">Remplazar</string>
+    <string name="replace_all">Remplazar Todo</string>
+    <string name="use_regex">Usar regex</string>
+    <string name="match_case">Mayúsculas y minúsculas</string>
+    <string name="no_occurences">Sin coincidencias</string>
+    <string name="no_occurences_desc">No se encontraron coincidencias para su búsqueda.</string>
 </resources>

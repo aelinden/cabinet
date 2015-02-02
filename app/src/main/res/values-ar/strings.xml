@@ -6,7 +6,7 @@
     <string name="welcome_conclusion">جرّب النقر على صورة المعاينة أو رمز النقاط الثلاث. النقر على صورة المعاينة يُحدّد الملف لإجراء عمليّات على عدّة ملفات معًا, يمكن إجراء هذا بالنقر وإبقاء الإصبع فوق الملفّات. يُظهر رمز النقاط الثّلاث خيارات متعلّقة بالملفّ.\n\n
 لـCabinet ميزات أخرى مُتنوّعة، كالوصول إلى الخواديم عبر SFTP والتي سندعك تكتشفها بنفسك!. شكرًا لتجرة Cabinet!</string>
     <string name="lets_go">لنبدأ!</string>
-    <string name="open_as">افتحه باعتباره…</string>
+    <string name="open_as">افتحه باعتباره...</string>
     <string name="pin">ثبّت</string>
     <string name="copy">نسخ</string>
     <string name="cut">نقل</string>
@@ -34,7 +34,6 @@
     <string name="sort_modified">أخر تعديل لـ</string>
     <string name="modified_x">تعديل %1$s</string>
     <string name="iconpress_hint">يمكنك الضغط على أيقونة الملف لتحديده بسرعة !</string>
-
     <string name="navigation_drawer_open">افتح قسم التّنقّل</string>
     <string name="navigation_drawer_close">أغلِق قسم التنقّل</string>
     <string name="new_folder">مجلّد جديد</string>
@@ -106,7 +105,7 @@
     <string name="cut_xfiles"><![CDATA[
  <b>قصّ:</b>&nbsp;&nbsp;%1$d ملفًّا
     ]]></string>
-    <string name="search_files">ابحث في الملفّات…</string>
+    <string name="search_files">ابحث في الملفّات...</string>
     <string name="search_x"><![CDATA[
 <b>بحث:</b>&nbsp;%1$s
 
@@ -120,27 +119,25 @@
     <string name="no_thanks">لا شكرًا!</string>
     <string name="file">ملفّ</string>
     <string name="folder">مجلّد</string>
-    <string name="remote_connection">اتصال بخادوم بعيد…</string>
+    <string name="remote_connection">اتصال بخادوم بعيد...</string>
     <string name="text">نص</string>
     <string name="image">صورة</string>
     <string name="audio">صوت</string>
     <string name="video">فيديو</string>
     <string name="other">نوع آخر</string>
     <string name="info">معلومات</string>
-
     <string name="show_hidden_files">أظهر الملفّات المخفيّة</string>
     <string name="about">نبذة</string>
     <string name="about_desc">نبذة عن التطبيق ومُصمّمه</string>
-
     <string name="ui">الواجهة</string>
     <string name="settings">الإعدادات</string>
     <string name="about_body"><![CDATA[
 مُدير ملفّات جميل ومُبسّط وسهل الاستخدام لإصدارات 4.1 وما بعده من Android.<br/><br/>
-صمّمه <b>آيدان فوليستاد (Aidan Follestad)</b>.<br/><a href=\'http://aidanfollestad.com\'>موقع ويب</a>&nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>تويتر</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+صمّمه <b>آيدان فوليستاد (Aidan Follestad)</b>.<br/><a href='http://aidanfollestad.com'>موقع ويب</a>&nbsp;&nbsp;
+ <a href='https://twitter.com/afollestad'>تويتر</a>&nbsp;&nbsp;
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>الاسم:</b>&nbsp;&nbsp;%1$s<br/><b>المسار:</b>&nbsp;&nbsp;%2$s<br/><b>الحجم:</b>&nbsp;&nbsp;%3$s<br/><b>عُدِّل:</b>&nbsp;&nbsp;%4$s<br/><b>الأذونات:</b>&nbsp;&nbsp;%5$s
@@ -153,13 +150,13 @@
     <string name="created_file">أُنشئ الملفّ %1$s</string>
     <string name="file_already_exists">الملفّ موجود من قبل</string>
     <string name="failed_make_file">فشل إنشاء ملفّ جديد: %1$s</string>
-    <string name="pick_a_file">اختيار ملف …</string>
+    <string name="pick_a_file">اختيار ملف ...</string>
     <string name="cabinet_text_editor">مُحرّر نصوص Cabinet</string>
     <string name="save">احفظ</string>
     <string name="unsaved_changes">لم تُحفَظ التغييرات</string>
     <string name="unsaved_changes_desc">أجريت تغييرات لم تحفظها بعد، أتريد حفظها قبل الخروج؟</string>
-    <string name="saving">يحفظ…</string>
-    <string name="loading">يُحمِّل…</string>
+    <string name="saving">يحفظ...</string>
+    <string name="loading">يُحمِّل...</string>
     <string name="unsupported_extension">لاحقة غير مدعومة</string>
     <string name="unsupported_extension_desc">لا يمكن فتح ملفات من هذا النوع في مُحرّر النصوص</string>
     <string name="file_already_exists_warning">تنبيه: هذا الملف موجود من قبل. سيظهر ملفّك الجديد كملفّ مُكرَّر.</string>
@@ -171,30 +168,9 @@
     <string name="no_files_filter">ما من ملفّات تطابق %1$s</string>
     <string name="superuser_not_available">المستخدم الخارق غير مُتاح</string>
     <string name="filter_active">عامل التّصفية الحاليّ: %1$s</string>
-
-
     <string name="sdcard">بطاقة الذاكرة</string>
     <string name="owner">المالك</string>
     <string name="group">المجموعة</string>
-    <string name="applying_permissions">يُطبِّق الأذونات…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">يُطبِّق الأذونات...</string>
+    <string name="primary_color">اللون الآساسي</string>
 </resources>

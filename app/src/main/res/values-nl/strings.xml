@@ -5,7 +5,7 @@
     <string name="welcome_conclusion">Probeer te tikken op het voorbeeld pictogram of de 3-punt icoon. Tikken op het voorbeeld pictogram selecteerd het bestand voor multi acties, dit kan ook gedaan worden door te tikken op en ingedrukt te houden van bestanden. De 3-punt icoon laat een popup menu zien met opties voor het specifieke bestand.\n\nCabinet
  heeft daarnaast nog andere features, zoals toegang tot servers op afstand via SFTP dat je kan vinden tijden het gebruik van Cabinet. Bedankt voor het uitproberen van Cabinet!</string>
     <string name="lets_go">Laten we beginnen!</string>
-    <string name="open_as">Open als…</string>
+    <string name="open_as">Open als...</string>
     <string name="pin">Vastzetten</string>
     <string name="copy">Kopiëren</string>
     <string name="cut">Knippen</string>
@@ -32,7 +32,6 @@
     <string name="sort_modified">Laatst aangepast</string>
     <string name="modified_x">Aangepast %1$s</string>
     <string name="iconpress_hint">Je kan op een bestand zijn icoon tikken om hem snel te selecteren</string>
-
     <string name="navigation_drawer_open">Open navigatie paneel</string>
     <string name="navigation_drawer_close">Sluit navigatie paneel</string>
     <string name="new_folder">Nieuwe map</string>
@@ -69,15 +68,15 @@
     <string name="disconnect_prompt">Wil je de verbinding met %1$s verbreken?</string>
     <string name="uploaded_to">Geupload naar %1$s</string>
     <string name="downloaded_to">Gedownload naar %1$s</string>
-    <string name="connecting">Verbinden…</string>
-    <string name="downloading">Downloaden…</string>
-    <string name="deleting">Verwijderen…</string>
-    <string name="making_folder">Nieuwe map aanmaken…</string>
-    <string name="renaming">Naam wijzigen…</string>
-    <string name="unzipping">Uitpakken…</string>
-    <string name="zipping">Inpakken…</string>
-    <string name="moving">Verplaatsen…</string>
-    <string name="uploading">Uploaden…</string>
+    <string name="connecting">Verbinden...</string>
+    <string name="downloading">Downloaden...</string>
+    <string name="deleting">Verwijderen...</string>
+    <string name="making_folder">Nieuwe map aanmaken...</string>
+    <string name="renaming">Naam wijzigen...</string>
+    <string name="unzipping">Uitpakken...</string>
+    <string name="zipping">Inpakken...</string>
+    <string name="moving">Verplaatsen...</string>
+    <string name="uploading">Uploaden...</string>
     <string name="copying">kopiëren</string>
     <string name="failed_delete_file">Het verwijderen van het volgende bestand is mislukt: %1$s</string>
     <string name="failed_make_directory">Het maken van de volgende map is mislukt: %1$s</string>
@@ -104,7 +103,7 @@
     <string name="cut_xfiles"><![CDATA[
 <b>Knip:</b>&nbsp;&nbsp;%1$d bestanden
     ]]></string>
-    <string name="search_files">Zoek bestanden…</string>
+    <string name="search_files">Zoek bestanden...</string>
     <string name="search_x"><![CDATA[
 <b>Zoek:</b>&nbsp;%1$s
     ]]></string>
@@ -117,27 +116,25 @@
     <string name="no_thanks">Nee bedankt</string>
     <string name="file">Bestand</string>
     <string name="folder">Map</string>
-    <string name="remote_connection">Verbinding op afstand…</string>
+    <string name="remote_connection">Verbinding op afstand...</string>
     <string name="text">Tekst</string>
     <string name="image">Afbeelding</string>
     <string name="audio">Geluid</string>
     <string name="video">Video</string>
     <string name="other">Overig</string>
     <string name="info">Info</string>
-
     <string name="show_hidden_files">Toon verborgen bestanden</string>
     <string name="about">Over</string>
     <string name="about_desc">Over de app en de ontwerper</string>
-
     <string name="ui">UI</string>
     <string name="settings">Instellingen</string>
     <string name="about_body"><![CDATA[
 Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en hoger.<br/><br/>
-        Ontworpen door <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Ontworpen door <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Naam:</b>&nbsp;&nbsp;%1$s<br/><b>Locatie:</b>&nbsp;&nbsp;%2$s<br/><b>grootte:</b>&nbsp;&nbsp;%3$s<br/><b>Aangepast:</b>&nbsp;&nbsp;%4$s<br/><b>Rechten:</b>&nbsp;&nbsp;%5$s
@@ -146,17 +143,17 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
         <b>Naam:</b>&nbsp;&nbsp;%1$s<br/><b>Locatie:</b>&nbsp;&nbsp;%2$s<br/><b>Inhoud:</b>&nbsp;&nbsp;%3$s<br/><b>Aangepast:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nieuw bestand</string>
-    <string name="making_file">Bestand aan het aanmaken…</string>
+    <string name="making_file">Bestand aan het aanmaken...</string>
     <string name="created_file">Bestand gemaakt: %1$s</string>
     <string name="file_already_exists">Bestand bestaat al</string>
     <string name="failed_make_file">Het maken van het volgende bestand is mislukt: %1$s</string>
-    <string name="pick_a_file">Kies een bestand…</string>
+    <string name="pick_a_file">Kies een bestand...</string>
     <string name="cabinet_text_editor">Cabinet Tekst Verwerker</string>
     <string name="save">Opslaan</string>
     <string name="unsaved_changes">Niet opgeslagen aanpassingen</string>
     <string name="unsaved_changes_desc">Je hebt niet opgeslagen aanpassingen, wil je deze opslaan voordat je het programma sluit?</string>
-    <string name="saving">Opslaan…</string>
-    <string name="loading">Laden…</string>
+    <string name="saving">Opslaan...</string>
+    <string name="loading">Laden...</string>
     <string name="unsupported_extension">Niet ondersteunde extensie</string>
     <string name="unsupported_extension_desc">Je kan dit type bestand niet openen voor tekst bewerking.</string>
     <string name="file_already_exists_warning">Let op: dit bestand bestaat al. Het nieuwe bestand zal verschijnen als kopie.</string>
@@ -168,29 +165,8 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
     <string name="no_files_filter">Geen bestanden voor filter: %1$s</string>
     <string name="superuser_not_available">Superuser niet beschikbaar.</string>
     <string name="filter_active">Filter actief:%1$s</string>
-
-
     <string name="sdcard">SD Kaart</string>
     <string name="owner">Eigenaar</string>
     <string name="group">Groep</string>
-    <string name="applying_permissions">Machtigingen toepassen…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-
+    <string name="applying_permissions">Machtigingen toepassen...</string>
 </resources>

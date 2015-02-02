@@ -6,7 +6,7 @@
     <string name="welcome_conclusion">Încercaţi sӑ apӑsaţi pe iconiţa fișierului sau butonul de meniu. Apӑsând pe iconiţӑ, pregӑtește fișierul pentru diverse acţiuni, iar acest lucru se poate realiza si prin apӑsare îndelungatӑ pe numele fișierului. Apӑsând pe butonul de meniu, va deschide un meniu de tip popup cu acţiuni individuale pentru fișiere. \n\nCabinet
  mai oferӑ si alte opţiuni, printre care și conexiunea la distanţӑ prin SFTP. Mulţumesc pentru cӑ aţi incercat Cabinet!</string>
     <string name="lets_go">Hai sa pornim!</string>
-    <string name="open_as">Deschide Sub Formӑ…</string>
+    <string name="open_as">Deschide Sub Formӑ...</string>
     <string name="pin">Marcheazӑ</string>
     <string name="copy">Copiazӑ</string>
     <string name="cut">Taie</string>
@@ -33,7 +33,6 @@
     <string name="sort_modified">Ultima modificare</string>
     <string name="modified_x">Modificat la %1$s</string>
     <string name="iconpress_hint">Poţi apӑsa pe iconiţa unui fișier pentru selecţie rapidӑ!</string>
-
     <string name="navigation_drawer_open">Deschide meniul de navigare</string>
     <string name="navigation_drawer_close">Inchide meniul de navigare</string>
     <string name="new_folder">Folder Nou</string>
@@ -70,16 +69,16 @@
     <string name="disconnect_prompt">Vrei sӑ te deconectezi de la %1$s?</string>
     <string name="uploaded_to">Uploadat catre %1$s</string>
     <string name="downloaded_to">Downloadat în %1$s</string>
-    <string name="connecting">Se conecteazӑ…</string>
-    <string name="downloading">Se downloadeazӑ…</string>
-    <string name="deleting">Se șterge…</string>
-    <string name="making_folder">Se creazӑ folderul…</string>
-    <string name="renaming">Se redenumește…</string>
-    <string name="unzipping">Se dezarhiveazӑ…</string>
-    <string name="zipping">Se arhiveazӑ…</string>
-    <string name="moving">Se mutӑ…</string>
-    <string name="uploading">Se uploadeazӑ…</string>
-    <string name="copying">Se copie…</string>
+    <string name="connecting">Se conecteazӑ...</string>
+    <string name="downloading">Se downloadeazӑ...</string>
+    <string name="deleting">Se șterge...</string>
+    <string name="making_folder">Se creazӑ folderul...</string>
+    <string name="renaming">Se redenumește...</string>
+    <string name="unzipping">Se dezarhiveazӑ...</string>
+    <string name="zipping">Se arhiveazӑ...</string>
+    <string name="moving">Se mutӑ...</string>
+    <string name="uploading">Se uploadeazӑ...</string>
+    <string name="copying">Se copie...</string>
     <string name="failed_delete_file">Ștergerea %1$s eșuatӑ</string>
     <string name="failed_make_directory">Creare folderului nou %1$s eșuatӑ</string>
     <string name="failed_rename_file">Redenumire eșuatӑ a: %1$s</string>
@@ -105,7 +104,7 @@
     <string name="cut_xfiles"><![CDATA[
  <b>Taie</b>&nbsp;&nbsp;%1$d fișiere
     ]]></string>
-    <string name="search_files">Cautӑ fișiere…</string>
+    <string name="search_files">Cautӑ fișiere...</string>
     <string name="search_x"><![CDATA[
  <b>Cautӑ</b>&nbsp;%1$s
     ]]></string>
@@ -118,27 +117,25 @@
     <string name="no_thanks">Nu, mersi</string>
     <string name="file">Fișier</string>
     <string name="folder">Folder</string>
-    <string name="remote_connection">Conexiune la distanţӑ…</string>
+    <string name="remote_connection">Conexiune la distanţӑ...</string>
     <string name="text">Text</string>
     <string name="image">Imagine</string>
     <string name="audio">Audio</string>
     <string name="video">Video</string>
     <string name="other">Altele</string>
     <string name="info">Detalii</string>
-
     <string name="show_hidden_files">Afișarea Fișierelor Ascunse</string>
     <string name="about">Despre</string>
     <string name="about_desc">Despre aplicaţie și autorul ei.</string>
-
     <string name="ui">Interfaţӑ</string>
     <string name="settings">Setӑri</string>
     <string name="about_body"><![CDATA[
 Un manager de fișiere minimalist, intuitiv și frumos pentru Android 4.1 sau mai nou.<br/><br/> 
-Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-<a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp; 
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>Linkedin</a>
+Creat de <b>Aidan Follestad</b><br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+<a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp; 
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+ <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+ <a href='https://www.linkedin.com/in/afollestad'>Linkedin</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Nume:</b>&nbsp;&nbsp;%1$s<br/><b>Locaţie:</b>&nbsp;&nbsp;%2$s<br/><b>Mӑrime</b>&nbsp;&nbsp;%3$s<br/><b>Modificat:</b>&nbsp;&nbsp;%4$s<br/><b>Privilegii:</b>&nbsp;&nbsp;%5$s
@@ -147,17 +144,17 @@ Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Websit
  <b>Nume:</b>&nbsp;&nbsp;%1$s<br/><b>Locaţie:</b>&nbsp;&nbsp;%2$s<br/><b>Conţinut:</b>&nbsp;&nbsp;%3$s<br/><b>Modificat:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Fișier Nou</string>
-    <string name="making_file">Creare fișier…</string>
+    <string name="making_file">Creare fișier...</string>
     <string name="created_file">Fișierul %1$s a fost creat</string>
     <string name="file_already_exists">Fișierul este deja existent</string>
     <string name="failed_make_file">Creare fișier nou eșuatӑ: %1$s</string>
-    <string name="pick_a_file">Alege un fișier…</string>
+    <string name="pick_a_file">Alege un fișier...</string>
     <string name="cabinet_text_editor">Editor Text Cabinet</string>
     <string name="save">Salveazӑ</string>
     <string name="unsaved_changes">Schimbӑri nesalvate</string>
     <string name="unsaved_changes_desc">Ai schimbӑri nesalvate, vrei sӑ le salvez inainte de a ieși?</string>
-    <string name="saving">Se salveazӑ…</string>
-    <string name="loading">Se incarcӑ…</string>
+    <string name="saving">Se salveazӑ...</string>
+    <string name="loading">Se incarcӑ...</string>
     <string name="unsupported_extension">Extensie Necunoscutӑ</string>
     <string name="unsupported_extension_desc">Nu poţi accesa acest tip de fișier pentru editare text.</string>
     <string name="file_already_exists_warning">Atenţie: acest fișier e deja existent. Noul tӑu fișier va apӑrea ca duplicat.</string>
@@ -169,30 +166,8 @@ Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Websit
     <string name="no_files_filter">Nici un fișier de tipul: %1$s</string>
     <string name="superuser_not_available">Superuser nu este valabil</string>
     <string name="filter_active">Filtru activ: %1$s</string>
-
-
     <string name="sdcard">Card SD</string>
     <string name="owner">Proprietar</string>
     <string name="group">Grup</string>
-    <string name="applying_permissions">Aplicând privilegii…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">Aplicând privilegii...</string>
 </resources>

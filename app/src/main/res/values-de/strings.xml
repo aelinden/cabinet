@@ -33,7 +33,6 @@
     <string name="sort_modified">Zuletzt verändert</string>
     <string name="modified_x">%1$s verändert</string>
     <string name="iconpress_hint">Sie können das Icon der Datei drücken um sie schnell auszuwählen!</string>
-
     <string name="navigation_drawer_open">Öffne navigation drawer</string>
     <string name="navigation_drawer_close">Schließe Navigation drawer</string>
     <string name="new_folder">Neuer Ordner</string>
@@ -125,20 +124,18 @@
     <string name="video">Video</string>
     <string name="other">Andere</string>
     <string name="info">Information</string>
-
     <string name="show_hidden_files">Zeige versteckte Dateien</string>
     <string name="about">Über</string>
     <string name="about_desc">Über die App und deren Designer</string>
-
     <string name="ui">UI</string>
     <string name="settings">Einstellungen</string>
     <string name="about_body"><![CDATA[
  Ein minimalistischer, intuitiver, schöner Dateimanager für Android 4.1 und darüber. <br/><br/>
- Entworfen von <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Webseite</a>&nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+ Entworfen von <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Webseite</a>&nbsp;&nbsp;
+ <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+ <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+ <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Größe:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s<br/><b>Berechtigung:</b>&nbsp;&nbsp;%5$s
@@ -147,17 +144,17 @@
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Inhalte:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Neuer Datei</string>
-    <string name="making_file">Erstelle Datei…</string>
+    <string name="making_file">Erstelle Datei...</string>
     <string name="created_file">Datei %1$s erstellt</string>
     <string name="file_already_exists">Datei existiert bereits</string>
     <string name="failed_make_file">Erstellen der Datei %1$s fehlgeschlagen</string>
-    <string name="pick_a_file">Wählen sie eine Datei…</string>
+    <string name="pick_a_file">Wählen sie eine Datei...</string>
     <string name="cabinet_text_editor">Cabinet Texteditor</string>
     <string name="save">Speichern</string>
     <string name="unsaved_changes">Ungespeicherte Änderungen</string>
     <string name="unsaved_changes_desc">Sie haben ungespeicherte Änderungen, möchten Sie diese vor dem Verlassen speichern?</string>
-    <string name="saving">Speichern…</string>
-    <string name="loading">Lade…</string>
+    <string name="saving">Speichern...</string>
+    <string name="loading">Lade...</string>
     <string name="unsupported_extension">Nicht unterstützer Dateityp</string>
     <string name="unsupported_extension_desc">Dieser Dateityp kann nicht im Texteditor geöffnet werden.</string>
     <string name="file_already_exists_warning">Warnung: Diese Datei existiert bereits. Die neue Datei wird als Duplikat erscheinen.</string>
@@ -169,30 +166,34 @@
     <string name="no_files_filter">Keine Dateien für Filter: %1$s</string>
     <string name="superuser_not_available">Superuser nicht verfügbar</string>
     <string name="filter_active">Filter aktiv: %1$s</string>
-
-
+    <string name="base_theme">Standard Aussehen</string>
+    <string-array name="base_themes">
+        <item>Hell</item>
+        <item>Dunkel</item>
+        <item>Schwarz (AMOLED)</item>
+    </string-array>
     <string name="sdcard">SD-Karte</string>
     <string name="owner">Besitzer</string>
     <string name="group">Gruppe</string>
-    <string name="applying_permissions">Berechtigungen werden angewendet…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">Berechtigungen werden angewendet...</string>
+    <string name="primary_color">Hauptfarbe</string>
+    <string name="primary_color_desc">Die zu benutzende Hauptfarbe. Standardmäßig blau.</string>
+    <string name="accent_color">Akzentfarbe</string>
+    <string name="accent_color_desc">Die zu benutzende Akzentfarbe. Standardmäßig pink.</string>
+    <string name="colored_navbar">Gefärbte Navigationsleiste</string>
+    <string name="colored_navbar_desc">Ob die die Navigationsleiste in der Hauptfarbe gefärbt ist oder nicht.</string>
+    <string name="colored_folders">Gefärbte Ordner</string>
+    <string name="colored_folders_desc">Ob die Ordner in der Hauptfarbe gefärbt sind oder nicht.</string>
+    <string name="defaultStr">Standardmäßig</string>
+    <string name="only_available_lollipop">Diese Funktion ist nur auf Android Lollipop und höher verfügbar.</string>
+    <string name="base_theme_desc">Wähle wenn du ein helles, dunkles oder AMOLED schwarzes Thema mit Farbe möchtest.</string>
+    <string name="find_and_replace">Suche und ersetze</string>
+    <string name="find">Suche</string>
+    <string name="replace">Ersetze</string>
+    <string name="replace_all">Ersetze alle</string>
+    <string name="use_regex">Benutze regex</string>
+    <string name="match_case">Wort für Wort</string>
+    <string name="no_occurences">Keine Übereinstimmung</string>
+    <string name="no_occurences_desc">Es wurden keine Übereinstimmungen anhand ihrer Suche gefunden.</string>
+    <string name="revert_changes">Kehre Änderungen um</string>
 </resources>

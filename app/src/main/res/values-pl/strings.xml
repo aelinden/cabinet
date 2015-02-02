@@ -6,7 +6,7 @@ i działał jak menadżer plików powinien.\n\n                       Spójrz na
     <string name="welcome_conclusion">Dotknij obrazek lub trzy kropki. Dotknięcie obrazka zaznaczy plik, można to zrobić również poprzez dotknięcie i przytrzymanie nazwy pliku. Natomiast ikonka z trzema kropkami to menu kontekstowe odpowiadające za wyświetlanie szczegółowych opcji zarządzania plikiem. \n\nCabinet
 posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów poprzez SFTP. Dziękujemy za wypróbowanie naszego menadżera plików Cabinet!</string>
     <string name="lets_go">Do dzieła!</string>
-    <string name="open_as">Otwórz jako…</string>
+    <string name="open_as">Otwórz jako...</string>
     <string name="pin">Przypnij</string>
     <string name="copy">Kopiuj</string>
     <string name="cut">Wytnij</string>
@@ -33,7 +33,6 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="sort_modified">Ostatnio modyfikowane</string>
     <string name="modified_x">Modyfikowane %1$s</string>
     <string name="iconpress_hint">Możesz dotknąć ikony pliku, aby go szybko zaznaczyć</string>
-
     <string name="navigation_drawer_open">Otwórz szufladę</string>
     <string name="navigation_drawer_close">Zamknij szufladę</string>
     <string name="new_folder">Nowy Folder</string>
@@ -70,16 +69,16 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="disconnect_prompt">Czy chcesz się rozłączyć z %1$s?</string>
     <string name="uploaded_to">Wysyłanie do %1$s</string>
     <string name="downloaded_to">Pobieranie do %1$s</string>
-    <string name="connecting">Łączenie…</string>
-    <string name="downloading">Pobieranie…</string>
-    <string name="deleting">Usuwanie…</string>
-    <string name="making_folder">Tworzenie folderu…</string>
-    <string name="renaming">Zmiana nazwy…</string>
-    <string name="unzipping">Rozpakowywanie…</string>
-    <string name="zipping">Pakowanie…</string>
-    <string name="moving">Przenoszenie…</string>
-    <string name="uploading">Wysyłanie…</string>
-    <string name="copying">Kopiowanie…</string>
+    <string name="connecting">Łączenie...</string>
+    <string name="downloading">Pobieranie...</string>
+    <string name="deleting">Usuwanie...</string>
+    <string name="making_folder">Tworzenie folderu...</string>
+    <string name="renaming">Zmiana nazwy...</string>
+    <string name="unzipping">Rozpakowywanie...</string>
+    <string name="zipping">Pakowanie...</string>
+    <string name="moving">Przenoszenie...</string>
+    <string name="uploading">Wysyłanie...</string>
+    <string name="copying">Kopiowanie...</string>
     <string name="failed_delete_file">Nie można usunąć tego pliku: %1$s</string>
     <string name="failed_make_directory">"Nie udało się utworzyć nowego folderu: %1$s "</string>
     <string name="failed_rename_file">Nie udało się zmienić nazwy/przenieść tego pliku: %1$s</string>
@@ -105,7 +104,7 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="cut_xfiles"><![CDATA[
  <b>Wytnij:</b>&nbsp:&;%1$d pliki
     ]]></string>
-    <string name="search_files">Szukaj plików…</string>
+    <string name="search_files">Szukaj plików...</string>
     <string name="search_x"><![CDATA[
  <b>Szukaj:</b>&nbsp;%1$s
     ]]></string>
@@ -118,31 +117,29 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="no_thanks">Nie, dzięki</string>
     <string name="file">Plik</string>
     <string name="folder">Folder</string>
-    <string name="remote_connection">Połączenie zdalne…</string>
+    <string name="remote_connection">Połączenie zdalne...</string>
     <string name="text">Tekst</string>
     <string name="image">Obraz</string>
     <string name="audio">Dzwięk</string>
     <string name="video">Film</string>
     <string name="other">Inny</string>
     <string name="info">Informacje</string>
-
     <string name="show_hidden_files">Pokaż ukryte pliki</string>
     <string name="about">O aplikacji</string>
     <string name="about_desc">Informacje o aplikacji i jej twórcy</string>
-
     <string name="ui">Wygląd</string>
     <string name="settings">Ustawienia</string>
     <string name="about_body"><![CDATA[
  Minimalistyczny, intuicyjny, piękny menadżer plików dla Androida 4.1 i wzwyż.<br/><br/> 
- Twórca <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Strona</a>
+ Twórca <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Strona</a>
 &nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>Twitter</a>
+ <a href='https://twitter.com/afollestad'>Twitter</a>
 &nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google
+ <a href='https://google.com/+AidanFollestad'>Google
 +</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>
+ <a href='https://github.com/afollestad'>GitHub</a>
 &nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn
+ <a href='https://www.linkedin.com/in/afollestad'>LinkedIn
 </a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
@@ -152,17 +149,17 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
  <b>Nazwa:</b>&nbsp;&nbsp;%1$s<br/><b>Ścieżka:</b>&nbsp;&nbsp;%2$s<br/><b>Zawartość:</b>&nbsp;&nbsp;%3$s<br/><b>Zmodyfikowano:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nowy plik</string>
-    <string name="making_file">Tworzenie pliku…</string>
+    <string name="making_file">Tworzenie pliku...</string>
     <string name="created_file">Plik utworzony %1$s</string>
     <string name="file_already_exists">Plik już istnieje</string>
     <string name="failed_make_file">Nie udało się utworzyć nowego pliku: %1$s</string>
-    <string name="pick_a_file">Wybierz plik…</string>
+    <string name="pick_a_file">Wybierz plik...</string>
     <string name="cabinet_text_editor">Edytor tekstu Cabinet</string>
     <string name="save">Zapisz</string>
     <string name="unsaved_changes">Zmiany niezapisane</string>
     <string name="unsaved_changes_desc">Masz niezapisane zmiany, czy chesz je zapisać przed wyjściem?</string>
-    <string name="saving">Zapisywanie…</string>
-    <string name="loading">Ładowanie…</string>
+    <string name="saving">Zapisywanie...</string>
+    <string name="loading">Ładowanie...</string>
     <string name="unsupported_extension">Nieobsługiwane rozszerzenie</string>
     <string name="unsupported_extension_desc">Nie możesz otworzyć tego typu pliku w edytorze tekstu</string>
     <string name="file_already_exists_warning">Uwaga: ten plik już istnieje. Twój nowy plik pojawi się jako duplikat</string>
@@ -174,30 +171,19 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="no_files_filter">Brak wyników filtrowania: %1$s</string>
     <string name="superuser_not_available">Tryb Superuser niedostępny</string>
     <string name="filter_active">Aktywny filtr: %1$s</string>
-
-
     <string name="sdcard">Karta SD</string>
     <string name="owner">Właściciel</string>
     <string name="group">Grupa</string>
-    <string name="applying_permissions">Stosowanie uprawnień…</string>
-
-    <string name="primary_color">Primary Color</string>
-    <string name="primary_color_desc">The primary theme color to use. Defaults to Material blue.</string>
-    <string name="accent_color">Accent Color</string>
-    <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
-    <string name="colored_navbar">Colored Navigation Bar</string>
-    <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="defaultStr">Default</string>
-    <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
-    <string name="colored_folders">Colored Folders</string>
-    <string name="colored_folders_desc">Whether or not folders are colored with the primary color.</string>
-
-    <string name="base_theme">Base Theme</string>
-    <string-array name="base_themes">
-        <item>Light</item>
-        <item>Dark</item>
-        <item>Black (AMOLED)</item>
-    </string-array>
-    <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
-
+    <string name="applying_permissions">Stosowanie uprawnień...</string>
+    <string name="primary_color">Kolor podstawowy</string>
+    <string name="primary_color_desc">Główny kolor motywu</string>
+    <string name="accent_color">Akcent koloru</string>
+    <string name="accent_color_desc">Kolor akcentu motywu</string>
+    <string name="colored_navbar">Kolorowy pasek nawigacji</string>
+    <string name="colored_navbar_desc">Pasek nawigacyjny w kolorze wybranego koloru motywu</string>
+    <string name="colored_folders">Kolorowe foldery</string>
+    <string name="colored_folders_desc">Foldery w kolorze wybranego koloru motywu</string>
+    <string name="defaultStr">Domyślny</string>
+    <string name="only_available_lollipop">Opcja dostępna wyłącznie na urządzeniach z Androidem Lollipop i późniejszymi</string>
+    <string name="base_theme_desc">Wybierz pomiędzy jasnym, ciemnym oraz czarnym motywem programu</string>
 </resources>
