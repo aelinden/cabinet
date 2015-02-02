@@ -16,5 +16,9 @@
     <color name="dark_theme_gray">#1F1F1F</color>
     <color name="dark_theme_gray_darker">#292929</color>
     <color name="non_colored_folder">#4A4A4A</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="half_black">#808080</color>
+    <color name="fab_white">#fafafa</color>
+    <color name="fab_white_pressed">#f1f1f1</color>
 
 </resources>
