@@ -74,7 +74,7 @@ public abstract class BaseFileCab extends BaseCab {
         }
         getContext().disableFab(hide);
         getContext().fab.getButton().
-                setImageResource(canPaste() == BaseFileCab.PasteMode.ENABLED ? R.drawable.ic_fab_paste : R.drawable.ic_fab_new);
+                setIcon(canPaste() == BaseFileCab.PasteMode.ENABLED ? R.drawable.ic_fab_paste : R.drawable.ic_fab_new);
         return this;
     }
 
@@ -196,7 +196,7 @@ public abstract class BaseFileCab extends BaseCab {
             getContext().invalidateNavDrawerPadding(false);
             if (canPaste() == PasteMode.ENABLED) {
                 getContext().fabPasteMode = PasteMode.DISABLED;
-                getContext().fab.getButton().setImageResource(R.drawable.ic_fab_new);
+                getContext().fab.getButton().setIcon(R.drawable.ic_fab_new);
             }
         }
         getContext().disableFab(false);
