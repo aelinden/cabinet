@@ -9,4 +9,4 @@ Since I'm now in college and no longer have time to maintain and update it, I ma
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
 </a>
 
-Download the latest APK here: 
+Download the latest APK here: https://github.com/afollestad/cabinet/blob/master/cabinet.apk
