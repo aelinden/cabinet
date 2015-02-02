@@ -8,6 +8,13 @@
         android:icon="@drawable/ic_save"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/findAndReplace"
+        android:title="@string/find_and_replace"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/revert"
+        android:title="@string/revert_changes"/>
+    <item
         android:id="@+id/details"
         android:title="@string/details" />
 

@@ -302,4 +302,14 @@
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
 
+    <string name="find_and_replace">Find and Replace</string>
+    <string name="find">Find</string>
+    <string name="replace">Replace</string>
+    <string name="replace_all">Replace All</string>
+    <string name="use_regex">Use regex</string>
+    <string name="match_case">Match case</string>
+    <string name="no_occurences">No Occurences</string>
+    <string name="no_occurences_desc">No occurences of your find query were found.</string>
+    <string name="revert_changes">Revert Changes</string>
+
 </resources>

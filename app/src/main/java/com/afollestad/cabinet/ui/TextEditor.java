@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.file.LocalFile;
@@ -32,6 +34,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TextEditor extends NetworkedActivity implements TextWatcher {
 
@@ -41,6 +45,36 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
     private String mOriginal;
     private Timer mTimer;
     private boolean mModified;
+
+    private int mFindStart = 0;
+    private EditText mFindText;
+    private EditText mReplaceText;
+
+    private String trim(String text) {
+        if (text.charAt(0) != '\n' && text.charAt(0) != ' ' &&
+                text.charAt(text.length() - 1) != '\n' &&
+                text.charAt(text.length() - 1) != ' ') {
+            return text;
+        }
+        final StringBuilder b = new StringBuilder(text);
+        while (true) {
+            if (b.length() == 0) break;
+            else if (b.charAt(0) == '\n' || b.charAt(0) == ' ') {
+                b.deleteCharAt(0);
+            } else {
+                break;
+            }
+        }
+        while (true) {
+            if (b.length() == 0) break;
+            else if (b.charAt(b.length() - 1) == '\n' || b.charAt(b.length() - 1) == ' ') {
+                b.deleteCharAt(b.length() - 1);
+            } else {
+                break;
+            }
+        }
+        return b.toString();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +92,86 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
 
         if (getIntent().getData() != null) load(getIntent().getData());
         else mInput.setVisibility(View.VISIBLE);
+
+        findViewById(R.id.findReplaceFrame).setBackgroundColor(getThemeUtils().primaryColor());
+
+        TextView find = (TextView) findViewById(R.id.btnFind);
+        find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performFind(true);
+            }
+        });
+
+        TextView replace = (TextView) findViewById(R.id.btnReplace);
+        replace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performReplace();
+            }
+        });
+
+        TextView replaceAll = (TextView) findViewById(R.id.btnReplaceAll);
+        replaceAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                while (performReplace()) {
+                    // Do nothing, it will stop on its own
+                }
+            }
+        });
+    }
+
+    private boolean performFind(boolean showErrorIfNone) {
+        String findText = trim(mFindText.getText().toString());
+        String mainText = trim(mInput.getText().toString());
+        final boolean matchCase = ((CheckBox) findViewById(R.id.match_case)).isChecked();
+
+        if (!matchCase) {
+            findText = findText.toLowerCase(Locale.getDefault());
+            mainText = mainText.toLowerCase(Locale.getDefault());
+        }
+
+        final Pattern p = Pattern.compile(findText);
+        final Matcher m = p.matcher(mainText);
+        if (mFindStart > mainText.length() - 1)
+            mFindStart = 0;
+        boolean found = m.find(mFindStart);
+        if (!found && mFindStart > 0) {
+            mFindStart = 0;
+            found = m.find(mFindStart);
+        }
+        if (!found) {
+            if (showErrorIfNone) {
+                new MaterialDialog.Builder(this)
+                        .title(R.string.no_occurences)
+                        .content(R.string.no_occurences_desc)
+                        .positiveText(android.R.string.ok)
+                        .show();
+            }
+            return false;
+        }
+
+        mFindStart = m.start();
+        int mFindEnd = m.end();
+        mInput.requestFocus();
+        mInput.setSelection(mFindStart, mFindEnd);
+        mFindStart = mFindEnd + 1;
+        return true;
+    }
+
+    private boolean performReplace() {
+        int mLastReplaceStart = -1;
+        if (mInput.getSelectionStart() >= 0 && mInput.getSelectionEnd() > mInput.getSelectionStart() &&
+                mLastReplaceStart != mInput.getSelectionStart()) {
+            final int start = mInput.getSelectionStart();
+            final int end = mInput.getSelectionEnd();
+            final StringBuilder inputText = new StringBuilder(mInput.getText().toString());
+            inputText.delete(start, end);
+            inputText.insert(start, mReplaceText.getText().toString());
+            mInput.setText(inputText.toString());
+            return performFind(false);
+        } else return performFind(true) && performReplace();
     }
 
     @Override
@@ -285,6 +399,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.text_editor, menu);
         menu.findItem(R.id.save).setVisible(mModified);
+        menu.findItem(R.id.revert).setVisible(mModified);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -298,6 +413,22 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
             return true;
         } else if (item.getItemId() == R.id.details) {
             DetailsDialog.create(new LocalFile(this, mFile)).show(getFragmentManager(), "DETAILS_DIALOG");
+            return true;
+        } else if (item.getItemId() == R.id.revert) {
+            mModified = false;
+            mInput.setText(mOriginal);
+            invalidateOptionsMenu();
+        } else if (item.getItemId() == R.id.findAndReplace) {
+            View frame = findViewById(R.id.findReplaceFrame);
+            if (frame.getVisibility() == View.GONE) {
+                frame.setVisibility(View.VISIBLE);
+                mFindText = (EditText) findViewById(R.id.find);
+                mReplaceText = (EditText) findViewById(R.id.replace);
+                mFindText.requestFocus();
+            } else {
+                frame.setVisibility(View.GONE);
+                mInput.requestFocus();
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);
