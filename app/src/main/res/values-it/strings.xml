@@ -117,7 +117,7 @@
     <string name="no_thanks">No grazie</string>
     <string name="file">File</string>
     <string name="folder">Cartella</string>
-    <string name="remote_connection">Connessione remota...</string>
+    <string name="remote_connection">Connessione remota…</string>
     <string name="text">Testo</string>
     <string name="image">Immagine</string>
     <string name="audio">Audio</string>
@@ -131,11 +131,11 @@
     <string name="settings">Impostazioni</string>
     <string name="about_body"><![CDATA[
         A gestore di file minimale, intuitivo e bellissimo per Android 4.1 e versioni successive.<br/><br/>
-        Progettato da <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Sito web</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+        Progettato da <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Sito web</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Percorso:</b>&nbsp;&nbsp;%2$s<br/><b>Dimensione:</b>&nbsp;&nbsp;%3$s<br/><b>Modificato:</b>&nbsp;&nbsp;%4$s<br/><b>Permessi:</b>&nbsp;&nbsp;%5$s
@@ -144,7 +144,7 @@
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Percorso:</b>&nbsp;&nbsp;%2$s<br/><b>Contenuti:</b>&nbsp;&nbsp;%3$s<br/><b>Modificato:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nuova File</string>
-    <string name="making_file">Creazione file...</string>
+    <string name="making_file">Creazione file…</string>
     <string name="created_file">File %1$s creato</string>
     <string name="file_already_exists">File già esistente</string>
     <string name="failed_make_file">Impossibile creare un nuovo file: %1$s</string>
@@ -153,8 +153,8 @@
     <string name="save">Salva</string>
     <string name="unsaved_changes">Modifiche non salvate</string>
     <string name="unsaved_changes_desc">Sono presenti modifiche non salvate. Salvarle prima di uscire?</string>
-    <string name="saving">Salvataggio...</string>
-    <string name="loading">Caricamento...</string>
+    <string name="saving">Salvataggio…</string>
+    <string name="loading">Caricamento…</string>
     <string name="unsupported_extension">Estensione non supportata</string>
     <string name="unsupported_extension_desc">Impossibile aprire questo tipo di file per la modifica del testo.</string>
     <string name="file_already_exists_warning">Attenzione: file già esistente. Il nuovo file apparirà come un duplicato.</string>
@@ -175,7 +175,7 @@
     <string name="sdcard">Scheda SD</string>
     <string name="owner">Proprietario</string>
     <string name="group">Gruppo</string>
-    <string name="applying_permissions">Applico i permessi...</string>
+    <string name="applying_permissions">Applico i permessi…</string>
     <string name="primary_color">Colore principale</string>
     <string name="primary_color_desc">Il colore principale da usare per il tema. Quello predefinito è il blu \"Material\".</string>
     <string name="accent_color">Colore di risalto</string>

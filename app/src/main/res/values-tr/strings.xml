@@ -69,16 +69,16 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="disconnect_prompt">%1$s bağlantısı kesmek istiyor musunuz?</string>
     <string name="uploaded_to">%1$s konumuna yüklendi</string>
     <string name="downloaded_to">%1$s konumuna indirildi</string>
-    <string name="connecting">Bağlanılıyor...</string>
-    <string name="downloading">İndiriliyor...</string>
-    <string name="deleting">Siliniyor...</string>
-    <string name="making_folder">Klasör oluşturuluyor...</string>
-    <string name="renaming">Adlandırılıyor...</string>
-    <string name="unzipping">Çıkartılıyor...</string>
+    <string name="connecting">Bağlanılıyor…</string>
+    <string name="downloading">İndiriliyor…</string>
+    <string name="deleting">Siliniyor…</string>
+    <string name="making_folder">Klasör oluşturuluyor…</string>
+    <string name="renaming">Adlandırılıyor…</string>
+    <string name="unzipping">Çıkartılıyor…</string>
     <string name="zipping">Sıkıştırılıyor..</string>
-    <string name="moving">Taşınıyor...</string>
-    <string name="uploading">Yükleniyor...</string>
-    <string name="copying">Kopyalanıyor...</string>
+    <string name="moving">Taşınıyor…</string>
+    <string name="uploading">Yükleniyor…</string>
+    <string name="copying">Kopyalanıyor…</string>
     <string name="failed_delete_file">%1$s dosyası silinemedi</string>
     <string name="failed_make_directory">%1$s klasörü oluşturulamadı.</string>
     <string name="failed_rename_file">%1$s dosyası yeniden adlandırılamadı/taşınamadı</string>
@@ -104,7 +104,7 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="cut_xfiles"><![CDATA[
 <b>Kes:</b>&nbsp;&nbsp;%1$d dosya
     ]]></string>
-    <string name="search_files">Dosyaları ara...</string>
+    <string name="search_files">Dosyaları ara…</string>
     <string name="search_x"><![CDATA[
 <b>Ara:</b>&nbsp;%1$s
     ]]></string>
@@ -117,7 +117,7 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="no_thanks">Hayır teşekkürler</string>
     <string name="file">Dosya</string>
     <string name="folder">Klasör</string>
-    <string name="remote_connection">Uzak Bağlantı...</string>
+    <string name="remote_connection">Uzak Bağlantı…</string>
     <string name="text">Metin</string>
     <string name="image">Resim</string>
     <string name="audio">Ses</string>
@@ -131,11 +131,11 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="settings">Ayarlar</string>
     <string name="about_body"><![CDATA[
 Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneticisi.<br/><br/><b>Aidan Follestad</b> tarafından tasarlandı.
-<a href='http://aidanfollestad.com'>Web Sitesi</a>&nbsp;&nbsp;
-<a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-<a href='https://google.com/+AidanFollestad'>Google</a>&nbsp;&nbsp;
-<a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-<a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>&nbsp;&nbsp;
+<a href=\'http://aidanfollestad.com\'>Web Sitesi</a>&nbsp;&nbsp;
+<a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+<a href=\'https://google.com/+AidanFollestad\'>Google</a>&nbsp;&nbsp;
+<a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+<a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>&nbsp;&nbsp;
     ]]></string>
     <string name="details_body_file"><![CDATA[
 <b>Dosya Adı:</b>&nbsp;&nbsp;%1$s<br/><b>Konum:</b>&nbsp;&nbsp;%2$s<br/><b>Boyut:</b>&nbsp;&nbsp;%3$s<br/><b>En Son Değiştirilme:</b>&nbsp;&nbsp;%4$s<br/><b>İzinler:</b>&nbsp;&nbsp;%5$s<br/>
@@ -148,13 +148,13 @@ Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneti
     <string name="created_file">%1$s oluşturuldu</string>
     <string name="file_already_exists">Dosya zaten mevcut</string>
     <string name="failed_make_file">%1$s oluşturulamadı</string>
-    <string name="pick_a_file">Bir dosya seçin...</string>
+    <string name="pick_a_file">Bir dosya seçin…</string>
     <string name="cabinet_text_editor">Cabinet Metin Editörü</string>
     <string name="save">Kaydet</string>
     <string name="unsaved_changes">Kaydedilmemiş Değişiklikler</string>
     <string name="unsaved_changes_desc">Kaydedilmemiş değişiklikleriniz var, çıkmadan önce onları kaydetmek ister misiniz?</string>
-    <string name="saving">Kaydediliyor...</string>
-    <string name="loading">Yükleniyor...</string>
+    <string name="saving">Kaydediliyor…</string>
+    <string name="loading">Yükleniyor…</string>
     <string name="unsupported_extension">Desteklenmeyen Uzantı</string>
     <string name="unsupported_extension_desc">Bu tür bir dosyayı metin olarak düzenlemek için açamazsınız.</string>
     <string name="file_already_exists_warning">Uyarı: bu dosya zaten mevcut. Yeni dosyanız bir kopya olarak görünecek</string>
@@ -169,5 +169,5 @@ Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneti
     <string name="sdcard">SD Kart</string>
     <string name="owner">Sahibi</string>
     <string name="group">Grup</string>
-    <string name="applying_permissions">İzinler uygulanıyor...</string>
+    <string name="applying_permissions">İzinler uygulanıyor…</string>
 </resources>
