@@ -244,24 +244,29 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         holder.menu.setOnClickListener(this);
     }
 
+    public static DisplayImageOptions getDisplayImageOptions(Context context, int fb) {
+        final Drawable fallback = context.getResources().getDrawable(fb);
+        fallback.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+        return new DisplayImageOptions.Builder()
+                .resetViewBeforeLoading(true)
+                .showImageOnLoading(fallback)
+                .showImageForEmptyUri(fallback)
+                .showImageOnFail(fallback)
+                .cacheInMemory(true)
+                .cacheOnDisk(false)
+                .build();
+    }
+
     public static void loadThumbnail(Context context, File file, ImageView icon) {
         String mime = file.getMimeType();
         if (mime != null) {
             if (mime.startsWith("image/")) {
                 Uri uri = Uri.fromFile(file.toJavaFile());
-                ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon);
+                ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon,
+                        getDisplayImageOptions(context, R.drawable.ic_file_image));
             } else if (mime.equals("application/vnd.android.package-archive")) {
-                final Drawable fallback = context.getResources().getDrawable(R.drawable.ic_file_apk);
-                fallback.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
-                final DisplayImageOptions options = new DisplayImageOptions.Builder()
-                        .resetViewBeforeLoading(true)
-                        .showImageOnLoading(fallback)
-                        .showImageForEmptyUri(fallback)
-                        .showImageOnFail(fallback)
-                        .cacheInMemory(true)
-                        .cacheOnDisk(false)
-                        .build();
-                ImageLoader.getInstance().displayImage(file.getPath(), icon, options);
+                ImageLoader.getInstance().displayImage(file.getPath(), icon,
+                        getDisplayImageOptions(context, R.drawable.ic_file_apk));
             } else {
                 int resId = R.drawable.ic_file_misc;
                 if (file.isDirectory()) {

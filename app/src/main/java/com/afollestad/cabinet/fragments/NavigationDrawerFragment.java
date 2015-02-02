@@ -25,6 +25,7 @@ import com.afollestad.cabinet.ui.SettingsActivity;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.StorageHelper;
 import com.afollestad.cabinet.utils.Utils;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 public class NavigationDrawerFragment extends Fragment {
 
@@ -99,11 +100,28 @@ public class NavigationDrawerFragment extends Fragment {
             public void onClickSettings() {
                 startActivity(new Intent(getActivity(), SettingsActivity.class));
             }
+
+            @Override
+            public void onClickDonate() {
+                donate();
+            }
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setCheckedPos(mCurrentSelectedPosition);
         return v;
+    }
+
+    private void donate() {
+        new MaterialDialog.Builder(getActivity())
+                .title(R.string.donate)
+                .items(R.array.donation_options)
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {
+                        ((MainActivity) getActivity()).donate(i + 1);
+                    }
+                }).show();
     }
 
     public void setUp(DrawerLayout drawerLayout, Toolbar actionBarToolbar) {

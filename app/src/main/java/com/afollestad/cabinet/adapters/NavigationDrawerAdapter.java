@@ -28,8 +28,10 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     @Override
     public void onClick(View view) {
         int index = (Integer) view.getTag();
-        if (mItems.get(index).isSettings())
+        if (index == mItems.size() + 1)
             mListener.onClickSettings();
+        else if (index == mItems.size())
+            mListener.onClickDonate();
         else
             mListener.onClick(index);
     }
@@ -46,6 +48,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         public abstract boolean onLongClick(int index);
 
         public abstract void onClickSettings();
+
+        public abstract void onClickDonate();
     }
 
     public NavigationDrawerAdapter(Activity context, ClickListener listener) {
@@ -104,7 +108,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         mItems.clear();
         for (Pins.Item i : items)
             mItems.add(i);
-        mItems.add(new Pins.Item(true));
         notifyDataSetChanged();
     }
 
@@ -157,22 +160,28 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public void onBindViewHolder(ShortcutViewHolder holder, int index) {
-        Pins.Item item = mItems.get(index);
         holder.view.setTag(index);
         holder.view.setOnClickListener(this);
 
-        if (item.isSettings()) {
-            holder.title.setText(R.string.settings);
+        final int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
+        holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
+
+        if (index == mItems.size() || index == mItems.size() + 1) {
+            holder.divider.setVisibility(View.GONE);
+            if (index == mItems.size() + 1) {
+                holder.title.setText(R.string.settings);
+                holder.icon.setImageResource(R.drawable.ic_drawer_settings);
+            } else {
+                holder.title.setText(R.string.donate);
+                holder.icon.setImageResource(R.drawable.ic_drawer_donate);
+                holder.divider.setVisibility(View.VISIBLE);
+            }
             holder.title.setTextColor(bodyText);
-            holder.icon.setImageResource(R.drawable.ic_drawer_settings);
-            holder.divider.setVisibility(View.VISIBLE);
         } else {
+            Pins.Item item = mItems.get(index);
             holder.view.setOnLongClickListener(this);
             holder.view.setActivated(mCheckedPos == index);
-
-            int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
             holder.title.setTextColor(currentColor);
-            holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
 
             if (item.isRemote()) {
                 holder.title.setText(item.getDisplay(mContext));
@@ -214,6 +223,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        // Add 2 for donate and settings
+        return mItems.size() + 2;
     }
 }

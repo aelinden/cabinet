@@ -831,18 +831,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 });
                 break;
             }
-            case R.id.donation1:
-                ((MainActivity) getActivity()).donate(1);
-                break;
-            case R.id.donation2:
-                ((MainActivity) getActivity()).donate(2);
-                break;
-            case R.id.donation3:
-                ((MainActivity) getActivity()).donate(3);
-                break;
-            case R.id.donation4:
-                ((MainActivity) getActivity()).donate(4);
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

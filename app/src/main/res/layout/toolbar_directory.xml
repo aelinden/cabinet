@@ -29,6 +29,7 @@
         android:paddingStart="72dp"
         android:paddingRight="16dp"
         android:paddingEnd="16dp"
-        android:fontFamily="sans-serif-light" />
+        android:fontFamily="sans-serif-light"
+        android:visibility="gone" />
 
 </LinearLayout>
