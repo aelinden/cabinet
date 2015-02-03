@@ -1,5 +1,7 @@
 package com.afollestad.cabinet.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -15,9 +18,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -229,7 +234,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
                 @Override
                 public void onMenuCollapsed() {
-                    findViewById(R.id.outerFrame).setVisibility(View.GONE);
+                    hideOuterFrame();
                 }
             });
             FloatingActionButton btn = fab.getButton();
@@ -250,13 +255,50 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
     private void showOuterFrame() {
         View outerFrame = findViewById(R.id.outerFrame);
-        outerFrame.setVisibility(View.VISIBLE);
         outerFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fab.collapse();
             }
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            final View container = findViewById(R.id.container);
+            int cx = container.getRight() - sixteenDp;
+            int cy = container.getBottom() - sixteenDp;
+
+            int finalRadius = Math.max(container.getWidth(), container.getHeight());
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
+            outerFrame.setVisibility(View.VISIBLE);
+            anim.start();
+        } else {
+            outerFrame.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void hideOuterFrame() {
+        final View outerFrame = findViewById(R.id.outerFrame);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            final View container = findViewById(R.id.container);
+            int cx = container.getRight() - sixteenDp;
+            int cy = container.getBottom() - sixteenDp;
+
+            int finalRadius = Math.max(container.getWidth(), container.getHeight());
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
+            anim.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    outerFrame.setVisibility(View.GONE);
+                }
+            });
+            anim.start();
+        } else {
+            outerFrame.setVisibility(View.GONE);
+        }
     }
 
     @Override
