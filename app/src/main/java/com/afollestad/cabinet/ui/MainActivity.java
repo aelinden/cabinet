@@ -18,7 +18,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -263,13 +262,11 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
             final View container = findViewById(R.id.container);
-            int cx = container.getRight() - sixteenDp;
-            int cy = container.getBottom() - sixteenDp;
+            final View btn = fab.getButton();
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, (int)btn.getX(), (int)btn.getY(), 0, finalRadius);
             outerFrame.setVisibility(View.VISIBLE);
             anim.start();
         } else {
@@ -281,13 +278,11 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         final View outerFrame = findViewById(R.id.outerFrame);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
             final View container = findViewById(R.id.container);
-            int cx = container.getRight() - sixteenDp;
-            int cy = container.getBottom() - sixteenDp;
+            final View btn = fab.getButton();
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, (int)btn.getX(), (int)btn.getY(), finalRadius, 0);
             anim.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
