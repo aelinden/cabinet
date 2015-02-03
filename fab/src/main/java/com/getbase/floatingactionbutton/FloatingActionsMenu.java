@@ -40,7 +40,9 @@ public class FloatingActionsMenu extends ViewGroup {
     private static final float EXPANDED_PLUS_ROTATION = 90f + 45f;
     private static final int TRANSLATE_DURATION_MILLIS = 200;
 
-    private int mAddButtonSize;
+    private int mButtonSize;
+    private int mButtonColorNormal;
+    private int mButtonColorPressed;
 
     private int mExpandDirection;
 
@@ -89,7 +91,9 @@ public class FloatingActionsMenu extends ViewGroup {
         mLabelsVerticalOffset = getResources().getDimensionPixelSize(R.dimen.fab_shadow_offset);
 
         TypedArray attr = context.obtainStyledAttributes(attributeSet, R.styleable.FloatingActionsMenu, 0, 0);
-        mAddButtonSize = attr.getInt(R.styleable.FloatingActionsMenu_fab_addButtonSize, FloatingActionButton.SIZE_NORMAL);
+        mButtonColorNormal = attr.getColor(R.styleable.FloatingActionsMenu_fab_buttonColorNormal, getColor(android.R.color.holo_blue_dark));
+        mButtonColorPressed = attr.getColor(R.styleable.FloatingActionsMenu_fab_buttonColorPressed, getColor(android.R.color.holo_blue_light));
+        mButtonSize = attr.getInt(R.styleable.FloatingActionsMenu_fab_buttonSize, FloatingActionButton.SIZE_NORMAL);
         mExpandDirection = attr.getInt(R.styleable.FloatingActionsMenu_fab_expandDirection, EXPAND_UP);
         mLabelsStyle = attr.getResourceId(R.styleable.FloatingActionsMenu_fab_labelStyle, 0);
         mLabelsPosition = attr.getInt(R.styleable.FloatingActionsMenu_fab_labelsPosition,
@@ -100,7 +104,7 @@ public class FloatingActionsMenu extends ViewGroup {
             throw new IllegalStateException("Action labels in horizontal expand orientation is not supported.");
         }
 
-        createAddButton(context);
+        createMainButton(context);
     }
 
     public void show() {
@@ -210,8 +214,15 @@ public class FloatingActionsMenu extends ViewGroup {
         }
     }
 
-    private void createAddButton(Context context) {
+    private void createMainButton(Context context) {
         mAddButton = new FloatingActionButton(context) {
+            @Override
+            void updateBackground() {
+                this.mColorNormal = mButtonColorNormal;
+                this.mColorPressed = mButtonColorPressed;
+                super.updateBackground();
+            }
+
             @Override
             Drawable getIconDrawable() {
                 final RotatingDrawable rotatingDrawable = new RotatingDrawable(super.getIconDrawable());
@@ -233,7 +244,7 @@ public class FloatingActionsMenu extends ViewGroup {
         };
 
         mAddButton.setId(R.id.fab_expand_menu_button);
-        mAddButton.setSize(mAddButtonSize);
+        mAddButton.setSize(mButtonSize);
         mAddButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
