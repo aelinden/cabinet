@@ -263,10 +263,12 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
-            final View btn = fab.getButton();
+            // TODO RTL
+            int cx = outerFrame.getRight() - outerFrame.getPaddingEnd();
+            int cy = outerFrame.getBottom() - outerFrame.getPaddingBottom();
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, (int)btn.getX(), (int)btn.getY(), 0, finalRadius);
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
             outerFrame.setVisibility(View.VISIBLE);
             anim.start();
         } else {
@@ -279,10 +281,12 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
-            final View btn = fab.getButton();
+            // TODO RTL
+            int cx = outerFrame.getRight() - outerFrame.getPaddingEnd();
+            int cy = outerFrame.getBottom() - outerFrame.getPaddingBottom();
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, (int)btn.getX(), (int)btn.getY(), finalRadius, 0);
+            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
             anim.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {

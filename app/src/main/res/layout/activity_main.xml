@@ -28,7 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone"
-                android:background="#CCFFFFFF" />
+                android:background="#CCFFFFFF"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                tools:ignore="RtlSymmetry" />
 
             <com.getbase.floatingactionbutton.FloatingActionsMenu
                 android:id="@+id/fab_actions"
