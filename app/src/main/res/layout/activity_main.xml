@@ -48,21 +48,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     fab:fab_title="@string/file"
-                    fab:fab_icon="@drawable/ic_fab_file" />
+                    fab:fab_icon="@drawable/ic_fab_file"
+                    fab:fab_size="mini" />
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/actionNewFolder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     fab:fab_title="@string/folder"
-                    fab:fab_icon="@drawable/ic_fab_folder" />
+                    fab:fab_icon="@drawable/ic_fab_folder"
+                    fab:fab_size="mini" />
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/actionNewConnection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     fab:fab_title="@string/remote_connection"
-                    fab:fab_icon="@drawable/ic_fab_connection" />
+                    fab:fab_icon="@drawable/ic_fab_connection"
+                    fab:fab_size="mini" />
 
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
