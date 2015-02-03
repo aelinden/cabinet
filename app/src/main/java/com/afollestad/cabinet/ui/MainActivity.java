@@ -105,6 +105,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             outState.putSerializable("cab", mCab);
         outState.putSerializable("fab_pastemode", fabPasteMode);
         outState.putBoolean("fab_disabled", fabDisabled);
+        outState.putBoolean("fab_frame_visible", findViewById(R.id.outerFrame).getVisibility() == View.VISIBLE);
         super.onSaveInstanceState(outState);
     }
 
@@ -152,6 +153,9 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             }
             fabPasteMode = (BaseFileCab.PasteMode) savedInstanceState.getSerializable("fab_pastemode");
             fabDisabled = savedInstanceState.getBoolean("fab_disabled");
+            if (savedInstanceState.getBoolean("fab_frame_visible")) {
+                showOuterFrame();
+            }
         }
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -220,14 +224,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             fab.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
                 @Override
                 public void onMenuExpanded() {
-                    View outerFrame = findViewById(R.id.outerFrame);
-                    outerFrame.setVisibility(View.VISIBLE);
-                    outerFrame.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            fab.collapse();
-                        }
-                    });
+                    showOuterFrame();
                 }
 
                 @Override
@@ -249,6 +246,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                 }
             });
         }
+    }
+
+    private void showOuterFrame() {
+        View outerFrame = findViewById(R.id.outerFrame);
+        outerFrame.setVisibility(View.VISIBLE);
+        outerFrame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab.collapse();
+            }
+        });
     }
 
     @Override
