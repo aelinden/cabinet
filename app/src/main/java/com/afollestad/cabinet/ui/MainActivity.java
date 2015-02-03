@@ -117,6 +117,8 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     public void onBackPressed() {
         if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else if (fab.isExpanded()) {
+            fab.collapse();
         } else if (getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         } else getFragmentManager().popBackStack();
