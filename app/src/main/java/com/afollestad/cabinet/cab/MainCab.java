@@ -82,6 +82,8 @@ public class MainCab extends BaseFileCab {
         menu.findItem(R.id.zip).setTitle(showUnzip ? R.string.unzip : R.string.zip);
         menu.findItem(R.id.share).setVisible(showShare);
         menu.findItem(R.id.pin).setVisible(showPin);
+        menu.findItem(R.id.goUp).setVisible(getFragment().mQuery == null &&
+                getFragment().getDirectory().getParent() != null);
         return super.onPrepareActionMode(actionMode, menu);
     }
 
@@ -191,6 +193,8 @@ public class MainCab extends BaseFileCab {
             }
             getContext().reloadNavDrawer(true);
             finish();
+        } else if (menuItem.getItemId() == R.id.goUp) {
+            getContext().switchDirectory(getFragment().getDirectory().getParent(), false);
         }
         return false;
     }

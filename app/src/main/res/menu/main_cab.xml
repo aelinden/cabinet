@@ -23,6 +23,11 @@
         android:icon="@drawable/ic_cut"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/goUp"
+        android:title="@string/go_up"
+        android:icon="@drawable/ic_up"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/selectAll"
         android:title="@string/selectAll"
         android:icon="@drawable/ic_selectall"

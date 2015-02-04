@@ -76,7 +76,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     }
 
     private File mDirectory;
-    private String mQuery;
+    public String mQuery;
     public FileAdapter mAdapter;
     public boolean showHidden;
     public int sorter;

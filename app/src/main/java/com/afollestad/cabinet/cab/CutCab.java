@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.support.v7.view.ActionMode;
 import android.text.Html;
 import android.text.Spanned;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -35,6 +36,18 @@ public class CutCab extends BaseFileCab {
     @Override
     public boolean canShowFab() {
         return true;
+    }
+
+    @Override
+    public int getMenu() {
+        return R.menu.copycut_cab;
+    }
+
+    @Override
+    public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        menu.findItem(R.id.goUp).setVisible(getFragment().mQuery == null &&
+                getFragment().getDirectory().getParent() != null);
+        return super.onPrepareActionMode(actionMode, menu);
     }
 
     @Override
@@ -111,6 +124,9 @@ public class CutCab extends BaseFileCab {
 
     @Override
     public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        if (menuItem.getItemId() == R.id.goUp) {
+            getContext().switchDirectory(getFragment().getDirectory().getParent(), false);
+        }
         return false;
     }
 }
