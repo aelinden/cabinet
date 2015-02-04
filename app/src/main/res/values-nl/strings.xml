@@ -5,7 +5,7 @@
     <string name="welcome_conclusion">Probeer te tikken op het voorbeeld pictogram of de 3-punt icoon. Tikken op het voorbeeld pictogram selecteerd het bestand voor multi acties, dit kan ook gedaan worden door te tikken op en ingedrukt te houden van bestanden. De 3-punt icoon laat een popup menu zien met opties voor het specifieke bestand.\n\nCabinet
  heeft daarnaast nog andere features, zoals toegang tot servers op afstand via SFTP dat je kan vinden tijden het gebruik van Cabinet. Bedankt voor het uitproberen van Cabinet!</string>
     <string name="lets_go">Laten we beginnen!</string>
-    <string name="open_as">Open als…</string>
+    <string name="open_as">Open als...</string>
     <string name="pin">Vastzetten</string>
     <string name="copy">Kopiëren</string>
     <string name="cut">Knippen</string>
@@ -20,7 +20,6 @@
     <string name="no_files">Geen bestanden</string>
     <string name="storage">Opslag</string>
     <string name="root">Root</string>
-    <string name="directory">Map</string>
     <string name="unknown">Onbekend</string>
     <string name="go_up">Ga omhoog</string>
     <string name="x_files">%1$d bestanden</string>
@@ -49,7 +48,6 @@
     <string name="unavailable">Onbeschikbaar</string>
     <string name="grid_mode">Raster modus</string>
     <string name="sort_by">Sorteren op</string>
-    <string name="sort_name_folderstop">Naam, mappen eerst</string>
     <string name="sort_name">Naam</string>
     <string name="sort_extension">Extensie</string>
     <string name="sort_size_lowhigh">Grootte, klein naar groot</string>
@@ -68,15 +66,15 @@
     <string name="disconnect_prompt">Wil je de verbinding met %1$s verbreken?</string>
     <string name="uploaded_to">Geupload naar %1$s</string>
     <string name="downloaded_to">Gedownload naar %1$s</string>
-    <string name="connecting">Verbinden…</string>
-    <string name="downloading">Downloaden…</string>
-    <string name="deleting">Verwijderen…</string>
-    <string name="making_folder">Nieuwe map aanmaken…</string>
-    <string name="renaming">Naam wijzigen…</string>
-    <string name="unzipping">Uitpakken…</string>
-    <string name="zipping">Inpakken…</string>
-    <string name="moving">Verplaatsen…</string>
-    <string name="uploading">Uploaden…</string>
+    <string name="connecting">Verbinden...</string>
+    <string name="downloading">Downloaden...</string>
+    <string name="deleting">Verwijderen...</string>
+    <string name="making_folder">Nieuwe map aanmaken...</string>
+    <string name="renaming">Naam wijzigen...</string>
+    <string name="unzipping">Uitpakken...</string>
+    <string name="zipping">Inpakken...</string>
+    <string name="moving">Verplaatsen...</string>
+    <string name="uploading">Uploaden...</string>
     <string name="copying">kopiëren</string>
     <string name="failed_delete_file">Het verwijderen van het volgende bestand is mislukt: %1$s</string>
     <string name="failed_make_directory">Het maken van de volgende map is mislukt: %1$s</string>
@@ -103,7 +101,7 @@
     <string name="cut_xfiles"><![CDATA[
 <b>Knip:</b>&nbsp;&nbsp;%1$d bestanden
     ]]></string>
-    <string name="search_files">Zoek bestanden…</string>
+    <string name="search_files">Zoek bestanden...</string>
     <string name="search_x"><![CDATA[
 <b>Zoek:</b>&nbsp;%1$s
     ]]></string>
@@ -116,7 +114,7 @@
     <string name="no_thanks">Nee bedankt</string>
     <string name="file">Bestand</string>
     <string name="folder">Map</string>
-    <string name="remote_connection">Verbinding op afstand…</string>
+    <string name="remote_connection">Verbinding op afstand...</string>
     <string name="text">Tekst</string>
     <string name="image">Afbeelding</string>
     <string name="audio">Geluid</string>
@@ -126,15 +124,14 @@
     <string name="show_hidden_files">Toon verborgen bestanden</string>
     <string name="about">Over</string>
     <string name="about_desc">Over de app en de ontwerper</string>
-
     <string name="settings">Instellingen</string>
     <string name="about_body"><![CDATA[
 Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en hoger.<br/><br/>
-        Ontworpen door <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Ontworpen door <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Naam:</b>&nbsp;&nbsp;%1$s<br/><b>Locatie:</b>&nbsp;&nbsp;%2$s<br/><b>grootte:</b>&nbsp;&nbsp;%3$s<br/><b>Aangepast:</b>&nbsp;&nbsp;%4$s<br/><b>Rechten:</b>&nbsp;&nbsp;%5$s
@@ -143,17 +140,17 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
         <b>Naam:</b>&nbsp;&nbsp;%1$s<br/><b>Locatie:</b>&nbsp;&nbsp;%2$s<br/><b>Inhoud:</b>&nbsp;&nbsp;%3$s<br/><b>Aangepast:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nieuw bestand</string>
-    <string name="making_file">Bestand aan het aanmaken…</string>
+    <string name="making_file">Bestand aan het aanmaken...</string>
     <string name="created_file">Bestand gemaakt: %1$s</string>
     <string name="file_already_exists">Bestand bestaat al</string>
     <string name="failed_make_file">Het maken van het volgende bestand is mislukt: %1$s</string>
-    <string name="pick_a_file">Kies een bestand…</string>
+    <string name="pick_a_file">Kies een bestand...</string>
     <string name="cabinet_text_editor">Cabinet Tekst Verwerker</string>
     <string name="save">Opslaan</string>
     <string name="unsaved_changes">Niet opgeslagen aanpassingen</string>
     <string name="unsaved_changes_desc">Je hebt niet opgeslagen aanpassingen, wil je deze opslaan voordat je het programma sluit?</string>
-    <string name="saving">Opslaan…</string>
-    <string name="loading">Laden…</string>
+    <string name="saving">Opslaan...</string>
+    <string name="loading">Laden...</string>
     <string name="unsupported_extension">Niet ondersteunde extensie</string>
     <string name="unsupported_extension_desc">Je kan dit type bestand niet openen voor tekst bewerking.</string>
     <string name="file_already_exists_warning">Let op: dit bestand bestaat al. Het nieuwe bestand zal verschijnen als kopie.</string>
@@ -168,5 +165,6 @@ Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en ho
     <string name="sdcard">SD Kaart</string>
     <string name="owner">Eigenaar</string>
     <string name="group">Groep</string>
-    <string name="applying_permissions">Machtigingen toepassen…</string>
+    <string name="applying_permissions">Machtigingen toepassen...</string>
+    <string name="directory">Map</string>
 </resources>

@@ -21,7 +21,6 @@
     <string name="no_files">Keine Dateien</string>
     <string name="storage">Speicher</string>
     <string name="root">Root</string>
-    <string name="directory">Verzeichnis</string>
     <string name="unknown">Unbekannt</string>
     <string name="go_up">Hinauf gehen</string>
     <string name="x_files">%1$d Dateien</string>
@@ -50,7 +49,6 @@
     <string name="unavailable">Unverfügbar</string>
     <string name="grid_mode">Rasteransicht</string>
     <string name="sort_by">Sortieren nach</string>
-    <string name="sort_name_folderstop">Name, Ordner zuerst</string>
     <string name="sort_name">Name</string>
     <string name="sort_extension">Erweiterung</string>
     <string name="sort_size_lowhigh">Größe, klein bis groß</string>
@@ -127,15 +125,14 @@
     <string name="show_hidden_files">Zeige versteckte Dateien</string>
     <string name="about">Über</string>
     <string name="about_desc">Über die App und deren Designer</string>
-
     <string name="settings">Einstellungen</string>
     <string name="about_body"><![CDATA[
  Ein minimalistischer, intuitiver, schöner Dateimanager für Android 4.1 und darüber. <br/><br/>
- Entworfen von <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Webseite</a>&nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+ Entworfen von <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Webseite</a>&nbsp;&nbsp;
+ <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+ <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+ <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Größe:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s<br/><b>Berechtigung:</b>&nbsp;&nbsp;%5$s
@@ -144,17 +141,17 @@
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Inhalte:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Neuer Datei</string>
-    <string name="making_file">Erstelle Datei…</string>
+    <string name="making_file">Erstelle Datei...</string>
     <string name="created_file">Datei %1$s erstellt</string>
     <string name="file_already_exists">Datei existiert bereits</string>
     <string name="failed_make_file">Erstellen der Datei %1$s fehlgeschlagen</string>
-    <string name="pick_a_file">Wählen sie eine Datei…</string>
+    <string name="pick_a_file">Wählen sie eine Datei...</string>
     <string name="cabinet_text_editor">Cabinet Texteditor</string>
     <string name="save">Speichern</string>
     <string name="unsaved_changes">Ungespeicherte Änderungen</string>
     <string name="unsaved_changes_desc">Sie haben ungespeicherte Änderungen, möchten Sie diese vor dem Verlassen speichern?</string>
-    <string name="saving">Speichern…</string>
-    <string name="loading">Lade…</string>
+    <string name="saving">Speichern...</string>
+    <string name="loading">Lade...</string>
     <string name="unsupported_extension">Nicht unterstützer Dateityp</string>
     <string name="unsupported_extension_desc">Dieser Dateityp kann nicht im Texteditor geöffnet werden.</string>
     <string name="file_already_exists_warning">Warnung: Diese Datei existiert bereits. Die neue Datei wird als Duplikat erscheinen.</string>
@@ -175,25 +172,35 @@
     <string name="sdcard">SD-Karte</string>
     <string name="owner">Besitzer</string>
     <string name="group">Gruppe</string>
-    <string name="applying_permissions">Berechtigungen werden angewendet…</string>
+    <string name="applying_permissions">Berechtigungen werden angewendet...</string>
     <string name="primary_color">Hauptfarbe</string>
     <string name="primary_color_desc">Die zu benutzende Hauptfarbe. Standardmäßig blau.</string>
     <string name="accent_color">Akzentfarbe</string>
     <string name="accent_color_desc">Die zu benutzende Akzentfarbe. Standardmäßig pink.</string>
     <string name="colored_navbar">Gefärbte Navigationsleiste</string>
-    <string name="colored_navbar_desc">Ob die Navigationsleiste in der Hauptfarbe gefärbt ist oder nicht.</string>
-
-
-    <string name="defaultStr">Standardmäßig</string>
+    <string name="colored_navbar_desc">Bestimmt, ob die Navigationsleiste in der Hauptfarbe gefärbt ist.</string>
+    <string name="colored_icons">Icon Farbe</string>
+    <string name="colored_icons_desc">Die Farbe von Datei und Ordner Icons. Sie können die Haupt- oder Akzentfarbe anstatt des Standard Graus verwenden.</string>
+    <string name="defaultStr">Standard</string>
     <string name="only_available_lollipop">Diese Funktion ist nur auf Android Lollipop und höher verfügbar.</string>
-    <string name="base_theme_desc">Wähle wenn du ein helles, dunkles oder AMOLED schwarzes Thema mit Farbe möchtest.</string>
-    <string name="find_and_replace">Suche und ersetze</string>
+    <string name="base_theme_desc">Wähle zwischen einem hellen, dunkeln oder AMOLED-Schwarz-Thema.</string>
+    <string name="find_and_replace">Suchen und Ersetzen</string>
     <string name="find">Suche</string>
     <string name="replace">Ersetze</string>
     <string name="replace_all">Ersetze alle</string>
     <string name="use_regex">Benutze regex</string>
     <string name="match_case">Wort für Wort</string>
-    <string name="no_occurences">Keine Übereinstimmung</string>
+    <string name="no_occurences">Keine Ergebnisse</string>
     <string name="no_occurences_desc">Es wurden keine Übereinstimmungen anhand ihrer Suche gefunden.</string>
     <string name="revert_changes">Kehre Änderungen um</string>
+    <string name="slash_name_invalid">Sie könne nicht / im Namen verwenden.</string>
+    <string name="directory">Verzeichnis</string>
+    <string name="directory_with_count">Verzeichnis – 1 Datei</string>
+    <string name="directory_with_count_x">Verzeichnis –%1$d Dateien</string>
+    <string name="directory_count">Verzeichnis-Zähler</string>
+    <string name="directory_count_descr">Wenn aktiviert, wird die Anzahl der Dateien oder Ordner innerhalb eines Ordners angezeigt.</string>
+    <string name="theming">Theming</string>
+    <string name="behavior">Verhalten</string>
+    <string name="changelog">Änderungen</string>
+    <string name="folders_first">Ordner zuerst</string>
 </resources>

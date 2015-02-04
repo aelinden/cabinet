@@ -20,7 +20,6 @@
     <string name="no_files">Sem arquivos</string>
     <string name="storage">Armazenamento</string>
     <string name="root">Root</string>
-    <string name="directory">Diretório</string>
     <string name="unknown">Desconhecido</string>
     <string name="go_up">Vá para cima</string>
     <string name="x_files">%1$d arquivos</string>
@@ -49,7 +48,6 @@
     <string name="unavailable">Inválido</string>
     <string name="grid_mode">Modo grade</string>
     <string name="sort_by">Ordenar por</string>
-    <string name="sort_name_folderstop">Nome, pastas primeiro</string>
     <string name="sort_name">Nome</string>
     <string name="sort_extension">Extensão</string>
     <string name="sort_size_lowhigh">Tamanho, crescente</string>
@@ -116,7 +114,7 @@
     <string name="no_thanks">Não, obrigado</string>
     <string name="file">Arquivo</string>
     <string name="folder">Pasta</string>
-    <string name="remote_connection">Conexão remota…</string>
+    <string name="remote_connection">Conexão remota...</string>
     <string name="text">Texto</string>
     <string name="image">Imagem</string>
     <string name="audio">Áudio</string>
@@ -126,15 +124,14 @@
     <string name="show_hidden_files">Mostrar Arquivos Ocultos</string>
     <string name="about">Sobre</string>
     <string name="about_desc">Sobre o aplicativo e o seu designer.</string>
-
     <string name="settings">Configurações</string>
     <string name="about_body"><![CDATA[
         Um bonito, minimalista e intuitivo gerenciador de arquivos para Android 4.1 ou acima.<br/><br/>
-        Design por <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Design por <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Caminho:</b>&nbsp;&nbsp;%2$s<br/><b>Tamanho:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s<br/><b>Permissões:</b>&nbsp;&nbsp;%5$s
@@ -143,17 +140,17 @@
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Caminho:</b>&nbsp;&nbsp;%2$s<br/><b>Conteúdo:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nova Arquivo</string>
-    <string name="making_file">Criando arquivo…</string>
+    <string name="making_file">Criando arquivo...</string>
     <string name="created_file">Criado arquivo %1$s</string>
     <string name="file_already_exists">O arquivo já existe</string>
     <string name="failed_make_file">Falha ao criar um novo arquivo: %1$s</string>
-    <string name="pick_a_file">Escolha um arquivo…</string>
+    <string name="pick_a_file">Escolha um arquivo...</string>
     <string name="cabinet_text_editor">Editor de texto do Cabinet</string>
     <string name="save">Salvar</string>
     <string name="unsaved_changes">Alterações não salvas</string>
     <string name="unsaved_changes_desc">Você tem alterações não salvas, deseja salvá-las antes de sair?</string>
-    <string name="saving">Salvando…</string>
-    <string name="loading">Carregando…</string>
+    <string name="saving">Salvando...</string>
+    <string name="loading">Carregando...</string>
     <string name="unsupported_extension">Extensão não suportada</string>
     <string name="unsupported_extension_desc">Você não pode abrir esse tipo de arquivo para edição de texto.</string>
     <string name="file_already_exists_warning">Aviso: Este arquivo já existe. Seu novo arquivo aparecerá duplicado.</string>
@@ -174,16 +171,15 @@
     <string name="sdcard">Cartão SD</string>
     <string name="owner">Proprietário</string>
     <string name="group">Grupo</string>
-    <string name="applying_permissions">Aplicando permissões…</string>
+    <string name="applying_permissions">Aplicando permissões...</string>
     <string name="primary_color">Cor primária</string>
     <string name="primary_color_desc">A cor primária a ser usada. Padrão é Material Blue</string>
     <string name="accent_color">Cor de destaque</string>
     <string name="accent_color_desc">A cor de destaque a ser usada. Padrão Material Pink</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Colorir a barra de navegação do sistema com a cor primária.</string>
-
-
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Este recurso só está disponível a partir do Android Lollipop.</string>
     <string name="base_theme_desc">Escolha se você quer um tema claro, escuro ou preto AMOLED.</string>
+    <string name="directory">Diretório</string>
 </resources>

@@ -21,7 +21,6 @@
     <string name="no_files">Nessun file</string>
     <string name="storage">Archivio</string>
     <string name="root">Root</string>
-    <string name="directory">Directory</string>
     <string name="unknown">Sconosciuto</string>
     <string name="go_up">Vai su</string>
     <string name="x_files">%1$d file</string>
@@ -50,7 +49,6 @@
     <string name="unavailable">Non disponibile</string>
     <string name="grid_mode">Vista a griglia</string>
     <string name="sort_by">Ordinamento</string>
-    <string name="sort_name_folderstop">Nome, prima le cartelle</string>
     <string name="sort_name">Nome</string>
     <string name="sort_extension">Estensione</string>
     <string name="sort_size_lowhigh">Dimensione, da piccolo a grande</string>
@@ -117,7 +115,7 @@
     <string name="no_thanks">No grazie</string>
     <string name="file">File</string>
     <string name="folder">Cartella</string>
-    <string name="remote_connection">Connessione remota…</string>
+    <string name="remote_connection">Connessione remota...</string>
     <string name="text">Testo</string>
     <string name="image">Immagine</string>
     <string name="audio">Audio</string>
@@ -127,15 +125,14 @@
     <string name="show_hidden_files">Mostra file nascosti</string>
     <string name="about">Informazioni</string>
     <string name="about_desc">Informazioni sull\'applicazione e sullo sviluppatore.</string>
-
     <string name="settings">Impostazioni</string>
     <string name="about_body"><![CDATA[
         A gestore di file minimale, intuitivo e bellissimo per Android 4.1 e versioni successive.<br/><br/>
-        Progettato da <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Sito web</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Progettato da <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Sito web</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Percorso:</b>&nbsp;&nbsp;%2$s<br/><b>Dimensione:</b>&nbsp;&nbsp;%3$s<br/><b>Modificato:</b>&nbsp;&nbsp;%4$s<br/><b>Permessi:</b>&nbsp;&nbsp;%5$s
@@ -144,7 +141,7 @@
         <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Percorso:</b>&nbsp;&nbsp;%2$s<br/><b>Contenuti:</b>&nbsp;&nbsp;%3$s<br/><b>Modificato:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nuova File</string>
-    <string name="making_file">Creazione file…</string>
+    <string name="making_file">Creazione file...</string>
     <string name="created_file">File %1$s creato</string>
     <string name="file_already_exists">File già esistente</string>
     <string name="failed_make_file">Impossibile creare un nuovo file: %1$s</string>
@@ -153,8 +150,8 @@
     <string name="save">Salva</string>
     <string name="unsaved_changes">Modifiche non salvate</string>
     <string name="unsaved_changes_desc">Sono presenti modifiche non salvate. Salvarle prima di uscire?</string>
-    <string name="saving">Salvataggio…</string>
-    <string name="loading">Caricamento…</string>
+    <string name="saving">Salvataggio...</string>
+    <string name="loading">Caricamento...</string>
     <string name="unsupported_extension">Estensione non supportata</string>
     <string name="unsupported_extension_desc">Impossibile aprire questo tipo di file per la modifica del testo.</string>
     <string name="file_already_exists_warning">Attenzione: file già esistente. Il nuovo file apparirà come un duplicato.</string>
@@ -175,16 +172,35 @@
     <string name="sdcard">Scheda SD</string>
     <string name="owner">Proprietario</string>
     <string name="group">Gruppo</string>
-    <string name="applying_permissions">Applico i permessi…</string>
+    <string name="applying_permissions">Applico i permessi...</string>
     <string name="primary_color">Colore principale</string>
     <string name="primary_color_desc">Il colore principale da usare per il tema. Quello predefinito è il blu \"Material\".</string>
     <string name="accent_color">Colore di risalto</string>
     <string name="accent_color_desc">Il colore di risalto da usare. Quello predefinito e il rosa \"Material\".</string>
     <string name="colored_navbar">Barra di navigazione colorata</string>
     <string name="colored_navbar_desc">Indica se la barra di navigazione viene colorata con il colore pricipale.</string>
-
-
+    <string name="colored_icons">Colore icone</string>
+    <string name="colored_icons_desc">Il colore delle icone dei file e delle cartelle. Puoi usare il colore primario o il colore di risalto al posto del grigio di default.</string>
     <string name="defaultStr">Predefinito</string>
     <string name="only_available_lollipop">Questa funzione è disponibile solo in Android Lollipop e versioni successive.</string>
     <string name="base_theme_desc">Scegli se usare un tema chiaro, scuro e nero (AMOLED).</string>
+    <string name="find_and_replace">Trova e sostituisci</string>
+    <string name="find">Trova</string>
+    <string name="replace">Sostituisci</string>
+    <string name="replace_all">Sostitisci tutti</string>
+    <string name="use_regex">Usa espressioni regolari</string>
+    <string name="match_case">Corrispondenze</string>
+    <string name="no_occurences">Nessuna corrispondenza</string>
+    <string name="no_occurences_desc">Nessuna corrispondenza trovata nella ricerca.</string>
+    <string name="revert_changes">Ripristina le modifiche</string>
+    <string name="slash_name_invalid">Non puoi usare \"/\" nel nome.</string>
+    <string name="directory">Directory</string>
+    <string name="directory_with_count">Cartella - 1 file</string>
+    <string name="directory_with_count_x">Cartella - %1$d file</string>
+    <string name="directory_count">Conteggio cartelle</string>
+    <string name="directory_count_descr">Se abilitato, il numero dei file e delle cartelle in una cartella locale sarà visualizzato in una lista.</string>
+    <string name="theming">Temi</string>
+    <string name="behavior">Comportamento</string>
+    <string name="changelog">Novità</string>
+    <string name="folders_first">Prima le cartelle</string>
 </resources>

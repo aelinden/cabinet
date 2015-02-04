@@ -6,7 +6,7 @@
     <string name="welcome_conclusion">Pokušajte dodirnuti sliku ili ikonu sa tri točke. Dodirom na sliku odabrat ćete datoteku za daljnje radnje, ovo se također može napraviti pritiskom i držanjem prsta na datotekama. Ikona sa tri točke prikazat će skočni izbornik sa pojedinačnim opcijama datoteke.\n\nCabinet
  ima razne ostale značajke, poput udaljenog pristupa serverima putem SFTP-a koji možete pronaći istraživanjem aplikacije. Zahvaljujemo što koristite Cabinet!</string>
     <string name="lets_go">Kreni!</string>
-    <string name="open_as">Otvori Kao…</string>
+    <string name="open_as">Otvori Kao...</string>
     <string name="pin">Prikvači</string>
     <string name="copy">Kopiraj</string>
     <string name="cut">Izreži</string>
@@ -21,7 +21,6 @@
     <string name="no_files">Nema datoteka</string>
     <string name="storage">Pohrana</string>
     <string name="root">Root</string>
-    <string name="directory">Direktorij</string>
     <string name="unknown">Nepoznato</string>
     <string name="go_up">Odi gore</string>
     <string name="x_files">%1$d datoteka</string>
@@ -49,7 +48,6 @@
     <string name="confirm_delete_xfiles">Jeste li sigurni da želite obrisati %1$d datoteka?</string>
     <string name="unavailable">Nedostupno</string>
     <string name="sort_by">Sortiraj Prema</string>
-    <string name="sort_name_folderstop">Ime, prvo mape</string>
     <string name="sort_name">Ime</string>
     <string name="sort_extension">Datotečni nastavak</string>
     <string name="sort_size_lowhigh">Veličina, od najmanjeg</string>
@@ -68,16 +66,16 @@
     <string name="disconnect_prompt">Želite li prekinuti vezu sa %1$s?</string>
     <string name="uploaded_to">Preneseno na %1$s</string>
     <string name="downloaded_to">Skinuto u %1$s</string>
-    <string name="connecting">Povezujem…</string>
-    <string name="downloading">Skidam…</string>
-    <string name="deleting">Brišem…</string>
-    <string name="making_folder">Stvaram mapu…</string>
-    <string name="renaming">Preimenujem…</string>
-    <string name="unzipping">Otpakiravam…</string>
-    <string name="zipping">Zapakiravam…</string>
-    <string name="moving">Premještam…</string>
-    <string name="uploading">Prenosim…</string>
-    <string name="copying">Kopiram…</string>
+    <string name="connecting">Povezujem...</string>
+    <string name="downloading">Skidam...</string>
+    <string name="deleting">Brišem...</string>
+    <string name="making_folder">Stvaram mapu...</string>
+    <string name="renaming">Preimenujem...</string>
+    <string name="unzipping">Otpakiravam...</string>
+    <string name="zipping">Zapakiravam...</string>
+    <string name="moving">Premještam...</string>
+    <string name="uploading">Prenosim...</string>
+    <string name="copying">Kopiram...</string>
     <string name="failed_delete_file">Neuspjelo brisanje datoteke: %1$s</string>
     <string name="failed_make_directory">Neuspjelo stvaranje mape: %1$s</string>
     <string name="failed_rename_file">Neuspjelo preimenovanje/premještanje datoteke: %1$s</string>
@@ -103,7 +101,7 @@
     <string name="cut_xfiles"><![CDATA[
  <b>Izreži:</b>&nbsp;&nbsp;%1$d datoteka
     ]]></string>
-    <string name="search_files">Pretraži datoteke…</string>
+    <string name="search_files">Pretraži datoteke...</string>
     <string name="search_x"><![CDATA[
  <b>Traži:</b>&nbsp;%1$s
     ]]></string>
@@ -116,7 +114,7 @@
     <string name="no_thanks">Ne, hvala</string>
     <string name="file">Datoteka</string>
     <string name="folder">Mapa</string>
-    <string name="remote_connection">Veza Na Daljinu…</string>
+    <string name="remote_connection">Veza Na Daljinu...</string>
     <string name="text">Tekst</string>
     <string name="image">Slika</string>
     <string name="audio">Zvuk</string>
@@ -126,15 +124,14 @@
     <string name="show_hidden_files">Pokaži Skrivene Datoteke</string>
     <string name="about">O</string>
     <string name="about_desc">O aplikaciji i njenom dizajneru.</string>
-
     <string name="settings">Postavke</string>
     <string name="about_body"><![CDATA[
  Minimalan, intuitivan, prelijep upravljač datoteka za Android 4.1 i kasnije.<br/><br/>
- Dizajnirao <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Web stranica</a>&nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+ Dizajnirao <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Web stranica</a>&nbsp;&nbsp;
+ <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+ <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+ <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Ime:</b>&nbsp;&nbsp;%1$s<br/><b>Lokacija:</b>&nbsp;&nbsp;%2$s<br/><b>Veličina:</b>&nbsp;&nbsp;%3$s<br/><b>Modificirano:</b>&nbsp;&nbsp;%4$s<br/><b>Dozvole:</b>&nbsp;&nbsp;%5$s
@@ -143,17 +140,17 @@
  <b>Ime:</b>&nbsp;&nbsp;%1$s<br/><b>Lokacija:</b>&nbsp;&nbsp;%2$s<br/><b>Sadržaj:</b>&nbsp;&nbsp;%3$s<br/><b>Modificirano:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nova Datoteka</string>
-    <string name="making_file">Stvaram datoteku…</string>
+    <string name="making_file">Stvaram datoteku...</string>
     <string name="created_file">Stvorena datoteka %1$s</string>
     <string name="file_already_exists">Datoteka već postoji</string>
     <string name="failed_make_file">Neuspjelo stvaranje nove datoteke %1$s</string>
-    <string name="pick_a_file">Odaberi datoteku…</string>
+    <string name="pick_a_file">Odaberi datoteku...</string>
     <string name="cabinet_text_editor">Cabinet Uređivač Teksta</string>
     <string name="save">Spremi</string>
     <string name="unsaved_changes">Nespremljene Promjene</string>
     <string name="unsaved_changes_desc">Imate nespremljene promjene, da li ih želite spremiti prije izlaska?</string>
-    <string name="saving">Spremam…</string>
-    <string name="loading">Učitavam…</string>
+    <string name="saving">Spremam...</string>
+    <string name="loading">Učitavam...</string>
     <string name="unsupported_extension">Nepodržani Datotečni Nastavak</string>
     <string name="unsupported_extension_desc">Ne možete otvoriti ovu vrstu datoteke u uređivaču teksta.</string>
     <string name="file_already_exists_warning">Upozorenje: ova datoteka već postoji. Vaša nova datoteka će se pojaviti kao duplikat.</string>
@@ -166,4 +163,5 @@
     <string name="superuser_not_available">Superuser nije dostupan</string>
     <string name="filter_active">Aktivan filtar: %1$s</string>
     <string name="sdcard">SD Kartica</string>
+    <string name="directory">Direktorij</string>
 </resources>

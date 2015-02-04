@@ -22,7 +22,6 @@
     <string name="no_files">無檔案</string>
     <string name="storage">儲存</string>
     <string name="root">Root</string>
-    <string name="directory">目錄</string>
     <string name="unknown">未知</string>
     <string name="go_up">向上</string>
     <string name="x_files">%1$d 檔案</string>
@@ -51,7 +50,6 @@
     <string name="unavailable">不可用</string>
     <string name="grid_mode">網格模式</string>
     <string name="sort_by">排序</string>
-    <string name="sort_name_folderstop">名稱，資料夾優先</string>
     <string name="sort_name">名稱</string>
     <string name="sort_extension">類型</string>
     <string name="sort_size_lowhigh">大小，從小到大</string>
@@ -128,15 +126,14 @@
     <string name="show_hidden_files">顯示隱藏檔案</string>
     <string name="about">關於</string>
     <string name="about_desc">關於程式和設計師</string>
-
     <string name="settings">設定</string>
     <string name="about_body"><![CDATA[
     一個簡約、直觀、優美的檔案管理器， Android 4.1 以上版本可用。<br/><br/>
-    由 <b>Aidan Follestad</b>設計。<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+    由 <b>Aidan Follestad</b>設計。<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>名稱：</b>&nbsp;&nbsp;%1$s<br/><b>路徑：</b>&nbsp;&nbsp;%2$s<br/><b>大小：</b>&nbsp;&nbsp;%3$s<br/><b>修改時間：</b>&nbsp;&nbsp;%4$s<br/><b>許可權：</b>&nbsp;&nbsp;%5$s
@@ -176,16 +173,15 @@
     <string name="sdcard">SD卡</string>
     <string name="owner">擁有者</string>
     <string name="group">群組</string>
-    <string name="applying_permissions">申請權限中……</string>
+    <string name="applying_permissions">申請權限中......</string>
     <string name="primary_color">主色調（Primary顏色）</string>
     <string name="primary_color_desc">界面主色調。默認為Material藍色。</string>
     <string name="accent_color">強調色調（Accent顏色）</string>
     <string name="accent_color_desc">界面強調色調。默認為Material粉色。</string>
     <string name="colored_navbar">主色調導航欄</string>
     <string name="colored_navbar_desc">導航欄是否設為主色調顏色。</string>
-
-
     <string name="defaultStr">默認</string>
     <string name="only_available_lollipop">此功能僅適用於Android 5.0及以上。</string>
     <string name="base_theme_desc">選擇淺灰色 、深灰色、或AMOLED黑色背景。</string>
+    <string name="directory">目錄</string>
 </resources>

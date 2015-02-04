@@ -6,7 +6,7 @@
     <string name="welcome_conclusion">Érintse meg az ikonképet vagy a 3-as pont ikont. Ha az ikonképet megnyomja feltűnnek az opciók. Ezt a fájl hosszú nyomva tartásával is elérheti. A 3-as pont ikon megjeleníti a fájl többi opcióit. \n\nA
  különféle jellemzői közé tartozik a szerverekhez való távoli hozzáférés SFTPn keresztül. Köszönjük hogy az alkalmazást használja!</string>
     <string name="lets_go">Indulás!</string>
-    <string name="open_as">Megnyitás Mint…</string>
+    <string name="open_as">Megnyitás Mint...</string>
     <string name="pin">Kedvencekhez Ad</string>
     <string name="copy">Másolás</string>
     <string name="cut">Kivágás</string>
@@ -21,7 +21,6 @@
     <string name="no_files">Üres Könyvtár</string>
     <string name="storage">Tárhely</string>
     <string name="root">Gyökér</string>
-    <string name="directory">Könyvtár</string>
     <string name="unknown">Ismeretlen</string>
     <string name="go_up">Ugrás Fel</string>
     <string name="x_files">%1$d fájl(ok)</string>
@@ -50,7 +49,6 @@
     <string name="unavailable">Nem áll rendelkezésre</string>
     <string name="grid_mode">Rács nézet</string>
     <string name="sort_by">Rendezés</string>
-    <string name="sort_name_folderstop">Mappák Elől</string>
     <string name="sort_name">Név</string>
     <string name="sort_extension">Kiterjesztés</string>
     <string name="sort_size_lowhigh">Növekvő</string>
@@ -69,16 +67,16 @@
     <string name="disconnect_prompt">Szeretné hogy csatlakozzon a(z) %1$s-hoz?</string>
     <string name="uploaded_to">Feltöltve ide: %1$s</string>
     <string name="downloaded_to">Letöltve ide: %1$s</string>
-    <string name="connecting">Csatlakozás…</string>
-    <string name="downloading">Letöltés…</string>
-    <string name="deleting">Törlés…</string>
-    <string name="making_folder">Mappa létrehozása…</string>
-    <string name="renaming">Átnevezés…</string>
-    <string name="unzipping">Kibontás…</string>
-    <string name="zipping">Becsomagolás…</string>
-    <string name="moving">Áthelyezés…</string>
-    <string name="uploading">Feltöltés…</string>
-    <string name="copying">Másolás…</string>
+    <string name="connecting">Csatlakozás...</string>
+    <string name="downloading">Letöltés...</string>
+    <string name="deleting">Törlés...</string>
+    <string name="making_folder">Mappa létrehozása...</string>
+    <string name="renaming">Átnevezés...</string>
+    <string name="unzipping">Kibontás...</string>
+    <string name="zipping">Becsomagolás...</string>
+    <string name="moving">Áthelyezés...</string>
+    <string name="uploading">Feltöltés...</string>
+    <string name="copying">Másolás...</string>
     <string name="failed_delete_file">Sikertelen a(z): %1$s törlése</string>
     <string name="failed_make_directory">Sikertelen a(z): %1$s mappa létrehozása</string>
     <string name="failed_rename_file">Sikertelen a(z): %1$s fájl átnevezése/mozgatása</string>
@@ -104,7 +102,7 @@
     <string name="cut_xfiles"><![CDATA[
  <b>Kivágás:</b>&nbsp;&nbsp;%1$d fájlok
     ]]></string>
-    <string name="search_files">Fájlok keresése…</string>
+    <string name="search_files">Fájlok keresése...</string>
     <string name="search_x"><![CDATA[
  <b>Keresés:</b>&nbsp;%1$s
     ]]></string>
@@ -117,7 +115,7 @@
     <string name="no_thanks">Köszönöm Nem</string>
     <string name="file">Fájl</string>
     <string name="folder">Mappa</string>
-    <string name="remote_connection">Távoli Kapcsolat…</string>
+    <string name="remote_connection">Távoli Kapcsolat...</string>
     <string name="text">Szöveg</string>
     <string name="image">Kép</string>
     <string name="audio">Hang</string>
@@ -127,15 +125,14 @@
     <string name="show_hidden_files">Rejtett Fájlok</string>
     <string name="about">Névjegy</string>
     <string name="about_desc">Az alkalmazásról és a fejlesztőjéről.</string>
-
     <string name="settings">Beállítások</string>
     <string name="about_body"><![CDATA[
  Egy minimalista, intuitív és szép fájlkezelő androidra. <br/><br/>
- Fejlesztő <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Weboldal</a>&nbsp;&nbsp;
- <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
- <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
- <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+ Fejlesztő <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Weboldal</a>&nbsp;&nbsp;
+ <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+ <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+ <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+ <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Név:</b>&nbsp;&nbsp;%1$s<br/><b>Elérési Út:</b>&nbsp;&nbsp;%2$s<br/><b>Méret:</b>&nbsp;&nbsp;%3$s<br/><b>Módosítva:</b>&nbsp;&nbsp;%4$s<br/><b>Jogosultság:</b>&nbsp;&nbsp;%5$s
@@ -144,17 +141,17 @@
  <b>Név:</b>&nbsp;&nbsp;%1$s<br/><b>Elérési Út:</b>&nbsp;&nbsp;%2$s<br/><b>Tartalom:</b>&nbsp;&nbsp;%3$s<br/><b>Módosítva:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Új Fájl</string>
-    <string name="making_file">Fájl létrehozása…</string>
+    <string name="making_file">Fájl létrehozása...</string>
     <string name="created_file">%1$s fájl létrehozva</string>
     <string name="file_already_exists">Ez a fájl már létezik</string>
     <string name="failed_make_file">Sikertelen a(z): %1$s új fájl létrehozása</string>
-    <string name="pick_a_file">Válasszon egy fájlt…</string>
+    <string name="pick_a_file">Válasszon egy fájlt...</string>
     <string name="cabinet_text_editor">Szöveg Szerkesztő</string>
     <string name="save">Mentés</string>
     <string name="unsaved_changes">Nem mentett változtatások</string>
     <string name="unsaved_changes_desc">Változtatások mentése kilépés előtt?</string>
-    <string name="saving">Mentés…</string>
-    <string name="loading">Betöltés…</string>
+    <string name="saving">Mentés...</string>
+    <string name="loading">Betöltés...</string>
     <string name="unsupported_extension">Nem Támogatott Kiterjesztés</string>
     <string name="unsupported_extension_desc">Ezt a fájltipust nem lehet szerkezteni.</string>
     <string name="file_already_exists_warning">Figyelmeztetés: Ez a fájl már létezik. Az új fájl egy másolatként jelenik meg.</string>
@@ -175,16 +172,21 @@
     <string name="sdcard">Memóriakártya</string>
     <string name="owner">Tulajdonos</string>
     <string name="group">Csoport</string>
-    <string name="applying_permissions">Engedélyek alkalmazása…</string>
+    <string name="applying_permissions">Engedélyek alkalmazása...</string>
     <string name="primary_color">Elsődleges Szín</string>
     <string name="primary_color_desc">Válassza ki hogy milyen elsődleges színt kíván használni.</string>
     <string name="accent_color">Másodlagos Szín</string>
     <string name="accent_color_desc">Válassza ki hogy milyen másodlagos színt kíván használni.</string>
     <string name="colored_navbar">Szinezett Navigációs Sáv</string>
     <string name="colored_navbar_desc">A navigációs sáv az elsődleges szín szerint lesz szinezve.</string>
-
-
     <string name="defaultStr">Alapértelmezett</string>
     <string name="only_available_lollipop">Ez az opció csak Android Lollipop verzión érhető el.</string>
     <string name="base_theme_desc">Válasszon témát amit használni szeretne.</string>
+    <string name="find_and_replace">Megkeresés és Kicserélés</string>
+    <string name="find">Megkeresés</string>
+    <string name="replace">Kicserélés</string>
+    <string name="replace_all">Mind Megkeresése</string>
+    <string name="use_regex">Regex használata</string>
+    <string name="no_occurences">Nincsenek események</string>
+    <string name="directory">Könyvtár</string>
 </resources>

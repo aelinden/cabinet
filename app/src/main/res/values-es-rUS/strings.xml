@@ -21,7 +21,6 @@
     <string name="no_files">No hay archivos</string>
     <string name="storage">Almacenamiento</string>
     <string name="root">Root</string>
-    <string name="directory">Directorio</string>
     <string name="unknown">Desconocido</string>
     <string name="go_up">Subir</string>
     <string name="x_files">%1$d archivos</string>
@@ -50,7 +49,6 @@
     <string name="unavailable">No disponible</string>
     <string name="grid_mode">modo malla</string>
     <string name="sort_by">Ordenar por</string>
-    <string name="sort_name_folderstop">Nombre, carpetas primero</string>
     <string name="sort_name">Nombre</string>
     <string name="sort_extension">Extensión</string>
     <string name="sort_size_lowhigh">Tamaño, ascendente</string>
@@ -117,7 +115,7 @@
     <string name="no_thanks">No gracias</string>
     <string name="file">Archivo</string>
     <string name="folder">Carpeta</string>
-    <string name="remote_connection">Conexión remota…</string>
+    <string name="remote_connection">Conexión remota...</string>
     <string name="text">Texto</string>
     <string name="image">Imagen</string>
     <string name="audio">Audio</string>
@@ -127,15 +125,14 @@
     <string name="show_hidden_files">Mostrar archivos ocultos</string>
     <string name="about">Acerca</string>
     <string name="about_desc">Acerca de la aplicación y su diseñador</string>
-
     <string name="settings">Configuración</string>
     <string name="about_body"><![CDATA[
         Un minimalista, intuitivo y bello administrador de archivos para Android 4.1 o mayores versiones.<br/><br/>
-        Diseñado por <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Pagina web</a>&nbsp;&nbsp;
-        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
-        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
-        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+        Diseñado por <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Pagina web</a>&nbsp;&nbsp;
+        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
+        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
+        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
+        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Nombre:</b>&nbsp;&nbsp;%1$s<br/><b>Ruta:</b>&nbsp;&nbsp;%2$s<br/><b>Tamaño:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s<br/><b>Permisos:</b>&nbsp;&nbsp;%5$s
@@ -144,17 +141,17 @@
         <b>Nombre:</b>&nbsp;&nbsp;%1$s<br/><b>Ruta:</b>&nbsp;&nbsp;%2$s<br/><b>Contenido:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nuevo Archivo</string>
-    <string name="making_file">Creando archivo…</string>
+    <string name="making_file">Creando archivo...</string>
     <string name="created_file">Archivo creado %1$s</string>
     <string name="file_already_exists">El archivo ya existe</string>
     <string name="failed_make_file">Error al crear un nuevo archivo: %1$s</string>
-    <string name="pick_a_file">Seleccione un archivo…</string>
+    <string name="pick_a_file">Seleccione un archivo...</string>
     <string name="cabinet_text_editor">Cabinet editor de texto</string>
     <string name="save">Guardar</string>
     <string name="unsaved_changes">Cambios no guardados</string>
     <string name="unsaved_changes_desc">Tienes cambios no guardados, ¿quieres guardarlos antes de salir?</string>
-    <string name="saving">Guardando…</string>
-    <string name="loading">Cargando…</string>
+    <string name="saving">Guardando...</string>
+    <string name="loading">Cargando...</string>
     <string name="unsupported_extension">Extension no soportada</string>
     <string name="unsupported_extension_desc">No puedes abrir este tipo de archivo con el editor de texto.</string>
     <string name="file_already_exists_warning">Advertencia: este archivo ya existe. El nuevo archivo aparecerá como un duplicado.</string>
@@ -175,15 +172,15 @@
     <string name="sdcard">Tarjeta SD</string>
     <string name="owner">Dueño</string>
     <string name="group">Grupo</string>
-    <string name="applying_permissions">Aplicando permisos…</string>
+    <string name="applying_permissions">Aplicando permisos...</string>
     <string name="primary_color">Color primario</string>
     <string name="primary_color_desc">El color primario a usar. Por defecto azul Material.</string>
     <string name="accent_color">Color resaltante</string>
     <string name="accent_color_desc">El color resaltante a usar. Por defecto rosado Material</string>
     <string name="colored_navbar">Barra de navegación colorida.</string>
     <string name="colored_navbar_desc">Barra de navegación coloreada con el color primario.</string>
-
-
+    <string name="colored_icons">Color de los iconos</string>
+    <string name="colored_icons_desc">El color de los archivos e iconos. Puedes usar el color primario o color resaltante en lugar del gris por defecto.</string>
     <string name="defaultStr">Por defecto</string>
     <string name="only_available_lollipop">Esta característica esta disponible en Android Lollipop hacia arriba.</string>
     <string name="base_theme_desc">Elija si quiere aplicar el tema claro, oscuro, o negro AMOLED.</string>
@@ -195,4 +192,14 @@
     <string name="match_case">Mayúsculas y minúsculas</string>
     <string name="no_occurences">Sin coincidencias</string>
     <string name="no_occurences_desc">No se encontraron coincidencias para su búsqueda.</string>
+    <string name="revert_changes">Revertir cambios</string>
+    <string name="slash_name_invalid">No puede incluir / en el nombre.</string>
+    <string name="directory">Directorio</string>
+    <string name="directory_with_count">Directorio – 1 archivo</string>
+    <string name="directory_with_count_x">Directorio – %1$d archivos</string>
+    <string name="directory_count">Contador de directorio</string>
+    <string name="directory_count_descr">Si se activa, el número de archivos y carpetas en una carpeta local se mostrará dentro de las listas</string>
+    <string name="theming">Cambiando tema</string>
+    <string name="behavior">Comportamiento</string>
+    <string name="changelog">Lista de cambios</string>
 </resources>
