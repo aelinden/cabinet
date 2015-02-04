@@ -18,7 +18,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -41,6 +40,7 @@ import com.afollestad.cabinet.ui.base.NetworkedActivity;
 import com.afollestad.cabinet.utils.APKIconDownloader;
 import com.afollestad.cabinet.utils.Pins;
 import com.afollestad.cabinet.utils.ThemeUtils;
+import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
@@ -265,13 +265,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
-            // TODO RTL
-            int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
             int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
-//            int cx = outerFrame.getMeasuredWidth() - outerFrame.getPaddingEnd() - halfButtonHeight;
-//            int cy = outerFrame.getMeasuredWidth() - outerFrame.getPaddingBottom() - halfButtonHeight;
-            int cx = outerFrame.getMeasuredWidth() - sixteenDp - halfButtonHeight;
-            int cy = outerFrame.getMeasuredHeight() - sixteenDp - halfButtonHeight;
+            int cx;
+            int cy;
+            if (Utils.isRTL(this)) {
+                cx = fabMargin + halfButtonHeight;
+                cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
+            } else {
+                cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
+                cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
+            }
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
             Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
@@ -288,13 +292,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
-            // TODO RTL
-            int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
             int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
-//            int cx = outerFrame.getMeasuredWidth() - outerFrame.getPaddingEnd() - halfButtonHeight;
-//            int cy = outerFrame.getMeasuredWidth() - outerFrame.getPaddingBottom() - halfButtonHeight;
-            int cx = outerFrame.getMeasuredWidth() - sixteenDp - halfButtonHeight;
-            int cy = outerFrame.getMeasuredHeight() - sixteenDp - halfButtonHeight;
+            int cx;
+            int cy;
+            if (Utils.isRTL(this)) {
+                cx = fabMargin + halfButtonHeight;
+                cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
+            } else {
+                cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
+                cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
+            }
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
             Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);

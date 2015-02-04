@@ -16,5 +16,6 @@
     <dimen name="circle_view_check">24dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="drawer_item_minheight">52dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

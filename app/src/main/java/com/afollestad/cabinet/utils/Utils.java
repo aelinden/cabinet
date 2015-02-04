@@ -1,6 +1,7 @@
 package com.afollestad.cabinet.utils;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
@@ -11,6 +12,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -391,5 +393,13 @@ public class Utils {
         } catch (ActivityNotFoundException e) {
             Toast.makeText(context, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public static boolean isRTL(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            Configuration config = context.getResources().getConfiguration();
+            return config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
+        } else return false;
     }
 }
