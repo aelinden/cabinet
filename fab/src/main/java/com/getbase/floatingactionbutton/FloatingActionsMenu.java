@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
@@ -214,15 +215,40 @@ public class FloatingActionsMenu extends ViewGroup {
         }
     }
 
+    public void setColorNormalResId(@ColorRes int colorNormal) {
+        mAddButton.setColorNormalResId(colorNormal);
+    }
+
+    public void setColorNormal(int color) {
+        mAddButton.setColorNormal(color);
+    }
+
+    public void setColorPressedResId(@ColorRes int colorPressed) {
+        mAddButton.setColorPressedResId(colorPressed);
+    }
+
+    public void setColorPressed(int color) {
+        mAddButton.setColorPressed(color);
+    }
+
+    public void setColorDisabledResId(@ColorRes int colorDisabled) {
+        mAddButton.setColorDisabledResId(colorDisabled);
+    }
+
+    public void setColorDisabled(int color) {
+        mAddButton.setColorDisabled(color);
+    }
+
+    public void setIcon(@DrawableRes int icon) {
+        mAddButton.setIcon(icon);
+    }
+
+    public void setIconDrawable(@NonNull Drawable iconDrawable) {
+        mAddButton.setIconDrawable(iconDrawable);
+    }
+
     private void createMainButton(Context context) {
         mAddButton = new FloatingActionButton(context) {
-            @Override
-            void updateBackground() {
-                this.mColorNormal = mButtonColorNormal;
-                this.mColorPressed = mButtonColorPressed;
-                super.updateBackground();
-            }
-
             @Override
             Drawable getIconDrawable() {
                 final RotatingDrawable rotatingDrawable = new RotatingDrawable(super.getIconDrawable());
@@ -243,6 +269,8 @@ public class FloatingActionsMenu extends ViewGroup {
             }
         };
 
+        mAddButton.setColorNormal(mButtonColorNormal);
+        mAddButton.setColorPressed(mButtonColorPressed);
         mAddButton.setId(R.id.fab_expand_menu_button);
         mAddButton.setSize(mButtonSize);
         mAddButton.setOnClickListener(new OnClickListener() {

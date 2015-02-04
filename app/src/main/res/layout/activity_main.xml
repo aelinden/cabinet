@@ -27,7 +27,7 @@
                 android:id="@+id/outerFrame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
+                android:visibility="invisible"
                 android:background="#CCFFFFFF"
                 android:paddingRight="16dp"
                 android:paddingEnd="16dp"
@@ -51,7 +51,8 @@
                     android:layout_height="wrap_content"
                     fab:fab_title="@string/file"
                     fab:fab_icon="@drawable/ic_fab_file"
-                    fab:fab_size="mini" />
+                    fab:fab_size="mini"
+                    android:background="#bF0099cc"/>
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/actionNewFolder"

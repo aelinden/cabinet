@@ -18,6 +18,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -238,11 +239,10 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                     hideOuterFrame();
                 }
             });
-            FloatingActionButton btn = fab.getButton();
-            btn.setIcon(R.drawable.ic_fab_new);
-            btn.setColorNormal(theme.accentColor());
-            btn.setColorPressed(theme.accentColorDark());
-            btn.setOnClickListener(new View.OnClickListener() {
+            fab.setIcon(R.drawable.ic_fab_new);
+            fab.setColorNormal(theme.accentColor());
+            fab.setColorPressed(theme.accentColorDark());
+            fab.getButton().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (fabPasteMode == BaseFileCab.PasteMode.ENABLED)
@@ -266,8 +266,12 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
             // TODO RTL
-            int cx = outerFrame.getRight() - outerFrame.getPaddingEnd();
-            int cy = outerFrame.getBottom() - outerFrame.getPaddingBottom();
+            int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
+//            int cx = outerFrame.getMeasuredWidth() - outerFrame.getPaddingEnd() - halfButtonHeight;
+//            int cy = outerFrame.getMeasuredWidth() - outerFrame.getPaddingBottom() - halfButtonHeight;
+            int cx = outerFrame.getMeasuredWidth() - sixteenDp - halfButtonHeight;
+            int cy = outerFrame.getMeasuredHeight() - sixteenDp - halfButtonHeight;
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
             Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
@@ -280,12 +284,17 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
     private void hideOuterFrame() {
         final View outerFrame = findViewById(R.id.outerFrame);
+        outerFrame.setOnClickListener(null);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
             // TODO RTL
-            int cx = outerFrame.getRight() - outerFrame.getPaddingEnd();
-            int cy = outerFrame.getBottom() - outerFrame.getPaddingBottom();
+            int sixteenDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, getResources().getDisplayMetrics());
+            int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
+//            int cx = outerFrame.getMeasuredWidth() - outerFrame.getPaddingEnd() - halfButtonHeight;
+//            int cy = outerFrame.getMeasuredWidth() - outerFrame.getPaddingBottom() - halfButtonHeight;
+            int cx = outerFrame.getMeasuredWidth() - sixteenDp - halfButtonHeight;
+            int cy = outerFrame.getMeasuredHeight() - sixteenDp - halfButtonHeight;
 
             int finalRadius = Math.max(container.getWidth(), container.getHeight());
             Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
