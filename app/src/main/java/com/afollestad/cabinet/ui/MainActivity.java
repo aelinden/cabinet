@@ -396,8 +396,8 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
     @SuppressLint("CommitPrefEdits")
     public boolean checkChangelog() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        int currentVersion;
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final int currentVersion;
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             currentVersion = pInfo.versionCode;
@@ -405,11 +405,16 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             throw new RuntimeException(e);
         }
         if (currentVersion != prefs.getInt("changelog_version", -1)) {
-            prefs.edit().putInt("changelog_version", currentVersion).commit();
             MaterialDialog dialog = new MaterialDialog.Builder(this)
                     .title(R.string.changelog)
                     .customView(R.layout.dialog_webview, false)
                     .positiveText(android.R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            prefs.edit().putInt("changelog_version", currentVersion).commit();
+                        }
+                    })
                     .build();
             WebView webView = (WebView) dialog.getCustomView().findViewById(R.id.webview);
             webView.loadUrl("file:///android_asset/changelog.html");
