@@ -179,6 +179,8 @@
     <string name="accent_color_desc">La couleur secondaire du thème. Rose matériau par défaut.</string>
     <string name="colored_navbar">Barre de navigation colorée</string>
     <string name="colored_navbar_desc">Colorer la barre de navigation avec la couleur principale.</string>
+    <string name="colored_icons">Couleurs d\'icône</string>
+    <string name="colored_icons_desc">La couleur des icônes de fichier et dossier. Vous pouvez utiliser la couleur principale ou secondaire au lieu du gris par défaut.</string>
     <string name="defaultStr">Défaut</string>
     <string name="only_available_lollipop">Cette fonctionnalité n\'est disponible qu\'à partir d\'Android Lollipop.</string>
     <string name="base_theme_desc">Choisissez un thème clair, sombre, ou noir AMOLED à colorer.</string>
@@ -191,5 +193,14 @@
     <string name="no_occurences">Aucun résultat</string>
     <string name="no_occurences_desc">Votre recherche n\'a retourné aucun résultat.</string>
     <string name="revert_changes">Annuler les modifications</string>
+    <string name="slash_name_invalid">Vous ne pouvez pas inclure / dans le nom.</string>
     <string name="directory">Répertoire</string>
+    <string name="directory_with_count">Répertoire – 1 fichier</string>
+    <string name="directory_with_count_x">Répertoire – %1$d fichiers</string>
+    <string name="directory_count">Contenu du dossier</string>
+    <string name="directory_count_descr">Si activé, le nombre de fichiers et dossiers contenus dans un répertoire local sera affiché sur les listes.</string>
+    <string name="theming">Thème</string>
+    <string name="behavior">Comportement</string>
+    <string name="changelog">Mises à jour</string>
+    <string name="folders_first">Dossiers en premier</string>
 </resources>
