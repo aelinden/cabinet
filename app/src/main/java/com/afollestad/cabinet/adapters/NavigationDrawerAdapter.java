@@ -208,13 +208,16 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             icon.setImageResource(R.drawable.ic_drawer_root);
         } else if (p.equals(Environment.getExternalStorageDirectory().getAbsolutePath())) {
             icon.setImageResource(R.drawable.ic_drawer_storage);
-        } else if (p.contains("dcim") || p.contains("camera")) {
+        } else if (p.contains("dcim") || p.contains("camera") ||
+                p.contains("video") || p.contains("movie")) {
             icon.setImageResource(R.drawable.ic_drawer_camera);
         } else if (p.contains("download")) {
             icon.setImageResource(R.drawable.ic_drawer_download);
-        } else if (p.contains("music") || p.contains("audio")) {
+        } else if (p.contains("music") || p.contains("audio") ||
+                p.contains("ringtone") || p.contains("notification") ||
+                p.contains("podcast") || p.contains("alarm")) {
             icon.setImageResource(R.drawable.ic_drawer_audio);
-        } else if (p.contains("pictures") || p.contains("instagram")) {
+        } else if (p.contains("picture") || p.contains("instagram")) {
             icon.setImageResource(R.drawable.ic_drawer_photo);
         } else {
             icon.setImageResource(R.drawable.ic_drawer_folder);
