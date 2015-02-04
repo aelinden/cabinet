@@ -126,7 +126,7 @@
     <string name="show_hidden_files">Pokaži Skrivene Datoteke</string>
     <string name="about">O</string>
     <string name="about_desc">O aplikaciji i njenom dizajneru.</string>
-    <string name="ui">Sučelje</string>
+
     <string name="settings">Postavke</string>
     <string name="about_body"><![CDATA[
  Minimalan, intuitivan, prelijep upravljač datoteka za Android 4.1 i kasnije.<br/><br/>

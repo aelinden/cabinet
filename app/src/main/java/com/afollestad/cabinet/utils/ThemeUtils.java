@@ -22,6 +22,7 @@ public class ThemeUtils {
     private int mLastAccentColor;
     private boolean mLastColoredNav;
     private int mColoredIcons;
+    private boolean mDirectoryCount;
 
     public int getPopupTheme() {
         if (mDarkMode || mTrueBlack) {
@@ -45,6 +46,11 @@ public class ThemeUtils {
     public static int coloredIconsMode(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getInt("colored_icons", 0);
+    }
+
+    public static boolean isDirectoryCount(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean("directory_count", false);
     }
 
     public int primaryColor() {
@@ -88,12 +94,14 @@ public class ThemeUtils {
         final int accentColor = accentColor();
         final boolean coloredNav = isColoredNavBar();
         final int coloredIcons = coloredIconsMode(mContext);
+        final boolean directoryCount = isDirectoryCount(mContext);
 
         boolean changed = false;
         if (checkForChanged) {
             changed = mDarkMode != darkTheme || mTrueBlack != blackTheme ||
                     mLastPrimaryColor != primaryColor || mLastAccentColor != accentColor ||
-                    coloredNav != mLastColoredNav || coloredIcons != mColoredIcons;
+                    coloredNav != mLastColoredNav || coloredIcons != mColoredIcons ||
+                    directoryCount != mDirectoryCount;
         }
 
         mDarkMode = darkTheme;
@@ -102,6 +110,7 @@ public class ThemeUtils {
         mLastAccentColor = accentColor;
         mLastColoredNav = coloredNav;
         mColoredIcons = coloredIcons;
+        mDirectoryCount = directoryCount;
 
         return changed;
     }

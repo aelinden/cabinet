@@ -126,7 +126,7 @@
     <string name="show_hidden_files">Mostrar Arquivos Ocultos</string>
     <string name="about">Sobre</string>
     <string name="about_desc">Sobre o aplicativo e o seu designer.</string>
-    <string name="ui">Interface</string>
+
     <string name="settings">Configurações</string>
     <string name="about_body"><![CDATA[
         Um bonito, minimalista e intuitivo gerenciador de arquivos para Android 4.1 ou acima.<br/><br/>

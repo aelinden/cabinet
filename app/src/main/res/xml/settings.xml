@@ -11,7 +11,19 @@
 
     </com.afollestad.cabinet.views.CabinetPreferenceCategory>
 
-    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/ui">
+    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/behavior">
+
+        <CheckBoxPreference
+            android:key="directory_count"
+            android:title="@string/directory_count"
+            android:summary="@string/directory_count_descr"
+            android:layout="@layout/preference_custom"
+            android:persistent="true"
+            android:defaultValue="false" />
+
+    </com.afollestad.cabinet.views.CabinetPreferenceCategory>
+
+    <com.afollestad.cabinet.views.CabinetPreferenceCategory android:title="@string/theming">
 
         <Preference
             android:key="base_theme"

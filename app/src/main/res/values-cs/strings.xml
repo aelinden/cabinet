@@ -127,7 +127,7 @@ disponuje také dalšími různými funkcemi, jako vzdálený přístup k server
     <string name="show_hidden_files">Zobrazovat skryté soubory</string>
     <string name="about">O aplikaci</string>
     <string name="about_desc">O aplikaci a jejím vývojáři.</string>
-    <string name="ui">Uživatelské rozhraní</string>
+
     <string name="settings">Nastavení</string>
     <string name="about_body"><![CDATA[
 Minimalistický, intuitivní a krásný souborový manažer pro Android 4.1 a vyšší.<br/><br/>

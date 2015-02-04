@@ -117,7 +117,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="show_hidden_files">Visa dolda filer</string>
     <string name="about">Om</string>
     <string name="about_desc">Om appen och dess tillverkare</string>
-    <string name="ui">Utseende</string>
+
     <string name="settings">Inställningar</string>
     <string name="about_body"><![CDATA[
         En minimalistisk, intuitiv och snygg filhanterare för Android 4.1 och senare.<br/><br/>

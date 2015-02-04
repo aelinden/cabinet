@@ -127,7 +127,7 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="show_hidden_files">숨김 파일 보기</string>
     <string name="about">정보</string>
     <string name="about_desc">앱과 디자이너에 대해…</string>
-    <string name="ui">UI</string>
+
     <string name="settings">설정</string>
     <string name="about_body"><![CDATA[
         안드로이드 4.1 이상을 위한 단순하고 직감적이며 아름다운 파일 관리자..<br/><br/><b>Aidan Follestad</b> 디자인.<br/><a href=\'http://aidanfollestad.com\'>웹사이트</a>&nbsp;&nbsp;

@@ -126,7 +126,7 @@
     <string name="show_hidden_files">Mostrar arxius ocults</string>
     <string name="about">Sobre</string>
     <string name="about_desc">Sobre l\'aplicació i el seu dissenyador</string>
-    <string name="ui">Interfície</string>
+
     <string name="settings">Configuració</string>
     <string name="about_body"><![CDATA[
  Un minimalista, intuïtiu i bonic gestor d\'arxius per a Android 4.1 i superior.<br/><br/>

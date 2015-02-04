@@ -127,7 +127,7 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="show_hidden_files">Gizli dosyaları göster</string>
     <string name="about">Hakkında</string>
     <string name="about_desc">Uygulama ve tasarımcısı hakkında.</string>
-    <string name="ui">Arayüz</string>
+
     <string name="settings">Ayarlar</string>
     <string name="about_body"><![CDATA[
 Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneticisi.<br/><br/><b>Aidan Follestad</b> tarafından tasarlandı.

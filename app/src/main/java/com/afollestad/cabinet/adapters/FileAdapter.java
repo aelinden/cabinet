@@ -25,6 +25,7 @@ import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.cab.CopyCab;
 import com.afollestad.cabinet.cab.CutCab;
 import com.afollestad.cabinet.cab.base.BaseFileCab;
+import com.afollestad.cabinet.file.CloudFile;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.root.RootFile;
 import com.afollestad.cabinet.ui.MainActivity;
@@ -54,6 +55,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         mShowDirs = showDirectories;
         checkedPaths = new ArrayList<>();
         gridMode = Utils.getGridMode(context);
+        directoryCount = ThemeUtils.isDirectoryCount(context);
+        showHidden = Utils.getShowHidden(context);
 
         ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();
         final int iconsMode = ThemeUtils.coloredIconsMode(context);
@@ -170,6 +173,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     public boolean showLastModified;
     private boolean gridMode;
     private static int primaryColor;
+    private boolean directoryCount;
+    private boolean showHidden;
 
     public void add(File file) {
         mFiles.add(file);
@@ -223,7 +228,20 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         } else holder.title.setText(file.getName());
 
         if (file.isDirectory()) {
-            holder.content.setText(R.string.directory);
+            if (directoryCount && !(file instanceof CloudFile)) {
+                String[] contents = new java.io.File(file.getPath()).list();
+                if (contents != null) {
+                    if (contents.length == 1) {
+                        holder.content.setText(R.string.directory_with_count);
+                    } else {
+                        holder.content.setText(mContext.getString(R.string.directory_with_count_x, contents.length));
+                    }
+                } else {
+                    holder.content.setText(R.string.directory);
+                }
+            } else {
+                holder.content.setText(R.string.directory);
+            }
         } else {
             holder.content.setText(file.getSizeString());
         }

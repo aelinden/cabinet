@@ -126,7 +126,7 @@
     <string name="show_hidden_files">Toon verborgen bestanden</string>
     <string name="about">Over</string>
     <string name="about_desc">Over de app en de ontwerper</string>
-    <string name="ui">UI</string>
+
     <string name="settings">Instellingen</string>
     <string name="about_body"><![CDATA[
 Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en hoger.<br/><br/>

@@ -126,7 +126,7 @@
     <string name="show_hidden_files">הראה קבצים מוסתרים</string>
     <string name="about">עלינו</string>
     <string name="about_desc">על האפליקציה ועל המעצב שלה.</string>
-    <string name="ui">ממשק</string>
+
     <string name="settings">הגדרות</string>
     <string name="about_body"><![CDATA[
         מנהל קבצים מינימליסאי, אינטואיטיבי ויפיפה לאנדרואיד 4.1 ומעלה.<br/><br/>

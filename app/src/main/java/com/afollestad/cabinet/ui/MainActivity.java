@@ -2,10 +2,12 @@ package com.afollestad.cabinet.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -22,6 +24,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -384,10 +387,36 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean("shown_welcome", false)) {
                 getFragmentManager().beginTransaction().replace(R.id.container, new WelcomeFragment()).commit();
             } else {
-                checkRating();
+                if (!checkChangelog())
+                    checkRating();
                 switchDirectory(null, true);
             }
         }
+    }
+
+    @SuppressLint("CommitPrefEdits")
+    public boolean checkChangelog() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int currentVersion;
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            currentVersion = pInfo.versionCode;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        if (currentVersion != prefs.getInt("changelog_version", -1)) {
+            prefs.edit().putInt("changelog_version", currentVersion).commit();
+            MaterialDialog dialog = new MaterialDialog.Builder(this)
+                    .title(R.string.changelog)
+                    .customView(R.layout.dialog_webview, false)
+                    .positiveText(android.R.string.ok)
+                    .build();
+            WebView webView = (WebView) dialog.getCustomView().findViewById(R.id.webview);
+            webView.loadUrl("file:///android_asset/changelog.html");
+            dialog.show();
+            return true;
+        }
+        return false;
     }
 
     public void reloadNavDrawer(boolean open) {

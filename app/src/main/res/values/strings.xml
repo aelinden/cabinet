@@ -28,7 +28,6 @@
     <string name="no_files">No files</string>
     <string name="storage">Storage</string>
     <string name="root">Root</string>
-    <string name="directory">Directory</string>
     <string name="unknown">Unknown</string>
     <string name="go_up">Go Up</string>
     <string name="x_files">%1$d files</string>
@@ -176,7 +175,7 @@
     <string name="about">About</string>
     <string name="about_desc">About the app and its designer.</string>
 
-    <string name="ui">UI</string>
+
     <string name="settings">Settings</string>
 
     <string name="about_body"><![CDATA[
@@ -319,5 +318,14 @@
     </string-array>
 
     <string name="slash_name_invalid">You cannot include / in the name.</string>
+
+    <string name="directory">Directory</string>
+    <string name="directory_with_count">Directory – 1 file</string>
+    <string name="directory_with_count_x">Directory – %1$d files</string>
+    <string name="directory_count">Directory Count</string>
+    <string name="directory_count_descr">If enabled, the number of files and folders in a local folder will be displayed within lists.</string>
+    <string name="theming">Theming</string>
+    <string name="behavior">Behavior</string>
+    <string name="changelog">Changelog</string>
 
 </resources>

@@ -127,7 +127,7 @@
     <string name="show_hidden_files">Zeige versteckte Dateien</string>
     <string name="about">Über</string>
     <string name="about_desc">Über die App und deren Designer</string>
-    <string name="ui">UI</string>
+
     <string name="settings">Einstellungen</string>
     <string name="about_body"><![CDATA[
  Ein minimalistischer, intuitiver, schöner Dateimanager für Android 4.1 und darüber. <br/><br/>

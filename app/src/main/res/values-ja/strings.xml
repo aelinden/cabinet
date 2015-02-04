@@ -127,7 +127,7 @@ Cabinetはその他にもSFTPによるサーバへのリモートアクセスな
     <string name="show_hidden_files">隠しファイルを表示</string>
     <string name="about">このアプリについて</string>
     <string name="about_desc">このアプリとデザイナーについて</string>
-    <string name="ui">UI</string>
+
     <string name="settings">設定</string>
     <string name="about_body"><![CDATA[
 Android4.1以降向けのミニマリスト、直感的かつ美しいファイルマネージャ。<br/><br/>

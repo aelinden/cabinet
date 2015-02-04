@@ -128,7 +128,7 @@
     <string name="show_hidden_files">顯示隱藏檔案</string>
     <string name="about">關於</string>
     <string name="about_desc">關於程式和設計師</string>
-    <string name="ui">UI</string>
+
     <string name="settings">設定</string>
     <string name="about_body"><![CDATA[
     一個簡約、直觀、優美的檔案管理器， Android 4.1 以上版本可用。<br/><br/>

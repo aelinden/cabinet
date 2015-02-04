@@ -127,7 +127,7 @@
     <string name="show_hidden_files">Показывать скрытые файлы</string>
     <string name="about">О приложении</string>
     <string name="about_desc">О приложении и его разработчике.</string>
-    <string name="ui">Внешний вид</string>
+
     <string name="settings">Настройки</string>
     <string name="about_body"><![CDATA[
  Минималистский, понятный, прекрасный файловый менеджер для Android 4.1 и выше.<br/><br/>

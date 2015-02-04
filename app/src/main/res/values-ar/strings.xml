@@ -129,7 +129,7 @@
     <string name="show_hidden_files">أظهر الملفّات المخفيّة</string>
     <string name="about">نبذة</string>
     <string name="about_desc">نبذة عن التطبيق ومُصمّمه</string>
-    <string name="ui">الواجهة</string>
+
     <string name="settings">الإعدادات</string>
     <string name="about_body"><![CDATA[
 مُدير ملفّات جميل ومُبسّط وسهل الاستخدام لإصدارات 4.1 وما بعده من Android.<br/><br/>

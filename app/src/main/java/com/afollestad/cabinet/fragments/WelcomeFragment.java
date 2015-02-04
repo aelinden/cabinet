@@ -104,6 +104,7 @@ public class WelcomeFragment extends Fragment {
                 act.switchDirectory(null, true);
                 act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
                 act.finishDrawerSetup();
+                act.checkChangelog();
             }
         });
     }
