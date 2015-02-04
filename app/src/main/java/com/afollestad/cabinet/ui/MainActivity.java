@@ -184,8 +184,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("shown_welcome", false)) {
-            NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-            mNavigationDrawerFragment.setUp(mDrawerLayout, mToolbar);
+            finishDrawerSetup();
         } else {
             mToolbar.setNavigationIcon(R.drawable.ic_intro_menu);
         }
@@ -226,6 +225,11 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                 .imageDownloader(new APKIconDownloader(this))
                 .build();
         ImageLoader.getInstance().init(config);
+    }
+
+    public void finishDrawerSetup() {
+        NavigationDrawerFragment mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragment.setUp(mDrawerLayout, mToolbar);
     }
 
     private void setupFab(View view, int action) {

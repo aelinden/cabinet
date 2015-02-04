@@ -103,6 +103,7 @@ public class WelcomeFragment extends Fragment {
                 MainActivity act = (MainActivity) getActivity();
                 act.switchDirectory(null, true);
                 act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
+                act.finishDrawerSetup();
             }
         });
     }
