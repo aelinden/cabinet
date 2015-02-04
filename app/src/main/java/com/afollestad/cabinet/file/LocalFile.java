@@ -571,7 +571,14 @@ public class LocalFile extends File {
 
     @Override
     public long length() {
-        return new java.io.File(getPath()).length();
+        java.io.File fi = new java.io.File(getPath());
+        if (isDirectory()) {
+            String[] content = fi.list();
+            if (content == null)
+                return 0;
+            return content.length;
+        }
+        return fi.length();
     }
 
     @Override
