@@ -3,7 +3,7 @@
     <string name="welcome">Velkommen</string>
     <string name="welcome_intro">Velkommen til Cabinet! Cabinet er en minimalistisk filbehandler som er designet for være estetisk
  vakker, og fungere som forventet.\n\nTa en titt på denne filen:</string>
-    <string name="open_as">Åpne som...</string>
+    <string name="open_as">Åpne som…</string>
     <string name="copy">Kopier</string>
     <string name="cut">Klipp</string>
     <string name="rename">Nytt navn</string>
@@ -50,20 +50,20 @@
     <string name="test_connection">Testkobling</string>
     <string name="uploaded_to">Lastet opp til %1$s</string>
     <string name="downloaded_to">Lastet ned til %1$s</string>
-    <string name="connecting">Kobler til...</string>
-    <string name="downloading">Laster ned...</string>
-    <string name="deleting">Sletter...</string>
-    <string name="making_folder">Oppretter mappe...</string>
-    <string name="renaming">Gir nytt navn...</string>
-    <string name="unzipping">Pakker opp...</string>
-    <string name="zipping">Pakker ned...</string>
-    <string name="moving">Flytter...</string>
-    <string name="uploading">Laster opp...</string>
-    <string name="copying">Kopierer...</string>
+    <string name="connecting">Kobler til…</string>
+    <string name="downloading">Laster ned…</string>
+    <string name="deleting">Sletter…</string>
+    <string name="making_folder">Oppretter mappe…</string>
+    <string name="renaming">Gir nytt navn…</string>
+    <string name="unzipping">Pakker opp…</string>
+    <string name="zipping">Pakker ned…</string>
+    <string name="moving">Flytter…</string>
+    <string name="uploading">Laster opp…</string>
+    <string name="copying">Kopierer…</string>
     <string name="copy_x"><![CDATA[
  <b>Kopier</b>&nbsp;&nbsp;%1$s
     ]]></string>
-    <string name="search_files">Søk etter filer...</string>
+    <string name="search_files">Søk etter filer…</string>
     <string name="thank_you">Tusen takk!</string>
     <string name="later">Senere</string>
     <string name="no_thanks">Nei takk</string>
@@ -81,11 +81,11 @@
     <string name="settings">Innstillinger</string>
     <string name="about_body"><![CDATA[
  En minimalistisk, intuitiv og vakker filbehandler for Android 4.1 og nyere.<br/><br/>
- Designet av <b>Aidan Follestad</b><br/><a href='http://aidanfollestad.com'>Nettside</a>&nbsp;&nbsp;
- <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
- <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
- <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
- <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>&nbsp;&nbsp;
+ Designet av <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Nettside</a>&nbsp;&nbsp;
+ <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+ <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>&nbsp;&nbsp;
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Navn:</b>&nbsp;&nbsp;%1$s<br/><b>Filbane:</b>&nbsp;&nbsp;%2$s<br/><b>Størrelse:</b>&nbsp;&nbsp;%3$s<br/><b>Endret:</b>&nbsp;&nbsp;%4$s<br/><b>Tillatelser:</b>&nbsp;&nbsp;%5$s
@@ -94,14 +94,14 @@
  <b>Navn:</b>&nbsp;&nbsp;%1$s<br/><b>Filbane:</b>&nbsp;&nbsp;%2$s<br/><b>Innhold:</b>&nbsp;&nbsp;%3$s<br/><b>Endret:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Ny Fil</string>
-    <string name="making_file">Oppretter fil...</string>
+    <string name="making_file">Oppretter fil…</string>
     <string name="created_file">Opprettet fil %1$s</string>
     <string name="file_already_exists">Fil eksisterer allerede</string>
-    <string name="pick_a_file">Velg en fil...</string>
+    <string name="pick_a_file">Velg en fil…</string>
     <string name="cabinet_text_editor">Cabinet Tekstbehandler</string>
     <string name="save">Lagre</string>
     <string name="saving">Lagrer</string>
-    <string name="loading">Laster inn...</string>
+    <string name="loading">Laster inn…</string>
     <string name="filter">Filter</string>
     <string name="none">Ingen</string>
     <string name="superuser_not_available">Superbruker ikke tilgjengelig</string>

@@ -128,11 +128,11 @@
     <string name="settings">Einstellungen</string>
     <string name="about_body"><![CDATA[
  Ein minimalistischer, intuitiver, schöner Dateimanager für Android 4.1 und darüber. <br/><br/>
- Entworfen von <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Webseite</a>&nbsp;&nbsp;
- <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
- <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
- <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
- <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+ Entworfen von <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Webseite</a>&nbsp;&nbsp;
+ <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+ <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Größe:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s<br/><b>Berechtigung:</b>&nbsp;&nbsp;%5$s
@@ -141,17 +141,17 @@
  <b>Name:</b>&nbsp;&nbsp;%1$s<br/><b>Pfad:</b>&nbsp;&nbsp;%2$s<br/><b>Inhalte:</b>&nbsp;&nbsp;%3$s<br/><b>Verändert:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Neuer Datei</string>
-    <string name="making_file">Erstelle Datei...</string>
+    <string name="making_file">Erstelle Datei…</string>
     <string name="created_file">Datei %1$s erstellt</string>
     <string name="file_already_exists">Datei existiert bereits</string>
     <string name="failed_make_file">Erstellen der Datei %1$s fehlgeschlagen</string>
-    <string name="pick_a_file">Wählen sie eine Datei...</string>
+    <string name="pick_a_file">Wählen sie eine Datei…</string>
     <string name="cabinet_text_editor">Cabinet Texteditor</string>
     <string name="save">Speichern</string>
     <string name="unsaved_changes">Ungespeicherte Änderungen</string>
     <string name="unsaved_changes_desc">Sie haben ungespeicherte Änderungen, möchten Sie diese vor dem Verlassen speichern?</string>
-    <string name="saving">Speichern...</string>
-    <string name="loading">Lade...</string>
+    <string name="saving">Speichern…</string>
+    <string name="loading">Lade…</string>
     <string name="unsupported_extension">Nicht unterstützer Dateityp</string>
     <string name="unsupported_extension_desc">Dieser Dateityp kann nicht im Texteditor geöffnet werden.</string>
     <string name="file_already_exists_warning">Warnung: Diese Datei existiert bereits. Die neue Datei wird als Duplikat erscheinen.</string>
@@ -172,7 +172,7 @@
     <string name="sdcard">SD-Karte</string>
     <string name="owner">Besitzer</string>
     <string name="group">Gruppe</string>
-    <string name="applying_permissions">Berechtigungen werden angewendet...</string>
+    <string name="applying_permissions">Berechtigungen werden angewendet…</string>
     <string name="primary_color">Hauptfarbe</string>
     <string name="primary_color_desc">Die zu benutzende Hauptfarbe. Standardmäßig blau.</string>
     <string name="accent_color">Akzentfarbe</string>

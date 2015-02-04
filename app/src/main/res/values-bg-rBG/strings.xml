@@ -67,16 +67,16 @@
     <string name="disconnect_prompt">Искате ли да прекъснете %1$s</string>
     <string name="uploaded_to">Качено на %1$s</string>
     <string name="downloaded_to">Изтеглено на %1$s</string>
-    <string name="connecting">Свързване...</string>
-    <string name="downloading">Изтегляне...</string>
-    <string name="deleting">Изтриване...</string>
-    <string name="making_folder">Създаване на папка...</string>
-    <string name="renaming">Преименуване...</string>
-    <string name="unzipping">Разархивиране...</string>
-    <string name="zipping">Архивиране...</string>
-    <string name="moving">Преместване...</string>
-    <string name="uploading">Качване...</string>
-    <string name="copying">Копиране...</string>
+    <string name="connecting">Свързване…</string>
+    <string name="downloading">Изтегляне…</string>
+    <string name="deleting">Изтриване…</string>
+    <string name="making_folder">Създаване на папка…</string>
+    <string name="renaming">Преименуване…</string>
+    <string name="unzipping">Разархивиране…</string>
+    <string name="zipping">Архивиране…</string>
+    <string name="moving">Преместване…</string>
+    <string name="uploading">Качване…</string>
+    <string name="copying">Копиране…</string>
     <string name="failed_delete_file">Не може да се изтрие този файл: %1$s</string>
     <string name="failed_make_directory">Не може да се направи нова папка: %1$s</string>
     <string name="failed_rename_file">Неуспех при преименуване/преместите този файл: %1$s</string>
@@ -94,7 +94,7 @@
     <string name="cut_x"><![CDATA[<b>Изрежи:</b>&nbsp;&nbsp;%1$s]]></string>
     <string name="copy_xfiles"><![CDATA[<b>Копирай:</b>&nbsp;&nbsp;%1$d files]]></string>
     <string name="cut_xfiles"><![CDATA[<b>Изрежи:</b>&nbsp;&nbsp;%1$d files]]></string>
-    <string name="search_files">Търсене на файлове ...</string>
+    <string name="search_files">Търсене на файлове …</string>
     <string name="search_x"><![CDATA[<b>Търсене:</b>&nbsp;%1$s]]></string>
     <string name="donate">Дарение</string>
     <string name="thank_you">Благодарим ви много!</string>
@@ -105,7 +105,7 @@
     <string name="no_thanks">Не благодаря</string>
     <string name="file">Файл</string>
     <string name="folder">Папка</string>
-    <string name="remote_connection">Отдалечена Връзка...</string>
+    <string name="remote_connection">Отдалечена Връзка…</string>
     <string name="text">Текст</string>
     <string name="image">Изображение</string>
     <string name="audio">Звуков файл</string>
@@ -118,11 +118,11 @@
     <string name="settings">Настройки</string>
     <string name="about_body"><![CDATA[
 Минималистичен, интуитивен, красив файлов мениджър за Android 4.1 и по-нова.<br/><br/>
-Разработено от <b>Aidan Follestad</b><br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+Разработено от <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>Име:</b>&nbsp;&nbsp;%1$s<br/><b>Път:</b>&nbsp;&nbsp;%2$s<br/><b>Размер:</b>&nbsp;&nbsp;%3$s<br/><b>Променено:</b>&nbsp;&nbsp;%4$s<br/><b>Разрешения:</b>&nbsp;&nbsp;%5$s
@@ -131,17 +131,17 @@
         <b>Име:</b>&nbsp;&nbsp;%1$s<br/><b>Път:</b>&nbsp;&nbsp;%2$s<br/><b>Съдържание:</b>&nbsp;&nbsp;%3$s<br/><b>Променено:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Нов Файл</string>
-    <string name="making_file">Създай файл...</string>
+    <string name="making_file">Създай файл…</string>
     <string name="created_file">Създаден файл %1$s</string>
     <string name="file_already_exists">Файлът вече съществува</string>
     <string name="failed_make_file">Не може да се създаде нов файл: %1$s</string>
-    <string name="pick_a_file">Изберете файл...</string>
+    <string name="pick_a_file">Изберете файл…</string>
     <string name="cabinet_text_editor">Cabinet Редактор на Текст</string>
     <string name="save">Запази</string>
     <string name="unsaved_changes">Незапазени Промени</string>
     <string name="unsaved_changes_desc">Имате незапазени промени, искате ли да ги запазите, преди да излезете?</string>
-    <string name="saving">Запазва се...</string>
-    <string name="loading">Зарежда се...</string>
+    <string name="saving">Запазва се…</string>
+    <string name="loading">Зарежда се…</string>
     <string name="unsupported_extension">Спиране на Поддръжката</string>
     <string name="unsupported_extension_desc">Не можете да отворите този тип файл за редактиране на текст.</string>
     <string name="file_already_exists_warning">Предупреждение: вече съществува този файл. Вашият нов файл ще се появи като дубликат.</string>
@@ -162,7 +162,7 @@
     <string name="sdcard">SD Карта</string>
     <string name="owner">Собственик</string>
     <string name="group">Група</string>
-    <string name="applying_permissions">Прилагане на разрешения...</string>
+    <string name="applying_permissions">Прилагане на разрешения…</string>
     <string name="primary_color">Основен Цвят</string>
     <string name="primary_color_desc">Използвате цвета на основната тема. По подразбиране се използва материал синьо.</string>
     <string name="accent_color">Цвят Акцент</string>

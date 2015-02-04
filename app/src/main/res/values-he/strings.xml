@@ -6,7 +6,7 @@
     <string name="welcome_conclusion">נסה ללחוץ על התמונה של הקובץ או על כפתור האפשרויות (שלושת הנקודות). לחיצה על תמונת הקובץ בוחרת אותו כדי לעשות פעולה אחת על מספר קבצים, כמו כן, זה יכול להיעשות באמצעות לחיצה ממושכת על הקובץ. כפתור האפשרויות מראה תפריט עם פעולות אינדיוידואלית לקובץ הספציפי. \n\n ל-Cabinet
  יש עוד אפשרויות שונות, כמו גישה מרחוק לשרתים באמצעות SFTP שאפשר למצוא באמצעות חיפוש. תודה שאתה מנסה את Cabinet!</string>
     <string name="lets_go">בואו נתחיל!</string>
-    <string name="open_as">פתח כ...</string>
+    <string name="open_as">פתח כ…</string>
     <string name="pin">סמן כמועדף</string>
     <string name="copy">העתק</string>
     <string name="cut">גזור</string>
@@ -66,16 +66,16 @@
     <string name="disconnect_prompt">האם אתה רוצה להתנתק מ %1$s?</string>
     <string name="uploaded_to">הועלה ל-%1$s</string>
     <string name="downloaded_to">הורד ל-%1$s</string>
-    <string name="connecting">מתחבר...</string>
-    <string name="downloading">מוריד...</string>
-    <string name="deleting">מוחק...</string>
-    <string name="making_folder">יוצר תיקייה...</string>
-    <string name="renaming">משנה שם...</string>
-    <string name="unzipping">מחלץ קבצים מZIP...</string>
-    <string name="zipping">דוחס לZIP...</string>
-    <string name="moving">מזיז...</string>
-    <string name="uploading">מעלה...</string>
-    <string name="copying">מעתיק...</string>
+    <string name="connecting">מתחבר…</string>
+    <string name="downloading">מוריד…</string>
+    <string name="deleting">מוחק…</string>
+    <string name="making_folder">יוצר תיקייה…</string>
+    <string name="renaming">משנה שם…</string>
+    <string name="unzipping">מחלץ קבצים מZIP…</string>
+    <string name="zipping">דוחס לZIP…</string>
+    <string name="moving">מזיז…</string>
+    <string name="uploading">מעלה…</string>
+    <string name="copying">מעתיק…</string>
     <string name="failed_delete_file">נכשלה מחיקת הקובץ: %1$s</string>
     <string name="failed_make_directory">נכשלה יצירת התיקייה: %1$s</string>
     <string name="failed_rename_file">נכשלה הזזה/שינוי שם של הקובץ: %1$s</string>
@@ -101,7 +101,7 @@
     <string name="cut_xfiles"><![CDATA[
         <b>גזור:</b>&nbsp;&nbsp;%1$d קבצים
     ]]></string>
-    <string name="search_files">חפש קבצים...</string>
+    <string name="search_files">חפש קבצים…</string>
     <string name="search_x"><![CDATA[
         <b>חפש:</b>&nbsp;%1$s
     ]]></string>
@@ -114,7 +114,7 @@
     <string name="no_thanks">לא תודה</string>
     <string name="file">קובץ</string>
     <string name="folder">תיקיה</string>
-    <string name="remote_connection">גישה מרחוק...</string>
+    <string name="remote_connection">גישה מרחוק…</string>
     <string name="text">טקסט</string>
     <string name="image">תמונה</string>
     <string name="audio">קול</string>
@@ -127,11 +127,11 @@
     <string name="settings">הגדרות</string>
     <string name="about_body"><![CDATA[
         מנהל קבצים מינימליסאי, אינטואיטיבי ויפיפה לאנדרואיד 4.1 ומעלה.<br/><br/>
-        מעוצב ע\"י <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>אתר</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+        מעוצב ע\"י <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>אתר</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
         <b>שם:</b>&nbsp;&nbsp;%1$s<br/><b>מיקום:</b>&nbsp;&nbsp;%2$s<br/><b>משקל:</b>&nbsp;&nbsp;%3$s<br/><b>נערך:</b>&nbsp;&nbsp;%4$s<br/><b>הרשאות:</b>&nbsp;&nbsp;%5$s
@@ -140,17 +140,17 @@
         <b>שם:</b>&nbsp;&nbsp;%1$s<br/><b>מיקום:</b>&nbsp;&nbsp;%2$s<br/><b>תוכן:</b>&nbsp;&nbsp;%3$s<br/><b>נערך:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">קובץ חדש</string>
-    <string name="making_file">יוצר קובץ...</string>
+    <string name="making_file">יוצר קובץ…</string>
     <string name="created_file">נוצר הקובץ %1$s</string>
     <string name="file_already_exists">קובץ זה כבר קיים</string>
     <string name="failed_make_file">נכשלה יצירת הקובץ החדש: %1$s</string>
-    <string name="pick_a_file">בחר קובץ...</string>
+    <string name="pick_a_file">בחר קובץ…</string>
     <string name="cabinet_text_editor">עורך הטקסט של Cabinet</string>
     <string name="save">שמור</string>
     <string name="unsaved_changes">שינויים לא נשמרו</string>
     <string name="unsaved_changes_desc">יש לך שינויים לא שמורים, האם תרצה לשמור אותם לפני שאתה יוצא?</string>
-    <string name="saving">שומר...</string>
-    <string name="loading">טוען...</string>
+    <string name="saving">שומר…</string>
+    <string name="loading">טוען…</string>
     <string name="unsupported_extension">אין תמיכה בסוג קובץ זה.</string>
     <string name="unsupported_extension_desc">אתה לא יכול לפתוח קובץ מסוג זה על מנת לערוך טקסט.</string>
     <string name="file_already_exists_warning">הזהרה: קובץ זה כבר קיים. הקובץ החדש יופיע כמשוכפל</string>

@@ -127,11 +127,11 @@
     <string name="settings">Definições</string>
     <string name="about_body"><![CDATA[
         Um bonito, minimalista e intuitivo gestor de ficheiros para o Android 4.1 e acima.<br/><br/>
-        Design por <b>Aidan Follestad</b>.<br/><a href='http://aidanfollestad.com'>Website</a>&nbsp;&nbsp;
-        <a href='https://twitter.com/afollestad'>Twitter</a>&nbsp;&nbsp;
-        <a href='https://google.com/+AidanFollestad'>Google+</a>&nbsp;&nbsp;
-        <a href='https://github.com/afollestad'>GitHub</a>&nbsp;&nbsp;
-        <a href='https://www.linkedin.com/in/afollestad'>LinkedIn</a>
+        Design por <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="details_body_file"><![CDATA[
 <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Caminho:</b>&nbsp;&nbsp;%2$s<br/><b>Tamanho:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s<br/><b>Permissões:</b>&nbsp;&nbsp;%5$s
@@ -140,7 +140,7 @@
 <b>Nome:</b>&nbsp;&nbsp;%1$s<br/><b>Caminho:</b>&nbsp;&nbsp;%2$s<br/><b>Conteúdo:</b>&nbsp;&nbsp;%3$s<br/><b>Modificado:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Nova Ficheiro</string>
-    <string name="making_file">A criar ficheiro...</string>
+    <string name="making_file">A criar ficheiro…</string>
     <string name="created_file">Ficheiro criado %1$s</string>
     <string name="file_already_exists">O ficheiro já existe</string>
     <string name="failed_make_file">Falha ao criar um novo ficheiro: %1$s</string>
@@ -149,7 +149,7 @@
     <string name="save">Guardar</string>
     <string name="unsaved_changes">Alterações não guardadas</string>
     <string name="unsaved_changes_desc">Tem alterações não gravadas, deseja gravá-las antes de sair?</string>
-    <string name="saving">Guardando...</string>
+    <string name="saving">Guardando…</string>
     <string name="loading">A carregar…</string>
     <string name="unsupported_extension">Extensão não suportada</string>
     <string name="unsupported_extension_desc">Não é possível abrir este tipo de ficheiro para editar texto.</string>
@@ -171,7 +171,7 @@
     <string name="sdcard">Cartão SD</string>
     <string name="owner">Dono</string>
     <string name="group">Grupo</string>
-    <string name="applying_permissions">Aplicando permissões...</string>
+    <string name="applying_permissions">Aplicando permissões…</string>
     <string name="primary_color">Cor primária</string>
     <string name="primary_color_desc">A cor primária a utilizar. A cor padrão é azul.</string>
     <string name="accent_color">Cor do acento</string>

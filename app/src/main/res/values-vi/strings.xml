@@ -65,16 +65,16 @@
     <string name="disconnect_prompt">Bạn có muốn ngắt kết nối %1$s?</string>
     <string name="uploaded_to">Tải lên %1$s</string>
     <string name="downloaded_to">Tải về %1$s</string>
-    <string name="connecting">Kết nối...</string>
-    <string name="downloading">Tải về...</string>
-    <string name="deleting">Xóa...</string>
-    <string name="making_folder">Tạo thư mục...</string>
+    <string name="connecting">Kết nối…</string>
+    <string name="downloading">Tải về…</string>
+    <string name="deleting">Xóa…</string>
+    <string name="making_folder">Tạo thư mục…</string>
     <string name="renaming">Đổi tên</string>
-    <string name="unzipping">Giải nén...</string>
-    <string name="zipping">Nén...</string>
-    <string name="moving">Di chuyển...</string>
-    <string name="uploading">Tải lên...</string>
-    <string name="copying">Sao chép...</string>
+    <string name="unzipping">Giải nén…</string>
+    <string name="zipping">Nén…</string>
+    <string name="moving">Di chuyển…</string>
+    <string name="uploading">Tải lên…</string>
+    <string name="copying">Sao chép…</string>
     <string name="error">Lỗi</string>
     <string name="no_apps_for_sharing">Không có ứng dụng có sẵn để chia sẻ kiểu tập tin này</string>
     <string name="directory_already_exists">Thư mục đã tồn tại</string>
@@ -100,20 +100,20 @@
 <b>Tên:</b>&nbsp;&nbsp;%1$s<br/><b>Đường dẫn:</b>&nbsp;&nbsp;%2$s<br/><b>Nội dung:</b>&nbsp;&nbsp;%3$s<br/><b>Chỉnh sửa:</b>&nbsp;&nbsp;%4$s
     ]]></string>
     <string name="new_file">Tập tin mới</string>
-    <string name="making_file">Tạo tập tin...</string>
+    <string name="making_file">Tạo tập tin…</string>
     <string name="created_file">Tạo tập tin %1$s</string>
     <string name="file_already_exists">Tập tin đã tồn tại</string>
     <string name="pick_a_file">Chọn 1 tập tin</string>
     <string name="cabinet_text_editor">Chỉnh sửa văn bản</string>
     <string name="save">Lưu</string>
     <string name="unsaved_changes">Thay đổi chưa được lưu</string>
-    <string name="saving">Đang lưu...</string>
-    <string name="loading">Đang tải...</string>
+    <string name="saving">Đang lưu…</string>
+    <string name="loading">Đang tải…</string>
     <string name="filter">Lọc</string>
     <string name="superuser_not_available">Superuser không có sẵn</string>
     <string name="sdcard">Thẻ nhớ ngoài</string>
     <string name="owner">Chủ nhân</string>
     <string name="group">Nhóm</string>
-    <string name="applying_permissions">Áp dụng quyền...</string>
+    <string name="applying_permissions">Áp dụng quyền…</string>
     <string name="directory">Thư mục</string>
 </resources>
