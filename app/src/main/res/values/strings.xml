@@ -318,4 +318,6 @@
         <item>@string/accent_color</item>
     </string-array>
 
+    <string name="slash_name_invalid">You cannot include / in the name.</string>
+
 </resources>

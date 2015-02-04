@@ -15,6 +15,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -28,6 +30,7 @@ import com.afollestad.cabinet.fragments.DirectoryFragment;
 import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.ui.MainActivity;
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.Arrays;
@@ -227,10 +230,10 @@ public class Utils {
         return showProgressDialog(context, message, null);
     }
 
-    public static void showInputDialog(Activity context, int title, int hint, String prefillInput, final InputCallback callback) {
+    public static void showInputDialog(final Activity context, int title, int hint, String prefillInput, final InputCallback callback) {
         @SuppressLint("InflateParams")
         final View view = context.getLayoutInflater().inflate(R.layout.dialog_input, null);
-        MaterialDialog.Builder dialog = new MaterialDialog.Builder(context)
+        final MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .title(title)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
@@ -242,19 +245,39 @@ public class Utils {
                             callback.onInput(input.getText().toString().trim());
                         }
                     }
-                }).customView(view, true);
+                })
+                .customView(view, true)
+                .build();
         final EditText input = (EditText) view.findViewById(R.id.input);
         if (hint != 0) input.setHint(hint);
         if (prefillInput != null) input.append(prefillInput);
-        MaterialDialog alert = dialog.build();
-        alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().contains("/")) {
+                    input.setError(context.getString(R.string.slash_name_invalid));
+                    dialog.getActionButton(DialogAction.POSITIVE).setEnabled(false);
+                } else {
+                    dialog.getActionButton(DialogAction.POSITIVE).setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
                 if (callback instanceof InputCancelCallback)
                     ((InputCancelCallback) callback).onCancel();
             }
         });
-        alert.show();
+        dialog.show();
     }
 
     private static boolean cancelledDownload;
