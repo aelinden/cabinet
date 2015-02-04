@@ -1,5 +1,8 @@
 package com.afollestad.cabinet.comparators;
 
+import android.content.Context;
+import android.preference.PreferenceManager;
+
 import com.afollestad.cabinet.file.base.File;
 
 /**
@@ -9,16 +12,26 @@ import com.afollestad.cabinet.file.base.File;
  */
 public class HighLowSizeComparator implements java.util.Comparator<File> {
 
+    private boolean foldersFirst;
+
+    public HighLowSizeComparator(Context context) {
+        foldersFirst = PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean("folders_first", true);
+    }
+
     @Override
     public int compare(File lhs, File rhs) {
-        if (lhs.isDirectory() && !rhs.isDirectory()) {
-            // Folders before files
-            return -1;
-        } else if (lhs.isDirectory() && rhs.isDirectory() || !lhs.isDirectory() && !rhs.isDirectory()) {
+        if (foldersFirst) {
+            if (lhs.isDirectory() && !rhs.isDirectory()) {
+                return -1;
+            } else if (lhs.isDirectory() == rhs.isDirectory()) {
+                // Sort by size once sorted by folders
+                return Long.valueOf(rhs.length()).compareTo(lhs.length());
+            } else {
+                return 1;
+            }
+        } else {
             return Long.valueOf(rhs.length()).compareTo(lhs.length());
-        } else if (!lhs.isDirectory() && rhs.isDirectory()) {
-            // Files below folders
-            return 1;
-        } else return 0; // stay where it is now
+        }
     }
 }

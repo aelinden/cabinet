@@ -58,7 +58,6 @@
     <string name="grid_mode">Grid mode</string>
 
     <string name="sort_by">Sort By</string>
-    <string name="sort_name_folderstop">Name, folders first</string>
     <string name="sort_name">Name</string>
     <string name="sort_extension">Extension</string>
     <string name="sort_size_lowhigh">Size, low to high</string>
@@ -327,5 +326,6 @@
     <string name="theming">Theming</string>
     <string name="behavior">Behavior</string>
     <string name="changelog">Changelog</string>
+    <string name="folders_first">Folders first</string>
 
 </resources>

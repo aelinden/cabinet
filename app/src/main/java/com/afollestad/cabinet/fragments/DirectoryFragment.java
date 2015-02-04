@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ActivityNotFoundException;
@@ -7,8 +8,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.GridLayoutManager;
@@ -34,7 +37,6 @@ import com.afollestad.cabinet.cab.base.BaseCab;
 import com.afollestad.cabinet.cab.base.BaseFileCab;
 import com.afollestad.cabinet.comparators.AlphabeticalComparator;
 import com.afollestad.cabinet.comparators.ExtensionComparator;
-import com.afollestad.cabinet.comparators.FoldersFirstComparator;
 import com.afollestad.cabinet.comparators.HighLowSizeComparator;
 import com.afollestad.cabinet.comparators.LastModifiedComparator;
 import com.afollestad.cabinet.comparators.LowHighSizeComparator;
@@ -188,9 +190,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         inflater.inflate(R.menu.fragment_menu, menu);
         switch (sorter) {
             default:
-                menu.findItem(R.id.sortNameFoldersTop).setChecked(true);
-                break;
-            case 1:
                 menu.findItem(R.id.sortName).setChecked(true);
                 break;
             case 2:
@@ -205,6 +204,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             case 5:
                 menu.findItem(R.id.sortLastModified).setChecked(true);
                 break;
+        }
+        if (getActivity() != null) {
+            boolean foldersFirst = PreferenceManager.getDefaultSharedPreferences(getActivity())
+                    .getBoolean("folders_first", true);
+            menu.findItem(R.id.foldersFirstCheck).setChecked(foldersFirst);
         }
 
         if (filter != null) {
@@ -523,22 +527,19 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         Comparator<File> comparator;
         switch (sorter) {
             default:
-                comparator = new FoldersFirstComparator();
-                break;
-            case 1:
-                comparator = new AlphabeticalComparator();
+                comparator = new AlphabeticalComparator(getActivity());
                 break;
             case 2:
-                comparator = new ExtensionComparator();
+                comparator = new ExtensionComparator(getActivity());
                 break;
             case 3:
-                comparator = new LowHighSizeComparator();
+                comparator = new LowHighSizeComparator(getActivity());
                 break;
             case 4:
-                comparator = new HighLowSizeComparator();
+                comparator = new HighLowSizeComparator(getActivity());
                 break;
             case 5:
-                comparator = new LastModifiedComparator();
+                comparator = new LastModifiedComparator(getActivity());
                 break;
         }
         return comparator;
@@ -740,6 +741,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         mAdapter.notifyDataSetChanged();
     }
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -752,10 +754,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 break;
             case R.id.showHidden:
                 Utils.setShowHidden(this, !showHidden);
-                break;
-            case R.id.sortNameFoldersTop:
-                item.setChecked(true);
-                Utils.setSorter(this, 0);
                 break;
             case R.id.sortName:
                 item.setChecked(true);
@@ -776,6 +774,13 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             case R.id.sortLastModified:
                 item.setChecked(true);
                 Utils.setSorter(this, 5);
+                break;
+            case R.id.foldersFirstCheck:
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                boolean foldersFirst = prefs.getBoolean("folders_first", true);
+                prefs.edit().putBoolean("folders_first", !foldersFirst).commit();
+                item.setChecked(!foldersFirst);
+                resort();
                 break;
             case R.id.filterNone:
                 item.setChecked(true);

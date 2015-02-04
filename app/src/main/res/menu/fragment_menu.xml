@@ -22,9 +22,6 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/sortNameFoldersTop"
-                    android:title="@string/sort_name_folderstop" />
-                <item
                     android:id="@+id/sortName"
                     android:title="@string/sort_name" />
                 <item
@@ -40,6 +37,10 @@
                     android:id="@+id/sortLastModified"
                     android:title="@string/sort_modified" />
             </group>
+            <item
+                android:id="@+id/foldersFirstCheck"
+                android:title="@string/folders_first"
+                android:checkable="true" />
         </menu>
     </item>
     <item
