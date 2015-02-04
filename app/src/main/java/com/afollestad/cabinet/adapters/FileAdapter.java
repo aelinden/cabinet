@@ -68,6 +68,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         String[] split = ((String) view.getTag()).split(":");
         int type = Integer.parseInt(split[0]);
         final int index = Integer.parseInt(split[1]);
+        if (index > mFiles.size() - 1)
+            return;
         File file = mFiles.get(index);
         if (type == 0) {  // item
             if (mListener != null)

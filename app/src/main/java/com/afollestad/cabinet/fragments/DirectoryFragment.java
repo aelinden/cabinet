@@ -600,23 +600,26 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     }
 
     private String getFilterDisplay() {
-        if (filter.equals("archives")) {
+        if (filter == null) return "?";
+        else if (filter.equals("archives")) {
             return getString(R.string.archives);
         } else {
             String[] splitFilter = filter.split(":");
-            if (splitFilter[0].equals("mime")) {
-                switch (splitFilter[1]) {
-                    case "text":
-                        return getString(R.string.text);
-                    case "image":
-                        return getString(R.string.image);
-                    case "audio":
-                        return getString(R.string.audio);
-                    case "video":
-                        return getString(R.string.video);
+            if (splitFilter.length == 2) {
+                if (splitFilter[0].equals("mime")) {
+                    switch (splitFilter[1]) {
+                        case "text":
+                            return getString(R.string.text);
+                        case "image":
+                            return getString(R.string.image);
+                        case "audio":
+                            return getString(R.string.audio);
+                        case "video":
+                            return getString(R.string.video);
+                    }
+                } else if (splitFilter[0].equals("ext")) {
+                    return splitFilter[1];
                 }
-            } else if (splitFilter[0].equals("ext")) {
-                return splitFilter[1];
             }
             return splitFilter[0];
         }

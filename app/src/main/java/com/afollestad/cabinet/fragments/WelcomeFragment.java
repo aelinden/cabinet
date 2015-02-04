@@ -27,7 +27,7 @@ public class WelcomeFragment extends Fragment {
     public void onDetach() {
         MainActivity act = (MainActivity) getActivity();
         act.disableFab(false);
-        act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
+        act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
         super.onDetach();
     }
 
@@ -44,8 +44,10 @@ public class WelcomeFragment extends Fragment {
     public void onAttach(final Activity activity) {
         super.onAttach(activity);
         final MainActivity act = (MainActivity) activity;
-        act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
-        act.disableFab(true);
+        if (act != null && act.getDrawerLayout() != null) {
+            act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
+            act.disableFab(true);
+        }
     }
 
     @Override
@@ -99,7 +101,7 @@ public class WelcomeFragment extends Fragment {
                 PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().putBoolean("shown_welcome", true).commit();
                 MainActivity act = (MainActivity) getActivity();
                 act.switchDirectory(null, true);
-                act.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
+                act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
             }
         });
     }

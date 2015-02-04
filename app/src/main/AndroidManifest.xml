@@ -51,6 +51,9 @@
             android:name=".services.NetworkService"
             android:exported="false"
             android:label="@string/network_service_label" />
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="a32223fc5520603d72388ab193f26c88d6d3a11a" />
     </application>
 
 </manifest>

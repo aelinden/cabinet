@@ -44,11 +44,13 @@ import com.afollestad.cabinet.utils.Utils;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
+import com.crashlytics.android.Crashlytics;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
 
@@ -65,7 +67,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     private boolean fabDisabled; // flag indicating whether fab should stay hidden while scrolling
     public boolean shouldAttachFab; // used during config change, tells fragment to reattach to cab
     public boolean pickMode; // flag indicating whether user is picking a file for another app
-    public DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;
     public Toolbar mToolbar;
 
     public BaseCab getCab() {
@@ -136,9 +138,16 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         }
     }
 
+    public DrawerLayout getDrawerLayout() {
+        if (mDrawerLayout == null)
+            mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        return mDrawerLayout;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);

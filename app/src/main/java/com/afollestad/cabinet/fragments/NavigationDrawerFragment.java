@@ -148,13 +148,14 @@ public class NavigationDrawerFragment extends Fragment {
         if (mRecyclerView != null) {
             mAdapter.setCheckedPos(position);
         }
+        MainActivity act = (MainActivity) getActivity();
+        if (act != null) {
+            Pins.Item item = mAdapter.getItem(position);
+            act.switchDirectory(item);
+        }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(Gravity.START);
         }
-        MainActivity act = (MainActivity) getActivity();
-        Pins.Item item = mAdapter.getItem(position);
-        act.switchDirectory(item);
-        mDrawerLayout.closeDrawers();
     }
 
     public void selectFile(File file) {
