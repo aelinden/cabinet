@@ -11,6 +11,7 @@
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
 
+        <item name="fab_overlay_color">#CCE1E1E1</item>
         <item name="toolbar_shadow">@null</item>
     </style>
 
@@ -24,6 +25,7 @@
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
 
+        <item name="fab_overlay_color">#CC505050</item>
         <item name="toolbar_shadow">@null</item>
     </style>
 

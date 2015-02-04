@@ -14,5 +14,6 @@
     <attr name="empty_image_error" format="reference" />
 
     <attr name="toolbar_shadow" format="reference" />
+    <attr name="fab_overlay_color" format="color" />
 
 </resources>

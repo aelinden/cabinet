@@ -6,6 +6,8 @@
         <item name="menu_selector">@drawable/menu_selector</item>
 
         <item name="toolbar_shadow">@drawable/toolbar_shadow</item>
+        <item name="fab_overlay_color">#CCE1E1E1</item>
+
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
@@ -36,6 +38,8 @@
         <item name="menu_selector">@drawable/menu_selector_dark</item>
 
         <item name="toolbar_shadow">@drawable/toolbar_shadow</item>
+        <item name="fab_overlay_color">#CC505050</item>
+
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
