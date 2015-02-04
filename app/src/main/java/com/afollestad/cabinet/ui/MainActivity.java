@@ -50,6 +50,7 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends NetworkedActivity implements BillingProcessor.IBillingHandler {
@@ -84,11 +85,18 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         else fab.show(true);
     }
 
-    public void disableFab(boolean disable) {
+    public void disableFab(boolean disable, boolean force) {
         if (!disable) {
+            if (fab.getVisibility() == View.GONE)
+                fab.setVisibility(View.VISIBLE);
             fab.show(true);
         } else {
             fab.hide(true);
+            if (force) {
+                fab.setVisibility(View.GONE);
+            } else {
+                fab.hide(true);
+            }
         }
         fabDisabled = disable;
     }

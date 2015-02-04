@@ -26,7 +26,7 @@ public class WelcomeFragment extends Fragment {
     @Override
     public void onDetach() {
         MainActivity act = (MainActivity) getActivity();
-        act.disableFab(false);
+        act.disableFab(false, false);
         act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
         super.onDetach();
     }
@@ -44,9 +44,10 @@ public class WelcomeFragment extends Fragment {
     public void onAttach(final Activity activity) {
         super.onAttach(activity);
         final MainActivity act = (MainActivity) activity;
-        if (act != null && act.getDrawerLayout() != null) {
-            act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
-            act.disableFab(true);
+        if (act != null) {
+            if (act.getDrawerLayout() != null)
+                act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
+            act.disableFab(true, true);
         }
     }
 
