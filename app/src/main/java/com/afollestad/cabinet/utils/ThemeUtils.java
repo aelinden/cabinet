@@ -21,7 +21,7 @@ public class ThemeUtils {
     private int mLastPrimaryColor;
     private int mLastAccentColor;
     private boolean mLastColoredNav;
-    private boolean mColoredFolders;
+    private int mColoredIcons;
 
     public int getPopupTheme() {
         if (mDarkMode || mTrueBlack) {
@@ -42,9 +42,9 @@ public class ThemeUtils {
         return prefs.getBoolean("true_black", false);
     }
 
-    public static boolean isColoredFolders(Context context) {
+    public static int coloredIconsMode(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getBoolean("colored_folders", false);
+        return prefs.getInt("colored_icons", 0);
     }
 
     public int primaryColor() {
@@ -87,13 +87,13 @@ public class ThemeUtils {
         final int primaryColor = primaryColor();
         final int accentColor = accentColor();
         final boolean coloredNav = isColoredNavBar();
-        final boolean coloredFolders = isColoredFolders(mContext);
+        final int coloredIcons = coloredIconsMode(mContext);
 
         boolean changed = false;
         if (checkForChanged) {
             changed = mDarkMode != darkTheme || mTrueBlack != blackTheme ||
                     mLastPrimaryColor != primaryColor || mLastAccentColor != accentColor ||
-                    coloredNav != mLastColoredNav || coloredFolders != mColoredFolders;
+                    coloredNav != mLastColoredNav || coloredIcons != mColoredIcons;
         }
 
         mDarkMode = darkTheme;
@@ -101,7 +101,7 @@ public class ThemeUtils {
         mLastPrimaryColor = primaryColor;
         mLastAccentColor = accentColor;
         mLastColoredNav = coloredNav;
-        mColoredFolders = coloredFolders;
+        mColoredIcons = coloredIcons;
 
         return changed;
     }

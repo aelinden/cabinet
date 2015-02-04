@@ -182,8 +182,8 @@
     <string name="accent_color_desc">Válassza ki hogy milyen másodlagos színt kíván használni.</string>
     <string name="colored_navbar">Szinezett Navigációs Sáv</string>
     <string name="colored_navbar_desc">A navigációs sáv az elsődleges szín szerint lesz szinezve.</string>
-    <string name="colored_folders">Szines Mappák</string>
-    <string name="colored_folders_desc">A mappák az elsődleges szín szerint lesznek szinezve.</string>
+
+
     <string name="defaultStr">Alapértelmezett</string>
     <string name="only_available_lollipop">Ez az opció csak Android Lollipop verzión érhető el.</string>
     <string name="base_theme_desc">Válasszon témát amit használni szeretne.</string>

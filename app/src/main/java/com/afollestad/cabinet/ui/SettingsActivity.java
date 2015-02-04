@@ -139,6 +139,39 @@ public class SettingsActivity extends ThemableActivity
                     return true;
                 }
             });
+
+            CabinetPreference coloredIcons = (CabinetPreference) findPreference("colored_icons");
+            final int iconsMode = ThemeUtils.coloredIconsMode(getActivity());
+            int iconsColor;
+            switch (iconsMode) {
+                default:
+                    iconsColor = getResources().getColor(R.color.non_colored_folder);
+                    break;
+                case 1:
+                    iconsColor = themeUtils.primaryColor();
+                    break;
+                case 2:
+                    iconsColor = themeUtils.accentColor();
+                    break;
+            }
+
+            coloredIcons.setColor(iconsColor, Utils.resolveColor(getActivity(), R.attr.colorAccent));
+            coloredIcons.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new MaterialDialog.Builder(getActivity())
+                            .title(R.string.colored_icons)
+                            .items(R.array.colored_icon_options)
+                            .itemsCallbackSingleChoice(iconsMode, new MaterialDialog.ListCallback() {
+                                @Override
+                                public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {
+                                    PreferenceManager.getDefaultSharedPreferences(getActivity())
+                                            .edit().putInt("colored_icons", i).commit();
+                                }
+                            }).show();
+                    return true;
+                }
+            });
         }
     }
 

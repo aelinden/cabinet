@@ -181,8 +181,8 @@
     <string name="accent_color_desc">A cor de destaque a ser usada. Padrão Material Pink</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Colorir a barra de navegação do sistema com a cor primária.</string>
-    <string name="colored_folders">Pastas coloridas</string>
-    <string name="colored_folders_desc">Colorir pastas com a cor primária.</string>
+
+
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Este recurso só está disponível a partir do Android Lollipop.</string>
     <string name="base_theme_desc">Escolha se você quer um tema claro, escuro ou preto AMOLED.</string>

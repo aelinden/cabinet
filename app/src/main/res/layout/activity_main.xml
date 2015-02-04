@@ -52,7 +52,7 @@
                     fab:fab_title="@string/file"
                     fab:fab_icon="@drawable/ic_fab_file"
                     fab:fab_size="mini"
-                    android:background="#bF0099cc"/>
+                    android:background="#bF0099cc" />
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/actionNewFolder"

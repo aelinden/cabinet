@@ -181,9 +181,9 @@
     <string name="accent_color">Akzentfarbe</string>
     <string name="accent_color_desc">Die zu benutzende Akzentfarbe. Standardmäßig pink.</string>
     <string name="colored_navbar">Gefärbte Navigationsleiste</string>
-    <string name="colored_navbar_desc">Ob die die Navigationsleiste in der Hauptfarbe gefärbt ist oder nicht.</string>
-    <string name="colored_folders">Gefärbte Ordner</string>
-    <string name="colored_folders_desc">Ob die Ordner in der Hauptfarbe gefärbt sind oder nicht.</string>
+    <string name="colored_navbar_desc">Ob die Navigationsleiste in der Hauptfarbe gefärbt ist oder nicht.</string>
+
+
     <string name="defaultStr">Standardmäßig</string>
     <string name="only_available_lollipop">Diese Funktion ist nur auf Android Lollipop und höher verfügbar.</string>
     <string name="base_theme_desc">Wähle wenn du ein helles, dunkles oder AMOLED schwarzes Thema mit Farbe möchtest.</string>

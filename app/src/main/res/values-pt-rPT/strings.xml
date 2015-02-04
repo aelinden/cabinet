@@ -181,8 +181,8 @@
     <string name="accent_color_desc">A cor a utilizar para os acentos. A cor padrão é rosa.</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Se a barra de navegação deve ser ou não colorida com a cor primária.</string>
-    <string name="colored_folders">Pastas Coloridas</string>
-    <string name="colored_folders_desc">Se as pastas devem ser ou não coloridas com a cor primária.</string>
+
+
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Esta funcionalidade só está disponível para versões iguais ou superiores ao Android Lollipop.</string>
     <string name="base_theme_desc">Escolha se pretende um tema claro, escuro ou preto AMOLED para pintar as cores.</string>

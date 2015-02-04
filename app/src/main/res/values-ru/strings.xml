@@ -182,8 +182,8 @@
     <string name="accent_color_desc">Используется как цвет акцента. По умолчанию - розовый Material.</string>
     <string name="colored_navbar">Цветной Navigation Bar</string>
     <string name="colored_navbar_desc">Использовать или не использовать основной цвет для navigation bar.</string>
-    <string name="colored_folders">Цветные папки</string>
-    <string name="colored_folders_desc">Использовать или нет основной цвет для раскрашивания папок.</string>
+
+
     <string name="defaultStr">По умолчанию</string>
     <string name="only_available_lollipop">Эта особенность доступна только на Android Lollipop и выше.</string>
     <string name="base_theme_desc">Выберете по желанию, какую тему использовать: светлую, темную или с настоящим черным для AMOLED.</string>

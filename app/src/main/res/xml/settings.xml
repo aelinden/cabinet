@@ -30,13 +30,10 @@
             android:title="@string/accent_color"
             android:summary="@string/accent_color_desc" />
 
-        <CheckBoxPreference
-            android:key="colored_folders"
-            android:title="@string/colored_folders"
-            android:summary="@string/colored_folders_desc"
-            android:layout="@layout/preference_custom"
-            android:persistent="true"
-            android:defaultValue="false" />
+        <com.afollestad.cabinet.views.CabinetPreference
+            android:key="colored_icons"
+            android:title="@string/colored_icons"
+            android:summary="@string/colored_icons_desc" />
 
         <CheckBoxPreference
             android:key="colored_navbar"

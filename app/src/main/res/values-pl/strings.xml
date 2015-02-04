@@ -181,8 +181,8 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="accent_color_desc">Kolor akcentu motywu</string>
     <string name="colored_navbar">Kolorowy pasek nawigacji</string>
     <string name="colored_navbar_desc">Pasek nawigacyjny w kolorze wybranego koloru motywu</string>
-    <string name="colored_folders">Kolorowe foldery</string>
-    <string name="colored_folders_desc">Foldery w kolorze wybranego koloru motywu</string>
+
+
     <string name="defaultStr">Domyślny</string>
     <string name="only_available_lollipop">Opcja dostępna wyłącznie na urządzeniach z Androidem Lollipop i późniejszymi</string>
     <string name="base_theme_desc">Wybierz pomiędzy jasnym, ciemnym oraz czarnym motywem programu</string>

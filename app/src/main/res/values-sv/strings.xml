@@ -172,8 +172,8 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="accent_color_desc">Bestämmer sekundär temafärg. Standard är Material Rosa.</string>
     <string name="colored_navbar">Färgat navigationsfält</string>
     <string name="colored_navbar_desc">Bestämmer om navigationsfältet ska ha samma färg som ditt primära färgval.</string>
-    <string name="colored_folders">Färglagda mappar</string>
-    <string name="colored_folders_desc">Välj om du vill ha mappar i primär färg.</string>
+
+
     <string name="defaultStr">Standard</string>
     <string name="only_available_lollipop">Denna funktion är bara tillgänglig i Android Lollipop och senare.</string>
     <string name="base_theme_desc">Välj om du vill ha ett ljust, mörkt eller AMOLED-svart tema.</string>

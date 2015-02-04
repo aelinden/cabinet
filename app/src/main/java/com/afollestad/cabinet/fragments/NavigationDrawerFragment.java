@@ -82,7 +82,11 @@ public class NavigationDrawerFragment extends Fragment {
 
             @Override
             public void onClickSettings() {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
+                MainActivity act = (MainActivity) getActivity();
+                if (act != null) {
+                    act.getDrawerLayout().closeDrawers();
+                    startActivity(new Intent(act, SettingsActivity.class));
+                }
             }
 
             @Override

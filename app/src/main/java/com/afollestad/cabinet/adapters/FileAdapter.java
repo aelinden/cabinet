@@ -56,10 +56,17 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         gridMode = Utils.getGridMode(context);
 
         ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();
-        if (ThemeUtils.isColoredFolders(context))
-            primaryColor = theme.primaryColor();
-        else {
-            primaryColor = context.getResources().getColor(R.color.non_colored_folder);
+        final int iconsMode = ThemeUtils.coloredIconsMode(context);
+        switch (iconsMode) {
+            default:
+                primaryColor = context.getResources().getColor(R.color.non_colored_folder);
+                break;
+            case 1:
+                primaryColor = theme.primaryColor();
+                break;
+            case 2:
+                primaryColor = theme.accentColor();
+                break;
         }
     }
 

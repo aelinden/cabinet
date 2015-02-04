@@ -183,8 +183,8 @@
     <string name="accent_color_desc">界面強調色調。默認為Material粉色。</string>
     <string name="colored_navbar">主色調導航欄</string>
     <string name="colored_navbar_desc">導航欄是否設為主色調顏色。</string>
-    <string name="colored_folders">主色調文件夾</string>
-    <string name="colored_folders_desc">文件夾圖標是否設為主色調顏色。</string>
+
+
     <string name="defaultStr">默認</string>
     <string name="only_available_lollipop">此功能僅適用於Android 5.0及以上。</string>
     <string name="base_theme_desc">選擇淺灰色 、深灰色、或AMOLED黑色背景。</string>
