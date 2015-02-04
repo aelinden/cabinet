@@ -30,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.cabinet.BuildConfig;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.cab.PickerCab;
 import com.afollestad.cabinet.cab.base.BaseCab;
@@ -158,7 +159,9 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+        if (!BuildConfig.DEBUG) {
+            Fabric.with(this, new Crashlytics());
+        }
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
@@ -180,9 +183,6 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             }
             fabPasteMode = (BaseFileCab.PasteMode) savedInstanceState.getSerializable("fab_pastemode");
             fabDisabled = savedInstanceState.getBoolean("fab_disabled");
-            if (savedInstanceState.getBoolean("fab_frame_visible")) {
-                showOuterFrame();
-            }
         }
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -210,6 +210,10 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         setupFab(findViewById(R.id.actionNewFile), 0);
         setupFab(findViewById(R.id.actionNewFolder), 1);
         setupFab(findViewById(R.id.actionNewConnection), 2);
+
+        if (savedInstanceState != null && savedInstanceState.getBoolean("fab_frame_visible")) {
+            showOuterFrame();
+        }
 
         mBP = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlPBB2hP/R0PrXtK8NPeDX7QV1fvk1hDxPVbIwRZLIgO5l/ZnAOAf8y9Bq57+eO5CD+ZVTgWcAVrS/QsiqDI/MwbfXcDydSkZLJoFofOFXRuSL7mX/jNwZBNtH0UrmcyFx1RqaHIe9KZFONBWLeLBmr47Hvs7dKshAto2Iy0v18kN48NqKxlWtj/PHwk8uIQ4YQeLYiXDCGhfBXYS861guEr3FFUnSLYtIpQ8CiGjwfU60+kjRMmXEGnmhle5lqzj6QeL6m2PNrkbJ0T9w2HM+bR7buHcD8e6tHl2Be6s/j7zn1Ypco/NCbqhtPgCnmLpeYm8EwwTnH4Yei7ACR7mXQIDAQAB", this);
 
