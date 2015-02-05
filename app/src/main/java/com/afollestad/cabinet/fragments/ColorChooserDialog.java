@@ -88,7 +88,9 @@ public class ColorChooserDialog extends DialogFragment implements View.OnClickLi
                 })
                 .build();
 
-        final TypedArray ta = getActivity().getResources().obtainTypedArray(R.array.colors);
+        final boolean primary = getArguments().getInt("title", 0) == R.string.primary_color;
+        final TypedArray ta = getActivity().getResources().obtainTypedArray(
+                primary ? R.array.colors_primary : R.array.colors_accent);
         mColors = new int[ta.length()];
         for (int i = 0; i < ta.length(); i++)
             mColors[i] = ta.getColor(i, 0);
