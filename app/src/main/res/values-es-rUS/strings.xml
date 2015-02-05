@@ -195,8 +195,8 @@
     <string name="revert_changes">Revertir cambios</string>
     <string name="slash_name_invalid">No puede incluir / en el nombre.</string>
     <string name="directory">Directorio</string>
-    <string name="directory_with_count">Directorio – 1 archivo</string>
-    <string name="directory_with_count_x">Directorio – %1$d archivos</string>
+
+
     <string name="directory_count">Contador de directorio</string>
     <string name="directory_count_descr">Si se activa, el número de archivos y carpetas en una carpeta local se mostrará dentro de las listas</string>
     <string name="theming">Cambiando tema</string>

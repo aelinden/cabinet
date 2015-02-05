@@ -195,8 +195,8 @@
     <string name="revert_changes">Annuler les modifications</string>
     <string name="slash_name_invalid">Vous ne pouvez pas inclure / dans le nom.</string>
     <string name="directory">Répertoire</string>
-    <string name="directory_with_count">Répertoire – 1 fichier</string>
-    <string name="directory_with_count_x">Répertoire – %1$d fichiers</string>
+
+
     <string name="directory_count">Contenu du dossier</string>
     <string name="directory_count_descr">Si activé, le nombre de fichiers et dossiers contenus dans un répertoire local sera affiché sur les listes.</string>
     <string name="theming">Thème</string>

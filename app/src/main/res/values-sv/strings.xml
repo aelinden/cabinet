@@ -185,8 +185,8 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="revert_changes">Återställ ändringar</string>
     <string name="slash_name_invalid">Du kan inte inkludera / i namnet.</string>
     <string name="directory">Mapp</string>
-    <string name="directory_with_count">Mapp - 1 fil</string>
-    <string name="directory_with_count_x">Mapp - %1$d filer</string>
+
+
     <string name="directory_count">Antal mappar</string>
     <string name="directory_count_descr">Om aktiverad, kommer antalet filer och mappar i en lokal mapp att visas inom listor.</string>
     <string name="theming">Teman</string>

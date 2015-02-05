@@ -195,8 +195,8 @@
     <string name="revert_changes">Отменить изменения</string>
     <string name="slash_name_invalid">Добавление не возможно / в имени.</string>
     <string name="directory">Каталог</string>
-    <string name="directory_with_count">Директория - 1 файл</string>
-    <string name="directory_with_count_x">Директория – %1$d файлов</string>
+
+
     <string name="directory_count">Число Директорий</string>
     <string name="directory_count_descr">Если опция включена, количество файлов и папок в локальной папке будут отображаться в списках.</string>
     <string name="theming">Оформление</string>

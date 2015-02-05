@@ -195,8 +195,8 @@
     <string name="revert_changes">Alapértékek Visszaállítása</string>
     <string name="slash_name_invalid">Nem tartalmazhatja / a nevet.</string>
     <string name="directory">Könyvtár</string>
-    <string name="directory_with_count">Könyvtár - 1 Fájl</string>
-    <string name="directory_with_count_x">Könyvtár - %1$d Fájl(ok)</string>
+
+
     <string name="directory_count">Könyvtár Szám</string>
     <string name="directory_count_descr">Ha engedélyezi, megjelennek a könyvtárak számai.</string>
     <string name="theming">Testreszabás</string>

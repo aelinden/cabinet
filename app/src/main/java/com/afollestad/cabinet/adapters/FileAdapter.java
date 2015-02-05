@@ -233,9 +233,9 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             if (directoryCount && !(file instanceof CloudFile)) {
                 long size = file.length();
                 if (size == 1) {
-                    holder.content.setText(R.string.directory_with_count);
+                    holder.content.setText(R.string.one_file);
                 } else {
-                    holder.content.setText(mContext.getString(R.string.directory_with_count_x, size));
+                    holder.content.setText(mContext.getString(R.string.x_files, size));
                 }
             } else {
                 holder.content.setText(R.string.directory);

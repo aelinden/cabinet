@@ -195,8 +195,8 @@
     <string name="revert_changes">Ripristina le modifiche</string>
     <string name="slash_name_invalid">Non puoi usare \"/\" nel nome.</string>
     <string name="directory">Directory</string>
-    <string name="directory_with_count">Cartella - 1 file</string>
-    <string name="directory_with_count_x">Cartella - %1$d file</string>
+
+
     <string name="directory_count">Conteggio cartelle</string>
     <string name="directory_count_descr">Se abilitato, il numero dei file e delle cartelle in una cartella locale sarà visualizzato in una lista.</string>
     <string name="theming">Temi</string>

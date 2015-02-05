@@ -195,8 +195,8 @@
     <string name="revert_changes">Kehre Änderungen um</string>
     <string name="slash_name_invalid">Sie könne nicht / im Namen verwenden.</string>
     <string name="directory">Verzeichnis</string>
-    <string name="directory_with_count">Verzeichnis – 1 Datei</string>
-    <string name="directory_with_count_x">Verzeichnis –%1$d Dateien</string>
+
+
     <string name="directory_count">Verzeichnis-Zähler</string>
     <string name="directory_count_descr">Wenn aktiviert, wird die Anzahl der Dateien oder Ordner innerhalb eines Ordners angezeigt.</string>
     <string name="theming">Theming</string>
