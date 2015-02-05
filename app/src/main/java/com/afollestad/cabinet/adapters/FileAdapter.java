@@ -46,6 +46,8 @@ import java.util.Locale;
 
 public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder> implements View.OnClickListener, View.OnLongClickListener {
 
+    private final static int HIDDEN_ALPHA = (int) (255 * 0.4f);
+
     public FileAdapter(Activity context, ItemClickListener listener, IconClickListener iconClickListener, MenuClickListener menuListener, boolean showDirectories) {
         mContext = context;
         mFiles = new ArrayList<>();
@@ -56,7 +58,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         checkedPaths = new ArrayList<>();
         gridMode = Utils.getGridMode(context);
         directoryCount = ThemeUtils.isDirectoryCount(context);
-        showHidden = Utils.getShowHidden(context);
 
         ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();
         final int iconsMode = ThemeUtils.coloredIconsMode(context);
@@ -176,7 +177,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     private boolean gridMode;
     private static int primaryColor;
     private boolean directoryCount;
-    private boolean showHidden;
 
     public void add(File file) {
         mFiles.add(file);
@@ -269,9 +269,11 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         holder.menu.setOnClickListener(this);
     }
 
-    public static DisplayImageOptions getDisplayImageOptions(Context context, int fb) {
+    public static DisplayImageOptions getDisplayImageOptions(Context context, File file, int fb) {
         final Drawable fallback = context.getResources().getDrawable(fb);
         fallback.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+        if (file.isHidden())
+            fallback.setAlpha(HIDDEN_ALPHA);
         return new DisplayImageOptions.Builder()
                 .resetViewBeforeLoading(true)
                 .showImageOnLoading(fallback)
@@ -288,16 +290,14 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             if (mime.startsWith("image/")) {
                 Uri uri = Uri.fromFile(file.toJavaFile());
                 ImageLoader.getInstance().displayImage(Uri.decode(uri.toString()), icon,
-                        getDisplayImageOptions(context, R.drawable.ic_file_image));
+                        getDisplayImageOptions(context, file, R.drawable.ic_file_image));
             } else if (mime.equals("application/vnd.android.package-archive")) {
                 ImageLoader.getInstance().displayImage(file.getPath(), icon,
-                        getDisplayImageOptions(context, R.drawable.ic_file_apk));
+                        getDisplayImageOptions(context, file, R.drawable.ic_file_apk));
             } else {
                 int resId = R.drawable.ic_file_misc;
                 if (file.isDirectory()) {
-                    if (file.isHidden())
-                        resId = R.drawable.ic_folder_hidden;
-                    else resId = R.drawable.ic_folder;
+                    resId = R.drawable.ic_folder;
                 } else {
                     final String ext = file.getExtension().toLowerCase(Locale.getDefault());
                     if (!ext.trim().isEmpty()) {
@@ -333,11 +333,15 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
                 }
                 Drawable d = context.getResources().getDrawable(resId);
                 d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+                if (file.isHidden())
+                    d.setAlpha(HIDDEN_ALPHA);
                 icon.setImageDrawable(d);
             }
         } else {
             Drawable d = context.getResources().getDrawable(R.drawable.ic_file_misc);
             d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
+            if (file.isHidden())
+                d.setAlpha(HIDDEN_ALPHA);
             icon.setImageDrawable(d);
         }
     }
