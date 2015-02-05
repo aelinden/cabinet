@@ -7,6 +7,7 @@ import android.util.Log;
 import com.afollestad.cabinet.R;
 import com.afollestad.cabinet.file.base.File;
 import com.afollestad.cabinet.file.base.FileFilter;
+import com.afollestad.cabinet.file.root.LsParser;
 import com.afollestad.cabinet.services.NetworkService;
 import com.afollestad.cabinet.sftp.SftpClient;
 import com.afollestad.cabinet.utils.Utils;
@@ -573,17 +574,17 @@ public class LocalFile extends File {
 
     @Override
     public boolean existsSync() throws Exception {
-//        TODO if (requiresRoot()) {
-//            if (Shell.SU.available()) {
-//                String cmd;
-//                if (isDirectory()) {
-//                    cmd = "[ -d \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
-//                } else {
-//                    cmd = "[ -f \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
-//                }
-//                return Integer.parseInt(runAsRoot(cmd).get(0)) == 1;
-//            }
-//        }
+        if (requiresRoot()) {
+            if (Shell.SU.available()) {
+                String cmd;
+                if (isDirectory()) {
+                    cmd = "[ -d \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
+                } else {
+                    cmd = "[ -f \"" + getPath() + "\" ] && echo \"1\" || echo \"0\"";
+                }
+                return Integer.parseInt(runAsRoot(cmd).get(0)) == 1;
+            }
+        }
         java.io.File mFile = new java.io.File(getPath());
         return mFile.exists() && isDirectory() == mFile.isDirectory();
     }
@@ -641,12 +642,12 @@ public class LocalFile extends File {
     @Override
     public List<File> listFilesSync(boolean includeHidden, FileFilter filter) throws Exception {
         List<File> results = new ArrayList<>();
-//       TODO if (requiresRoot()) {
-//            if (Shell.SU.available()) {
-//                List<String> response = runAsRoot("ls -l \"" + getPath() + "\"");
-//                return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
-//            }
-//        }
+        if (requiresRoot()) {
+            if (Shell.SU.available()) {
+                List<String> response = runAsRoot("ls -l \"" + getPath() + "\"");
+                return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
+            }
+        }
         java.io.File[] list;
         if (filter != null) list = new java.io.File(getPath()).listFiles();
         else list = new java.io.File(getPath()).listFiles();
