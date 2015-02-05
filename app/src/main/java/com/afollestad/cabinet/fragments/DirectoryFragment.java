@@ -75,9 +75,12 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public DirectoryFragment() {
     }
 
+    public FileAdapter mAdapter;
+    private GridLayoutManager mLayoutManager;
+    private RecyclerView mRecyclerView;
+
     private File mDirectory;
     public String mQuery;
-    public FileAdapter mAdapter;
     public boolean showHidden;
     public int sorter;
     public String filter;
@@ -160,17 +163,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         }
 
         ((NavigationDrawerFragment) act.getFragmentManager().findFragmentByTag("NAV_DRAWER")).selectFile(mDirectory);
-        String persistentFilter = Utils.getFilter(getActivity());
-        if (showHidden != Utils.getShowHidden(getActivity()) ||
-                sorter != Utils.getSorter(getActivity()) ||
-                (filter == null && persistentFilter != null) ||
-                (filter != null && persistentFilter == null) ||
-                (filter != null && !filter.equals(persistentFilter))) {
-            showHidden = Utils.getShowHidden(getActivity());
-            sorter = Utils.getSorter(getActivity());
-            filter = persistentFilter;
-            reload();
-        }
+        showHidden = Utils.getShowHidden(getActivity());
+        sorter = Utils.getSorter(getActivity());
+        filter = Utils.getFilter(getActivity());
+
+        reload();
     }
 
     @Override
@@ -489,7 +486,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(android.R.id.list);
+        mRecyclerView = (RecyclerView) view.findViewById(android.R.id.list);
         mRecyclerView.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true, new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView view, int dx, int dy) {
@@ -505,12 +502,13 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }));
 
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity())));
+        mLayoutManager = new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity()));
+        mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
 
         ((MainActivity) getActivity()).setFabListener(this);
-        reload();
+//        reload();
     }
 
     protected void runOnUiThread(Runnable runnable) {
@@ -659,12 +657,16 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         View v = getView();
         if (v == null) return;
         RecyclerView mRecyclerView = (RecyclerView) v.findViewById(android.R.id.list);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity())));
+        mLayoutManager = new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity()));
+        mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
         getActivity().invalidateOptionsMenu(); // update checkbox
         reload();
     }
+
+    private int persistedPosition;
+    private int persistedOffset;
 
     public void reload() {
         final View v = getView();
@@ -713,6 +715,12 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 Utils.resolveDrawable(getActivity(), R.attr.empty_image));
 
         mDirectory.setContext(getActivity());
+        persistedPosition = -1;
+        persistedOffset = 0;
+        if (mAdapter.getItemCount() > 0 && !getDirectory().isRemote()) {
+            persistedPosition = mLayoutManager.findFirstVisibleItemPosition();
+            persistedOffset = (int) mRecyclerView.getChildAt(0).getY();
+        }
         mDirectory.listFiles(showHidden, lsFilter, new File.ArrayCallback() {
             @Override
             public void onComplete(final File[] results) {
@@ -724,6 +732,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                             Arrays.sort(results, getComparator());
                             for (File fi : results)
                                 mAdapter.add(fi);
+                            if (persistedPosition > -1) {
+                                mLayoutManager.scrollToPositionWithOffset(persistedPosition, persistedOffset);
+                            }
                         }
                         try {
                             setListShown(true);

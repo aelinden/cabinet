@@ -91,6 +91,7 @@ public class Utils {
         file.exists(new File.BooleanCallback() {
             @Override
             public void onComplete(final boolean result) {
+                if (context == null) return;
                 context.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -221,6 +222,7 @@ public class Utils {
 
     public static void showErrorDialog(final Activity context, final String message) {
         try {
+            if (context == null) return;
             context.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -321,7 +323,7 @@ public class Utils {
         context.getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
             public void onSftpClient(final SftpClient client) {
-                if (cancelledDownload) return;
+                if (cancelledDownload || !context.isFinishing()) return;
                 context.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

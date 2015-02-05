@@ -39,6 +39,8 @@ import java.util.regex.Pattern;
 
 public class TextEditor extends NetworkedActivity implements TextWatcher {
 
+    private final static int MODIFIED_CHECK_INTERVAL = 150;
+
     private EditText mInput;
     private java.io.File mFile;
     private java.io.File mTempFile;
@@ -454,7 +456,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                 mModified = !mInput.getText().toString().equals(mOriginal);
                 invalidateOptionsMenu();
             }
-        }, 250);
+        }, MODIFIED_CHECK_INTERVAL);
     }
 
     @Override
