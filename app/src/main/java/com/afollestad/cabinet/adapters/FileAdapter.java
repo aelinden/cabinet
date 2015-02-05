@@ -57,7 +57,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         mMenuListener = menuListener;
         mShowDirs = showDirectories;
         checkedPaths = new ArrayList<>();
-        gridMode = Utils.getGridMode(context);
+        gridMode = Utils.getGridSize(context) > 1;
         directoryCount = ThemeUtils.isDirectoryCount(context);
 
         ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();

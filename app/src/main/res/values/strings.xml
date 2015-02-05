@@ -56,7 +56,6 @@
     <string name="confirm_delete">Are you sure you want to delete %1$s?</string>
     <string name="confirm_delete_xfiles">Are you sure you want to delete %1$d files?</string>
     <string name="unavailable">Unavailable</string>
-    <string name="grid_mode">Grid mode</string>
 
     <string name="sort_by">Sort By</string>
     <string name="sort_name">Name</string>
@@ -319,5 +318,13 @@
     <string name="behavior">Behavior</string>
     <string name="changelog">Changelog</string>
     <string name="folders_first">Folders first</string>
+
+    <string name="grid_size">Grid Size</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 
 </resources>

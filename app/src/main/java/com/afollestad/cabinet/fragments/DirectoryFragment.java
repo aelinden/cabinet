@@ -238,7 +238,26 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         } else menu.findItem(R.id.filterNone).setChecked(true);
 
         if (getActivity() != null) {
-            menu.findItem(R.id.gridMode).setChecked(Utils.getGridMode(getActivity()));
+            switch (Utils.getGridSize(getActivity())) {
+                default:
+                    menu.findItem(R.id.gridSizeOne).setChecked(true);
+                    break;
+                case 2:
+                    menu.findItem(R.id.gridSizeTwo).setChecked(true);
+                    break;
+                case 3:
+                    menu.findItem(R.id.gridSizeThree).setChecked(true);
+                    break;
+                case 4:
+                    menu.findItem(R.id.gridSizeFour).setChecked(true);
+                    break;
+                case 5:
+                    menu.findItem(R.id.gridSizeFive).setChecked(true);
+                    break;
+                case 6:
+                    menu.findItem(R.id.gridSizeSix).setChecked(true);
+                    break;
+            }
             menu.findItem(R.id.showHidden).setChecked(Utils.getShowHidden(getActivity()));
         }
 
@@ -486,8 +505,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             }
         }));
 
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                Utils.getGridMode(getActivity()) ? getResources().getInteger(R.integer.grid_columns) : 1));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity())));
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -641,8 +659,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         View v = getView();
         if (v == null) return;
         RecyclerView mRecyclerView = (RecyclerView) v.findViewById(android.R.id.list);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                Utils.getGridMode(getActivity()) ? getResources().getInteger(R.integer.grid_columns) : 1));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), Utils.getGridSize(getActivity())));
         mAdapter = new FileAdapter(getActivity(), this, this, this, mQuery != null);
         mRecyclerView.setAdapter(mAdapter);
         getActivity().invalidateOptionsMenu(); // update checkbox
@@ -755,10 +772,6 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
             case R.id.goUp:
                 ((MainActivity) getActivity()).switchDirectory(mDirectory.getParent(), false);
                 break;
-            case R.id.gridMode:
-                boolean gridMode = Utils.getGridMode(getActivity());
-                Utils.setGridMode(this, !gridMode);
-                break;
             case R.id.showHidden:
                 Utils.setShowHidden(this, !showHidden);
                 break;
@@ -833,6 +846,30 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 });
                 break;
             }
+            case R.id.gridSizeOne:
+                item.setChecked(true);
+                Utils.setGridSize(this, 1);
+                break;
+            case R.id.gridSizeTwo:
+                item.setChecked(true);
+                Utils.setGridSize(this, 2);
+                break;
+            case R.id.gridSizeThree:
+                item.setChecked(true);
+                Utils.setGridSize(this, 3);
+                break;
+            case R.id.gridSizeFour:
+                item.setChecked(true);
+                Utils.setGridSize(this, 4);
+                break;
+            case R.id.gridSizeFive:
+                item.setChecked(true);
+                Utils.setGridSize(this, 5);
+                break;
+            case R.id.gridSizeSix:
+                item.setChecked(true);
+                Utils.setGridSize(this, 6);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -73,9 +73,32 @@
         </menu>
     </item>
     <item
-        android:id="@+id/gridMode"
-        android:title="@string/grid_mode"
-        android:checkable="true" />
+        android:id="@+id/gridSize"
+        android:title="@string/grid_size">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/gridSizeOne"
+                    android:title="@string/grid_size_one" />
+                <item
+                    android:id="@+id/gridSizeTwo"
+                    android:title="@string/grid_size_two" />
+                <item
+                    android:id="@+id/gridSizeThree"
+                    android:title="@string/grid_size_three" />
+                <item
+                    android:id="@+id/gridSizeFour"
+                    android:title="@string/grid_size_four" />
+                <item
+                    android:id="@+id/gridSizeFive"
+                    android:title="@string/grid_size_five" />
+                <item
+                    android:id="@+id/gridSizeSix"
+                    android:title="@string/grid_size_six" />
+            </group>
+        </menu>
+    </item>
+
     <item
         android:id="@+id/showHidden"
         android:title="@string/show_hidden_files"

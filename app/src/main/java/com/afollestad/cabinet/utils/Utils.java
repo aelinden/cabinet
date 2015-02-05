@@ -145,8 +145,8 @@ public class Utils {
         return PreferenceManager.getDefaultSharedPreferences(context).getInt("sorter", 0);
     }
 
-    public static void setGridMode(DirectoryFragment context, boolean grid) {
-        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putBoolean("grid_mode", grid).commit();
+    public static void setGridSize(DirectoryFragment context, int size) {
+        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putInt("grid_size", size).commit();
         context.changeLayout();
     }
 
@@ -156,8 +156,9 @@ public class Utils {
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 
-    public static boolean getGridMode(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("grid_mode", isTablet(context));
+    public static int getGridSize(Context context) {
+        final int defaultSize = isTablet(context) ? context.getResources().getInteger(R.integer.grid_columns) : 1;
+        return PreferenceManager.getDefaultSharedPreferences(context).getInt("grid_size", defaultSize);
     }
 
     public static void setFilter(DirectoryFragment context, String filter) {
