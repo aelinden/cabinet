@@ -95,6 +95,7 @@ public class LocalFile extends File {
 
     @Override
     public void rename(final File newFile, final SftpClient.FileCallback callback) {
+        if (getContext() == null) return;
         getContext().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -110,6 +111,7 @@ public class LocalFile extends File {
                                 public void run() {
                                     try {
                                         uploadRecursive(client, LocalFile.this, (CloudFile) newFile, true, true);
+                                        if (getContext() == null) return;
                                         getContext().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
@@ -120,6 +122,7 @@ public class LocalFile extends File {
                                         });
                                     } catch (final Exception e) {
                                         e.printStackTrace();
+                                        if (getContext() == null) return;
                                         getContext().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
@@ -135,6 +138,7 @@ public class LocalFile extends File {
 
                         @Override
                         public void onError(final Exception e) {
+                            if (getContext() == null) return;
                             getContext().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -155,6 +159,7 @@ public class LocalFile extends File {
                                     public void run() {
                                         try {
                                             runAsRoot("mv \"" + getPath() + "\" \"" + newFile.getPath() + "\"");
+                                            if (getContext() == null) return;
                                             getContext().runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -166,6 +171,7 @@ public class LocalFile extends File {
                                             });
                                         } catch (final Exception e) {
                                             e.printStackTrace();
+                                            if (getContext() == null) return;
                                             getContext().runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -177,6 +183,7 @@ public class LocalFile extends File {
                                     }
                                 }).start();
                             } else if (new java.io.File(getPath()).renameTo(newFile.toJavaFile())) {
+                                if (getContext() == null) return;
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -187,6 +194,7 @@ public class LocalFile extends File {
                                     }
                                 });
                             } else {
+                                if (getContext() == null) return;
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -208,6 +216,7 @@ public class LocalFile extends File {
             getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
                 @Override
                 public void onSftpClient(final SftpClient client) {
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -218,6 +227,7 @@ public class LocalFile extends File {
                                 public void run() {
                                     try {
                                         uploadRecursive(client, LocalFile.this, (CloudFile) dest, false, false);
+                                        if (getContext() == null) return;
                                         getContext().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
@@ -227,6 +237,7 @@ public class LocalFile extends File {
                                         });
                                     } catch (final Exception e) {
                                         e.printStackTrace();
+                                        if (getContext() == null) return;
                                         getContext().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
@@ -244,6 +255,7 @@ public class LocalFile extends File {
 
                 @Override
                 public void onError(final Exception e) {
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -261,6 +273,7 @@ public class LocalFile extends File {
                     if (isDirectory()) {
                         try {
                             copyRecursive(toJavaFile(), dest.toJavaFile(), false);
+                            if (getContext() == null) return;
                             getContext().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -268,6 +281,7 @@ public class LocalFile extends File {
                                 }
                             });
                         } catch (Exception e) {
+                            if (getContext() == null) return;
                             getContext().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -280,6 +294,7 @@ public class LocalFile extends File {
                     } else {
                         try {
                             final LocalFile result = copySync(toJavaFile(), dest.toJavaFile());
+                            if (getContext() == null) return;
                             getContext().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -288,6 +303,7 @@ public class LocalFile extends File {
                             });
                         } catch (final Exception e) {
                             e.printStackTrace();
+                            if (getContext() == null) return;
                             getContext().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -467,6 +483,7 @@ public class LocalFile extends File {
                 public void run() {
                     try {
                         runAsRoot("rm -rf \"" + getPath() + "\"");
+                        if (getContext() == null) return;
                         getContext().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -475,6 +492,7 @@ public class LocalFile extends File {
                         });
                     } catch (final Exception e) {
                         e.printStackTrace();
+                        if (getContext() == null) return;
                         getContext().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -532,6 +550,7 @@ public class LocalFile extends File {
             public void run() {
                 try {
                     final boolean exists = existsSync();
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -540,6 +559,7 @@ public class LocalFile extends File {
                     });
                 } catch (final Exception e) {
                     e.printStackTrace();
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -593,6 +613,7 @@ public class LocalFile extends File {
             public void run() {
                 try {
                     final List<File> results = listFilesSync(includeHidden, filter);
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -601,6 +622,7 @@ public class LocalFile extends File {
                     });
                 } catch (final Exception e) {
                     e.printStackTrace();
+                    if (getContext() == null) return;
                     getContext().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

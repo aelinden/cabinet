@@ -13,8 +13,8 @@ public class LastModifiedComparator implements java.util.Comparator<File> {
     private boolean foldersFirst;
 
     public LastModifiedComparator(Context context) {
-        foldersFirst = PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean("folders_first", true);
+        if(context != null)
+            foldersFirst = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("folders_first", true);
     }
 
     @Override

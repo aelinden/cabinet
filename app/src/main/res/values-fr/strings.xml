@@ -23,6 +23,7 @@
     <string name="root">Racine</string>
     <string name="unknown">Inconnu</string>
     <string name="go_up">Remonter</string>
+    <string name="one_file">Un fichier</string>
     <string name="x_files">%1$d fichiers</string>
     <string name="x_dirs">%1$d répertoires</string>
     <string name="no_x_files">Pas de fichier %1$s</string>
@@ -130,7 +131,7 @@
  Un gestionnaire de fichiers minimaliste, beau et intuitif pour Android 4.1 et plus.<br/><br/>
  Conçu par <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Site internet</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -188,15 +189,12 @@
     <string name="find">Rechercher</string>
     <string name="replace">Remplacer</string>
     <string name="replace_all">Remplacer tout</string>
-    <string name="use_regex">Utiliser une regex</string>
     <string name="match_case">Respecter la casse</string>
     <string name="no_occurences">Aucun résultat</string>
     <string name="no_occurences_desc">Votre recherche n\'a retourné aucun résultat.</string>
     <string name="revert_changes">Annuler les modifications</string>
     <string name="slash_name_invalid">Vous ne pouvez pas inclure / dans le nom.</string>
     <string name="directory">Répertoire</string>
-
-
     <string name="directory_count">Contenu du dossier</string>
     <string name="directory_count_descr">Si activé, le nombre de fichiers et dossiers contenus dans un répertoire local sera affiché sur les listes.</string>
     <string name="theming">Thème</string>

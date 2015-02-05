@@ -188,15 +188,12 @@
     <string name="find">Encontrar</string>
     <string name="replace">Reemplazar</string>
     <string name="replace_all">Reemplazar todo</string>
-    <string name="use_regex">Usar regex</string>
     <string name="match_case">Coincidencia exacta</string>
     <string name="no_occurences">Sin resultados</string>
     <string name="no_occurences_desc">La consulta no encontró resultados.</string>
     <string name="revert_changes">Revertir cambios</string>
     <string name="slash_name_invalid">El nombre no puede contener \" / \".</string>
     <string name="directory">Directorio</string>
-
-
     <string name="directory_count">Conteo directorio</string>
     <string name="directory_count_descr">Si está habilitado, el número de archivos y carpetas en una carpeta loca serán desplegados dentro de listas.</string>
     <string name="theming">Tema</string>

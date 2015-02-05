@@ -21,7 +21,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.InflateException;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.webkit.WebView;
@@ -89,7 +91,22 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         else getFab().show(true);
     }
 
+    public void waitForFab() {
+        while (true) {
+            if (isFinishing() || getFab() != null) break;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                if (isDestroyed()) break;
+            }
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void disableFab(boolean disable, boolean force) {
+        if (getFab() == null) return;
         if (!disable) {
             if (getFab().getVisibility() == View.GONE)
                 getFab().setVisibility(View.VISIBLE);
@@ -297,23 +314,27 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final View container = findViewById(R.id.container);
-            int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
-            int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
-            int cx;
-            int cy;
-            if (Utils.isRTL(this)) {
-                cx = fabMargin + halfButtonHeight;
-                cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
-            } else {
-                cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
-                cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
-            }
+            try {
+                final View container = findViewById(R.id.container);
+                int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
+                int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
+                int cx;
+                int cy;
+                if (Utils.isRTL(this)) {
+                    cx = fabMargin + halfButtonHeight;
+                    cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
+                } else {
+                    cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
+                    cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
+                }
 
-            int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius);
+                int finalRadius = Math.max(container.getWidth(), container.getHeight());
+                ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, 0, finalRadius).start();
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
+            }
             outerFrame.setVisibility(View.VISIBLE);
-            anim.start();
+
         } else {
             outerFrame.setVisibility(View.VISIBLE);
         }
@@ -324,29 +345,34 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         outerFrame.setOnClickListener(null);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final View container = findViewById(R.id.container);
-            int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
-            int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
-            int cx;
-            int cy;
-            if (Utils.isRTL(this)) {
-                cx = fabMargin + halfButtonHeight;
-                cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
-            } else {
-                cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
-                cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
-            }
-
-            int finalRadius = Math.max(container.getWidth(), container.getHeight());
-            Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
-            anim.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    super.onAnimationEnd(animation);
-                    outerFrame.setVisibility(View.GONE);
+            try {
+                final View container = findViewById(R.id.container);
+                int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
+                int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
+                int cx;
+                int cy;
+                if (Utils.isRTL(this)) {
+                    cx = fabMargin + halfButtonHeight;
+                    cy = outerFrame.getMeasuredHeight() - (fabMargin + halfButtonHeight);
+                } else {
+                    cx = outerFrame.getMeasuredWidth() - fabMargin - halfButtonHeight;
+                    cy = outerFrame.getMeasuredHeight() - fabMargin - halfButtonHeight;
                 }
-            });
-            anim.start();
+
+                int finalRadius = Math.max(container.getWidth(), container.getHeight());
+                Animator anim = ViewAnimationUtils.createCircularReveal(outerFrame, cx, cy, finalRadius, 0);
+                anim.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        outerFrame.setVisibility(View.GONE);
+                    }
+                });
+                anim.start();
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
+                outerFrame.setVisibility(View.GONE);
+            }
         } else {
             outerFrame.setVisibility(View.GONE);
         }
@@ -414,9 +440,16 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
             throw new RuntimeException(e);
         }
         if (currentVersion != prefs.getInt("changelog_version", -1)) {
+            final View customView;
+            try {
+                customView = LayoutInflater.from(this).inflate(R.layout.dialog_webview, null);
+            } catch (InflateException e) {
+                Toast.makeText(this, "This device does not support WebViews, cannot show the changelog.", Toast.LENGTH_LONG).show();
+                return true;
+            }
             MaterialDialog dialog = new MaterialDialog.Builder(this)
                     .title(R.string.changelog)
-                    .customView(R.layout.dialog_webview, false)
+                    .customView(customView, false)
                     .positiveText(android.R.string.ok)
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
@@ -425,7 +458,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                         }
                     })
                     .build();
-            WebView webView = (WebView) dialog.getCustomView().findViewById(R.id.webview);
+            WebView webView = (WebView) customView.findViewById(R.id.webview);
             webView.loadUrl("file:///android_asset/changelog.html");
             dialog.show();
             return true;

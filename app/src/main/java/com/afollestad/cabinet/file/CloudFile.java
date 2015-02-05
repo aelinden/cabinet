@@ -68,63 +68,74 @@ public class CloudFile extends File {
         final ProgressDialog connectProgress = Utils.showProgressDialog(getContext(), R.string.connecting);
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
-            public void onSftpClient(SftpClient client) {
-                connectProgress.dismiss();
-                final ProgressDialog makeProgress = Utils.showProgressDialog(getContext(), R.string.making_file, new DialogInterface.OnCancelListener() {
+            public void onSftpClient(final SftpClient client) {
+                if (getContext() == null) return;
+                getContext().runOnUiThread(new Runnable() {
                     @Override
-                    public void onCancel(DialogInterface dialogInterface) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                java.io.File tempFile;
-                try {
-                    tempFile = java.io.File.createTempFile(getName(), null, getContext().getCacheDir());
-                } catch (final IOException e) {
-                    e.printStackTrace();
-                    getContext().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            makeProgress.dismiss();
-                            callback.onError(null);
-                            Utils.showErrorDialog(getContext(), R.string.failed_make_file, e);
+                    public void run() {
+                        connectProgress.dismiss();
+                        final ProgressDialog makeProgress = Utils.showProgressDialog(getContext(), R.string.making_file, new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialogInterface) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                        java.io.File tempFile;
+                        try {
+                            tempFile = java.io.File.createTempFile(getName(), null, getContext().getCacheDir());
+                        } catch (final IOException e) {
+                            e.printStackTrace();
+                            if (getContext() == null) return;
+                            getContext().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    makeProgress.dismiss();
+                                    callback.onError(null);
+                                    Utils.showErrorDialog(getContext(), R.string.failed_make_file, e);
+                                }
+                            });
+                            return;
                         }
-                    });
-                    return;
-                }
-                client.put(tempFile.getAbsolutePath(), getPath(), new SftpClient.CancelableCompletionCallback() {
-                    @Override
-                    public boolean shouldCancel() {
-                        return !makeProgress.isShowing();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        getContext().runOnUiThread(new Runnable() {
+                        client.put(tempFile.getAbsolutePath(), getPath(), new SftpClient.CancelableCompletionCallback() {
                             @Override
-                            public void run() {
-                                makeProgress.dismiss();
-                                Toast.makeText(getContext(), getContext().getString(R.string.created_file, getName()), Toast.LENGTH_SHORT).show();
-                                callback.onComplete();
+                            public boolean shouldCancel() {
+                                return !makeProgress.isShowing();
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                if (getContext() == null) return;
+                                getContext().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        makeProgress.dismiss();
+                                        Toast.makeText(getContext(), getContext().getString(R.string.created_file, getName()), Toast.LENGTH_SHORT).show();
+                                        callback.onComplete();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onError(final Exception e) {
+                                if (getContext() == null) return;
+                                getContext().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        makeProgress.dismiss();
+                                        callback.onError(null);
+                                        Utils.showErrorDialog(getContext(), R.string.failed_make_file, e);
+                                    }
+                                });
                             }
                         });
-                    }
 
-                    @Override
-                    public void onError(final Exception e) {
-                        getContext().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                makeProgress.dismiss();
-                                callback.onError(null);
-                                Utils.showErrorDialog(getContext(), R.string.failed_make_file, e);
-                            }
-                        });
                     }
                 });
             }
 
             @Override
             public void onError(final Exception e) {
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -134,7 +145,9 @@ public class CloudFile extends File {
                     }
                 });
             }
-        }, this);
+        }
+
+                , this);
     }
 
     @Override
@@ -142,30 +155,38 @@ public class CloudFile extends File {
         final ProgressDialog connectProgress = Utils.showProgressDialog(getContext(), R.string.connecting);
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
-            public void onSftpClient(SftpClient client) {
-                connectProgress.dismiss();
-                final ProgressDialog makeProgress = Utils.showProgressDialog(getContext(), R.string.making_folder);
-                client.mkdir(getPath(), new SftpClient.CompletionCallback() {
+            public void onSftpClient(final SftpClient client) {
+                if (getContext() == null) return;
+                getContext().runOnUiThread(new Runnable() {
                     @Override
-                    public void onComplete() {
-                        getContext().runOnUiThread(new Runnable() {
+                    public void run() {
+                        connectProgress.dismiss();
+                        final ProgressDialog makeProgress = Utils.showProgressDialog(getContext(), R.string.making_folder);
+                        client.mkdir(getPath(), new SftpClient.CompletionCallback() {
                             @Override
-                            public void run() {
-                                makeProgress.dismiss();
-                                Toast.makeText(getContext(), getContext().getString(R.string.created_folder, getName()), Toast.LENGTH_SHORT).show();
-                                callback.onComplete();
+                            public void onComplete() {
+                                if (getContext() == null) return;
+                                getContext().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        makeProgress.dismiss();
+                                        Toast.makeText(getContext(), getContext().getString(R.string.created_folder, getName()), Toast.LENGTH_SHORT).show();
+                                        callback.onComplete();
+                                    }
+                                });
                             }
-                        });
-                    }
 
-                    @Override
-                    public void onError(final Exception e) {
-                        getContext().runOnUiThread(new Runnable() {
                             @Override
-                            public void run() {
-                                makeProgress.dismiss();
-                                callback.onError(null);
-                                Utils.showErrorDialog(getContext(), R.string.failed_make_directory, e);
+                            public void onError(final Exception e) {
+                                if (getContext() == null) return;
+                                getContext().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        makeProgress.dismiss();
+                                        callback.onError(null);
+                                        Utils.showErrorDialog(getContext(), R.string.failed_make_directory, e);
+                                    }
+                                });
                             }
                         });
                     }
@@ -174,6 +195,7 @@ public class CloudFile extends File {
 
             @Override
             public void onError(final Exception e) {
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -230,75 +252,86 @@ public class CloudFile extends File {
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
             public void onSftpClient(final SftpClient client) {
-                connectProgress.dismiss();
-                final ProgressDialog renameProgress = Utils.showProgressDialog(getContext(),
-                        !newFile.isRemote() ? R.string.downloading :
-                                getParent().equals(newFile.getParent()) ? R.string.renaming : R.string.moving
-                );
-                if (newFile.isRemote()) {
-                    Utils.checkDuplicates(getContext(), newFile, new Utils.DuplicateCheckResult() {
-                        @Override
-                        public void onResult(final File newFile) {
-                            client.rename(CloudFile.this, newFile, new SftpClient.CompletionCallback() {
+                if (getContext() == null) return;
+                getContext().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        connectProgress.dismiss();
+                        final ProgressDialog renameProgress = Utils.showProgressDialog(getContext(),
+                                !newFile.isRemote() ? R.string.downloading :
+                                        getParent().equals(newFile.getParent()) ? R.string.renaming : R.string.moving
+                        );
+                        if (newFile.isRemote()) {
+                            Utils.checkDuplicates(getContext(), newFile, new Utils.DuplicateCheckResult() {
                                 @Override
-                                public void onComplete() {
-                                    getContext().runOnUiThread(new Runnable() {
+                                public void onResult(final File newFile) {
+                                    client.rename(CloudFile.this, newFile, new SftpClient.CompletionCallback() {
                                         @Override
-                                        public void run() {
-                                            renameProgress.dismiss();
-                                            Toast.makeText(getContext(), getContext().getString(getParent().equals(newFile.getParent()) ?
-                                                    R.string.renamed_to : R.string.moved_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
-                                            callback.onComplete(newFile);
+                                        public void onComplete() {
+                                            if (getContext() == null) return;
+                                            getContext().runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    renameProgress.dismiss();
+                                                    Toast.makeText(getContext(), getContext().getString(getParent().equals(newFile.getParent()) ?
+                                                            R.string.renamed_to : R.string.moved_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
+                                                    callback.onComplete(newFile);
+                                                }
+                                            });
                                         }
-                                    });
-                                }
 
-                                @Override
-                                public void onError(final Exception e) {
-                                    getContext().runOnUiThread(new Runnable() {
                                         @Override
-                                        public void run() {
-                                            renameProgress.dismiss();
-                                            callback.onError(null);
-                                            Utils.showErrorDialog(getContext(), R.string.failed_rename_file, e);
+                                        public void onError(final Exception e) {
+                                            if (getContext() == null) return;
+                                            getContext().runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    renameProgress.dismiss();
+                                                    callback.onError(null);
+                                                    Utils.showErrorDialog(getContext(), R.string.failed_rename_file, e);
+                                                }
+                                            });
                                         }
                                     });
                                 }
                             });
-                        }
-                    });
-                } else {
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                final LocalFile result = getRecursive(client, CloudFile.this, (LocalFile) newFile, true);
-                                getContext().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        renameProgress.dismiss();
-                                        Toast.makeText(getContext(), getContext().getString(R.string.downloaded_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
-                                        callback.onComplete(result);
+                        } else {
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        final LocalFile result = getRecursive(client, CloudFile.this, (LocalFile) newFile, true);
+                                        if (getContext() == null) return;
+                                        getContext().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                renameProgress.dismiss();
+                                                Toast.makeText(getContext(), getContext().getString(R.string.downloaded_to, newFile.getPath()), Toast.LENGTH_SHORT).show();
+                                                callback.onComplete(result);
+                                            }
+                                        });
+                                    } catch (final Exception e) {
+                                        e.printStackTrace();
+                                        if (getContext() == null) return;
+                                        getContext().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                renameProgress.dismiss();
+                                                callback.onError(null);
+                                                Utils.showErrorDialog(getContext(), R.string.failed_download_file, e);
+                                            }
+                                        });
                                     }
-                                });
-                            } catch (final Exception e) {
-                                e.printStackTrace();
-                                getContext().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        renameProgress.dismiss();
-                                        callback.onError(null);
-                                        Utils.showErrorDialog(getContext(), R.string.failed_download_file, e);
-                                    }
-                                });
-                            }
+                                }
+                            }).start();
                         }
-                    }).start();
-                }
+                    }
+                });
             }
 
             @Override
             public void onError(final Exception e) {
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -316,6 +349,7 @@ public class CloudFile extends File {
         Utils.checkDuplicates(getContext(), newFile, new Utils.DuplicateCheckResult() {
             @Override
             public void onResult(final File dest) {
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -323,67 +357,78 @@ public class CloudFile extends File {
                         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
                             @Override
                             public void onSftpClient(final SftpClient client) {
-                                connectProgress.dismiss();
-                                if (dest.isRemote()) {
-                                    final ProgressDialog copyProgress = Utils.showProgressDialog(getContext(), R.string.copying);
-                                    client.execute("cp -R \"" + getPath() + "\" \"" + dest.getPath() + "\"", null, new SftpClient.CompletionCallback() {
-                                        @Override
-                                        public void onComplete() {
-                                            getContext().runOnUiThread(new Runnable() {
+                                if (getContext() == null) return;
+                                getContext().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        connectProgress.dismiss();
+                                        if (dest.isRemote()) {
+                                            final ProgressDialog copyProgress = Utils.showProgressDialog(getContext(), R.string.copying);
+                                            client.execute("cp -R \"" + getPath() + "\" \"" + dest.getPath() + "\"", null, new SftpClient.CompletionCallback() {
                                                 @Override
-                                                public void run() {
-                                                    copyProgress.dismiss();
-                                                    Toast.makeText(getContext(), getContext().getString(R.string.copied_to, dest.getPath()), Toast.LENGTH_SHORT).show();
-                                                    callback.onComplete(dest);
+                                                public void onComplete() {
+                                                    if (getContext() == null) return;
+                                                    getContext().runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            copyProgress.dismiss();
+                                                            Toast.makeText(getContext(), getContext().getString(R.string.copied_to, dest.getPath()), Toast.LENGTH_SHORT).show();
+                                                            callback.onComplete(dest);
+                                                        }
+                                                    });
                                                 }
-                                            });
-                                        }
 
-                                        @Override
-                                        public void onError(final Exception e) {
-                                            getContext().runOnUiThread(new Runnable() {
                                                 @Override
-                                                public void run() {
-                                                    copyProgress.dismiss();
-                                                    callback.onError(null);
-                                                    Utils.showErrorDialog(getContext(), R.string.failed_copy_file, e);
+                                                public void onError(final Exception e) {
+                                                    if (getContext() == null) return;
+                                                    getContext().runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            copyProgress.dismiss();
+                                                            callback.onError(null);
+                                                            Utils.showErrorDialog(getContext(), R.string.failed_copy_file, e);
+                                                        }
+                                                    });
                                                 }
                                             });
-                                        }
-                                    });
-                                } else {
-                                    final ProgressDialog downloadProgress = Utils.showProgressDialog(getContext(), R.string.downloading);
-                                    new Thread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            try {
-                                                final LocalFile result = getRecursive(client, CloudFile.this, (LocalFile) dest, false);
-                                                getContext().runOnUiThread(new Runnable() {
-                                                    @Override
-                                                    public void run() {
-                                                        downloadProgress.dismiss();
-                                                        Toast.makeText(getContext(), getContext().getString(R.string.downloaded_to, dest.getPath()), Toast.LENGTH_SHORT).show();
-                                                        callback.onComplete(result);
+                                        } else {
+                                            final ProgressDialog downloadProgress = Utils.showProgressDialog(getContext(), R.string.downloading);
+                                            new Thread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    try {
+                                                        final LocalFile result = getRecursive(client, CloudFile.this, (LocalFile) dest, false);
+                                                        if (getContext() == null) return;
+                                                        getContext().runOnUiThread(new Runnable() {
+                                                            @Override
+                                                            public void run() {
+                                                                downloadProgress.dismiss();
+                                                                Toast.makeText(getContext(), getContext().getString(R.string.downloaded_to, dest.getPath()), Toast.LENGTH_SHORT).show();
+                                                                callback.onComplete(result);
+                                                            }
+                                                        });
+                                                    } catch (final Exception e) {
+                                                        e.printStackTrace();
+                                                        if (getContext() == null) return;
+                                                        getContext().runOnUiThread(new Runnable() {
+                                                            @Override
+                                                            public void run() {
+                                                                downloadProgress.dismiss();
+                                                                callback.onError(null);
+                                                                Utils.showErrorDialog(getContext(), R.string.failed_download_file, e);
+                                                            }
+                                                        });
                                                     }
-                                                });
-                                            } catch (final Exception e) {
-                                                e.printStackTrace();
-                                                getContext().runOnUiThread(new Runnable() {
-                                                    @Override
-                                                    public void run() {
-                                                        downloadProgress.dismiss();
-                                                        callback.onError(null);
-                                                        Utils.showErrorDialog(getContext(), R.string.failed_download_file, e);
-                                                    }
-                                                });
-                                            }
+                                                }
+                                            }).start();
                                         }
-                                    }).start();
-                                }
+                                    }
+                                });
                             }
 
                             @Override
                             public void onError(final Exception e) {
+                                if (getContext() == null) return;
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -406,14 +451,16 @@ public class CloudFile extends File {
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
             public void onSftpClient(final SftpClient client) {
-                connectProgress.dismiss();
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        connectProgress.dismiss();
                         final ProgressDialog deleteProgress = Utils.showProgressDialog(getContext(), R.string.deleting);
                         client.rm(CloudFile.this, new SftpClient.CompletionCallback() {
                             @Override
                             public void onComplete() {
+                                if (getContext() == null) return;
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -425,6 +472,7 @@ public class CloudFile extends File {
 
                             @Override
                             public void onError(final Exception e) {
+                                if (getContext() == null) return;
                                 getContext().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -442,6 +490,7 @@ public class CloudFile extends File {
 
             @Override
             public void onError(final Exception e) {
+                if (getContext() == null) return;
                 getContext().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -473,18 +522,24 @@ public class CloudFile extends File {
     public void exists(final BooleanCallback callback) {
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
-            public void onSftpClient(SftpClient client) {
-                client.lstat(getPath(), new SftpClient.LsStatCallback() {
+            public void onSftpClient(final SftpClient client) {
+                if (getContext() == null) return;
+                getContext().runOnUiThread(new Runnable() {
                     @Override
-                    public void onComplete(SftpATTRS attrs) {
-                        callback.onComplete(attrs.isDir() == isDirectory());
-                    }
+                    public void run() {
+                        client.lstat(getPath(), new SftpClient.LsStatCallback() {
+                            @Override
+                            public void onComplete(SftpATTRS attrs) {
+                                callback.onComplete(attrs.isDir() == isDirectory());
+                            }
 
-                    @Override
-                    public void onError(Exception e) {
-                        if (e instanceof FileNotExistsException) {
-                            callback.onComplete(false);
-                        } else callback.onError(e);
+                            @Override
+                            public void onError(Exception e) {
+                                if (e instanceof FileNotExistsException) {
+                                    callback.onComplete(false);
+                                } else callback.onError(e);
+                            }
+                        });
                     }
                 });
             }
@@ -543,8 +598,14 @@ public class CloudFile extends File {
         }
         getContext().getNetworkService().getSftpClient(new NetworkService.SftpGetCallback() {
             @Override
-            public void onSftpClient(SftpClient client) {
-                client.ls(getContext(), includeHidden, getPath(), filter, callback);
+            public void onSftpClient(final SftpClient client) {
+                if (getContext() == null) return;
+                getContext().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        client.ls(getContext(), includeHidden, getPath(), filter, callback);
+                    }
+                });
             }
 
             @Override

@@ -178,15 +178,12 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="find">Sök</string>
     <string name="replace">Ersätt</string>
     <string name="replace_all">Ersätt alla</string>
-    <string name="use_regex">Använd regex</string>
     <string name="match_case">Matcha fråga</string>
     <string name="no_occurences">Inga matchningar</string>
     <string name="no_occurences_desc">Din sökfråga hittade inga matchningar.</string>
     <string name="revert_changes">Återställ ändringar</string>
     <string name="slash_name_invalid">Du kan inte inkludera / i namnet.</string>
     <string name="directory">Mapp</string>
-
-
     <string name="directory_count">Antal mappar</string>
     <string name="directory_count_descr">Om aktiverad, kommer antalet filer och mappar i en lokal mapp att visas inom listor.</string>
     <string name="theming">Teman</string>

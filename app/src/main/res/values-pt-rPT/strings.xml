@@ -3,7 +3,7 @@
     <string name="welcome">Bem-Vindo</string>
     <string name="welcome_intro">Bem-Vindo ao Cabinet! Cabinet é um gestor de ficheiros minimalista desenhado para ser esteticamente agradável, e que funciona como um gestor de ficheiros deve funcionar.\n\nDê uma olhada neste ficheiro:</string>
     <string name="welcome_conclusion">Tente tocar na imagem de pré-visualização ou no icone de 3 pontos. Tocar na imagem de pré-visualização seleciona o ficheiro a efetuar ações, isto pode também ser feito ao tocar e manter premidos os ficheiros. O icone de 3 pontos apresenta um menu pop-ip com as opções individuais dos ficheiros icon shows a popup menu with individual file options.\n\nCabinet
-        tem outras mais funcionalidades, como o acesso remoto a servidores via SFTP que se pode encontrar explorando. Obrigado por experimentar o Cabinet!</string>
+tem outras funcionalidades, como o acesso remoto a servidores via SFTP que encontra ao explorar a aplicação. Obrigado por experimentar o Cabinet!</string>
     <string name="lets_go">Começar!</string>
     <string name="open_as">Abrir Como…</string>
     <string name="pin">Fixar</string>
@@ -22,6 +22,7 @@
     <string name="root">Raiz</string>
     <string name="unknown">Desconhecido</string>
     <string name="go_up">Ir para cima</string>
+    <string name="one_file">1 ficheiro</string>
     <string name="x_files">%1$d ficheiros</string>
     <string name="x_dirs">%1$d diretórios</string>
     <string name="no_x_files">Sem %1$s ficheiros</string>
@@ -178,6 +179,8 @@
     <string name="accent_color_desc">A cor a utilizar para os acentos. A cor padrão é rosa.</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Se a barra de navegação deve ser ou não colorida com a cor primária.</string>
+    <string name="colored_icons">Cor dos ícones</string>
+    <string name="colored_icons_desc">A cor para o ícone dos ficheiros e pastas. Pode utilizar a cor primária ou a cor do acento em vez da cor cinzenta.</string>
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Esta funcionalidade só está disponível para versões iguais ou superiores ao Android Lollipop.</string>
     <string name="base_theme_desc">Escolha se pretende um tema claro, escuro ou preto AMOLED para pintar as cores.</string>
@@ -185,10 +188,16 @@
     <string name="find">Localizar</string>
     <string name="replace">Substituir</string>
     <string name="replace_all">Substituir tudo</string>
-    <string name="use_regex">Utilizar regex</string>
     <string name="match_case">Maiúsculas/minúsculas</string>
     <string name="no_occurences">Sem ocorrências</string>
     <string name="no_occurences_desc">Não foram encontradas ocorrências.</string>
     <string name="revert_changes">Reverter alterações</string>
+    <string name="slash_name_invalid">Não pode incluir a barra (/) no nome.</string>
     <string name="directory">Diretorio</string>
+    <string name="directory_count">Número de diretórios</string>
+    <string name="directory_count_descr">Se ativa, o número de ficheiros e pastas será mostrado nas listas.</string>
+    <string name="theming">Tema</string>
+    <string name="behavior">Comportamento</string>
+    <string name="changelog">Alterações</string>
+    <string name="folders_first">Pastas primeiro</string>
 </resources>

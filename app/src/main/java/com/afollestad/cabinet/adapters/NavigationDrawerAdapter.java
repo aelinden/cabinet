@@ -133,6 +133,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     }
 
     public Pins.Item getItem(int index) {
+        if (mItems.size() == 0) return null;
         return mItems.get(index);
     }
 

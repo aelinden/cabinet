@@ -24,14 +24,6 @@ import com.afollestad.cabinet.ui.MainActivity;
 public class WelcomeFragment extends Fragment {
 
     @Override
-    public void onDetach() {
-        MainActivity act = (MainActivity) getActivity();
-        act.disableFab(false, false);
-        act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
-        super.onDetach();
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_welcome, null);
     }
@@ -47,7 +39,15 @@ public class WelcomeFragment extends Fragment {
         if (act != null) {
             if (act.getDrawerLayout() != null)
                 act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.START);
-            act.disableFab(true, true);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // Solves the issue of the FAB intiially being null after orientation change
+                    // Waits for the Activity to create its layout
+                    act.waitForFab();
+                    act.disableFab(true, true);
+                }
+            }).start();
         }
     }
 
@@ -102,6 +102,7 @@ public class WelcomeFragment extends Fragment {
                 PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().putBoolean("shown_welcome", true).commit();
                 MainActivity act = (MainActivity) getActivity();
                 act.switchDirectory(null, true);
+                act.disableFab(false, false);
                 act.getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED, Gravity.START);
                 act.finishDrawerSetup();
                 act.checkChangelog();

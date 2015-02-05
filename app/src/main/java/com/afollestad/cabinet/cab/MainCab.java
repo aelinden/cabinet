@@ -96,6 +96,8 @@ public class MainCab extends BaseFileCab {
                 getContext().startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(getContext(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
+            } catch (SecurityException e2) {
+                Toast.makeText(getContext(), e2.getMessage(), Toast.LENGTH_LONG).show();
             }
         } else {
             Intent intent = new Intent().setAction(Intent.ACTION_SEND_MULTIPLE);
@@ -107,6 +109,8 @@ public class MainCab extends BaseFileCab {
                 getContext().startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(getContext(), R.string.no_apps_for_sharing, Toast.LENGTH_SHORT).show();
+            } catch (SecurityException e2) {
+                Toast.makeText(getContext(), e2.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }

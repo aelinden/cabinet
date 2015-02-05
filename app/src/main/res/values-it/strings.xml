@@ -23,6 +23,7 @@
     <string name="root">Root</string>
     <string name="unknown">Sconosciuto</string>
     <string name="go_up">Vai su</string>
+    <string name="one_file">1 file</string>
     <string name="x_files">%1$d file</string>
     <string name="x_dirs">%1$d directory</string>
     <string name="no_x_files">Nessun file %1$s</string>
@@ -188,18 +189,15 @@
     <string name="find">Trova</string>
     <string name="replace">Sostituisci</string>
     <string name="replace_all">Sostitisci tutti</string>
-    <string name="use_regex">Usa espressioni regolari</string>
     <string name="match_case">Corrispondenze</string>
     <string name="no_occurences">Nessuna corrispondenza</string>
     <string name="no_occurences_desc">Nessuna corrispondenza trovata nella ricerca.</string>
     <string name="revert_changes">Ripristina le modifiche</string>
     <string name="slash_name_invalid">Non puoi usare \"/\" nel nome.</string>
     <string name="directory">Directory</string>
-
-
-    <string name="directory_count">Conteggio cartelle</string>
+    <string name="directory_count">Contatore file</string>
     <string name="directory_count_descr">Se abilitato, il numero dei file e delle cartelle in una cartella locale sarà visualizzato in una lista.</string>
-    <string name="theming">Temi</string>
+    <string name="theming">Tema</string>
     <string name="behavior">Comportamento</string>
     <string name="changelog">Novità</string>
     <string name="folders_first">Prima le cartelle</string>

@@ -23,6 +23,7 @@
     <string name="root">Root</string>
     <string name="unknown">Unbekannt</string>
     <string name="go_up">Hinauf gehen</string>
+    <string name="one_file">eine Datei</string>
     <string name="x_files">%1$d Dateien</string>
     <string name="x_dirs">%1$d Verzeichnisse</string>
     <string name="no_x_files">Keine %1$s Dateien</string>
@@ -180,7 +181,7 @@
     <string name="colored_navbar">Gefärbte Navigationsleiste</string>
     <string name="colored_navbar_desc">Bestimmt, ob die Navigationsleiste in der Hauptfarbe gefärbt ist.</string>
     <string name="colored_icons">Icon Farbe</string>
-    <string name="colored_icons_desc">Die Farbe von Datei und Ordner Icons. Sie können die Haupt- oder Akzentfarbe anstatt des Standard Graus verwenden.</string>
+    <string name="colored_icons_desc">Die Farbe von Datei und Ordner Icons.</string>
     <string name="defaultStr">Standard</string>
     <string name="only_available_lollipop">Diese Funktion ist nur auf Android Lollipop und höher verfügbar.</string>
     <string name="base_theme_desc">Wähle zwischen einem hellen, dunkeln oder AMOLED-Schwarz-Thema.</string>
@@ -188,17 +189,14 @@
     <string name="find">Suche</string>
     <string name="replace">Ersetze</string>
     <string name="replace_all">Ersetze alle</string>
-    <string name="use_regex">Benutze regex</string>
     <string name="match_case">Wort für Wort</string>
     <string name="no_occurences">Keine Ergebnisse</string>
     <string name="no_occurences_desc">Es wurden keine Übereinstimmungen anhand ihrer Suche gefunden.</string>
     <string name="revert_changes">Kehre Änderungen um</string>
     <string name="slash_name_invalid">Sie könne nicht / im Namen verwenden.</string>
     <string name="directory">Verzeichnis</string>
-
-
     <string name="directory_count">Verzeichnis-Zähler</string>
-    <string name="directory_count_descr">Wenn aktiviert, wird die Anzahl der Dateien oder Ordner innerhalb eines Ordners angezeigt.</string>
+    <string name="directory_count_descr">Wenn aktiviert, wird die Anzahl der Dateien und Ordner angezeigt.</string>
     <string name="theming">Theming</string>
     <string name="behavior">Verhalten</string>
     <string name="changelog">Änderungen</string>

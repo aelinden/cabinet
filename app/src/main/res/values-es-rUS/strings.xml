@@ -23,6 +23,7 @@
     <string name="root">Root</string>
     <string name="unknown">Desconocido</string>
     <string name="go_up">Subir</string>
+    <string name="one_file">1 archivo</string>
     <string name="x_files">%1$d archivos</string>
     <string name="x_dirs">%1$d directorios</string>
     <string name="no_x_files">No %1$s archivos</string>
@@ -47,7 +48,7 @@
     <string name="confirm_delete">¿Esta seguro de eliminar %1$s?</string>
     <string name="confirm_delete_xfiles">¿Esta seguro de eliminar %1$d archivos?</string>
     <string name="unavailable">No disponible</string>
-    <string name="grid_mode">modo malla</string>
+    <string name="grid_mode">Modo cuadrícula</string>
     <string name="sort_by">Ordenar por</string>
     <string name="sort_name">Nombre</string>
     <string name="sort_extension">Extensión</string>
@@ -188,18 +189,16 @@
     <string name="find">Encontrar</string>
     <string name="replace">Remplazar</string>
     <string name="replace_all">Remplazar Todo</string>
-    <string name="use_regex">Usar regex</string>
     <string name="match_case">Mayúsculas y minúsculas</string>
     <string name="no_occurences">Sin coincidencias</string>
     <string name="no_occurences_desc">No se encontraron coincidencias para su búsqueda.</string>
     <string name="revert_changes">Revertir cambios</string>
     <string name="slash_name_invalid">No puede incluir / en el nombre.</string>
     <string name="directory">Directorio</string>
-
-
     <string name="directory_count">Contador de directorio</string>
     <string name="directory_count_descr">Si se activa, el número de archivos y carpetas en una carpeta local se mostrará dentro de las listas</string>
     <string name="theming">Cambiando tema</string>
     <string name="behavior">Comportamiento</string>
     <string name="changelog">Lista de cambios</string>
+    <string name="folders_first">Carpetas primero</string>
 </resources>

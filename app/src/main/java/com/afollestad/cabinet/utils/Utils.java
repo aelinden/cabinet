@@ -204,16 +204,20 @@ public class Utils {
     }
 
     public static void showErrorDialog(final Activity context, final String message) {
-        context.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                new MaterialDialog.Builder(context)
-                        .title(R.string.error)
-                        .content(message)
-                        .positiveText(android.R.string.ok)
-                        .show();
-            }
-        });
+        try {
+            context.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new MaterialDialog.Builder(context)
+                            .title(R.string.error)
+                            .content(message)
+                            .positiveText(android.R.string.ok)
+                            .show();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static ProgressDialog showProgressDialog(Activity context, int message, ProgressDialog.OnCancelListener cancelListener) {

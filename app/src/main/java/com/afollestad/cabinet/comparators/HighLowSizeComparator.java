@@ -15,8 +15,8 @@ public class HighLowSizeComparator implements java.util.Comparator<File> {
     private boolean foldersFirst;
 
     public HighLowSizeComparator(Context context) {
-        foldersFirst = PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean("folders_first", true);
+        if(context != null)
+            foldersFirst = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("folders_first", true);
     }
 
     @Override

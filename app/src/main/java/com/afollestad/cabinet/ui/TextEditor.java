@@ -51,7 +51,8 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
     private EditText mReplaceText;
 
     private String trim(String text) {
-        if (text.charAt(0) != '\n' && text.charAt(0) != ' ' &&
+        if (text.length() == 0) return text;
+        else if (text.charAt(0) != '\n' && text.charAt(0) != ' ' &&
                 text.charAt(text.length() - 1) != '\n' &&
                 text.charAt(text.length() - 1) != ' ') {
             return text;
@@ -124,6 +125,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
 
     private boolean performFind(boolean showErrorIfNone) {
         String findText = trim(mFindText.getText().toString());
+        if (findText.length() == 0) return false;
         String mainText = trim(mInput.getText().toString());
         final boolean matchCase = ((CheckBox) findViewById(R.id.match_case)).isChecked();
 

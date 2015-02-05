@@ -188,15 +188,12 @@
     <string name="find">Найти</string>
     <string name="replace">Заменить</string>
     <string name="replace_all">Заменить все</string>
-    <string name="use_regex">Использовать регулярные выражения</string>
     <string name="match_case">Учитывать регистр</string>
     <string name="no_occurences">Без результатов</string>
     <string name="no_occurences_desc">По вашему запросу ничего не найдено.</string>
     <string name="revert_changes">Отменить изменения</string>
     <string name="slash_name_invalid">Добавление не возможно / в имени.</string>
     <string name="directory">Каталог</string>
-
-
     <string name="directory_count">Число Директорий</string>
     <string name="directory_count_descr">Если опция включена, количество файлов и папок в локальной папке будут отображаться в списках.</string>
     <string name="theming">Оформление</string>

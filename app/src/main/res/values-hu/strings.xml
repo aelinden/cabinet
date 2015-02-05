@@ -23,7 +23,7 @@
     <string name="root">Gyökér</string>
     <string name="unknown">Ismeretlen</string>
     <string name="go_up">Ugrás Fel</string>
-    <string name="x_files">%1$d fájl(ok)</string>
+    <string name="x_files">%1$d fájl</string>
     <string name="x_dirs">%1$d könyvtár(ak)</string>
     <string name="no_x_files">Nincsenek %1$s fájlok</string>
     <string name="done">Kész</string>
@@ -163,22 +163,22 @@
     <string name="no_files_filter">Nincsenek %1$s fájlok</string>
     <string name="superuser_not_available">Superuser nem elérhető</string>
     <string name="filter_active">A Fájl Szűrő Aktív: %1$s</string>
-    <string name="base_theme">Alap Téma</string>
+    <string name="base_theme">Témák</string>
     <string-array name="base_themes">
-        <item>Világos</item>
-        <item>Sötét</item>
-        <item>Éjszakai Mód</item>
+        <item>Fehér</item>
+        <item>Szürke</item>
+        <item>Fekete</item>
     </string-array>
     <string name="sdcard">Memóriakártya</string>
     <string name="owner">Tulajdonos</string>
     <string name="group">Csoport</string>
     <string name="applying_permissions">Engedélyek alkalmazása…</string>
     <string name="primary_color">Elsődleges Szín</string>
-    <string name="primary_color_desc">Válassza ki hogy milyen elsődleges színt kíván használni.</string>
+    <string name="primary_color_desc">Válasszon Elsődleges Színt.</string>
     <string name="accent_color">Másodlagos Szín</string>
-    <string name="accent_color_desc">Válassza ki hogy milyen másodlagos színt kíván használni.</string>
+    <string name="accent_color_desc">Válasszon Másodlagos Színt.</string>
     <string name="colored_navbar">Szinezett Navigációs Sáv</string>
-    <string name="colored_navbar_desc">A navigációs sáv az elsődleges szín szerint lesz szinezve.</string>
+    <string name="colored_navbar_desc">A navigációs sáv beszinezése.</string>
     <string name="colored_icons">Ikon Szinek</string>
     <string name="colored_icons_desc">A fájlok és mappák szineinek megváltoztatása.</string>
     <string name="defaultStr">Alapértelmezett</string>
@@ -188,17 +188,14 @@
     <string name="find">Megkeresés</string>
     <string name="replace">Kicserélés</string>
     <string name="replace_all">Mind Megkeresése</string>
-    <string name="use_regex">Regex használata</string>
     <string name="match_case">Találat esetén</string>
     <string name="no_occurences">Nincsenek események</string>
     <string name="no_occurences_desc">Nincs előfordulása a keresett query találatnak.</string>
     <string name="revert_changes">Alapértékek Visszaállítása</string>
     <string name="slash_name_invalid">Nem tartalmazhatja / a nevet.</string>
     <string name="directory">Könyvtár</string>
-
-
-    <string name="directory_count">Könyvtár Szám</string>
-    <string name="directory_count_descr">Ha engedélyezi, megjelennek a könyvtárak számai.</string>
+    <string name="directory_count">Könyvtár Számok</string>
+    <string name="directory_count_descr">Megjelennek a könyvtárak számai.</string>
     <string name="theming">Testreszabás</string>
     <string name="behavior">Működés</string>
     <string name="changelog">Változások</string>

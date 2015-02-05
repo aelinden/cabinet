@@ -15,8 +15,8 @@ public class AlphabeticalComparator implements java.util.Comparator<File> {
     private boolean foldersFirst;
 
     public AlphabeticalComparator(Context context) {
-        foldersFirst = PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean("folders_first", true);
+        if (context != null)
+            foldersFirst = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("folders_first", true);
     }
 
     @Override

@@ -259,7 +259,11 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         if (canShow && !searchMode) {
             assert search != null;
             SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
-            searchView.setQueryHint(getString(R.string.search_files));
+            try {
+                searchView.setQueryHint(getString(R.string.search_files));
+            } catch (IllegalStateException e) {
+                searchView.setQueryHint("Search files…");
+            }
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
@@ -492,7 +496,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
 
     protected void runOnUiThread(Runnable runnable) {
         Activity act = getActivity();
-        if (act != null) act.runOnUiThread(runnable);
+        if (act != null && getView() != null)
+            act.runOnUiThread(runnable);
     }
 
     public final void setListShown(boolean shown) {
@@ -556,7 +561,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         @Override
                         public void run() {
                             if (searchThread.isInterrupted()) return;
-                            Collections.sort(results, getComparator());
+                            if (results != null && results.size() > 0)
+                                Collections.sort(results, getComparator());
                             mAdapter.set(results);
                             setListShown(true);
                         }
@@ -698,9 +704,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                         mAdapter.clear();
                         if (results != null && results.length > 0) {
                             Arrays.sort(results, getComparator());
-                            for (File fi : results) {
+                            for (File fi : results)
                                 mAdapter.add(fi);
-                            }
                         }
                         try {
                             setListShown(true);
@@ -737,7 +742,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
     }
 
     public void resort() {
-        Collections.sort(mAdapter.getFiles(), getComparator());
+        if (mAdapter.getFiles() != null && mAdapter.getFiles().size() > 0)
+            Collections.sort(mAdapter.getFiles(), getComparator());
         mAdapter.notifyDataSetChanged();
     }
 
@@ -895,8 +901,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                 public void onNegative(MaterialDialog dialog) {
                                     Utils.openFile((MainActivity) getActivity(), fFile, false);
                                 }
-                            })
-                            .build().show();
+                            }).show();
                 } else {
                     Utils.openFile((MainActivity) getActivity(), file, false);
                 }
@@ -1012,7 +1017,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                                 MainActivity act = (MainActivity) getActivity();
                                 if (act.getCab() != null && act.getCab() instanceof BaseFileCab) {
                                     BaseFileCab cab = (BaseFileCab) act.getCab();
-                                    if (cab.getFiles().size() > 0) {
+                                    if (cab.getFiles() != null && cab.getFiles().size() > 0) {
                                         List<File> files = new ArrayList<>();
                                         files.addAll(cab.getFiles()); // copy so it doesn't get modified by CAB functions
                                         cab.removeFile(file, true);

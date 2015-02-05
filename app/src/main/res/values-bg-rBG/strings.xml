@@ -176,7 +176,6 @@
     <string name="find">Намери</string>
     <string name="replace">Замени</string>
     <string name="replace_all">Замени Всичко</string>
-    <string name="use_regex">Използвай регулатор</string>
     <string name="match_case">Съвпадение</string>
     <string name="no_occurences">Не се Появява</string>
     <string name="no_occurences_desc">Не се появява това което търситe</string>

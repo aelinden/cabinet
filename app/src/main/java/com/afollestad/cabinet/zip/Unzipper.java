@@ -77,6 +77,15 @@ public class Unzipper {
         });
     }
 
+    private static void dismissProgressDialog() {
+        if (mDialog == null) return;
+        try {
+            mDialog.dismiss();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void unzip(final DirectoryFragment context, final List<File> files, final Zipper.ZipCallback callback) {
         new Thread(new Runnable() {
             @Override
@@ -93,9 +102,10 @@ public class Unzipper {
                     context.getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mDialog.dismiss();
+                            dismissProgressDialog();
                             context.reload();
-                            if (mDialog.isShowing() && callback != null) callback.onComplete();
+                            if (mDialog != null && mDialog.isShowing() && callback != null)
+                                callback.onComplete();
                         }
                     });
                 } catch (final Exception e) {
@@ -104,7 +114,7 @@ public class Unzipper {
                     context.getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (mDialog != null) mDialog.dismiss();
+                            dismissProgressDialog();
                             Utils.showErrorDialog(context.getActivity(), R.string.failed_unzip_file, e);
                         }
                     });
