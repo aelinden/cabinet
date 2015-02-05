@@ -146,7 +146,10 @@ public class Utils {
     }
 
     public static void setGridSize(DirectoryFragment context, int size) {
-        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit().putInt("grid_size", size).commit();
+        final boolean landscape = context.getResources()
+                .getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        PreferenceManager.getDefaultSharedPreferences(context.getActivity()).edit()
+                .putInt("grid_size_" + (landscape ? "land" : "port"), size).commit();
         context.changeLayout();
     }
 
@@ -157,8 +160,20 @@ public class Utils {
     }
 
     public static int getGridSize(Context context) {
+        final boolean landscape = context.getResources()
+                .getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         final int defaultSize = isTablet(context) ? context.getResources().getInteger(R.integer.grid_columns) : 1;
-        return PreferenceManager.getDefaultSharedPreferences(context).getInt("grid_size", defaultSize);
+        if (landscape && defaultSize == 1) {
+            final int portraitValue = PreferenceManager.getDefaultSharedPreferences(context)
+                    .getInt("grid_size_port", defaultSize);
+            if (portraitValue > 1) {
+                // This uses more than 1 grid by default in landscape even on phones if portrait is not set to 1 column
+                return PreferenceManager.getDefaultSharedPreferences(context)
+                        .getInt("grid_size_land", portraitValue + 1);
+            }
+        }
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                .getInt("grid_size_" + (landscape ? "land" : "port"), defaultSize);
     }
 
     public static void setFilter(DirectoryFragment context, String filter) {
