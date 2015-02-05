@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextThemeWrapper;
@@ -334,15 +335,27 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
                 Drawable d = context.getResources().getDrawable(resId);
                 d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
                 if (file.isHidden())
-                    d.setAlpha(HIDDEN_ALPHA);
+                    alpha(icon, HIDDEN_ALPHA);
+                else
+                    alpha(icon, 255);
                 icon.setImageDrawable(d);
             }
         } else {
             Drawable d = context.getResources().getDrawable(R.drawable.ic_file_misc);
             d.setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
             if (file.isHidden())
-                d.setAlpha(HIDDEN_ALPHA);
+                alpha(icon, HIDDEN_ALPHA);
+            else
+                alpha(icon, 255);
             icon.setImageDrawable(d);
+        }
+    }
+
+    private static void alpha(ImageView view, int alpha) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            view.setImageAlpha(alpha);
+        } else {
+            view.setAlpha(alpha);
         }
     }
 
