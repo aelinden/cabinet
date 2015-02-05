@@ -47,7 +47,6 @@ Cabinetはその他にもSFTPによるサーバへのリモートアクセスな
     <string name="confirm_delete">%1$s を削除しますか？</string>
     <string name="confirm_delete_xfiles">%1$d 個のファイルを削除しますか？</string>
     <string name="unavailable">利用不可</string>
-    <string name="grid_mode">グリッド表示</string>
     <string name="sort_by">並べ替え</string>
     <string name="sort_name">名前順</string>
     <string name="sort_extension">拡張子順</string>
@@ -130,7 +129,7 @@ Cabinetはその他にもSFTPによるサーバへのリモートアクセスな
 Android4.1以降向けのミニマリスト、直感的かつ美しいファイルマネージャ。<br/><br/>
         Designed by <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>ウェブサイト</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

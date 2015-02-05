@@ -23,6 +23,7 @@
     <string name="root">Система</string>
     <string name="unknown">Неизвестно</string>
     <string name="go_up">Нагоре</string>
+    <string name="one_file">1 файл</string>
     <string name="x_files">%1$d файлове</string>
     <string name="x_dirs">%1$d директории</string>
     <string name="no_x_files">Няма %1$s файлове</string>
@@ -47,7 +48,6 @@
     <string name="confirm_delete">Искате ли да изтриете %1$s?</string>
     <string name="confirm_delete_xfiles">Искате ли да изтриете %1$d файлове</string>
     <string name="unavailable">Не е налично</string>
-    <string name="grid_mode">Решетка</string>
     <string name="sort_by">Сортиране като</string>
     <string name="sort_name">Име</string>
     <string name="sort_extension">Части</string>
@@ -120,7 +120,7 @@
 Минималистичен, интуитивен, красив файлов мениджър за Android 4.1 и по-нова.<br/><br/>
 Разработено от <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -168,8 +168,10 @@
     <string name="accent_color">Цвят Акцент</string>
     <string name="accent_color_desc">Използвате цвета на акцент тема.По подразбиране се използва материал розово.</string>
     <string name="colored_navbar">Оцвети Навигационната Лента</string>
-    <string name="colored_navbar_desc">Дали е или не полето на навигационната лента е оцветено с основния избран цвят.</string>
-    <string name="defaultStr">Липсва</string>
+    <string name="colored_navbar_desc">Полето на навигационната лента е оцветено с основния избран цвят.</string>
+    <string name="thumbnail_color">Цвят на миниатюри</string>
+    <string name="thumbnail_color_desc">Показва цвета на файлове и миниатюрни папки. По подразбиране се използва сиво.</string>
+    <string name="defaultStr">По подразбиране</string>
     <string name="only_available_lollipop">Тази функция е достъпна само за Android Lollipop и по-нова.</string>
     <string name="base_theme_desc">Изберете, ако искате светла, тъмна, или черна AMOLED тема, за да оцветиш цветовете.</string>
     <string name="find_and_replace">Търсене и Заместване</string>
@@ -180,5 +182,19 @@
     <string name="no_occurences">Не се Появява</string>
     <string name="no_occurences_desc">Не се появява това което търситe</string>
     <string name="revert_changes">Връщате на Промени</string>
+    <string name="slash_name_invalid">Вие не може да се включите / в името.</string>
     <string name="directory">Директория</string>
+    <string name="directory_count">Брой Директории</string>
+    <string name="directory_count_descr">Ако е включено, ще бъдат показани броят на файловете и папките в локалната папка.</string>
+    <string name="theming">Теми</string>
+    <string name="behavior">Режим на работа</string>
+    <string name="changelog">Промяна</string>
+    <string name="folders_first">Първо папките</string>
+    <string name="grid_size">Формат Решетка</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

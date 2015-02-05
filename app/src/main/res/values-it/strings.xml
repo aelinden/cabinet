@@ -48,7 +48,6 @@
     <string name="confirm_delete">Eliminare veramente %1$s?</string>
     <string name="confirm_delete_xfiles">Eliminare veramente %1$d file?</string>
     <string name="unavailable">Non disponibile</string>
-    <string name="grid_mode">Vista a griglia</string>
     <string name="sort_by">Ordinamento</string>
     <string name="sort_name">Nome</string>
     <string name="sort_extension">Estensione</string>
@@ -131,7 +130,7 @@
         A gestore di file minimale, intuitivo e bellissimo per Android 4.1 e versioni successive.<br/><br/>
         Progettato da <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Sito web</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -180,8 +179,8 @@
     <string name="accent_color_desc">Il colore di risalto da usare. Quello predefinito e il rosa \"Material\".</string>
     <string name="colored_navbar">Barra di navigazione colorata</string>
     <string name="colored_navbar_desc">Indica se la barra di navigazione viene colorata con il colore pricipale.</string>
-
-
+    <string name="thumbnail_color">Colore anteprime</string>
+    <string name="thumbnail_color_desc">Il colore visualizzato per le anteprime di file e cartelle. Quello predefinito è il grigio.</string>
     <string name="defaultStr">Predefinito</string>
     <string name="only_available_lollipop">Questa funzione è disponibile solo in Android Lollipop e versioni successive.</string>
     <string name="base_theme_desc">Scegli se usare un tema chiaro, scuro e nero (AMOLED).</string>
@@ -201,4 +200,11 @@
     <string name="behavior">Comportamento</string>
     <string name="changelog">Novità</string>
     <string name="folders_first">Prima le cartelle</string>
+    <string name="grid_size">Dimensione griglia</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

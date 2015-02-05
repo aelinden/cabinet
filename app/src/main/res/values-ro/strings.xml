@@ -47,7 +47,6 @@
     <string name="confirm_delete">Ești sigur cӑ vrei sӑ ștergi %1$s?</string>
     <string name="confirm_delete_xfiles">Ești sigur cӑ vrei sӑ ștergi cele %1$d fișiere?</string>
     <string name="unavailable">Nu este valabil</string>
-    <string name="grid_mode">Mod de afișaj tip grilӑ</string>
     <string name="sort_by">Sorteazӑ Dupӑ</string>
     <string name="sort_name">Nume</string>
     <string name="sort_extension">Extensie</string>
@@ -130,7 +129,7 @@
 Un manager de fișiere minimalist, intuitiv și frumos pentru Android 4.1 sau mai nou.<br/><br/> 
 Creat de <b>Aidan Follestad</b><br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
 <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>Linkedin</a>
     ]]></string>

@@ -47,7 +47,6 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
     <string name="confirm_delete">Czy na pewo chcesz usunąć %1$s?</string>
     <string name="confirm_delete_xfiles">Czy na pewno chcesz usunąć %1$d pliki?</string>
     <string name="unavailable">Niedostępne</string>
-    <string name="grid_mode">Siatka</string>
     <string name="sort_by">"Sortuj "</string>
     <string name="sort_name">Nazwa</string>
     <string name="sort_extension">Rozszerzenie</string>
@@ -132,7 +131,7 @@ posiada również inne funkcje, takie jak m.in. zdolny dostęp do serwerów popr
 &nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>
 &nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google
+ <a href=\'https://google.com/+AidanFollestad\'>Google
 +</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>
 &nbsp;&nbsp;

@@ -46,7 +46,6 @@
     <string name="confirm_delete">Weet je zeker dat je %1$s wilt verwijderen?</string>
     <string name="confirm_delete_xfiles">Weet je zeker dat je %1$d bestanden wilt verwijderen?</string>
     <string name="unavailable">Onbeschikbaar</string>
-    <string name="grid_mode">Raster modus</string>
     <string name="sort_by">Sorteren op</string>
     <string name="sort_name">Naam</string>
     <string name="sort_extension">Extensie</string>
@@ -129,7 +128,7 @@
 Een minimalistische, vernuftige, mooie bestands beheerder voor Android 4.1 en hoger.<br/><br/>
         Ontworpen door <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

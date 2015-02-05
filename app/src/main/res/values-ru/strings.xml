@@ -23,6 +23,7 @@
     <string name="root">Система</string>
     <string name="unknown">Неизвестно</string>
     <string name="go_up">Выше</string>
+    <string name="one_file">1 файл</string>
     <string name="x_files">%1$d файлов</string>
     <string name="x_dirs">%1$d папок</string>
     <string name="no_x_files">Нет %1$s файлов</string>
@@ -47,7 +48,6 @@
     <string name="confirm_delete">Вы уверены, что хотите удалить %1$s?</string>
     <string name="confirm_delete_xfiles">Вы уверены, что хотите удалить %1$d файлов?</string>
     <string name="unavailable">Недоступен</string>
-    <string name="grid_mode">Режим сетки</string>
     <string name="sort_by">Сортировать по</string>
     <string name="sort_name">По имени</string>
     <string name="sort_extension">По типу</string>
@@ -130,7 +130,7 @@
  Минималистский, понятный, прекрасный файловый менеджер для Android 4.1 и выше.<br/><br/>
  Разработчик <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Веб-сайт</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -179,8 +179,8 @@
     <string name="accent_color_desc">Используется как цвет акцента. По умолчанию - розовый Material.</string>
     <string name="colored_navbar">Цветной Navigation Bar</string>
     <string name="colored_navbar_desc">Использовать или не использовать основной цвет для navigation bar.</string>
-
-
+    <string name="thumbnail_color">Цвет Миниатюр</string>
+    <string name="thumbnail_color_desc">Цвет отображения миниатюр файлов и папок. По умолчанию - серый.</string>
     <string name="defaultStr">По умолчанию</string>
     <string name="only_available_lollipop">Эта особенность доступна только на Android Lollipop и выше.</string>
     <string name="base_theme_desc">Выберете по желанию, какую тему использовать: светлую, темную или с настоящим черным для AMOLED.</string>
@@ -194,10 +194,17 @@
     <string name="revert_changes">Отменить изменения</string>
     <string name="slash_name_invalid">Добавление не возможно / в имени.</string>
     <string name="directory">Каталог</string>
-    <string name="directory_count">Число Директорий</string>
-    <string name="directory_count_descr">Если опция включена, количество файлов и папок в локальной папке будут отображаться в списках.</string>
+    <string name="directory_count">Количество файлов и папок</string>
+    <string name="directory_count_descr">Будет отображаться количество файлов и папок в локальной папке.</string>
     <string name="theming">Оформление</string>
-    <string name="behavior">Поведение</string>
+    <string name="behavior">Дополнительно</string>
     <string name="changelog">Изменения</string>
     <string name="folders_first">Сначала папки</string>
+    <string name="grid_size">Размер Сетки</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

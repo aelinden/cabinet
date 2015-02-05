@@ -46,7 +46,6 @@
     <string name="confirm_delete">Bạn có chắc là muốn xóa %1$s?</string>
     <string name="confirm_delete_xfiles">Bạn có chắc là muốn xóa %1$d tập tin?</string>
     <string name="unavailable">Không có sẵn</string>
-    <string name="grid_mode">Chế độ lưới</string>
     <string name="sort_by">Sắp xếp theo</string>
     <string name="sort_name">Tên</string>
     <string name="sort_extension">Mở rộng</string>

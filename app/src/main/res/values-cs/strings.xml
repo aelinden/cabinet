@@ -47,7 +47,6 @@ disponuje také dalšími různými funkcemi, jako vzdálený přístup k server
     <string name="confirm_delete">Opravdu chcete smazat %1$s?</string>
     <string name="confirm_delete_xfiles">Opravdu chcete smazat %1$d souborů?</string>
     <string name="unavailable">Nedostupný</string>
-    <string name="grid_mode">Režim mřížky</string>
     <string name="sort_by">Seřadit podle</string>
     <string name="sort_name">Jméno</string>
     <string name="sort_extension">Přípona</string>
@@ -130,7 +129,7 @@ disponuje také dalšími různými funkcemi, jako vzdálený přístup k server
 Minimalistický, intuitivní a krásný souborový manažer pro Android 4.1 a vyšší.<br/><br/>
 Vytvořil <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Web</a>&nbsp;&nbsp;
 <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-<a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+<a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
 <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
 <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

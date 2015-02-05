@@ -47,7 +47,6 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="confirm_delete">%1$s를 삭제하겠습니까?</string>
     <string name="confirm_delete_xfiles">%1$d 개의 파일을 삭제하겠습니까?</string>
     <string name="unavailable">할 수 없음</string>
-    <string name="grid_mode">격자 모드</string>
     <string name="sort_by">정렬 순서</string>
     <string name="sort_name">파일명</string>
     <string name="sort_extension">형식</string>
@@ -129,7 +128,7 @@ Cabinet은 그 외에도 SFTP서버 원격 액세스 등 다양한 기능을 갖
     <string name="about_body"><![CDATA[
         안드로이드 4.1 이상을 위한 단순하고 직감적이며 아름다운 파일 관리자..<br/><br/><b>Aidan Follestad</b> 디자인.<br/><a href=\'http://aidanfollestad.com\'>웹사이트</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>트위터</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

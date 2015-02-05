@@ -47,7 +47,6 @@
     <string name="confirm_delete">你确定要删除%1$s?</string>
     <string name="confirm_delete_xfiles">你确定要删除 %1$d 文件?</string>
     <string name="unavailable">不可用</string>
-    <string name="grid_mode">网格模式</string>
     <string name="sort_by">排序</string>
     <string name="sort_name">文件名</string>
     <string name="sort_extension">类型</string>
@@ -130,7 +129,7 @@
         一个简约、直观、美丽的文件管理器，只要 Android 4.1以上版本就可以使用。<br/><br/>
         由 <b>Aidan Follestad</b> 设计。<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

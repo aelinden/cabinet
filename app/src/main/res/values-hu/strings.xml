@@ -47,7 +47,6 @@
     <string name="confirm_delete">Biztos hogy törli %1$s?</string>
     <string name="confirm_delete_xfiles">Biztos hogy törli a %1$d fájlokat?</string>
     <string name="unavailable">Nem áll rendelkezésre</string>
-    <string name="grid_mode">Rács nézet</string>
     <string name="sort_by">Rendezés</string>
     <string name="sort_name">Név</string>
     <string name="sort_extension">Kiterjesztés</string>
@@ -130,7 +129,7 @@
  Egy minimalista, intuitív és szép fájlkezelő androidra. <br/><br/>
  Fejlesztő <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Weboldal</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -179,8 +178,6 @@
     <string name="accent_color_desc">Válasszon Másodlagos Színt.</string>
     <string name="colored_navbar">Szinezett Navigációs Sáv</string>
     <string name="colored_navbar_desc">A navigációs sáv beszinezése.</string>
-
-
     <string name="defaultStr">Alapértelmezett</string>
     <string name="only_available_lollipop">Ez az opció csak Android Lollipop verzión érhető el.</string>
     <string name="base_theme_desc">Válasszon témát amit használni szeretne.</string>

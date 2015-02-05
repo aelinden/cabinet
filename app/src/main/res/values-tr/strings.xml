@@ -47,7 +47,6 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
     <string name="confirm_delete">%1$s öğesini silmek istediğinizden emin misiniz?</string>
     <string name="confirm_delete_xfiles">%1$d dosyayı silmek istediğinizden emin misiniz?</string>
     <string name="unavailable">Uygun değil</string>
-    <string name="grid_mode">Izgara modu</string>
     <string name="sort_by">Sırala</string>
     <string name="sort_name">İsim</string>
     <string name="sort_extension">Uzantı</string>
@@ -130,7 +129,7 @@ daha birçok özelliğe sahiptir, sunuculara SFTP ile uzak bağlantı kurmakta b
 Android 4.1 ve üstü için minimalist, kullanışlı ve zarif bir dosya yöneticisi.<br/><br/><b>Aidan Follestad</b> tarafından tasarlandı.
 <a href=\'http://aidanfollestad.com\'>Web Sitesi</a>&nbsp;&nbsp;
 <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-<a href=\'https://google.com/+Aidanfollestad\'>Google</a>&nbsp;&nbsp;
+<a href=\'https://google.com/+AidanFollestad\'>Google</a>&nbsp;&nbsp;
 <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
 <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>&nbsp;&nbsp;
     ]]></string>

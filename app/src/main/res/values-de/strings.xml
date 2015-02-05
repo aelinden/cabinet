@@ -48,7 +48,6 @@
     <string name="confirm_delete">Sind Sie sicher dass Sie %1$s löschen möchten?</string>
     <string name="confirm_delete_xfiles">Sind Sie sicher dass Sie %1$d Dateien löschen möchten?</string>
     <string name="unavailable">Unverfügbar</string>
-    <string name="grid_mode">Rasteransicht</string>
     <string name="sort_by">Sortieren nach</string>
     <string name="sort_name">Name</string>
     <string name="sort_extension">Erweiterung</string>
@@ -131,7 +130,7 @@
  Ein minimalistischer, intuitiver, schöner Dateimanager für Android 4.1 und darüber. <br/><br/>
  Entworfen von <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Webseite</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -180,8 +179,8 @@
     <string name="accent_color_desc">Die zu benutzende Akzentfarbe. Standardmäßig pink.</string>
     <string name="colored_navbar">Gefärbte Navigationsleiste</string>
     <string name="colored_navbar_desc">Bestimmt, ob die Navigationsleiste in der Hauptfarbe gefärbt ist.</string>
-
-
+    <string name="thumbnail_color">Vorschaufarbe</string>
+    <string name="thumbnail_color_desc">Die Farbe, die für Datei- und Verzeichnisvorschauen verwendet wird. Die Standardfarbe ist Grau.</string>
     <string name="defaultStr">Standard</string>
     <string name="only_available_lollipop">Diese Funktion ist nur auf Android Lollipop und höher verfügbar.</string>
     <string name="base_theme_desc">Wähle zwischen einem hellen, dunkeln oder AMOLED-Schwarz-Thema.</string>
@@ -201,4 +200,11 @@
     <string name="behavior">Verhalten</string>
     <string name="changelog">Änderungen</string>
     <string name="folders_first">Ordner zuerst</string>
+    <string name="grid_size">Rastergröße</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

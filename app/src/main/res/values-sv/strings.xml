@@ -23,6 +23,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="root">Rot</string>
     <string name="unknown">Okänd</string>
     <string name="go_up">Gå upp</string>
+    <string name="one_file">1 fil</string>
     <string name="x_files">%1$d filer</string>
     <string name="x_dirs">%1$d mappar</string>
     <string name="no_x_files">Inga %1$s filer</string>
@@ -47,7 +48,6 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="confirm_delete">Är du säker på att du vill ta bort %1$s?</string>
     <string name="confirm_delete_xfiles">Är du säker på att du vill ta bort %1$d filer?</string>
     <string name="unavailable">Ej tillgänglig</string>
-    <string name="grid_mode">Rutnät</string>
     <string name="sort_by">Sortera efter</string>
     <string name="sort_name">Namn</string>
     <string name="sort_extension">Filändelse</string>
@@ -120,7 +120,7 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
         En minimalistisk, intuitiv och snygg filhanterare för Android 4.1 och senare.<br/><br/>
         Skapad av <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Hemsida</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -169,8 +169,8 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="accent_color_desc">Bestämmer sekundär temafärg. Standard är Material Rosa.</string>
     <string name="colored_navbar">Färgat navigationsfält</string>
     <string name="colored_navbar_desc">Bestämmer om navigationsfältet ska ha samma färg som ditt primära färgval.</string>
-
-
+    <string name="thumbnail_color">Färg på ikoner</string>
+    <string name="thumbnail_color_desc">Färgen på fil- och mappikoner. Standardfärg är grå.</string>
     <string name="defaultStr">Standard</string>
     <string name="only_available_lollipop">Denna funktion är bara tillgänglig i Android Lollipop och senare.</string>
     <string name="base_theme_desc">Välj om du vill ha ett ljust, mörkt eller AMOLED-svart tema.</string>
@@ -190,4 +190,11 @@ har andra funktioner, till exempel fjärråtkomst till servrar via SFTP som du h
     <string name="behavior">Beteende</string>
     <string name="changelog">Ändringslogg</string>
     <string name="folders_first">Mappar först</string>
+    <string name="grid_size">Storlek på rutnät</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

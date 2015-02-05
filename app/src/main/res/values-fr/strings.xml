@@ -32,7 +32,7 @@
     <string name="confirm_remove_shortcut">Voulez-vous vraiment enlever le raccourci vers %1$s ?</string>
     <string name="sort_modified">Dernière modification</string>
     <string name="modified_x">Modifié %1$s</string>
-    <string name="iconpress_hint">Vous pouvez appuyer sur l\'icône d\'un fichier pour le sélectionner rapidement!</string>
+    <string name="iconpress_hint">Vous pouvez appuyer sur l\'icône d\'un fichier pour le sélectionner rapidement !</string>
     <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
     <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
     <string name="new_folder">Nouveau dossier</string>
@@ -48,7 +48,6 @@
     <string name="confirm_delete">Voulez-vous vraiment supprimer %1$s ?</string>
     <string name="confirm_delete_xfiles">Voulez-vous vraiment supprimer %1$d fichiers ?</string>
     <string name="unavailable">Indisponible</string>
-    <string name="grid_mode">Mode grille</string>
     <string name="sort_by">Trier par</string>
     <string name="sort_name">Nom</string>
     <string name="sort_extension">Extension</string>
@@ -131,7 +130,7 @@
  Un gestionnaire de fichiers minimaliste, beau et intuitif pour Android 4.1 et plus.<br/><br/>
  Conçu par <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Site internet</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
  <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
  <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
@@ -180,8 +179,8 @@
     <string name="accent_color_desc">La couleur secondaire du thème. Rose matériau par défaut.</string>
     <string name="colored_navbar">Barre de navigation colorée</string>
     <string name="colored_navbar_desc">Colorer la barre de navigation avec la couleur principale.</string>
-
-
+    <string name="thumbnail_color">Couleur de vignette</string>
+    <string name="thumbnail_color_desc">La couleur affichée sur les vignettes de fichier et dossier. Gris par défaut.</string>
     <string name="defaultStr">Défaut</string>
     <string name="only_available_lollipop">Cette fonctionnalité n\'est disponible qu\'à partir d\'Android Lollipop.</string>
     <string name="base_theme_desc">Choisissez un thème clair, sombre, ou noir AMOLED à colorer.</string>
@@ -201,4 +200,11 @@
     <string name="behavior">Comportement</string>
     <string name="changelog">Journal des modifications</string>
     <string name="folders_first">Dossiers en premier</string>
+    <string name="grid_size">Taille de grille</string>
+    <string name="grid_size_one">1</string>
+    <string name="grid_size_two">2</string>
+    <string name="grid_size_three">3</string>
+    <string name="grid_size_four">4</string>
+    <string name="grid_size_five">5</string>
+    <string name="grid_size_six">6</string>
 </resources>

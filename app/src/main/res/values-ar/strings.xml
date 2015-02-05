@@ -48,7 +48,6 @@
     <string name="confirm_delete">أتريد حقًّا حذف %1$s؟</string>
     <string name="confirm_delete_xfiles">أتريد حقًّا حذف الملفّات (%1$d)؟</string>
     <string name="unavailable">غير مُتاح</string>
-    <string name="grid_mode">تخطيط الشبكة</string>
     <string name="sort_by">رتّب حسب</string>
     <string name="sort_name">اسم</string>
     <string name="sort_extension">اللاحقة</string>
@@ -132,7 +131,7 @@
 مُدير ملفّات جميل ومُبسّط وسهل الاستخدام لإصدارات 4.1 وما بعده من Android.<br/><br/>
 صمّمه <b>آيدان فوليستاد (Aidan Follestad)</b>.<br/><a href=\'http://aidanfollestad.com\'>موقع ويب</a>&nbsp;&nbsp;
  <a href=\'https://twitter.com/afollestad\'>تويتر</a>&nbsp;&nbsp;
- <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+ <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

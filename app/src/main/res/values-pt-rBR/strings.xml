@@ -46,7 +46,6 @@
     <string name="confirm_delete">Tem certeza que deseja deletar %1$s?</string>
     <string name="confirm_delete_xfiles">Tem certeza que deseja deletar %1$d arquivos?</string>
     <string name="unavailable">Inválido</string>
-    <string name="grid_mode">Modo grade</string>
     <string name="sort_by">Ordenar por</string>
     <string name="sort_name">Nome</string>
     <string name="sort_extension">Extensão</string>
@@ -129,7 +128,7 @@
         Um bonito, minimalista e intuitivo gerenciador de arquivos para Android 4.1 ou acima.<br/><br/>
         Design por <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>

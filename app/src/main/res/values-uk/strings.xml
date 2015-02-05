@@ -47,7 +47,6 @@
     <string name="confirm_delete">Ви впевнені, що хочете видалити %1$s?</string>
     <string name="confirm_delete_xfiles">Ви впевнені, що хочете видалити %1$d файлів?</string>
     <string name="unavailable">Недоступно</string>
-    <string name="grid_mode">Режим таблиці</string>
     <string name="sort_by">Сортувати за</string>
     <string name="sort_name">Іменем</string>
     <string name="sort_extension">Типом</string>
@@ -130,7 +129,7 @@
         Мінімалістичний, інтуїтивно-зрозумілий та просто гарний файловий менеджер для Android 4.1 і вище.<br/><br/>
         Розробник  <b>Aidan Follestad</b>.<br/><a href=\'http://aidanfollestad.com\'>Інтрнетсторінка</a>&nbsp;&nbsp;
         <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
-        <a href=\'https://google.com/+Aidanfollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
