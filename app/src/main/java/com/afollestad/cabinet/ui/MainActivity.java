@@ -66,7 +66,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     private BillingProcessor mBP; // used for donations
     private BaseCab mCab; // the current contextual action bar, saves state throughout fragments
 
-    public FloatingActionsMenu fab; // the floating blue add/paste button
+    public FloatingActionsMenu mFab; // the floating blue add/paste button
     private FabListener mFabListener; // a callback used to notify DirectoryFragment of fab press
     public BaseFileCab.PasteMode fabPasteMode = BaseFileCab.PasteMode.DISABLED;
     private boolean fabDisabled; // flag indicating whether fab should stay hidden while scrolling
@@ -84,22 +84,22 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     }
 
     public void toggleFab(boolean hide) {
-        if (fabDisabled) fab.hide(false);
-        else if (hide) fab.hide(true);
-        else fab.show(true);
+        if (fabDisabled) getFab().hide(false);
+        else if (hide) getFab().hide(true);
+        else getFab().show(true);
     }
 
     public void disableFab(boolean disable, boolean force) {
         if (!disable) {
-            if (fab.getVisibility() == View.GONE)
-                fab.setVisibility(View.VISIBLE);
-            fab.show(true);
+            if (getFab().getVisibility() == View.GONE)
+                getFab().setVisibility(View.VISIBLE);
+            getFab().show(true);
         } else {
-            fab.hide(true);
+            getFab().hide(true);
             if (force) {
-                fab.setVisibility(View.GONE);
+                getFab().setVisibility(View.GONE);
             } else {
-                fab.hide(true);
+                getFab().hide(true);
             }
         }
         fabDisabled = disable;
@@ -132,8 +132,8 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
     public void onBackPressed() {
         if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-        } else if (fab.isExpanded()) {
-            fab.collapse();
+        } else if (getFab().isExpanded()) {
+            getFab().collapse();
         } else if (getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         } else getFragmentManager().popBackStack();
@@ -154,6 +154,12 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         if (mDrawerLayout == null)
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         return mDrawerLayout;
+    }
+
+    public FloatingActionsMenu getFab() {
+        if (mFab == null)
+            mFab = (FloatingActionsMenu) findViewById(R.id.fab_actions);
+        return mFab;
     }
 
     @Override
@@ -255,8 +261,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                 }
             });
         } else {
-            fab = (FloatingActionsMenu) view;
-            fab.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+            getFab().setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
                 @Override
                 public void onMenuExpanded() {
                     showOuterFrame();
@@ -267,10 +272,10 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
                     hideOuterFrame();
                 }
             });
-            fab.setIcon(R.drawable.ic_fab_new);
-            fab.setColorNormal(theme.accentColor());
-            fab.setColorPressed(theme.accentColorDark());
-            fab.getButton().setOnClickListener(new View.OnClickListener() {
+            getFab().setIcon(R.drawable.ic_fab_new);
+            getFab().setColorNormal(theme.accentColor());
+            getFab().setColorPressed(theme.accentColorDark());
+            getFab().getButton().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (fabPasteMode == BaseFileCab.PasteMode.ENABLED)
@@ -287,14 +292,14 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         outerFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fab.collapse();
+                getFab().collapse();
             }
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
             int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
-            int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
+            int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
             int cx;
             int cy;
             if (Utils.isRTL(this)) {
@@ -321,7 +326,7 @@ public class MainActivity extends NetworkedActivity implements BillingProcessor.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final View container = findViewById(R.id.container);
             int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
-            int halfButtonHeight = fab.getButton().getMeasuredHeight() / 2;
+            int halfButtonHeight = getFab().getButton().getMeasuredHeight() / 2;
             int cx;
             int cy;
             if (Utils.isRTL(this)) {

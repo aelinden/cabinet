@@ -211,6 +211,7 @@ public class MainCab extends BaseFileCab {
         getFiles().get(0).delete(new SftpClient.CompletionCallback() {
             @Override
             public void onComplete() {
+                if (getFiles().size() == 0) return;
                 getFragment().mAdapter.remove(getFiles().get(0));
                 getFiles().remove(0);
                 deleteNextFile();

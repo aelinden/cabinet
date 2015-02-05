@@ -135,6 +135,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         }
 //        view.findViewById(R.id.image).performClick();
         int index = Integer.parseInt(((String) view.getTag()).split(":")[1]);
+        if (index > mFiles.size() - 1)
+            return true;
         File file = mFiles.get(index);
         boolean checked = !isItemChecked(file);
         setItemChecked(file, checked);
