@@ -180,8 +180,8 @@
     <string name="accent_color_desc">La couleur secondaire du thème. Rose matériau par défaut.</string>
     <string name="colored_navbar">Barre de navigation colorée</string>
     <string name="colored_navbar_desc">Colorer la barre de navigation avec la couleur principale.</string>
-    <string name="colored_icons">Couleur des icônes</string>
-    <string name="colored_icons_desc">La couleur des icônes de fichier et dossier. Vous pouvez utiliser la couleur principale ou secondaire au lieu du gris par défaut.</string>
+
+
     <string name="defaultStr">Défaut</string>
     <string name="only_available_lollipop">Cette fonctionnalité n\'est disponible qu\'à partir d\'Android Lollipop.</string>
     <string name="base_theme_desc">Choisissez un thème clair, sombre, ou noir AMOLED à colorer.</string>

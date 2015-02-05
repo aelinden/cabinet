@@ -15,7 +15,7 @@
 
     <color name="dark_theme_gray">#1F1F1F</color>
     <color name="dark_theme_gray_darker">#292929</color>
-    <color name="non_colored_folder">#4A4A4A</color>
+    <color name="non_colored_folder">#424242</color>
     <color name="black_semi_transparent">#B2000000</color>
 
 </resources>

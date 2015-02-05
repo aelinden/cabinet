@@ -179,8 +179,8 @@ tem outras funcionalidades, como o acesso remoto a servidores via SFTP que encon
     <string name="accent_color_desc">A cor a utilizar para os acentos. A cor padrão é rosa.</string>
     <string name="colored_navbar">Barra de navegação colorida</string>
     <string name="colored_navbar_desc">Se a barra de navegação deve ser ou não colorida com a cor primária.</string>
-    <string name="colored_icons">Cor dos ícones</string>
-    <string name="colored_icons_desc">A cor para o ícone dos ficheiros e pastas. Pode utilizar a cor primária ou a cor do acento em vez da cor cinzenta.</string>
+
+
     <string name="defaultStr">Padrão</string>
     <string name="only_available_lollipop">Esta funcionalidade só está disponível para versões iguais ou superiores ao Android Lollipop.</string>
     <string name="base_theme_desc">Escolha se pretende um tema claro, escuro ou preto AMOLED para pintar as cores.</string>

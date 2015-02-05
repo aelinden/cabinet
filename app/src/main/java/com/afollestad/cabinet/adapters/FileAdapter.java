@@ -61,18 +61,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         directoryCount = ThemeUtils.isDirectoryCount(context);
 
         ThemeUtils theme = ((ThemableActivity) context).getThemeUtils();
-        final int iconsMode = ThemeUtils.coloredIconsMode(context);
-        switch (iconsMode) {
-            default:
-                primaryColor = context.getResources().getColor(R.color.non_colored_folder);
-                break;
-            case 1:
-                primaryColor = theme.primaryColor();
-                break;
-            case 2:
-                primaryColor = theme.accentColor();
-                break;
-        }
+        primaryColor = theme.thumbnailColor();
     }
 
     @Override

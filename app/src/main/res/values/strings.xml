@@ -295,8 +295,8 @@
     <string name="accent_color_desc">The accent theme color to use. Defaults to Material pink.</string>
     <string name="colored_navbar">Colored Navigation Bar</string>
     <string name="colored_navbar_desc">Whether or not the system navigation bar is colored with the primary color.</string>
-    <string name="colored_icons">Icon Colors</string>
-    <string name="colored_icons_desc">The color of file and folder icons. You can use the primary color or accent color instead of the default gray.</string>
+    <string name="thumbnail_color">Thumbnail Color</string>
+    <string name="thumbnail_color_desc">The color displayed on file and folder thumbnails. Defaults to gray.</string>
     <string name="defaultStr">Default</string>
     <string name="only_available_lollipop">This feature is only available on Android Lollipop and above.</string>
     <string name="base_theme_desc">Choose if you want a light, dark, or AMOLED black theme to paint colors on.</string>
@@ -310,16 +310,8 @@
     <string name="no_occurences_desc">No occurrences of your find query were found.</string>
     <string name="revert_changes">Revert Changes</string>
 
-    <string-array name="colored_icon_options" translatable="false">
-        <item>@string/defaultStr</item>
-        <item>@string/primary_color</item>
-        <item>@string/accent_color</item>
-    </string-array>
-
     <string name="slash_name_invalid">You cannot include / in the name.</string>
-
     <string name="directory">Directory</string>
-
 
     <string name="directory_count">Directory Count</string>
     <string name="directory_count_descr">If enabled, the number of files and folders in a local folder will be displayed within lists.</string>

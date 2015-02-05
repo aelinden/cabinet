@@ -21,7 +21,7 @@ public class ThemeUtils {
     private int mLastPrimaryColor;
     private int mLastAccentColor;
     private boolean mLastColoredNav;
-    private int mColoredIcons;
+    private int mThumbnailColor;
     private boolean mDirectoryCount;
 
     public int getPopupTheme() {
@@ -41,11 +41,6 @@ public class ThemeUtils {
         if (!isDarkMode(context)) return false;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean("true_black", false);
-    }
-
-    public static int coloredIconsMode(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getInt("colored_icons", 0);
     }
 
     public static boolean isDirectoryCount(Context context) {
@@ -83,6 +78,15 @@ public class ThemeUtils {
         PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt("accent_color", newColor).commit();
     }
 
+    public int thumbnailColor() {
+        final int defaultColor = mContext.getResources().getColor(R.color.non_colored_folder);
+        return PreferenceManager.getDefaultSharedPreferences(mContext).getInt("thumbnail_color", defaultColor);
+    }
+
+    public void thumbnailColor(int newColor) {
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit().putInt("thumbnail_color", newColor).commit();
+    }
+
     public boolean isColoredNavBar() {
         return PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("colored_navbar", true);
     }
@@ -92,15 +96,15 @@ public class ThemeUtils {
         final boolean blackTheme = isTrueBlack(mContext);
         final int primaryColor = primaryColor();
         final int accentColor = accentColor();
+        final int thumbnailColor = thumbnailColor();
         final boolean coloredNav = isColoredNavBar();
-        final int coloredIcons = coloredIconsMode(mContext);
         final boolean directoryCount = isDirectoryCount(mContext);
 
         boolean changed = false;
         if (checkForChanged) {
             changed = mDarkMode != darkTheme || mTrueBlack != blackTheme ||
                     mLastPrimaryColor != primaryColor || mLastAccentColor != accentColor ||
-                    coloredNav != mLastColoredNav || coloredIcons != mColoredIcons ||
+                    coloredNav != mLastColoredNav || thumbnailColor != mThumbnailColor ||
                     directoryCount != mDirectoryCount;
         }
 
@@ -109,7 +113,7 @@ public class ThemeUtils {
         mLastPrimaryColor = primaryColor;
         mLastAccentColor = accentColor;
         mLastColoredNav = coloredNav;
-        mColoredIcons = coloredIcons;
+        mThumbnailColor = thumbnailColor;
         mDirectoryCount = directoryCount;
 
         return changed;

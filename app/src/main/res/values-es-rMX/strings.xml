@@ -179,8 +179,8 @@
     <string name="accent_color_desc">El color del tema para resaltar. Por defecto rosado Material</string>
     <string name="colored_navbar">Barra de navegación colorida.</string>
     <string name="colored_navbar_desc">Si o no la barra de navegación del sistema se colorea con el color primario.</string>
-    <string name="colored_icons">Colores de Iconos</string>
-    <string name="colored_icons_desc">El color de los iconos de archivos y carpetas . Puedes utilizar el color o el acento de color primario en lugar del gris predeterminado.</string>
+
+
     <string name="defaultStr">Por defecto.</string>
     <string name="only_available_lollipop">Esta característica esta solo disponible en Android Lollipop hacia arriba.</string>
     <string name="base_theme_desc">Elige si quieres tema claro, oscuro, o AMOLED para pintar colores.</string>

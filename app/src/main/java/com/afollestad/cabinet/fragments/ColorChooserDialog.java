@@ -78,8 +78,10 @@ public class ColorChooserDialog extends DialogFragment implements View.OnClickLi
                         super.onNeutral(dialog);
                         if (getArguments().getInt("title", 0) == R.string.primary_color) {
                             getArguments().putInt("preselect", getResources().getColor(R.color.cabinet_color));
-                        } else {
+                        } else if (getArguments().getInt("title", 0) == R.string.accent_color) {
                             getArguments().putInt("preselect", getResources().getColor(R.color.cabinet_accent_color));
+                        } else {
+                            getArguments().putInt("preselect", getResources().getColor(R.color.non_colored_folder));
                         }
                         invalidateGrid();
                     }
