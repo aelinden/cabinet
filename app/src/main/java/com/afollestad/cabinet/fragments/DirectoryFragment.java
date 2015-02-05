@@ -268,7 +268,8 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     search.collapseActionView();
-                    ((MainActivity) getActivity()).search(mDirectory, query);
+                    if (getActivity() != null)
+                        ((MainActivity) getActivity()).search(mDirectory, query);
                     return false;
                 }
 

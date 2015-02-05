@@ -36,6 +36,7 @@ public class RootFile extends File {
     public String date;
     public String time;
     public String originalName;
+    private int contentSize = -1;
 
     @Override
     public boolean isHidden() {
@@ -234,6 +235,18 @@ public class RootFile extends File {
 
     @Override
     public long length() {
+        if (isDirectory()) {
+            if (contentSize == -1) {
+                try {
+                    List<File> contents = listFilesSync(Utils.getShowHidden(getContext()));
+                    if (contents != null)
+                        contentSize = contents.size();
+                } catch (Exception e) {
+                    contentSize = -2;
+                }
+            }
+            return contentSize;
+        }
         return size;
     }
 
@@ -271,13 +284,13 @@ public class RootFile extends File {
     @Override
     public List<File> listFilesSync(boolean includeHidden, FileFilter filter) throws Exception {
         List<File> results = new ArrayList<>();
-        if (requiresRoot()) {
-            if (Shell.SU.available()) {
-                List<String> response = runAsRoot("ls -l \"" + getPath() + "\"", false);
-                if (response == null) return results;
-                return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
-            }
-        }
+//       TODO if (requiresRoot()) {
+//            if (Shell.SU.available()) {
+//                List<String> response = runAsRoot("ls -l \"" + getPath() + "\"", false);
+//                if (response == null) return results;
+//                return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
+//            }
+//        }
         java.io.File[] list;
         if (filter != null) list = new java.io.File(getPath()).listFiles();
         else list = new java.io.File(getPath()).listFiles();

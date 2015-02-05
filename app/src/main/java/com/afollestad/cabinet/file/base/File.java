@@ -107,6 +107,7 @@ public abstract class File implements Serializable {
     }
 
     public static String getExtension(String name) {
+        if (!name.contains(".")) return "";
         name = name.toLowerCase();
         return name.substring(name.lastIndexOf('.') + 1);
     }
