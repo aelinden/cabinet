@@ -122,7 +122,7 @@ public abstract class File implements Serializable {
 
     public static String getMimeType(Context context, String extension) {
         String type = null;
-        if (extension != null) {
+        if (extension != null && !extension.trim().isEmpty()) {
             MimeTypeMap mime = MimeTypeMap.getSingleton();
             type = mime.getMimeTypeFromExtension(extension);
             if (type == null) return context.getResources().getString(R.string.mime_textplain);
@@ -232,10 +232,11 @@ public abstract class File implements Serializable {
     }
 
     protected final void updateMediaDatabase(File file, MediaUpdateType type) {
-        if (!file.getMimeType().startsWith("image/") &&
-                !file.getMimeType().startsWith("audio/") &&
-                !file.getMimeType().startsWith("video/") &&
-                !file.getExtension().equals("ogg")) {
+        final String mime = file.getMimeType();
+        if (!mime.startsWith("image/") &&
+                !mime.startsWith("audio/") &&
+                !mime.startsWith("video/") &&
+                !mime.equals("ogg")) {
             return;
         }
         if (type == MediaUpdateType.ADD) {
