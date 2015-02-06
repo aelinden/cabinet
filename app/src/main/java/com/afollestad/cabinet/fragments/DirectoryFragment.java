@@ -754,7 +754,7 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
                     public void run() {
                         ((ImageView) v.findViewById(R.id.emptyImage)).setImageResource(
                                 Utils.resolveDrawable(getActivity(), R.attr.empty_image_error));
-                        if (mDirectory.isRemote()) {
+                        if (mDirectory.isRemote() && getActivity() != null) {
                             ((MainActivity) getActivity()).disableFab(false, false);
                         }
                         try {

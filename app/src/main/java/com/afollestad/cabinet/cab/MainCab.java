@@ -1,5 +1,6 @@
 package com.afollestad.cabinet.cab;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -203,19 +204,34 @@ public class MainCab extends BaseFileCab {
         return false;
     }
 
+    private ProgressDialog mDialog;
+
     private void deleteNextFile() {
         Log.v("FabDelete", "Deleting next file...");
         if (getFiles().size() == 0) {
+            mDialog.dismiss();
+            mDialog = null;
             Log.v("FabDelete", "No files left in CAB, invalidating empty text and CAB.");
             getFragment().setListShown(true); // invalidates empty text
             invalidate();
             return;
         }
+
+        if (mDialog == null) {
+            final ProgressDialog mDialog = new ProgressDialog(getContext());
+            mDialog.setMessage(getContext().getString(R.string.copying));
+            if (getFiles().size() > 1) {
+                mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                mDialog.setMax(getFiles().size());
+            } else mDialog.setIndeterminate(true);
+            mDialog.setCancelable(false);
+            mDialog.show();
+        }
+
         Log.v("FabDelete", "Deleting: " + getFiles().get(0));
         getFiles().get(0).delete(new SftpClient.CompletionCallback() {
             @Override
             public void onComplete() {
-                if (getFiles().size() == 0) return;
                 getFragment().mAdapter.remove(getFiles().get(0));
                 getFiles().remove(0);
                 deleteNextFile();
