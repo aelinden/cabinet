@@ -219,7 +219,7 @@ public class MainCab extends BaseFileCab {
 
         if (mDialog == null) {
             final ProgressDialog mDialog = new ProgressDialog(getContext());
-            mDialog.setMessage(getContext().getString(R.string.copying));
+            mDialog.setMessage(getContext().getString(R.string.deleting));
             if (getFiles().size() > 1) {
                 mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 mDialog.setMax(getFiles().size());
@@ -232,6 +232,8 @@ public class MainCab extends BaseFileCab {
         getFiles().get(0).delete(new SftpClient.CompletionCallback() {
             @Override
             public void onComplete() {
+                if (!mDialog.isIndeterminate())
+                    mDialog.setProgress(mDialog.getProgress() + 1);
                 getFragment().mAdapter.remove(getFiles().get(0));
                 getFiles().remove(0);
                 deleteNextFile();
@@ -239,7 +241,8 @@ public class MainCab extends BaseFileCab {
 
             @Override
             public void onError(Exception e) {
-                // Nothing is needed here
+                mDialog.dismiss();
+                mDialog = null;
             }
         });
     }

@@ -50,10 +50,17 @@ public class CopyCab extends BaseFileCab {
         return super.onPrepareActionMode(actionMode, menu);
     }
 
+    private ProgressDialog mDialog;
+
     @Override
     public void paste() {
         Utils.lockOrientation(getContext());
-        final ProgressDialog mDialog = new ProgressDialog(getContext());
+        if (mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
+        }
+
+        mDialog = new ProgressDialog(getContext());
         mDialog.setMessage(getContext().getString(R.string.copying));
         if (getFiles().size() > 1) {
             mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -61,6 +68,7 @@ public class CopyCab extends BaseFileCab {
         } else mDialog.setIndeterminate(true);
         mDialog.setCancelable(false);
         mDialog.show();
+
         copyCount = 0;
         copyTotal = getFiles().size();
         new Thread(new Runnable() {
