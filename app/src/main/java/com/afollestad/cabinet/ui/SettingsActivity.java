@@ -67,6 +67,7 @@ public class SettingsActivity extends ThemableActivity
                                 @SuppressLint("CommitPrefEdits")
                                 @Override
                                 public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {
+                                    if (getActivity() == null) return;
                                     SharedPreferences.Editor prefs = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
                                     switch (i) {
                                         default:

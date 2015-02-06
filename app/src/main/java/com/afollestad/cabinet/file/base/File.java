@@ -66,9 +66,12 @@ public abstract class File implements Serializable {
         if (getPath().equals("/")) {
             if (isRemote()) {
                 return ((CloudFile) this).getRemote().getHost();
-            } else return getContext().getString(R.string.root);
+            } else if (getContext() != null) {
+                return getContext().getString(R.string.root);
+            }
         } else if (isStorageDirectory() || name.equals("sdcard")) {
-            return getContext().getString(R.string.storage);
+            if (getContext() != null)
+                return getContext().getString(R.string.storage);
         }
         return name;
     }

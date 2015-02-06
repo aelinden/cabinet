@@ -719,7 +719,9 @@ public class DirectoryFragment extends Fragment implements FileAdapter.IconClick
         persistedOffset = 0;
         if (mAdapter.getItemCount() > 0 && !getDirectory().isRemote()) {
             persistedPosition = mLayoutManager.findFirstVisibleItemPosition();
-            persistedOffset = (int) mRecyclerView.getChildAt(0).getY();
+            final View firstChild = mRecyclerView.getChildAt(0);
+            if (firstChild != null)
+                persistedOffset = (int) firstChild.getY();
         }
         mDirectory.listFiles(showHidden, lsFilter, new File.ArrayCallback() {
             @Override
