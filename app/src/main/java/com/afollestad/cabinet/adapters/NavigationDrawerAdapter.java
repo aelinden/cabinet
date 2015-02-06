@@ -166,9 +166,9 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         final int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
         holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
+        holder.divider.setVisibility(View.GONE);
 
         if (index == mItems.size() || index == mItems.size() + 1) {
-            holder.divider.setVisibility(View.GONE);
             if (index == mItems.size() + 1) {
                 holder.title.setText(R.string.settings);
                 holder.icon.setImageResource(R.drawable.ic_drawer_settings);
