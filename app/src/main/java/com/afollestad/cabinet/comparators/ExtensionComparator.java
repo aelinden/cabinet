@@ -15,7 +15,7 @@ public class ExtensionComparator implements java.util.Comparator<File> {
     private boolean foldersFirst;
 
     public ExtensionComparator(Context context) {
-        if(context != null)
+        if (context != null)
             foldersFirst = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("folders_first", true);
     }
 

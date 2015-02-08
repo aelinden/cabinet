@@ -284,12 +284,12 @@ public class RootFile extends File {
     @Override
     public List<File> listFilesSync(boolean includeHidden, FileFilter filter) throws Exception {
         List<File> results = new ArrayList<>();
-       if (requiresRoot()) {
-           if (Shell.SU.available()) {
-               List<String> response = runAsRoot("ls -l \"" + getPath() + "\"", false);
-               if (response == null) return results;
-               return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
-           }
+        if (requiresRoot()) {
+            if (Shell.SU.available()) {
+                List<String> response = runAsRoot("ls -l \"" + getPath() + "\"", false);
+                if (response == null) return results;
+                return LsParser.parse(getContext(), getPath(), response, filter, includeHidden).getFiles();
+            }
         }
         java.io.File[] list;
         if (filter != null) list = new java.io.File(getPath()).listFiles();
