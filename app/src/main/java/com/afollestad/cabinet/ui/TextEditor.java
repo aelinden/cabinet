@@ -269,7 +269,7 @@ public class TextEditor extends NetworkedActivity implements TextWatcher {
                             setProgress(false);
                         }
                     });
-                } catch (final IOException e) {
+                } catch (final Exception e) {
                     Log.v("TextEditor", "Error: " + e.getMessage());
                     runOnUiThread(new Runnable() {
                         @Override
