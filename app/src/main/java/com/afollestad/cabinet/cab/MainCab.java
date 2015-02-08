@@ -218,7 +218,7 @@ public class MainCab extends BaseFileCab {
         }
 
         if (mDialog == null) {
-            final ProgressDialog mDialog = new ProgressDialog(getContext());
+            mDialog = new ProgressDialog(getContext());
             mDialog.setMessage(getContext().getString(R.string.deleting));
             if (getFiles().size() > 1) {
                 mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
