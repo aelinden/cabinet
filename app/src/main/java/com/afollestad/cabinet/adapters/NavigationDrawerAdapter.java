@@ -141,16 +141,18 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         public ShortcutViewHolder(View itemView) {
             super(itemView);
-            view = itemView;
+
+            divider = itemView.findViewById(R.id.divider);
+
+            item = itemView.findViewById(R.id.item);
             title = (TextView) itemView.findViewById(R.id.title);
             icon = (ImageView) itemView.findViewById(R.id.icon);
-            divider = itemView.findViewById(R.id.divider);
         }
 
-        View view;
         TextView title;
         ImageView icon;
         View divider;
+        View item;
     }
 
     @Override
@@ -161,8 +163,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public void onBindViewHolder(ShortcutViewHolder holder, int index) {
-        holder.view.setTag(index);
-        holder.view.setOnClickListener(this);
+        holder.item.setTag(index);
+        holder.item.setOnClickListener(this);
 
         final int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
         holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
@@ -180,8 +182,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             holder.title.setTextColor(bodyText);
         } else {
             Pins.Item item = mItems.get(index);
-            holder.view.setOnLongClickListener(this);
-            holder.view.setActivated(mCheckedPos == index);
+            holder.item.setOnLongClickListener(this);
+            holder.item.setActivated(mCheckedPos == index);
             holder.title.setTextColor(currentColor);
 
             if (item.isRemote()) {
