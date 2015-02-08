@@ -190,7 +190,7 @@ public class NavigationDrawerFragment extends Fragment {
         if (cabStarted) {
             int actionBarHeight;
             TypedValue tv = new TypedValue();
-            if (getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+            if (getActivity().getTheme().resolveAttribute(R.attr.actionBarSize, tv, true))
                 actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
             else
                 actionBarHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 52, getResources().getDisplayMetrics());
