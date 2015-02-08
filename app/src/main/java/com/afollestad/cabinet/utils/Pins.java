@@ -121,7 +121,9 @@ public class Pins {
 
         @Override
         public String toString() {
-            return toJSON().toString();
+            JSONObject jsonObject = toJSON();
+            jsonObject.remove("main");
+            return jsonObject.toString();
         }
 
         public File toFile(Activity context) {
