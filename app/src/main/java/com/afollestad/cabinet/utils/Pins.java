@@ -42,6 +42,7 @@ public class Pins {
         }
 
         public Item(JSONObject json) {
+            isMain = json.optBoolean("main");
             mPath = json.optString("path");
             if (json.optBoolean("remote")) {
                 isRemote = true;
@@ -53,11 +54,20 @@ public class Pins {
         }
 
         private boolean isRemote;
+        private boolean isMain;
         private String mPath;
         private String mHost;
         private int mPort;
         private String mUser;
         private String mPass;
+
+        private void setMain(boolean isMain) {
+            this.isMain = isMain;
+        }
+
+        public boolean isMain() {
+            return isMain;
+        }
 
         public boolean isRemote() {
             return isRemote;
@@ -94,6 +104,7 @@ public class Pins {
         public JSONObject toJSON() {
             JSONObject json = new JSONObject();
             try {
+                json.put("main", isMain);
                 json.put("path", mPath);
                 json.put("remote", isRemote);
                 if (isRemote) {
@@ -128,13 +139,32 @@ public class Pins {
         for (Item item : items) {
             toSet.put(item.toJSON());
         }
-        prefs.edit().putString("pins", toSet.toString()).commit();
+        prefs.edit().putString("pins", toSet.toString()).apply();
     }
 
     public static void add(Context context, Item item) {
         List<Item> items = getAll(context);
         items.add(item);
         save(context, items);
+    }
+
+    public static void addMain(Context context, Item item) {
+        item.setMain(true);
+        List<Item> items = getAll(context);
+        items.add(0, item);
+        save(context, items);
+    }
+
+    public static int getNumberOfMainItems(Context context) {
+        int number = 0;
+        for (Item i : getAll(context)) {
+            if (i.isMain) {
+                number++;
+            } else {
+                break;
+            }
+        }
+        return number;
     }
 
     public static List<Item> getAll(Context context) {

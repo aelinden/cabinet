@@ -38,7 +38,9 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public boolean onLongClick(View view) {
-        mListener.onLongClick((Integer) view.getTag());
+        if (!mItems.get((Integer) view.getTag()).isMain()) {
+            mListener.onLongClick((Integer) view.getTag());
+        }
         return false;
     }
 
@@ -59,10 +61,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         bodyText = Utils.resolveColor(context, R.attr.body_text);
 
         if (Pins.getAll(context).size() == 0) {
-            LocalFile item = new LocalFile(context);
-            Pins.add(context, new Pins.Item(item));
-            item = new LocalFile(context, Environment.getExternalStorageDirectory());
-            Pins.add(context, new Pins.Item(item));
             try {
 
                 // TODO SD card stuff
@@ -78,7 +76,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 //                    }
 //                }
 
-                item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "DCIM"));
+                LocalFile item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "DCIM"));
                 if (item.existsSync())
                     Pins.add(context, new Pins.Item(item));
                 item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "Download"));
@@ -99,15 +97,24 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     private Activity mContext;
     private List<Pins.Item> mItems;
+    private int mNumberOfMainItems;
     private int mCheckedPos = -1;
     private ClickListener mListener;
     private int bodyText;
 
     public void reload(Context context) {
+        LocalFile item = new LocalFile((Activity) context, Environment.getExternalStorageDirectory());
+        Pins.remove((Activity) context, item);
+        Pins.addMain(context, new Pins.Item(item));
+        item = new LocalFile((Activity) context);
+        Pins.remove((Activity) context, item);
+        Pins.addMain(context, new Pins.Item(item));
+
         final List<Pins.Item> items = Pins.getAll(context);
         mItems.clear();
         for (Pins.Item i : items)
             mItems.add(i);
+        mNumberOfMainItems = Pins.getNumberOfMainItems(context);
         notifyDataSetChanged();
     }
 
@@ -141,16 +148,18 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         public ShortcutViewHolder(View itemView) {
             super(itemView);
-            view = itemView;
+
+            divider = itemView.findViewById(R.id.divider);
+
+            item = itemView.findViewById(R.id.item);
             title = (TextView) itemView.findViewById(R.id.title);
             icon = (ImageView) itemView.findViewById(R.id.icon);
-            divider = itemView.findViewById(R.id.divider);
         }
 
-        View view;
         TextView title;
         ImageView icon;
         View divider;
+        View item;
     }
 
     @Override
@@ -161,8 +170,8 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public void onBindViewHolder(ShortcutViewHolder holder, int index) {
-        holder.view.setTag(index);
-        holder.view.setOnClickListener(this);
+        holder.item.setTag(index);
+        holder.item.setOnClickListener(this);
 
         final int currentColor = mCheckedPos == index ? ThemeSingleton.get().positiveColor : bodyText;
         holder.icon.setColorFilter(currentColor, PorterDuff.Mode.SRC_ATOP);
@@ -180,9 +189,13 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             holder.title.setTextColor(bodyText);
         } else {
             Pins.Item item = mItems.get(index);
-            holder.view.setOnLongClickListener(this);
-            holder.view.setActivated(mCheckedPos == index);
+            holder.item.setOnLongClickListener(this);
+            holder.item.setActivated(mCheckedPos == index);
             holder.title.setTextColor(currentColor);
+
+            if (mNumberOfMainItems != 0 && index == mNumberOfMainItems) {
+                holder.divider.setVisibility(View.VISIBLE);
+            }
 
             if (item.isRemote()) {
                 holder.title.setText(item.getDisplay(mContext));
