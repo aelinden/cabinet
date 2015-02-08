@@ -59,10 +59,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         bodyText = Utils.resolveColor(context, R.attr.body_text);
 
         if (Pins.getAll(context).size() == 0) {
-            LocalFile item = new LocalFile(context);
-            Pins.add(context, new Pins.Item(item));
-            item = new LocalFile(context, Environment.getExternalStorageDirectory());
-            Pins.add(context, new Pins.Item(item));
             try {
 
                 // TODO SD card stuff
@@ -78,7 +74,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 //                    }
 //                }
 
-                item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "DCIM"));
+                LocalFile item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "DCIM"));
                 if (item.existsSync())
                     Pins.add(context, new Pins.Item(item));
                 item = new LocalFile(context, new java.io.File(Environment.getExternalStorageDirectory(), "Download"));
@@ -99,15 +95,24 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     private Activity mContext;
     private List<Pins.Item> mItems;
+    private int mNumberOfMainItems;
     private int mCheckedPos = -1;
     private ClickListener mListener;
     private int bodyText;
 
     public void reload(Context context) {
+        LocalFile item = new LocalFile((Activity) context, Environment.getExternalStorageDirectory());
+        Pins.remove((Activity) context, item);
+        Pins.addMain(context, new Pins.Item(item));
+        item = new LocalFile((Activity) context);
+        Pins.remove((Activity) context, item);
+        Pins.addMain(context, new Pins.Item(item));
+
         final List<Pins.Item> items = Pins.getAll(context);
         mItems.clear();
         for (Pins.Item i : items)
             mItems.add(i);
+        mNumberOfMainItems = Pins.getNumberOfMainItems(context);
         notifyDataSetChanged();
     }
 
@@ -185,6 +190,10 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             holder.item.setOnLongClickListener(this);
             holder.item.setActivated(mCheckedPos == index);
             holder.title.setTextColor(currentColor);
+
+            if (mNumberOfMainItems != 0 && index == mNumberOfMainItems) {
+                holder.divider.setVisibility(View.VISIBLE);
+            }
 
             if (item.isRemote()) {
                 holder.title.setText(item.getDisplay(mContext));
