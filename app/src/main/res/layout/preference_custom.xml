@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="?android:attr/listPreferredItemHeight"
     android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
     android:paddingEnd="?android:attr/scrollbarSize"
     android:paddingRight="?android:attr/scrollbarSize"
     tools:ignore="RtlSymmetry">
@@ -12,47 +12,47 @@
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dip"
-        android:layout_marginLeft="16dip"
-        android:layout_marginEnd="6dip"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="12dip"
         android:layout_marginBottom="12dip"
+        android:layout_marginEnd="6dip"
+        android:layout_marginLeft="16dip"
+        android:layout_marginRight="6dip"
+        android:layout_marginStart="16dip"
+        android:layout_marginTop="12dip"
         android:layout_weight="1">
 
         <TextView
             android:id="@android:id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             android:fontFamily="sans-serif"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="15sp"
-            tools:text="Title"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:gravity="start"
-            android:textAlignment="viewStart" />
+            android:singleLine="true"
+            android:textAlignment="viewStart"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp"
+            tools:text="Title" />
 
         <TextView
             android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@android:id/title"
-            android:layout_alignStart="@android:id/title"
             android:layout_alignLeft="@android:id/title"
-            android:textSize="14sp"
-            android:maxLines="6"
-            android:layout_marginTop="2dp"
-            android:fontFamily="sans-serif-light"
-            android:textColor="?android:textColorSecondary"
-            tools:text="Summary"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:fontFamily="sans-serif"
             android:gravity="start"
-            android:textAlignment="viewStart" />
+            android:maxLines="6"
+            android:textAlignment="viewStart"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp"
+            tools:text="Summary" />
 
     </RelativeLayout>
 
@@ -61,19 +61,19 @@
         android:id="@android:id/widget_frame"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
         android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp" />
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical" />
 
     <com.afollestad.cabinet.views.CircleView
         android:id="@+id/circle"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:visibility="gone"
-        tools:visibility="visible"
         android:layout_gravity="center_vertical|end"
         android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp" />
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </LinearLayout>
