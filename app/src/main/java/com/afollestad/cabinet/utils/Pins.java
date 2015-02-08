@@ -65,6 +65,10 @@ public class Pins {
             this.isMain = isMain;
         }
 
+        public boolean isMain() {
+            return isMain;
+        }
+
         public boolean isRemote() {
             return isRemote;
         }

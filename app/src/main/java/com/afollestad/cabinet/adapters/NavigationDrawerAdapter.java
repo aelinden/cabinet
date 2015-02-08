@@ -38,7 +38,9 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public boolean onLongClick(View view) {
-        mListener.onLongClick((Integer) view.getTag());
+        if (!mItems.get((Integer) view.getTag()).isMain()) {
+            mListener.onLongClick((Integer) view.getTag());
+        }
         return false;
     }
 
