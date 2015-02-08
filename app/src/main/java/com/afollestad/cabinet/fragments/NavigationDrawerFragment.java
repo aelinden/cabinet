@@ -187,16 +187,12 @@ public class NavigationDrawerFragment extends Fragment {
     public void invalidatePadding(boolean cabStarted) {
         if (getView() == null || getActivity() == null) return;
         final View v = getView();
+        int eightDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics());
         if (cabStarted) {
-            int actionBarHeight;
-            TypedValue tv = new TypedValue();
-            if (getActivity().getTheme().resolveAttribute(R.attr.actionBarSize, tv, true))
-                actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
-            else
-                actionBarHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 52, getResources().getDisplayMetrics());
-            v.setPadding(v.getPaddingLeft(), actionBarHeight, v.getPaddingRight(), v.getPaddingBottom());
+            int actionBarHeight = (int) getActivity().getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
+            v.setPadding(v.getPaddingLeft(), actionBarHeight + eightDp, v.getPaddingRight(), v.getPaddingBottom());
         } else {
-            v.setPadding(v.getPaddingLeft(), 0, v.getPaddingRight(), v.getPaddingBottom());
+            v.setPadding(v.getPaddingLeft(), eightDp, v.getPaddingRight(), v.getPaddingBottom());
         }
     }
 }
