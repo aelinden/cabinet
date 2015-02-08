@@ -50,7 +50,7 @@ public class CopyCab extends BaseFileCab {
         return super.onPrepareActionMode(actionMode, menu);
     }
 
-    private ProgressDialog mDialog;
+    private transient ProgressDialog mDialog;
 
     @Override
     public void paste() {

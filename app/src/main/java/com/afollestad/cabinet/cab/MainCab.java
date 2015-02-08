@@ -161,6 +161,7 @@ public class MainCab extends BaseFileCab {
                     new Utils.ClickListener() {
                         @Override
                         public void onPositive(int which, View view) {
+                            Utils.lockOrientation(getContext());
                             deleteNextFile();
                         }
                     }
@@ -204,7 +205,7 @@ public class MainCab extends BaseFileCab {
         return false;
     }
 
-    private ProgressDialog mDialog;
+    private transient ProgressDialog mDialog;
 
     private void deleteNextFile() {
         Log.v("FabDelete", "Deleting next file...");
@@ -214,6 +215,7 @@ public class MainCab extends BaseFileCab {
             Log.v("FabDelete", "No files left in CAB, invalidating empty text and CAB.");
             getFragment().setListShown(true); // invalidates empty text
             invalidate();
+            Utils.unlockOrientation(getContext());
             return;
         }
 
@@ -228,8 +230,9 @@ public class MainCab extends BaseFileCab {
             mDialog.show();
         }
 
-        Log.v("FabDelete", "Deleting: " + getFiles().get(0));
-        getFiles().get(0).delete(new SftpClient.CompletionCallback() {
+        final File fi = getFiles().get(0);
+        Log.v("FabDelete", "Deleting: " + fi);
+        fi.delete(new SftpClient.CompletionCallback() {
             @Override
             public void onComplete() {
                 if (!mDialog.isIndeterminate())

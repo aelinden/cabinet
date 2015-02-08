@@ -257,4 +257,9 @@ public abstract class File implements Serializable {
             r.delete(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, "_data = ?", new String[]{file.getPath()});
         }
     }
+
+    @Override
+    public String toString() {
+        return mPath;
+    }
 }
