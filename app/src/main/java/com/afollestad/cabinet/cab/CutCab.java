@@ -60,14 +60,19 @@ public class CutCab extends BaseFileCab {
             mDialog = null;
         }
 
-        mDialog = new ProgressDialog(getContext());
-        mDialog.setMessage(getContext().getString(R.string.copying));
-        if (getFiles().size() > 1) {
-            mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            mDialog.setMax(getFiles().size());
-        } else mDialog.setIndeterminate(true);
-        mDialog.setCancelable(false);
-        mDialog.show();
+        getContext().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mDialog = new ProgressDialog(getContext());
+                mDialog.setMessage(getContext().getString(R.string.copying));
+                if (getFiles().size() > 1) {
+                    mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    mDialog.setMax(getFiles().size());
+                } else mDialog.setIndeterminate(true);
+                mDialog.setCancelable(false);
+                mDialog.show();
+            }
+        });
 
         cutCount = 0;
         cutTotal = getFiles().size();
