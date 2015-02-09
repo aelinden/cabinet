@@ -101,7 +101,7 @@ public class MainCab extends BaseFileCab {
                 Toast.makeText(getContext(), e2.getMessage(), Toast.LENGTH_LONG).show();
             }
         } else {
-            Intent intent = new Intent().setAction(Intent.ACTION_SEND_MULTIPLE);
+            Intent intent = new Intent().setAction(Intent.ACTION_SEND_MULTIPLE).setType("*/*");
             ArrayList<Uri> files = new ArrayList<>();
             for (File fi : send)
                 files.add(Uri.fromFile(fi.toJavaFile()));
