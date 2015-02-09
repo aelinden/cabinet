@@ -45,7 +45,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
-public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder> implements View.OnClickListener, View.OnLongClickListener {
+public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder> {
 
     private final static int HIDDEN_ALPHA = (int) (255 * 0.4f);
 
@@ -64,79 +64,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         primaryColor = theme.thumbnailColor();
     }
 
-    @Override
-    public void onClick(View view) {
-        String[] split = ((String) view.getTag()).split(":");
-        int type = Integer.parseInt(split[0]);
-        final int index = Integer.parseInt(split[1]);
-        if (index > mFiles.size() - 1)
-            return;
-        File file = mFiles.get(index);
-        if (type == 0) {  // item
-            if (mListener != null)
-                mListener.onItemClicked(index, mFiles.get(index));
-        } else if (type == 1) {  // icon
-            boolean checked = !isItemChecked(file);
-            setItemChecked(file, checked);
-            if (mIconListener != null)
-                mIconListener.onIconClicked(index, file, checked);
-        } else {  // menu
-            ContextThemeWrapper context = new ContextThemeWrapper(mContext, R.style.Widget_AppCompat_Light_PopupMenu);
-            PopupMenu mPopupMenu = new PopupMenu(context, view);
-            mPopupMenu.inflate(file.isDirectory() ? R.menu.dir_options : R.menu.file_options);
-            boolean foundInCopyCab = false;
-            boolean foundInCutCab = false;
-            MainActivity act = (MainActivity) mContext;
-            if (act.getCab() instanceof CopyCab) {
-                foundInCopyCab = ((BaseFileCab) act.getCab()).containsFile(file);
-            } else if (act.getCab() instanceof CutCab) {
-                foundInCutCab = ((BaseFileCab) act.getCab()).containsFile(file);
-            }
-            mPopupMenu.getMenu().findItem(R.id.copy).setVisible(!foundInCopyCab);
-            mPopupMenu.getMenu().findItem(R.id.cut).setVisible(!foundInCutCab);
-            if (file.isDirectory()) {
-                mPopupMenu.getMenu().findItem(R.id.pin).setVisible(!Pins.contains(mContext, new Pins.Item(file)));
-            } else {
-                MenuItem zip = mPopupMenu.getMenu().findItem(R.id.zip);
-                if (!file.isRemote()) {
-                    zip.setVisible(true);
-                    if (file.getExtension().equals("zip"))
-                        zip.setTitle(R.string.unzip);
-                    else zip.setTitle(R.string.zip);
-                } else zip.setVisible(false);
-            }
-            mPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem menuItem) {
-                    mMenuListener.onMenuItemClick(mFiles.get(index), menuItem);
-                    return true;
-                }
-            });
-            mPopupMenu.show();
-        }
-    }
-
-    @SuppressLint("CommitPrefEdits")
-    @Override
-    public boolean onLongClick(View view) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-        if (!prefs.getBoolean("shown_iconpress_hint", false)) {
-            prefs.edit().putBoolean("shown_iconpress_hint", true).commit();
-            Toast.makeText(mContext, R.string.iconpress_hint, Toast.LENGTH_LONG).show();
-        }
-//        view.findViewById(R.id.image).performClick();
-        int index = Integer.parseInt(((String) view.getTag()).split(":")[1]);
-        if (index > mFiles.size() - 1)
-            return true;
-        File file = mFiles.get(index);
-        boolean checked = !isItemChecked(file);
-        setItemChecked(file, checked);
-        if (mIconListener != null)
-            mIconListener.onIconClicked(index, file, checked);
-        return true;
-    }
-
-    public static class FileViewHolder extends RecyclerView.ViewHolder {
+    public class FileViewHolder extends RecyclerView.ViewHolder
+            implements View.OnClickListener, View.OnLongClickListener {
 
         View view;
         ImageView icon;
@@ -153,6 +82,89 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             content = (TextView) itemView.findViewById(android.R.id.content);
             directory = (TextView) itemView.findViewById(R.id.directory);
             menu = itemView.findViewById(R.id.menu);
+
+
+            view.setTag("0");
+            icon.setTag("1");
+            menu.setTag("2");
+
+            view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
+            icon.setOnClickListener(this);
+            menu.setOnClickListener(this);
+
+            setupTouchDelegate(mContext, menu);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int type = Integer.parseInt((String) view.getTag());
+            final int index = getPosition();
+            if (index > mFiles.size() - 1)
+                return;
+            File file = mFiles.get(index);
+            if (type == 0) {  // item
+                if (mListener != null)
+                    mListener.onItemClicked(index, mFiles.get(index));
+            } else if (type == 1) {  // icon
+                boolean checked = !isItemChecked(file);
+                setItemChecked(file, checked);
+                if (mIconListener != null)
+                    mIconListener.onIconClicked(index, file, checked);
+            } else {  // menu
+                ContextThemeWrapper context = new ContextThemeWrapper(mContext, R.style.Widget_AppCompat_Light_PopupMenu);
+                PopupMenu mPopupMenu = new PopupMenu(context, view);
+                mPopupMenu.inflate(file.isDirectory() ? R.menu.dir_options : R.menu.file_options);
+                boolean foundInCopyCab = false;
+                boolean foundInCutCab = false;
+                MainActivity act = (MainActivity) mContext;
+                if (act.getCab() instanceof CopyCab) {
+                    foundInCopyCab = ((BaseFileCab) act.getCab()).containsFile(file);
+                } else if (act.getCab() instanceof CutCab) {
+                    foundInCutCab = ((BaseFileCab) act.getCab()).containsFile(file);
+                }
+                mPopupMenu.getMenu().findItem(R.id.copy).setVisible(!foundInCopyCab);
+                mPopupMenu.getMenu().findItem(R.id.cut).setVisible(!foundInCutCab);
+                if (file.isDirectory()) {
+                    mPopupMenu.getMenu().findItem(R.id.pin).setVisible(!Pins.contains(mContext, new Pins.Item(file)));
+                } else {
+                    MenuItem zip = mPopupMenu.getMenu().findItem(R.id.zip);
+                    if (!file.isRemote()) {
+                        zip.setVisible(true);
+                        if (file.getExtension().equals("zip"))
+                            zip.setTitle(R.string.unzip);
+                        else zip.setTitle(R.string.zip);
+                    } else zip.setVisible(false);
+                }
+                mPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        mMenuListener.onMenuItemClick(mFiles.get(index), menuItem);
+                        return true;
+                    }
+                });
+                mPopupMenu.show();
+            }
+        }
+
+        @SuppressLint("CommitPrefEdits")
+        @Override
+        public boolean onLongClick(View view) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+            if (!prefs.getBoolean("shown_iconpress_hint", false)) {
+                prefs.edit().putBoolean("shown_iconpress_hint", true).commit();
+                Toast.makeText(mContext, R.string.iconpress_hint, Toast.LENGTH_LONG).show();
+            }
+//        view.findViewById(R.id.image).performClick();
+            int index = getPosition();
+            if (index > mFiles.size() - 1)
+                return true;
+            File file = mFiles.get(index);
+            boolean checked = !isItemChecked(file);
+            setItemChecked(file, checked);
+            if (mIconListener != null)
+                mIconListener.onIconClicked(index, file, checked);
+            return true;
         }
     }
 
@@ -210,10 +222,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     @Override
     public void onBindViewHolder(FileViewHolder holder, int index) {
         File file = mFiles.get(index);
-        holder.view.setTag("0:" + index);
-        holder.view.setOnClickListener(this);
-        holder.view.setOnLongClickListener(this);
-        setupTouchDelegate(mContext, holder.menu);
 
         if (file instanceof RootFile) {
             holder.title.setText(((RootFile) file).originalName);
@@ -252,11 +260,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         } else holder.directory.setVisibility(View.GONE);
 
         holder.view.setActivated(isItemChecked(file));
-        holder.icon.setTag("1:" + index);
-        holder.icon.setOnClickListener(this);
-
-        holder.menu.setTag("2:" + index);
-        holder.menu.setOnClickListener(this);
     }
 
     public static DisplayImageOptions getDisplayImageOptions(Context context, File file, int fb) {

@@ -122,7 +122,7 @@ public abstract class File implements Serializable {
 
     public static String getMimeType(Context context, String extension) {
         String type = null;
-        if (extension != null && !extension.trim().isEmpty()) {
+        if (extension != null) {
             MimeTypeMap mime = MimeTypeMap.getSingleton();
             type = mime.getMimeTypeFromExtension(extension);
             if (type == null) return context.getResources().getString(R.string.mime_textplain);
